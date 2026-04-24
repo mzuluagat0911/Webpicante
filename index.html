@@ -1,6 +1,17 @@
 <!doctype html>
 <html lang="es">
   <head>
+    <!-- GitHub Pages: el sitio vive en /REPO/; sin <base>, rutas ./recursos/… fallan si la URL no termina en /. -->
+    <base id="site-base" href="/" />
+    <script>
+      (function () {
+        var el = document.getElementById("site-base");
+        if (!el) return;
+        var host = location.hostname;
+        var parts = location.pathname.split("/").filter(Boolean);
+        if (host.endsWith("github.io") && parts.length) el.href = "/" + parts[0] + "/";
+      })();
+    </script>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
     <title>Picante Studio | Agencia de Growth, Performance e IA para marcas que escalan</title>
