@@ -9,7 +9,9 @@
         if (!el) return;
         var host = location.hostname;
         var parts = location.pathname.split("/").filter(Boolean);
-        if (host.endsWith("github.io") && parts.length) el.href = "/" + parts[0] + "/";
+        if (host.endsWith("github.io") && parts.length) {
+          el.href = location.protocol + "//" + host + "/" + parts[0] + "/";
+        }
       })();
     </script>
     <meta charset="UTF-8" />
@@ -490,18 +492,18 @@
         </div>
 
         <div class="clients-showcase reveal">
-          <article class="client-logo-card" data-client-note="Delivery · Apertura Colombia y México"><img src="./recursos/Logos clientes/Sin título-2-01.png" alt="Cliente: delivery y expansión regional" loading="lazy" /></article>
-          <article class="client-logo-card" data-client-note="Gastronomía · Sitio web"><img src="./recursos/Logos clientes/Sin título-2-02.png" alt="Cliente: gastronomía, sitio web" loading="lazy" /></article>
-          <article class="client-logo-card" data-client-note="Gastronomía · E-commerce"><img src="./recursos/Logos clientes/Sin título-2-03.png" alt="Cliente: gastronomía, e-commerce" loading="lazy" /></article>
-          <article class="client-logo-card" data-client-note="Gastronomía · Paid media"><img src="./recursos/Logos clientes/Sin título-2-04.png" alt="Cliente: gastronomía, paid media" loading="lazy" /></article>
-          <article class="client-logo-card" data-client-note="Gastronomía · E-commerce"><img src="./recursos/Logos clientes/Sin título-2-05.png" alt="Cliente: gastronomía, e-commerce" loading="lazy" /></article>
-          <article class="client-logo-card" data-client-note="Gastronomía · Branding y mailing"><img src="./recursos/Logos clientes/Sin título-2-06.png" alt="Cliente: gastronomía, branding y mailing" loading="lazy" /></article>
-          <article class="client-logo-card" data-client-note="Logística · Contenidos y paid media"><img src="./recursos/Logos clientes/Sin título-2-07.png" alt="Cliente: logística, contenidos y paid media" loading="lazy" /></article>
-          <article class="client-logo-card" data-client-note="Retail · Branding"><img src="./recursos/Logos clientes/Sin título-2-08.png" alt="Cliente: retail, branding" loading="lazy" /></article>
-          <article class="client-logo-card" data-client-note="Fintech · Contenidos y paid media"><img src="./recursos/Logos clientes/Sin título-2-09.png" alt="Cliente: fintech, contenidos y paid media" loading="lazy" /></article>
-          <article class="client-logo-card" data-client-note="Fintech · Contenidos y paid media"><img src="./recursos/Logos clientes/Sin título-2-10.png" alt="Cliente: fintech, contenidos y paid media" loading="lazy" /></article>
-          <article class="client-logo-card" data-client-note="Cine · Estrategia de contenidos"><img src="./recursos/Logos clientes/Sin título-2-11.png" alt="Cliente: entretenimiento, estrategia de contenidos" loading="lazy" /></article>
-          <article class="client-logo-card" data-client-note="Fintech · Contenidos y paid media"><img src="./recursos/Logos clientes/Sin título-2-12.png" alt="Cliente: fintech, contenidos y paid media" loading="lazy" /></article>
+          <article class="client-logo-card" data-client-note="Delivery · Apertura Colombia y México"><img src="assets/client-logos/logo-1.png" alt="Cliente: delivery y expansión regional" loading="lazy" decoding="async" /></article>
+          <article class="client-logo-card" data-client-note="Gastronomía · Sitio web"><img src="assets/client-logos/logo-2.png" alt="Cliente: gastronomía, sitio web" loading="lazy" decoding="async" /></article>
+          <article class="client-logo-card" data-client-note="Gastronomía · E-commerce"><img src="assets/client-logos/logo-3.png" alt="Cliente: gastronomía, e-commerce" loading="lazy" decoding="async" /></article>
+          <article class="client-logo-card" data-client-note="Gastronomía · Paid media"><img src="assets/client-logos/logo-4.png" alt="Cliente: gastronomía, paid media" loading="lazy" decoding="async" /></article>
+          <article class="client-logo-card" data-client-note="Gastronomía · E-commerce"><img src="assets/client-logos/logo-5.png" alt="Cliente: gastronomía, e-commerce" loading="lazy" decoding="async" /></article>
+          <article class="client-logo-card" data-client-note="Gastronomía · Branding y mailing"><img src="assets/client-logos/logo-6.png" alt="Cliente: gastronomía, branding y mailing" loading="lazy" decoding="async" /></article>
+          <article class="client-logo-card" data-client-note="Logística · Contenidos y paid media"><img src="assets/client-logos/logo-7.png" alt="Cliente: logística, contenidos y paid media" loading="lazy" decoding="async" /></article>
+          <article class="client-logo-card" data-client-note="Retail · Branding"><img src="assets/client-logos/logo-8.png" alt="Cliente: retail, branding" loading="lazy" decoding="async" /></article>
+          <article class="client-logo-card" data-client-note="Fintech · Contenidos y paid media"><img src="assets/client-logos/logo-9.png" alt="Cliente: fintech, contenidos y paid media" loading="lazy" decoding="async" /></article>
+          <article class="client-logo-card" data-client-note="Fintech · Contenidos y paid media"><img src="assets/client-logos/logo-10.png" alt="Cliente: fintech, contenidos y paid media" loading="lazy" decoding="async" /></article>
+          <article class="client-logo-card" data-client-note="Cine · Estrategia de contenidos"><img src="assets/client-logos/logo-11.png" alt="Cliente: entretenimiento, estrategia de contenidos" loading="lazy" decoding="async" /></article>
+          <article class="client-logo-card" data-client-note="Fintech · Contenidos y paid media"><img src="assets/client-logos/logo-12.png" alt="Cliente: fintech, contenidos y paid media" loading="lazy" decoding="async" /></article>
         </div>
       </section>
 
