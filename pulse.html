@@ -1,0 +1,1272 @@
+<!doctype html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
+    <title>Pulse | Inteligencia competitiva local en tiempo real — Picante Studio</title>
+    <meta
+      name="description"
+      content="Pulse escanea Google Maps, rastrea reseñas y te muestra dónde estás parado frente a tu competencia local. Sin buscar manualmente. Sin suposiciones."
+    />
+    <meta name="keywords" content="inteligencia competitiva, Google Maps, reseñas, competidores locales, multi-sucursal, Pulse, Picante" />
+    <link rel="canonical" href="https://wearepicante.com/pulse.html" />
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content="Pulse | Inteligencia competitiva local en tiempo real" />
+    <meta
+      property="og:description"
+      content="Sabé exactamente dónde estás parado frente a tu competencia. Escaneo automático, ranking en vivo y alertas."
+    />
+    <meta property="og:url" content="https://wearepicante.com/pulse.html" />
+    <meta property="og:image" content="https://wearepicante.com/assets/picante-red.png" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="Pulse | Inteligencia competitiva local" />
+    <meta
+      name="twitter:description"
+      content="Tu competencia se mueve. Ahora vos también lo ves. Dashboard comparativo para negocios con presencia física."
+    />
+    <meta name="theme-color" content="#0a0a0a" />
+    <link rel="icon" type="image/png" href="./assets/picante-red.png" />
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "SoftwareApplication",
+        "name": "Pulse",
+        "applicationCategory": "BusinessApplication",
+        "operatingSystem": "Web",
+        "description": "Inteligencia competitiva local en tiempo real para negocios con presencia física.",
+        "provider": {
+          "@type": "Organization",
+          "name": "Picante Studio",
+          "url": "https://wearepicante.com"
+        }
+      }
+    </script>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Instrument+Serif:ital@0;1&display=swap"
+      rel="stylesheet"
+    />
+    <style>
+      :root {
+        --brand: #c31c1e;
+        --brand-light: #e63946;
+        --brand-glow: rgba(195, 28, 30, 0.55);
+        --ink: #1d1d1f;
+        --ink-soft: #6e6e73;
+        --ink-faint: #86868b;
+        --bg: #ffffff;
+        --bg-soft: #f5f5f7;
+        --bg-dark: #0a0a0a;
+        --bg-card-dark: #1a1a1a;
+        --line: rgba(0, 0, 0, 0.06);
+        --line-dark: rgba(255, 255, 255, 0.08);
+        --line-dark-2: rgba(255, 255, 255, 0.14);
+        --radius-lg: 16px;
+        --radius-md: 16px;
+        --nav-h: 68px;
+        --ease: cubic-bezier(0.22, 1, 0.36, 1);
+        --ease-out: cubic-bezier(0.16, 1, 0.3, 1);
+        --max: 1200px;
+      }
+
+      *, *::before, *::after { box-sizing: border-box; }
+
+      html { scroll-behavior: smooth; }
+
+      body {
+        margin: 0;
+        font-family: Inter, -apple-system, BlinkMacSystemFont, "SF Pro Display", "Segoe UI", Roboto, sans-serif;
+        font-size: 16px;
+        line-height: 1.5;
+        color: var(--ink);
+        background: var(--bg);
+        -webkit-font-smoothing: antialiased;
+        overflow-x: hidden;
+      }
+
+      ::selection { background: var(--ink); color: #fff; }
+
+      img { max-width: 100%; height: auto; display: block; }
+
+      a { color: inherit; }
+
+      .container {
+        width: min(var(--max), 92%);
+        margin: 0 auto;
+      }
+
+      .accent-red { color: var(--brand); }
+      .accent-serif {
+        font-family: "Instrument Serif", Georgia, serif;
+        font-style: italic;
+        font-weight: 400;
+      }
+
+      /* —— Header —— */
+      .site-header {
+        position: fixed;
+        top: 0;
+        left: 0;
+        right: 0;
+        z-index: 60;
+        border-bottom: 1px solid transparent;
+        transition: background 0.45s var(--ease), border-color 0.45s var(--ease), backdrop-filter 0.45s var(--ease);
+      }
+
+      .site-header.scrolled {
+        background: rgba(255, 255, 255, 0.78);
+        backdrop-filter: saturate(180%) blur(20px);
+        -webkit-backdrop-filter: saturate(180%) blur(20px);
+        border-bottom-color: var(--line);
+      }
+
+      .site-header.on-dark:not(.scrolled) { color: #fff; }
+
+      .nav {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        min-height: var(--nav-h);
+        gap: 16px;
+      }
+
+      .brand {
+        display: inline-flex;
+        align-items: center;
+        text-decoration: none;
+        height: 22px;
+        width: 72px;
+        position: relative;
+        flex-shrink: 0;
+      }
+
+      .brand-logo {
+        position: absolute;
+        inset: 0;
+        width: 100%;
+        height: 100%;
+        object-fit: contain;
+        object-position: left center;
+        transition: opacity 0.4s var(--ease);
+      }
+
+      .brand-logo--dark { opacity: 0; }
+      .brand-logo--light { opacity: 1; }
+
+      .site-header.scrolled .brand-logo--light { opacity: 0; }
+      .site-header.scrolled .brand-logo--dark { opacity: 1; }
+      .site-header.on-dark:not(.scrolled) .brand-logo--light { opacity: 1; }
+      .site-header.on-dark:not(.scrolled) .brand-logo--dark { opacity: 0; }
+
+      .menu {
+        display: flex;
+        align-items: center;
+        gap: 28px;
+      }
+
+      .menu a {
+        text-decoration: none;
+        font-size: 0.88rem;
+        font-weight: 500;
+        color: var(--ink-soft);
+        transition: color 0.2s;
+      }
+
+      .menu a:hover { color: var(--ink); }
+
+      .site-header.on-dark:not(.scrolled) .menu a { color: rgba(255, 255, 255, 0.68); }
+      .site-header.on-dark:not(.scrolled) .menu a:hover { color: #fff; }
+
+      .menu-cta {
+        padding: 9px 18px;
+        border-radius: 999px;
+        border: 1px solid var(--line);
+        color: var(--ink) !important;
+        transition: background 0.25s, border-color 0.25s, color 0.25s;
+      }
+
+      .site-header.on-dark:not(.scrolled) .menu-cta {
+        border-color: rgba(255, 255, 255, 0.22);
+        color: #fff !important;
+      }
+
+      .menu-cta:hover {
+        background: rgba(0, 0, 0, 0.05);
+        border-color: rgba(0, 0, 0, 0.12);
+      }
+
+      .site-header.on-dark:not(.scrolled) .menu-cta:hover {
+        background: rgba(255, 255, 255, 0.1);
+      }
+
+      .nav-toggle {
+        display: none;
+        width: 44px;
+        height: 44px;
+        border-radius: 12px;
+        border: 1px solid var(--line);
+        background: rgba(255, 255, 255, 0.92);
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        gap: 6px;
+        cursor: pointer;
+      }
+
+      .site-header.on-dark:not(.scrolled) .nav-toggle {
+        border-color: rgba(255, 255, 255, 0.22);
+        background: rgba(0, 0, 0, 0.28);
+      }
+
+      .nav-toggle-bar {
+        display: block;
+        width: 18px;
+        height: 2px;
+        border-radius: 2px;
+        background: var(--ink);
+        transition: transform 0.3s var(--ease);
+      }
+
+      .site-header.on-dark:not(.scrolled) .nav-toggle-bar { background: #fff; }
+
+      .site-header.nav-open .nav-toggle-bar:first-child { transform: translateY(4px) rotate(45deg); }
+      .site-header.nav-open .nav-toggle-bar:last-child { transform: translateY(-4px) rotate(-45deg); }
+
+      .nav-backdrop {
+        position: fixed;
+        inset: 0;
+        top: var(--nav-h);
+        background: rgba(0, 0, 0, 0.45);
+        opacity: 0;
+        visibility: hidden;
+        pointer-events: none;
+        transition: opacity 0.3s, visibility 0.3s;
+        z-index: 55;
+      }
+
+      .site-header.nav-open .nav-backdrop {
+        opacity: 1;
+        visibility: visible;
+        pointer-events: auto;
+      }
+
+      .nav-drawer {
+        position: fixed;
+        top: var(--nav-h);
+        right: 0;
+        width: min(360px, 88vw);
+        height: calc(100dvh - var(--nav-h));
+        background: #fff;
+        border-left: 1px solid var(--line);
+        padding: 20px;
+        display: flex;
+        flex-direction: column;
+        gap: 4px;
+        transform: translateX(100%);
+        visibility: hidden;
+        transition: transform 0.4s var(--ease-out), visibility 0.4s;
+        z-index: 58;
+        overflow-y: auto;
+      }
+
+      .site-header.nav-open .nav-drawer {
+        transform: translateX(0);
+        visibility: visible;
+      }
+
+      .nav-drawer a {
+        display: block;
+        padding: 14px;
+        border-radius: 12px;
+        text-decoration: none;
+        font-weight: 600;
+        color: var(--ink);
+      }
+
+      .nav-drawer a:hover { background: var(--bg-soft); }
+
+      .nav-drawer-cta {
+        margin-top: 12px;
+        text-align: center;
+        background: var(--ink);
+        color: #fff !important;
+      }
+
+      body.nav-open { overflow: hidden; }
+
+      /* —— Typography —— */
+      .eyebrow {
+        display: inline-flex;
+        align-items: center;
+        gap: 10px;
+        margin: 0 0 24px;
+        font-size: 0.74rem;
+        letter-spacing: 0.22em;
+        text-transform: uppercase;
+        font-weight: 600;
+        color: var(--ink-soft);
+      }
+
+      .section-dark .eyebrow,
+      .hero .eyebrow { color: rgba(255, 255, 255, 0.55); }
+
+      .eyebrow-dot {
+        width: 6px;
+        height: 6px;
+        border-radius: 50%;
+        background: var(--brand);
+        box-shadow: 0 0 12px var(--brand-glow);
+        flex-shrink: 0;
+      }
+
+      .display {
+        margin: 0;
+        font-size: clamp(2.2rem, 5.5vw, 4.4rem);
+        line-height: 1.02;
+        letter-spacing: -0.038em;
+        font-weight: 700;
+      }
+
+      .lead {
+        margin: 26px 0 0;
+        font-size: clamp(1.05rem, 1.3vw, 1.2rem);
+        color: var(--ink-soft);
+        max-width: 62ch;
+        line-height: 1.55;
+      }
+
+      .section-dark .lead { color: rgba(255, 255, 255, 0.62); }
+
+      /* —— Buttons —— */
+      .btn {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        gap: 8px;
+        padding: 14px 28px;
+        border-radius: 999px;
+        font-weight: 600;
+        font-size: 0.95rem;
+        text-decoration: none;
+        border: 1px solid transparent;
+        transition: transform 0.35s var(--ease), background 0.35s var(--ease), border-color 0.35s var(--ease), box-shadow 0.35s var(--ease);
+      }
+
+      .btn-primary {
+        background: #1d1d1f;
+        color: #fff;
+        box-shadow: 0 14px 36px -14px rgba(0, 0, 0, 0.45);
+      }
+
+      .btn-primary:hover {
+        transform: translateY(-2px);
+        background: var(--brand);
+        box-shadow: 0 18px 40px -12px rgba(195, 28, 30, 0.45);
+      }
+
+      .btn-ghost {
+        background: transparent;
+        color: inherit;
+        border-color: rgba(255, 255, 255, 0.2);
+      }
+
+      .btn-ghost:hover {
+        background: rgba(255, 255, 255, 0.08);
+        transform: translateY(-2px);
+      }
+
+      .section-light .btn-ghost {
+        border-color: var(--line);
+        color: var(--ink);
+      }
+
+      .section-light .btn-ghost:hover,
+      .section:not(.section-dark):not(.section-soft) .btn-ghost:hover {
+        background: var(--bg-soft);
+      }
+
+      .display .accent-serif {
+        color: inherit;
+      }
+
+      .section-dark .display .accent-serif {
+        color: rgba(255, 255, 255, 0.72);
+      }
+
+      .btn-light {
+        background: #fff;
+        color: #000;
+        box-shadow: 0 14px 36px -14px rgba(0, 0, 0, 0.35);
+      }
+
+      .btn-light:hover {
+        transform: translateY(-2px);
+        background: var(--brand);
+        color: #fff;
+      }
+
+      /* —— Sections —— */
+      .section {
+        padding: clamp(100px, 12vw, 140px) 0;
+        position: relative;
+      }
+
+      .section-dark {
+        background: var(--bg-dark);
+        color: #fff;
+      }
+
+      .section-soft {
+        background: var(--bg-soft);
+      }
+
+      .section-head {
+        max-width: 760px;
+        margin-bottom: 64px;
+      }
+
+      .section-head--center {
+        margin-left: auto;
+        margin-right: auto;
+        text-align: center;
+      }
+
+      .section-head--center .eyebrow { justify-content: center; }
+      .section-head--center .lead { margin-left: auto; margin-right: auto; }
+
+      .reveal {
+        opacity: 0;
+        transform: translateY(28px);
+        transition: opacity 0.85s var(--ease-out), transform 0.85s var(--ease-out);
+      }
+
+      .reveal.is-in {
+        opacity: 1;
+        transform: none;
+      }
+
+      @media (prefers-reduced-motion: reduce) {
+        .reveal { opacity: 1; transform: none; transition: none; }
+        .marquee-track { animation: none; }
+        .hero-title .line > span { transform: none; }
+      }
+
+      /* —— Hero —— */
+      .hero {
+        position: relative;
+        min-height: 100vh;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        padding: calc(var(--nav-h) + 48px) 0 0;
+        background: #050505;
+        color: #fff;
+        overflow: hidden;
+      }
+
+      .hero-ambient {
+        position: absolute;
+        inset: 0;
+        z-index: 0;
+        pointer-events: none;
+      }
+
+      .hero-ambient::before {
+        content: "";
+        position: absolute;
+        inset: -20% -10%;
+        background:
+          radial-gradient(55% 50% at 72% 38%, rgba(195, 28, 30, 0.22), transparent 65%),
+          radial-gradient(45% 40% at 20% 70%, rgba(90, 10, 13, 0.35), transparent 60%),
+          linear-gradient(180deg, #0a0a0a 0%, #121212 50%, #0a0a0a 100%);
+      }
+
+      .hero-dashboard-blur {
+        position: absolute;
+        right: -8%;
+        top: 50%;
+        transform: translateY(-48%);
+        width: min(58vw, 720px);
+        aspect-ratio: 16 / 9;
+        border-radius: var(--radius-lg);
+        border: 1px solid rgba(255, 255, 255, 0.08);
+        background:
+          linear-gradient(145deg, rgba(255, 255, 255, 0.06), rgba(255, 255, 255, 0.02)),
+          linear-gradient(120deg, #1a1a1e 0%, #0d0d10 100%);
+        filter: blur(2px) brightness(0.85);
+        opacity: 0.55;
+        box-shadow: 0 40px 100px -30px rgba(0, 0, 0, 0.8);
+      }
+
+      .hero-dashboard-blur::after {
+        content: "Dashboard Preview";
+        position: absolute;
+        inset: 0;
+        display: grid;
+        place-items: center;
+        font-size: 0.85rem;
+        letter-spacing: 0.14em;
+        text-transform: uppercase;
+        color: rgba(255, 255, 255, 0.22);
+      }
+
+      .hero-inner {
+        position: relative;
+        z-index: 2;
+        max-width: 680px;
+      }
+
+      .hero-title {
+        margin: 0;
+        font-size: clamp(2.6rem, 8vw, 6.2rem);
+        line-height: 0.98;
+        letter-spacing: -0.045em;
+        font-weight: 700;
+      }
+
+      .hero-title .line {
+        display: block;
+        overflow: hidden;
+      }
+
+      .hero-title .line > span {
+        display: inline-block;
+        transform: translateY(110%);
+        transition: transform 1s var(--ease-out);
+      }
+
+      .hero-title.is-in .line > span { transform: translateY(0); }
+      .hero-title.is-in .line:nth-child(1) > span { transition-delay: 0.08s; }
+      .hero-title.is-in .line:nth-child(2) > span { transition-delay: 0.18s; }
+
+      .hero-sub {
+        margin: 28px 0 0;
+        font-size: clamp(1.05rem, 1.4vw, 1.22rem);
+        color: rgba(255, 255, 255, 0.68);
+        max-width: 54ch;
+      }
+
+      .hero-actions {
+        margin-top: 36px;
+        display: flex;
+        flex-wrap: wrap;
+        gap: 12px;
+      }
+
+      /* —— Marquee —— */
+      .pulse-marquee {
+        position: relative;
+        z-index: 2;
+        margin-top: auto;
+        overflow: hidden;
+        padding: 18px 0;
+        border-top: 1px solid rgba(255, 255, 255, 0.08);
+        mask-image: linear-gradient(90deg, transparent, #000 10%, #000 90%, transparent);
+      }
+
+      .marquee-track {
+        display: flex;
+        gap: 44px;
+        width: max-content;
+        animation: marquee 30s linear infinite;
+        font-size: 1.05rem;
+        font-weight: 500;
+        color: rgba(255, 255, 255, 0.5);
+      }
+
+      .marquee-track .dot { color: var(--brand); }
+
+      @keyframes marquee {
+        from { transform: translateX(0); }
+        to { transform: translateX(-50%); }
+      }
+
+      /* —— Problem cards —— */
+      .cards-row {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 16px;
+      }
+
+      .card-light {
+        background: #fff;
+        border: 1px solid var(--line);
+        border-radius: var(--radius-md);
+        padding: 32px;
+        transition: transform 0.4s var(--ease), box-shadow 0.4s var(--ease);
+      }
+
+      .card-light:hover {
+        transform: translateY(-4px);
+        box-shadow: 0 20px 48px -24px rgba(0, 0, 0, 0.12);
+      }
+
+      .card-light h3 {
+        margin: 0 0 12px;
+        font-size: 1.15rem;
+        letter-spacing: -0.02em;
+      }
+
+      .card-light p {
+        margin: 0;
+        color: var(--ink-soft);
+        font-size: 0.98rem;
+        line-height: 1.55;
+      }
+
+      /* —— Dashboard preview —— */
+      .dashboard-preview {
+        margin-top: 56px;
+        aspect-ratio: 16 / 9;
+        border-radius: var(--radius-lg);
+        border: 1px solid var(--line-dark);
+        background:
+          radial-gradient(80% 120% at 20% 0%, rgba(195, 28, 30, 0.15), transparent 50%),
+          linear-gradient(160deg, #1c1c20 0%, #101012 45%, #0a0a0c 100%);
+        display: grid;
+        place-items: center;
+        position: relative;
+        overflow: hidden;
+      }
+
+      .dashboard-preview::before {
+        content: "";
+        position: absolute;
+        inset: 0;
+        background: repeating-linear-gradient(
+          90deg,
+          rgba(255, 255, 255, 0.03) 0,
+          rgba(255, 255, 255, 0.03) 1px,
+          transparent 1px,
+          transparent 80px
+        );
+        opacity: 0.5;
+      }
+
+      .dashboard-preview span {
+        position: relative;
+        font-size: 0.8rem;
+        letter-spacing: 0.2em;
+        text-transform: uppercase;
+        color: rgba(255, 255, 255, 0.28);
+        font-weight: 600;
+      }
+
+      /* —— Feature bento —— */
+      .features-grid {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 16px;
+      }
+
+      .feature-card {
+        position: relative;
+        padding: 36px;
+        border-radius: var(--radius-lg);
+        background: var(--bg-card-dark);
+        border: 1px solid var(--line-dark);
+        min-height: 240px;
+        display: flex;
+        flex-direction: column;
+        gap: 12px;
+        transition: transform 0.45s var(--ease), border-color 0.45s var(--ease), background 0.45s var(--ease);
+      }
+
+      .feature-card::before {
+        content: attr(data-num);
+        position: absolute;
+        top: 28px;
+        right: 32px;
+        font-size: 0.72rem;
+        font-weight: 600;
+        letter-spacing: 0.18em;
+        color: rgba(255, 255, 255, 0.25);
+      }
+
+      .feature-card:hover {
+        transform: translateY(-3px);
+        border-color: var(--line-dark-2);
+        background: #222226;
+      }
+
+      .feature-card:hover::before { color: rgba(255, 255, 255, 0.45); }
+
+      .feature-card h3 {
+        margin: 0;
+        font-size: 1.25rem;
+        font-weight: 600;
+        letter-spacing: -0.02em;
+        color: #fff;
+        padding-right: 48px;
+      }
+
+      .feature-card p {
+        margin: 0;
+        color: rgba(255, 255, 255, 0.62);
+        font-size: 0.98rem;
+        line-height: 1.55;
+      }
+
+      /* —— Process —— */
+      .steps-row {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 16px;
+      }
+
+      .step-card {
+        background: #fff;
+        border: 1px solid var(--line);
+        border-radius: var(--radius-md);
+        padding: 32px;
+        transition: transform 0.4s var(--ease);
+      }
+
+      .step-card:hover { transform: translateY(-4px); }
+
+      .step-num {
+        display: block;
+        margin-bottom: 16px;
+        font-size: 0.72rem;
+        font-weight: 700;
+        letter-spacing: 0.18em;
+        color: var(--ink-faint);
+      }
+
+      .step-card h3 {
+        margin: 0 0 10px;
+        font-size: 1.15rem;
+      }
+
+      .step-card p {
+        margin: 0;
+        color: var(--ink-soft);
+        line-height: 1.55;
+      }
+
+      /* —— Metrics —— */
+      .metrics-grid {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 16px;
+      }
+
+      .metric-card {
+        padding: 40px 32px;
+        border-radius: var(--radius-lg);
+        border: 1px solid var(--line-dark);
+        background: linear-gradient(160deg, #141416 0%, #0d0d0f 100%);
+        transition: transform 0.4s var(--ease), border-color 0.4s var(--ease);
+      }
+
+      .metric-card:hover {
+        transform: translateY(-4px);
+        border-color: var(--line-dark-2);
+      }
+
+      .metric-value {
+        margin: 0 0 8px;
+        font-size: clamp(1.8rem, 3vw, 2.6rem);
+        font-weight: 700;
+        letter-spacing: -0.03em;
+        line-height: 1.1;
+      }
+
+      .metric-value .accent-red { font-weight: 700; }
+
+      .metric-label {
+        margin: 0;
+        font-size: 0.95rem;
+        color: rgba(255, 255, 255, 0.55);
+      }
+
+      /* —— CTA —— */
+      .cta-block {
+        text-align: center;
+        max-width: 640px;
+        margin: 0 auto;
+      }
+
+      .cta-block .lead { margin-left: auto; margin-right: auto; }
+
+      .cta-actions {
+        margin-top: 36px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 16px;
+      }
+
+      .cta-note {
+        margin: 0;
+        font-size: 0.92rem;
+        color: rgba(255, 255, 255, 0.45);
+      }
+
+      .pulse-badge {
+        display: inline-flex;
+        align-items: center;
+        gap: 8px;
+        margin-left: 12px;
+        padding: 4px 12px;
+        border-radius: 999px;
+        border: 1px solid rgba(255, 255, 255, 0.15);
+        font-size: 0.72rem;
+        font-weight: 600;
+        letter-spacing: 0.06em;
+        text-transform: uppercase;
+        color: rgba(255, 255, 255, 0.7);
+        vertical-align: middle;
+      }
+
+      /* —— Footer —— */
+      .site-footer {
+        padding: 80px 0 40px;
+        border-top: 1px solid var(--line);
+        background: var(--bg);
+      }
+
+      .footer-hero {
+        padding-bottom: 56px;
+        border-bottom: 1px solid var(--line);
+      }
+
+      .footer-logo {
+        width: min(380px, 58%);
+        margin: 0;
+      }
+
+      .footer-hero p {
+        margin: 18px 0 0;
+        color: var(--ink-soft);
+      }
+
+      .footer-grid {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 40px;
+        padding: 48px 0;
+        border-bottom: 1px solid var(--line);
+      }
+
+      .footer-col {
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+      }
+
+      .footer-title {
+        margin: 0 0 4px;
+        font-weight: 600;
+        font-size: 0.9rem;
+      }
+
+      .footer-col a,
+      .footer-col span {
+        color: var(--ink-soft);
+        text-decoration: none;
+        font-size: 0.92rem;
+        transition: color 0.2s;
+      }
+
+      .footer-col a:hover { color: var(--ink); }
+
+      .footer-bottom {
+        padding-top: 24px;
+        display: flex;
+        justify-content: space-between;
+        flex-wrap: wrap;
+        gap: 12px;
+        color: var(--ink-soft);
+        font-size: 0.85rem;
+      }
+
+      /* —— Responsive —— */
+      @media (max-width: 1200px) {
+        .hero-dashboard-blur {
+          width: 70vw;
+          opacity: 0.35;
+          right: -20%;
+        }
+      }
+
+      @media (max-width: 768px) {
+        .menu--desktop { display: none; }
+        .nav-toggle { display: inline-flex; }
+
+        .cards-row,
+        .features-grid,
+        .steps-row,
+        .metrics-grid {
+          grid-template-columns: 1fr;
+        }
+
+        .hero-dashboard-blur { display: none; }
+
+        .footer-grid { grid-template-columns: 1fr; }
+
+        .hero-actions .btn { width: 100%; }
+      }
+    </style>
+  </head>
+  <body>
+    <header class="site-header on-dark" id="siteHeader">
+      <div class="container nav">
+        <a class="brand" href="./index.html" aria-label="Picante Studio">
+          <img class="brand-logo brand-logo--light" src="./assets/picante-white.png" alt="" width="799" height="255" />
+          <img class="brand-logo brand-logo--dark" src="./assets/picante-black.png" alt="" width="1639" height="507" />
+        </a>
+        <nav class="menu menu--desktop" aria-label="Principal">
+          <a href="#problema">Problema</a>
+          <a href="#solucion">Solución</a>
+          <a href="#capacidades">Capacidades</a>
+          <a href="#proceso">Proceso</a>
+          <a href="#resultados">Resultados</a>
+          <a href="#demo" class="menu-cta">Agendar demo</a>
+        </nav>
+        <button
+          type="button"
+          class="nav-toggle"
+          id="navToggle"
+          aria-expanded="false"
+          aria-controls="navDrawer"
+          aria-label="Abrir menú"
+        >
+          <span class="nav-toggle-bar" aria-hidden="true"></span>
+          <span class="nav-toggle-bar" aria-hidden="true"></span>
+        </button>
+      </div>
+      <div class="nav-backdrop" id="navBackdrop" aria-hidden="true"></div>
+      <nav class="nav-drawer" id="navDrawer" aria-label="Móvil" aria-hidden="true">
+        <a href="#problema">Problema</a>
+        <a href="#solucion">Solución</a>
+        <a href="#capacidades">Capacidades</a>
+        <a href="#proceso">Proceso</a>
+        <a href="#resultados">Resultados</a>
+        <a href="#demo" class="nav-drawer-cta">Agendar demo</a>
+      </nav>
+    </header>
+
+    <main>
+      <!-- 1. Hero -->
+      <section class="hero" id="top">
+        <div class="hero-ambient" aria-hidden="true">
+          <div class="hero-dashboard-blur"></div>
+        </div>
+        <div class="container hero-inner">
+          <p class="eyebrow">
+            <span class="eyebrow-dot" aria-hidden="true"></span>
+            Pulse
+          </p>
+          <h1 class="hero-title" id="heroTitle">
+            <span class="line"><span>Tu competencia se mueve.</span></span>
+            <span class="line"><span class="accent-red">Ahora vos también lo ves.</span></span>
+          </h1>
+          <p class="hero-sub reveal">
+            Sabé exactamente dónde estás parado frente a tu competencia. Sin buscar manualmente. Sin suposiciones.
+          </p>
+          <p class="hero-sub reveal" style="margin-top: 14px; font-size: 0.98rem; opacity: 0.85">
+            Escaneamos Google Maps, rastreamos reseñas y te mostramos el panorama completo en un solo dashboard.
+          </p>
+          <div class="hero-actions reveal">
+            <a class="btn btn-primary" href="#solucion">Ver cómo funciona</a>
+            <a class="btn btn-ghost" href="#demo">Agendar demo</a>
+          </div>
+        </div>
+        <div class="pulse-marquee" aria-hidden="true">
+          <div class="marquee-track">
+            <span>Rating</span><span class="dot">●</span>
+            <span>Reseñas</span><span class="dot">●</span>
+            <span>Competidores</span><span class="dot">●</span>
+            <span>Ubicaciones</span><span class="dot">●</span>
+            <span>Tendencias</span><span class="dot">●</span>
+            <span>Alertas</span><span class="dot">●</span>
+            <span>Google Maps</span><span class="dot">●</span>
+            <span>Multi-sucursal</span><span class="dot">●</span>
+            <span>Rating</span><span class="dot">●</span>
+            <span>Reseñas</span><span class="dot">●</span>
+            <span>Competidores</span><span class="dot">●</span>
+            <span>Ubicaciones</span><span class="dot">●</span>
+            <span>Tendencias</span><span class="dot">●</span>
+            <span>Alertas</span><span class="dot">●</span>
+            <span>Google Maps</span><span class="dot">●</span>
+            <span>Multi-sucursal</span><span class="dot">●</span>
+          </div>
+        </div>
+      </section>
+
+      <!-- 3. Problema -->
+      <section class="section section-light" id="problema">
+        <div class="container">
+          <div class="section-head reveal">
+            <p class="eyebrow"><span class="eyebrow-dot"></span> El problema</p>
+            <h2 class="display">Tus competidores cambiaron. <span class="accent-red">¿Lo notaste?</span></h2>
+          </div>
+          <div class="cards-row">
+            <article class="card-light reveal">
+              <h3>Revisás Google Maps a mano</h3>
+              <p>
+                Buscando uno por uno qué rating tienen, cuántas reseñas, qué dicen. Cada semana. Cada sucursal.
+              </p>
+            </article>
+            <article class="card-light reveal">
+              <h3>No sabés quién te está ganando</h3>
+              <p>
+                Un competidor subió 0.3 en rating y vos ni te enteraste. Mientras tanto, tus clientes sí lo ven.
+              </p>
+            </article>
+            <article class="card-light reveal">
+              <h3>Decisiones a ciegas</h3>
+              <p>Sin datos reales, cada decisión de marketing local es una suposición. Y las suposiciones cuestan.</p>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <!-- 4. Solución -->
+      <section class="section section-dark" id="solucion">
+        <div class="container">
+          <div class="section-head reveal">
+            <p class="eyebrow"><span class="eyebrow-dot"></span> La solución</p>
+            <h2 class="display">
+              Un radar para tu negocio. <span class="accent-red">En automático.</span>
+            </h2>
+            <p class="lead">
+              Pulse escanea tu zona, rastrea a cada competidor y te muestra el panorama completo. Sin mover un dedo.
+            </p>
+          </div>
+          <div class="dashboard-preview reveal" role="img" aria-label="Vista previa del dashboard de Pulse">
+            <span>Dashboard Preview</span>
+          </div>
+        </div>
+      </section>
+
+      <!-- 5. Features -->
+      <section class="section section-light" id="capacidades">
+        <div class="container">
+          <div class="section-head section-head--center reveal">
+            <p class="eyebrow"><span class="eyebrow-dot"></span> Capacidades</p>
+            <h2 class="display">
+              Todo lo que necesitás saber. <span class="accent-red">Nada que no.</span>
+            </h2>
+          </div>
+          <div class="features-grid">
+            <article class="feature-card reveal" data-num="01">
+              <h3>Escaneo automático</h3>
+              <p>
+                Rastreamos competidores por zona y categoría en Google Maps. Tú eliges el radio, nosotros hacemos el
+                trabajo.
+              </p>
+            </article>
+            <article class="feature-card reveal" data-num="02">
+              <h3>Ranking en vivo</h3>
+              <p>Rating, reseñas, tendencias. Cada competidor vs tu negocio en un solo dashboard.</p>
+            </article>
+            <article class="feature-card reveal" data-num="03">
+              <h3>Alertas de cambios</h3>
+              <p>¿Un competidor subió de rating? ¿Recibió reseñas negativas? Lo sabés al instante.</p>
+            </article>
+            <article class="feature-card reveal" data-num="04">
+              <h3>Multi-sucursal</h3>
+              <p>5 locales, 5 zonas competitivas. Un solo panel para verlo todo.</p>
+            </article>
+            <article class="feature-card reveal" data-num="05">
+              <h3>Reseñas analizadas</h3>
+              <p>No solo cuántas reseñas — qué dicen. Sentimiento, temas, patrones.</p>
+            </article>
+            <article class="feature-card reveal" data-num="06">
+              <h3>Google Business Profile</h3>
+              <p>Conectá tu ficha de Google para datos propios más precisos y completos.</p>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <!-- 6. Proceso -->
+      <section class="section section-soft" id="proceso">
+        <div class="container">
+          <div class="section-head section-head--center reveal">
+            <p class="eyebrow"><span class="eyebrow-dot"></span> Proceso</p>
+            <h2 class="display">Tres pasos. <span class="accent-red">Cero fricción.</span></h2>
+          </div>
+          <div class="steps-row">
+            <article class="step-card reveal">
+              <span class="step-num">01</span>
+              <h3>Conectás tu negocio</h3>
+              <p>Nombre, categoría y ubicación. En 2 minutos estás dentro.</p>
+            </article>
+            <article class="step-card reveal">
+              <span class="step-num">02</span>
+              <h3>Pulse escanea tu zona</h3>
+              <p>Identificamos a tus competidores reales y recopilamos toda su data pública.</p>
+            </article>
+            <article class="step-card reveal">
+              <span class="step-num">03</span>
+              <h3>Ves el panorama completo</h3>
+              <p>Dashboard en vivo con ranking, tendencias y alertas. Actualizado cada semana.</p>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <!-- 7. Métricas -->
+      <section class="section section-dark" id="resultados">
+        <div class="container">
+          <div class="section-head section-head--center reveal">
+            <p class="eyebrow"><span class="eyebrow-dot"></span> Resultados</p>
+            <h2 class="display">Datos que <span class="accent-red">mueven decisiones.</span></h2>
+          </div>
+          <div class="metrics-grid">
+            <article class="metric-card reveal">
+              <p class="metric-value"><span class="accent-red">60+</span> competidores</p>
+              <p class="metric-label">rastreados por escaneo</p>
+            </article>
+            <article class="metric-card reveal">
+              <p class="metric-value">Actualización <span class="accent-red">semanal</span></p>
+              <p class="metric-label">data fresca sin mover un dedo</p>
+            </article>
+            <article class="metric-card reveal">
+              <p class="metric-value">Multi-<span class="accent-red">mercado</span></p>
+              <p class="metric-label">USA, LATAM y Europa</p>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <!-- 8. CTA -->
+      <section class="section section-dark" id="demo">
+        <div class="container">
+          <div class="cta-block reveal">
+            <p class="eyebrow" style="justify-content: center"><span class="eyebrow-dot"></span> Siguiente paso</p>
+            <h2 class="display">
+              Tu competencia ya se está moviendo. <span class="accent-red">¿Y vos?</span>
+            </h2>
+            <p class="lead">
+              Agendá 15 minutos. Te mostramos tu panorama competitivo real con datos de tu zona.
+            </p>
+            <div class="cta-actions">
+              <a
+                class="btn btn-light"
+                href="https://calendar.google.com/calendar/appointments/schedules/AcZssZ2tGRPxb4jN6Z6jf9zVSZuxGKlPQUWvckgLsWh-2YcP9gBGAz5HkezKdBU-G_V9FnDTVVzJhVvm?gv=true"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                Agendar demo
+              </a>
+              <p class="cta-note">Sin compromiso. Sales sabiendo exactamente dónde estás parado.</p>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <!-- 9. Footer -->
+    <footer class="site-footer">
+      <div class="container">
+        <div class="footer-hero">
+          <a href="./index.html">
+            <img class="footer-logo" src="./assets/picante-red.png" alt="Picante Studio" width="1639" height="507" loading="lazy" />
+          </a>
+          <p>Sistemas de crecimiento para marcas ambiciosas. Pulse es un producto de Picante Studio.</p>
+        </div>
+        <div class="footer-grid">
+          <div class="footer-col">
+            <p class="footer-title">Pulse</p>
+            <a href="#solucion">La solución</a>
+            <a href="#capacidades">Capacidades</a>
+            <a href="#proceso">Proceso</a>
+            <a href="#resultados">Resultados</a>
+          </div>
+          <div class="footer-col">
+            <p class="footer-title">Contacto</p>
+            <a href="mailto:mateo@pimenton.io">mateo@pimenton.io</a>
+            <a href="#demo">Agendar demo</a>
+            <a href="https://wa.me/573135076319?text=Hola%20Mateo%2C%20quiero%20una%20demo%20de%20Pulse." target="_blank" rel="noopener noreferrer">WhatsApp</a>
+          </div>
+          <div class="footer-col">
+            <p class="footer-title">Picante</p>
+            <a href="./index.html">wearepicante.com</a>
+            <span>USA</span>
+            <span>LATAM</span>
+            <span>Europa</span>
+          </div>
+        </div>
+        <div class="footer-bottom">
+          <p>© 2026 Picante Studio</p>
+          <p>Diseñado con intención.</p>
+        </div>
+      </div>
+    </footer>
+
+    <script>
+      (function () {
+        const prefersReduced = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+        const header = document.getElementById("siteHeader");
+        const hero = document.querySelector(".hero");
+
+        function onScroll() {
+          const y = window.scrollY || document.documentElement.scrollTop;
+          if (header) header.classList.toggle("scrolled", y > 10);
+          if (hero && header) {
+            const heroBottom = hero.offsetTop + hero.offsetHeight - 80;
+            header.classList.toggle("on-dark", y < heroBottom);
+          }
+        }
+        onScroll();
+        window.addEventListener("scroll", onScroll, { passive: true });
+
+        const heroTitle = document.getElementById("heroTitle");
+        if (heroTitle && !prefersReduced) {
+          requestAnimationFrame(() => heroTitle.classList.add("is-in"));
+        } else if (heroTitle) {
+          heroTitle.classList.add("is-in");
+        }
+
+        const revealEls = document.querySelectorAll(".reveal");
+        if (prefersReduced) {
+          revealEls.forEach((el) => el.classList.add("is-in"));
+        } else if ("IntersectionObserver" in window) {
+          const io = new IntersectionObserver(
+            (entries) => {
+              entries.forEach((entry) => {
+                if (entry.isIntersecting) {
+                  entry.target.classList.add("is-in");
+                  io.unobserve(entry.target);
+                }
+              });
+            },
+            { threshold: 0.12, rootMargin: "0px 0px -48px 0px" }
+          );
+          revealEls.forEach((el) => io.observe(el));
+          setTimeout(() => {
+            revealEls.forEach((el) => {
+              if (!el.classList.contains("is-in")) el.classList.add("is-in");
+            });
+          }, 2800);
+        } else {
+          revealEls.forEach((el) => el.classList.add("is-in"));
+        }
+
+        const toggle = document.getElementById("navToggle");
+        const backdrop = document.getElementById("navBackdrop");
+        const drawer = document.getElementById("navDrawer");
+        if (toggle && backdrop && drawer) {
+          const setOpen = (open) => {
+            header.classList.toggle("nav-open", open);
+            document.body.classList.toggle("nav-open", open);
+            toggle.setAttribute("aria-expanded", open ? "true" : "false");
+            toggle.setAttribute("aria-label", open ? "Cerrar menú" : "Abrir menú");
+            drawer.setAttribute("aria-hidden", open ? "false" : "true");
+          };
+          toggle.addEventListener("click", () => setOpen(!header.classList.contains("nav-open")));
+          backdrop.addEventListener("click", () => setOpen(false));
+          drawer.querySelectorAll("a").forEach((a) => a.addEventListener("click", () => setOpen(false)));
+          document.addEventListener("keydown", (e) => {
+            if (e.key === "Escape") setOpen(false);
+          });
+        }
+      })();
+    </script>
+  </body>
+</html>

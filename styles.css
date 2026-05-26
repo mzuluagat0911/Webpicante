@@ -361,6 +361,82 @@ body.nav-open {
   transition: transform 0.3s var(--ease), background 0.3s var(--ease);
 }
 
+.nav-actions {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  flex-shrink: 0;
+  position: relative;
+  z-index: 2;
+}
+
+.lang-switch {
+  display: inline-flex;
+  align-items: center;
+  gap: 2px;
+  padding: 3px;
+  border-radius: 999px;
+  border: 1.5px solid rgba(195, 28, 30, 0.45);
+  background: #fff;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.12);
+}
+
+.site-header.on-dark:not(.scrolled) .lang-switch {
+  border-color: rgba(255, 255, 255, 0.55);
+  background: rgba(255, 255, 255, 0.96);
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.28);
+}
+
+.lang-switch-btn {
+  min-width: 40px;
+  padding: 7px 11px;
+  border: 0;
+  border-radius: 999px;
+  background: transparent;
+  color: var(--ink-soft);
+  font-family: inherit;
+  font-size: 0.78rem;
+  font-weight: 800;
+  letter-spacing: 0.08em;
+  cursor: pointer !important;
+  transition: color 0.2s var(--ease-soft), background 0.2s var(--ease-soft);
+}
+
+.lang-switch-btn:hover {
+  color: var(--ink);
+}
+
+.lang-switch-btn.is-active {
+  background: var(--brand);
+  color: #fff;
+}
+
+.lang-switch-btn:focus-visible {
+  outline: 2px solid var(--brand-light);
+  outline-offset: 2px;
+}
+
+.nav-drawer-lang {
+  display: none;
+  flex-direction: column;
+  gap: 10px;
+  padding: 4px 6px 16px;
+  margin-bottom: 8px;
+  border-bottom: 1px solid var(--line);
+}
+
+.nav-drawer-lang-label {
+  font-size: 0.72rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--ink-soft);
+}
+
+.lang-switch--drawer {
+  align-self: flex-start;
+}
+
 /* =============== Buttons =============== */
 .btn {
   --btn-bg: #1d1d1f;
@@ -1788,6 +1864,10 @@ body.nav-open {
 @media (max-width: 900px) {
   .menu--desktop {
     display: none;
+  }
+
+  .nav-drawer-lang {
+    display: flex;
   }
 
   .nav-toggle {

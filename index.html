@@ -93,39 +93,52 @@
             height="507"
           />
         </a>
-        <nav class="menu menu--desktop" aria-label="Principal">
-          <a href="#servicios" data-cursor="link">Servicios</a>
-          <a href="#filosofia" data-cursor="link">Filosofía</a>
-          <a href="#metodologia" data-cursor="link">Metodología</a>
-          <a href="#proceso" data-cursor="link">Proceso</a>
-          <a href="#clientes" data-cursor="link">Clientes</a>
-          <a href="#faq" data-cursor="link">FAQ</a>
+        <nav class="menu menu--desktop" aria-label="Principal" data-i18n-aria-label="a11y.navMain">
+          <a href="#servicios" data-cursor="link" data-i18n="nav.services">Servicios</a>
+          <a href="#filosofia" data-cursor="link" data-i18n="nav.philosophy">Filosofía</a>
+          <a href="#metodologia" data-cursor="link" data-i18n="nav.methodology">Metodología</a>
+          <a href="#proceso" data-cursor="link" data-i18n="nav.process">Proceso</a>
+          <a href="#clientes" data-cursor="link" data-i18n="nav.clients">Clientes</a>
+          <a href="#faq" data-cursor="link" data-i18n="nav.faq">FAQ</a>
           <a href="#agenda-calendario" class="menu-cta magnetic" data-cursor="link">
-            <span>Agendar</span>
+            <span data-i18n="nav.schedule">Agendar</span>
           </a>
         </nav>
-        <button
-          type="button"
-          class="nav-toggle"
-          id="navToggle"
-          aria-expanded="false"
-          aria-controls="navDrawer"
-          aria-label="Abrir menú de navegación"
-        >
-          <span class="nav-toggle-bar" aria-hidden="true"></span>
-          <span class="nav-toggle-bar" aria-hidden="true"></span>
-        </button>
+        <div class="nav-actions">
+          <div class="lang-switch" role="group" data-i18n-aria-label="a11y.langSwitch">
+            <button type="button" class="lang-switch-btn is-active" data-lang="es" lang="es" aria-pressed="true">ES</button>
+            <button type="button" class="lang-switch-btn" data-lang="en" lang="en" aria-pressed="false">EN</button>
+          </div>
+          <button
+            type="button"
+            class="nav-toggle"
+            id="navToggle"
+            aria-expanded="false"
+            aria-controls="navDrawer"
+            data-i18n-aria-label="a11y.navOpen"
+          >
+            <span class="nav-toggle-bar" aria-hidden="true"></span>
+            <span class="nav-toggle-bar" aria-hidden="true"></span>
+          </button>
+        </div>
       </div>
       <div class="nav-backdrop" id="navBackdrop" aria-hidden="true"></div>
-      <nav class="nav-drawer" id="navDrawer" aria-label="Móvil" aria-hidden="true">
-        <a class="nav-drawer-link" href="#servicios">Servicios</a>
-        <a class="nav-drawer-link" href="#filosofia">Filosofía</a>
-        <a class="nav-drawer-link" href="#metodologia">Metodología</a>
-        <a class="nav-drawer-link" href="#proceso">Proceso</a>
-        <a class="nav-drawer-link" href="#clientes">Clientes</a>
-        <a class="nav-drawer-link" href="#casos">Casos</a>
-        <a class="nav-drawer-link" href="#faq">FAQ</a>
-        <a class="nav-drawer-link nav-drawer-cta" href="#agenda-calendario">Agendar reunión</a>
+      <nav class="nav-drawer" id="navDrawer" aria-label="Móvil" data-i18n-aria-label="a11y.navMobile" aria-hidden="true">
+        <div class="nav-drawer-lang" role="group" data-i18n-aria-label="a11y.langSwitch">
+          <span class="nav-drawer-lang-label" data-i18n="a11y.langLabel">Idioma</span>
+          <div class="lang-switch lang-switch--drawer">
+            <button type="button" class="lang-switch-btn is-active" data-lang="es" lang="es" aria-pressed="true">ES</button>
+            <button type="button" class="lang-switch-btn" data-lang="en" lang="en" aria-pressed="false">EN</button>
+          </div>
+        </div>
+        <a class="nav-drawer-link" href="#servicios" data-i18n="nav.services">Servicios</a>
+        <a class="nav-drawer-link" href="#filosofia" data-i18n="nav.philosophy">Filosofía</a>
+        <a class="nav-drawer-link" href="#metodologia" data-i18n="nav.methodology">Metodología</a>
+        <a class="nav-drawer-link" href="#proceso" data-i18n="nav.process">Proceso</a>
+        <a class="nav-drawer-link" href="#clientes" data-i18n="nav.clients">Clientes</a>
+        <a class="nav-drawer-link" href="#casos" data-i18n="nav.cases">Casos</a>
+        <a class="nav-drawer-link" href="#faq" data-i18n="nav.faq">FAQ</a>
+        <a class="nav-drawer-link nav-drawer-cta" href="#agenda-calendario" data-i18n="nav.scheduleMeeting">Agendar reunión</a>
       </nav>
     </header>
 
@@ -153,16 +166,16 @@
         <div class="container hero-inner">
           <p class="eyebrow hero-eyebrow">
             <span class="eyebrow-dot"></span>
-            USA · LATAM · Europa
+            <span data-i18n="hero.regions">USA · LATAM · Europa</span>
           </p>
 
           <h1 class="hero-title" data-split="lines">
-            <span class="line"><span>Las marcas que ganan</span></span>
-            <span class="line"><span>atención <em>no gritan.</em></span></span>
-            <span class="line"><span class="gradient-text">Conectan.</span></span>
+            <span class="line"><span data-i18n="hero.titleL1">Las marcas que ganan</span></span>
+            <span class="line"><span><span data-i18n="hero.titleL2a">atención </span><em data-i18n="hero.titleL2em">no gritan.</em></span></span>
+            <span class="line"><span class="gradient-text" data-i18n="hero.titleL3">Conectan.</span></span>
           </h1>
 
-          <p class="hero-sub reveal">
+          <p class="hero-sub reveal" data-i18n="hero.sub">
             Diseñamos sistemas de crecimiento donde estrategia, creatividad e
             inteligencia artificial trabajan como uno solo.
           </p>
@@ -170,8 +183,8 @@
           <div class="hero-actions reveal">
             <a class="btn btn-primary magnetic" href="#servicios" data-cursor="cta">
               <span class="btn-label">
-                <span class="btn-text">Descubrir el sistema</span>
-                <span class="btn-text btn-text--hover">Descubrir el sistema</span>
+                <span class="btn-text" data-i18n="hero.ctaPrimary">Descubrir el sistema</span>
+                <span class="btn-text btn-text--hover" data-i18n="hero.ctaPrimary">Descubrir el sistema</span>
               </span>
               <span class="btn-arrow">
                 <svg width="16" height="16" viewBox="0 0 24 24" fill="none" aria-hidden="true">
@@ -180,7 +193,7 @@
               </span>
             </a>
             <a class="btn btn-ghost magnetic track-event" href="#agenda-calendario" data-cursor="cta" data-event-name="hero_secondary_cta_click">
-              <span>Agendar reunión</span>
+              <span data-i18n="hero.ctaSecondary">Agendar reunión</span>
             </a>
           </div>
         </div>
@@ -204,7 +217,7 @@
         </div>
 
         <div class="hero-scroll-hint">
-          <span>Scroll</span>
+          <span data-i18n="hero.scroll">Scroll</span>
           <div class="scroll-line"><span></span></div>
         </div>
       </section>
@@ -212,11 +225,11 @@
       <section class="section section-cta-inline">
         <div class="container">
           <div class="inline-cta reveal">
-            <p>Reserva 30 minutos: sales con diagnóstico y próximos pasos claros.</p>
+            <p data-i18n="inlineCta.text">Reserva 30 minutos: sales con diagnóstico y próximos pasos claros.</p>
             <a class="btn btn-primary magnetic track-event" href="#agenda-calendario" data-cursor="cta" data-event-name="inline_cta_after_hero">
               <span class="btn-label">
-                <span class="btn-text">Abrir agenda</span>
-                <span class="btn-text btn-text--hover">Abrir agenda</span>
+                <span class="btn-text" data-i18n="inlineCta.btn">Abrir agenda</span>
+                <span class="btn-text btn-text--hover" data-i18n="inlineCta.btn">Abrir agenda</span>
               </span>
             </a>
           </div>
@@ -228,13 +241,13 @@
         <div class="container">
           <p class="eyebrow reveal">
             <span class="eyebrow-dot"></span>
-            Filosofía
+            <span data-i18n="philosophy.eyebrow">Filosofía</span>
           </p>
           <h2 class="display mask-reveal" data-reveal="lines">
-            <span class="line"><span>Creatividad humana.</span></span>
-            <span class="line"><span class="muted">Tecnología real.</span></span>
+            <span class="line"><span data-i18n="philosophy.l1">Creatividad humana.</span></span>
+            <span class="line"><span class="muted" data-i18n="philosophy.l2">Tecnología real.</span></span>
           </h2>
-          <p class="lead reveal">
+          <p class="lead reveal" data-i18n="philosophy.lead">
             No creemos en piezas sueltas. Creemos en sistemas. Cada idea, cada
             campaña y cada línea de código trabaja para un mismo objetivo.
           </p>
@@ -247,13 +260,13 @@
           <div class="section-head">
             <p class="eyebrow reveal">
               <span class="eyebrow-dot"></span>
-              Servicios
+              <span data-i18n="services.eyebrow">Servicios</span>
             </p>
             <h2 class="display mask-reveal" data-reveal="lines">
-              <span class="line"><span>Seis disciplinas.</span></span>
-              <span class="line"><span class="gradient-text">Una arquitectura.</span></span>
+              <span class="line"><span data-i18n="services.l1">Seis disciplinas.</span></span>
+              <span class="line"><span class="gradient-text" data-i18n="services.l2">Una arquitectura.</span></span>
             </h2>
-            <p class="lead reveal">
+            <p class="lead reveal" data-i18n="services.lead">
               Seis capacidades integradas que funcionan como un solo motor de
               crecimiento. Sin fricción, sin silos, sin ruido.
             </p>
@@ -264,23 +277,23 @@
             <article class="bento-item bento-feature reveal" data-num="06">
               <div class="bento-feature-bg" aria-hidden="true"></div>
               <div class="bento-content">
-                <span class="card-badge">Nuevo</span>
+                <span class="card-badge" data-i18n="services.badge">Nuevo</span>
                 <div class="card-icon card-icon-lg">
                   <svg viewBox="0 0 24 24" fill="none" aria-hidden="true">
                     <circle cx="12" cy="14" r="3" stroke="currentColor" stroke-width="1.6"/>
                     <path d="M12 3v4M5 7l2.5 2.5M3 14h4M7 19l2.5-2.5M17 19l-2.5-2.5M21 14h-4M19 7l-2.5 2.5" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/>
                   </svg>
                 </div>
-                <h3 class="bento-title">Sistemas de crecimiento con IA</h3>
-                <p class="bento-desc">
+                <h3 class="bento-title" data-i18n="services.aiTitle">Sistemas de crecimiento con IA</h3>
+                <p class="bento-desc" data-i18n="services.aiDesc">
                   IA en el core del negocio. Agentes autónomos,
                   automatizaciones y optimización continua para escalar
                   con estructura.
                 </p>
                 <ul class="card-list">
-                  <li>Agentes de IA</li>
-                  <li>Automatización</li>
-                  <li>Data + ML</li>
+                  <li data-i18n="services.aiL1">Agentes de IA</li>
+                  <li data-i18n="services.aiL2">Automatización</li>
+                  <li data-i18n="services.aiL3">Data + ML</li>
                 </ul>
               </div>
             </article>
@@ -289,8 +302,8 @@
               <div class="card-icon">
                 <svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><circle cx="12" cy="12" r="3" stroke="currentColor" stroke-width="1.5"/><circle cx="12" cy="12" r="8" stroke="currentColor" stroke-width="1.5" opacity=".55"/><circle cx="12" cy="12" r="11" stroke="currentColor" stroke-width="1.5" opacity=".25"/></svg>
               </div>
-              <h3>Estrategia & Branding</h3>
-              <p>
+              <h3 data-i18n="services.s1Title">Estrategia & Branding</h3>
+              <p data-i18n="services.s1Desc">
                 Primero el sistema, después la pieza. La marca como base de
                 todo lo que viene después.
               </p>
@@ -300,8 +313,8 @@
               <div class="card-icon">
                 <svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M4 6h16M4 12h10M4 18h16" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/></svg>
               </div>
-              <h3>Creación de Contenido</h3>
-              <p>
+              <h3 data-i18n="services.s2Title">Creación de Contenido</h3>
+              <p data-i18n="services.s2Desc">
                 Ideas hechas para ser vistas, recordadas y compartidas. Cada
                 pieza con un objetivo.
               </p>
@@ -311,8 +324,8 @@
               <div class="card-icon">
                 <svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M3 17l6-6 4 4 8-8M14 7h7v7" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg>
               </div>
-              <h3>Performance</h3>
-              <p>
+              <h3 data-i18n="services.s3Title">Performance</h3>
+              <p data-i18n="services.s3Desc">
                 Escalamos lo que funciona. Descartamos lo que no. Decisiones
                 guiadas por datos.
               </p>
@@ -322,8 +335,8 @@
               <div class="card-icon">
                 <svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><circle cx="9" cy="7" r="4" stroke="currentColor" stroke-width="1.5"/><path d="M16 21v-2a4 4 0 00-4-4H6a4 4 0 00-4 4v2M22 21v-2a4 4 0 00-3-3.87M16 3.13a4 4 0 010 7.75" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg>
               </div>
-              <h3>Social Media</h3>
-              <p>
+              <h3 data-i18n="services.s4Title">Social Media</h3>
+              <p data-i18n="services.s4Desc">
                 Relación, no solo presencia. Comunidades que conectan,
                 conversan y compran.
               </p>
@@ -333,8 +346,8 @@
               <div class="card-icon">
                 <svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M8 6l-6 6 6 6M16 6l6 6-6 6" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg>
               </div>
-              <h3>Desarrollo & Tech</h3>
-              <p>
+              <h3 data-i18n="services.s5Title">Desarrollo & Tech</h3>
+              <p data-i18n="services.s5Desc">
                 Infraestructura para escalar sin fricción. Web, e-commerce,
                 integraciones y plataformas a medida.
               </p>
@@ -348,25 +361,25 @@
           <div class="section-head">
             <p class="eyebrow reveal">
               <span class="eyebrow-dot"></span>
-              Metodología
+              <span data-i18n="methodology.eyebrow">Metodología</span>
             </p>
             <h2 class="display mask-reveal" data-reveal="lines">
-              <span class="line"><span>Menos ocurrencias.</span></span>
-              <span class="line"><span class="muted">Más sistema y evidencia.</span></span>
+              <span class="line"><span data-i18n="methodology.l1">Menos ocurrencias.</span></span>
+              <span class="line"><span class="muted" data-i18n="methodology.l2">Más sistema y evidencia.</span></span>
             </h2>
           </div>
           <div class="authority-grid">
             <article class="authority-card reveal">
-              <h3>1. Diagnóstico de embudo</h3>
-              <p>Auditoría de tráfico, narrativa, oferta y conversión para detectar el cuello de botella real.</p>
+              <h3 data-i18n="methodology.c1Title">1. Diagnóstico de embudo</h3>
+              <p data-i18n="methodology.c1Desc">Auditoría de tráfico, narrativa, oferta y conversión para detectar el cuello de botella real.</p>
             </article>
             <article class="authority-card reveal">
-              <h3>2. Roadmap de crecimiento</h3>
-              <p>Hipótesis priorizadas por impacto, velocidad y costo para ejecutar con foco y sin dispersión.</p>
+              <h3 data-i18n="methodology.c2Title">2. Roadmap de crecimiento</h3>
+              <p data-i18n="methodology.c2Desc">Hipótesis priorizadas por impacto, velocidad y costo para ejecutar con foco y sin dispersión.</p>
             </article>
             <article class="authority-card reveal">
-              <h3>3. Ejecución integrada</h3>
-              <p>Contenido, anuncios, automatizaciones y optimización corriendo como un solo sistema.</p>
+              <h3 data-i18n="methodology.c3Title">3. Ejecución integrada</h3>
+              <p data-i18n="methodology.c3Desc">Contenido, anuncios, automatizaciones y optimización corriendo como un solo sistema.</p>
             </article>
           </div>
         </div>
@@ -378,13 +391,13 @@
           <div class="reveal">
             <p class="eyebrow">
               <span class="eyebrow-dot"></span>
-              Alcance
+              <span data-i18n="reach.eyebrow">Alcance</span>
             </p>
             <h2 class="display mask-reveal" data-reveal="lines">
-              <span class="line"><span>Visión global.</span></span>
-              <span class="line"><span class="muted">Ejecución local.</span></span>
+              <span class="line"><span data-i18n="reach.l1">Visión global.</span></span>
+              <span class="line"><span class="muted" data-i18n="reach.l2">Ejecución local.</span></span>
             </h2>
-            <p class="lead">
+            <p class="lead" data-i18n="reach.lead">
               Operamos en ocho países. Un mismo estándar de excelencia,
               adaptado a cada cultura, mercado y audiencia.
             </p>
@@ -392,15 +405,15 @@
           <div class="stats">
             <div class="stat reveal" data-count="8" data-stagger="0" data-duration="3200">
               <p class="stat-num"><span class="count">0</span></p>
-              <p class="stat-label">Países</p>
+              <p class="stat-label" data-i18n="reach.statCountries">Países</p>
             </div>
             <div class="stat reveal" data-count="60" data-suffix="+" data-stagger="280" data-duration="3800">
               <p class="stat-num"><span class="count">0</span><span class="suffix">+</span></p>
-              <p class="stat-label">Marcas impactadas</p>
+              <p class="stat-label" data-i18n="reach.statBrands">Marcas impactadas</p>
             </div>
             <div class="stat reveal" data-count="98" data-suffix="%" data-stagger="560" data-duration="3600">
               <p class="stat-num"><span class="count">0</span><span class="suffix">%</span></p>
-              <p class="stat-label">Retención de clientes</p>
+              <p class="stat-label" data-i18n="reach.statRetention">Retención de clientes</p>
             </div>
           </div>
         </div>
@@ -409,11 +422,11 @@
       <section class="section quick-results">
         <div class="container">
           <div class="results-wrap reveal">
-            <h3>Resultados que buscamos en los primeros 90 días</h3>
+            <h3 data-i18n="results90.title">Resultados que buscamos en los primeros 90 días</h3>
             <ul>
-              <li>Reducir CAC y elevar tasa de conversión.</li>
-              <li>Aumentar velocidad de aprendizaje del equipo comercial.</li>
-              <li>Construir activos repetibles de contenido y adquisición.</li>
+              <li data-i18n="results90.l1">Reducir CAC y elevar tasa de conversión.</li>
+              <li data-i18n="results90.l2">Aumentar velocidad de aprendizaje del equipo comercial.</li>
+              <li data-i18n="results90.l3">Construir activos repetibles de contenido y adquisición.</li>
             </ul>
           </div>
         </div>
@@ -425,11 +438,11 @@
           <div class="section-head">
             <p class="eyebrow reveal">
               <span class="eyebrow-dot"></span>
-              Proceso
+              <span data-i18n="process.eyebrow">Proceso</span>
             </p>
             <h2 class="display mask-reveal" data-reveal="lines">
-              <span class="line"><span>Un sistema.</span></span>
-              <span class="line"><span class="gradient-text">Cuatro movimientos.</span></span>
+              <span class="line"><span data-i18n="process.l1">Un sistema.</span></span>
+              <span class="line"><span class="gradient-text" data-i18n="process.l2">Cuatro movimientos.</span></span>
             </h2>
           </div>
 
@@ -441,32 +454,32 @@
             <div class="steps">
               <div class="step reveal">
                 <span class="step-num">01</span>
-                <h3>Diagnóstico</h3>
-                <p>
+                <h3 data-i18n="process.s1Title">Diagnóstico</h3>
+                <p data-i18n="process.s1Desc">
                   Entendemos tu marca, tu mercado y tu momento. Antes de
                   proponer, escuchamos y medimos.
                 </p>
               </div>
               <div class="step reveal">
                 <span class="step-num">02</span>
-                <h3>Arquitectura</h3>
-                <p>
+                <h3 data-i18n="process.s2Title">Arquitectura</h3>
+                <p data-i18n="process.s2Desc">
                   Diseñamos el sistema completo: posicionamiento, narrativa,
                   canales, contenido, métricas.
                 </p>
               </div>
               <div class="step reveal">
                 <span class="step-num">03</span>
-                <h3>Ejecución</h3>
-                <p>
+                <h3 data-i18n="process.s3Title">Ejecución</h3>
+                <p data-i18n="process.s3Desc">
                   Producimos, lanzamos y optimizamos. Con velocidad. Sin perder
                   criterio ni excelencia.
                 </p>
               </div>
               <div class="step reveal">
                 <span class="step-num">04</span>
-                <h3>Escala</h3>
-                <p>
+                <h3 data-i18n="process.s4Title">Escala</h3>
+                <p data-i18n="process.s4Desc">
                   Amplificamos lo que funciona con IA, performance y
                   creatividad continua. Sin techo.
                 </p>
@@ -482,11 +495,11 @@
           <div class="section-head section-head-centered">
             <p class="eyebrow reveal">
               <span class="eyebrow-dot"></span>
-              Clientes
+              <span data-i18n="clients.eyebrow">Clientes</span>
             </p>
             <h2 class="display mask-reveal" data-reveal="lines">
-              <span class="line"><span>Marcas que ya confiaron</span></span>
-              <span class="line"><span class="muted">en el sistema.</span></span>
+              <span class="line"><span data-i18n="clients.l1">Marcas que ya confiaron</span></span>
+              <span class="line"><span class="muted" data-i18n="clients.l2">en el sistema.</span></span>
             </h2>
           </div>
         </div>
@@ -512,28 +525,28 @@
           <div class="section-head section-head-centered">
             <p class="eyebrow reveal">
               <span class="eyebrow-dot"></span>
-              Impacto
+              <span data-i18n="cases.eyebrow">Impacto</span>
             </p>
             <h2 class="display mask-reveal" data-reveal="lines">
-              <span class="line"><span>Tipo de resultados</span></span>
-              <span class="line"><span class="muted">que buscamos generar.</span></span>
+              <span class="line"><span data-i18n="cases.l1">Tipo de resultados</span></span>
+              <span class="line"><span class="muted" data-i18n="cases.l2">que buscamos generar.</span></span>
             </h2>
           </div>
           <div class="cases-grid">
             <article class="case-card reveal">
-              <p class="case-metric">−22% CAC</p>
-              <p class="case-label">Performance + creatividad</p>
-              <p class="case-desc">Reestructura de embudo y pruebas semanales en anuncios y landing.</p>
+              <p class="case-metric" data-i18n="cases.m1">−22% CAC</p>
+              <p class="case-label" data-i18n="cases.l1label">Performance + creatividad</p>
+              <p class="case-desc" data-i18n="cases.d1">Reestructura de embudo y pruebas semanales en anuncios y landing.</p>
             </article>
             <article class="case-card reveal">
-              <p class="case-metric">+31% tasa de conversión</p>
-              <p class="case-label">Sitio + narrativa</p>
-              <p class="case-desc">Mensaje alineado a intención de búsqueda y pruebas con prueba social.</p>
+              <p class="case-metric" data-i18n="cases.m2">+31% tasa de conversión</p>
+              <p class="case-label" data-i18n="cases.l2label">Sitio + narrativa</p>
+              <p class="case-desc" data-i18n="cases.d2">Mensaje alineado a intención de búsqueda y pruebas con prueba social.</p>
             </article>
             <article class="case-card reveal">
-              <p class="case-metric">+2.4× ROAS</p>
-              <p class="case-label">Escala controlada</p>
-              <p class="case-desc">Presupuesto gradual con reglas de apagado y optimización por cohorte.</p>
+              <p class="case-metric" data-i18n="cases.m3">+2.4× ROAS</p>
+              <p class="case-label" data-i18n="cases.l3label">Escala controlada</p>
+              <p class="case-desc" data-i18n="cases.d3">Presupuesto gradual con reglas de apagado y optimización por cohorte.</p>
             </article>
           </div>
         </div>
@@ -544,25 +557,25 @@
           <div class="section-head">
             <p class="eyebrow reveal">
               <span class="eyebrow-dot"></span>
-              Preguntas frecuentes
+              <span data-i18n="faq.eyebrow">Preguntas frecuentes</span>
             </p>
             <h2 class="display mask-reveal" data-reveal="lines">
-              <span class="line"><span>Respuestas claras.</span></span>
-              <span class="line"><span class="muted">Decisiones más rápidas.</span></span>
+              <span class="line"><span data-i18n="faq.l1">Respuestas claras.</span></span>
+              <span class="line"><span class="muted" data-i18n="faq.l2">Decisiones más rápidas.</span></span>
             </h2>
           </div>
           <div class="faq-list">
             <details class="faq-item reveal">
-              <summary>¿Para qué tipo de marca es ideal Picante?</summary>
-              <p>Para marcas que ya venden y necesitan escalar con estrategia, ejecución y medición, no solo más piezas sueltas.</p>
+              <summary data-i18n="faq.q1">¿Para qué tipo de marca es ideal Picante?</summary>
+              <p data-i18n="faq.a1">Para marcas que ya venden y necesitan escalar con estrategia, ejecución y medición, no solo más piezas sueltas.</p>
             </details>
             <details class="faq-item reveal">
-              <summary>¿Qué recibo en la llamada inicial de 30 minutos?</summary>
-              <p>Un diagnóstico de situación, oportunidades priorizadas y una ruta accionable de corto plazo.</p>
+              <summary data-i18n="faq.q2">¿Qué recibo en la llamada inicial de 30 minutos?</summary>
+              <p data-i18n="faq.a2">Un diagnóstico de situación, oportunidades priorizadas y una ruta accionable de corto plazo.</p>
             </details>
             <details class="faq-item reveal">
-              <summary>¿En cuánto tiempo se empiezan a ver mejoras?</summary>
-              <p>Normalmente en 4 a 8 semanas vemos señales claras en eficiencia y calidad de resultados; la escala sólida se consolida en 90 días.</p>
+              <summary data-i18n="faq.q3">¿En cuánto tiempo se empiezan a ver mejoras?</summary>
+              <p data-i18n="faq.a3">Normalmente en 4 a 8 semanas vemos señales claras en eficiencia y calidad de resultados; la escala sólida se consolida en 90 días.</p>
             </details>
           </div>
         </div>
@@ -575,26 +588,26 @@
             <div class="cta-glow" aria-hidden="true"></div>
             <p class="eyebrow">
               <span class="eyebrow-dot"></span>
-              Siguiente capítulo
+              <span data-i18n="cta.eyebrow">Siguiente capítulo</span>
             </p>
             <h2 class="display mask-reveal" data-reveal="lines">
-              <span class="line"><span>Si tu marca ya vende,</span></span>
-              <span class="line"><span class="gradient-text">el próximo paso es escalar.</span></span>
+              <span class="line"><span data-i18n="cta.l1">Si tu marca ya vende,</span></span>
+              <span class="line"><span class="gradient-text" data-i18n="cta.l2">el próximo paso es escalar.</span></span>
             </h2>
-            <p class="lead">
+            <p class="lead" data-i18n="cta.lead">
               Conversemos 30 minutos. Sin compromiso. Sales con un diagnóstico
               claro, prioridades por impacto y un camino accionable.
             </p>
             <p class="cta-path-hint reveal">
-              <strong>Paso recomendado:</strong> agenda en el calendario. Si prefieres, escribe por WhatsApp o correo; el formulario sirve para dejarnos contexto antes de hablar.
+              <strong data-i18n="cta.hint">Paso recomendado:</strong><span data-i18n="cta.hintRest"> agenda en el calendario. Si prefieres, escribe por WhatsApp o correo; el formulario sirve para dejarnos contexto antes de hablar.</span>
             </p>
             <div class="qualifier-copy">
-              <p><strong>Ideal para:</strong> marcas con producto validado y objetivo de crecimiento.</p>
-              <p><strong>No ideal para:</strong> proyectos en etapa de idea sin operación comercial activa.</p>
+              <p><strong data-i18n="cta.ideal">Ideal para:</strong><span data-i18n="cta.idealRest"> marcas con producto validado y objetivo de crecimiento.</span></p>
+              <p><strong data-i18n="cta.notIdeal">No ideal para:</strong><span data-i18n="cta.notIdealRest"> proyectos en etapa de idea sin operación comercial activa.</span></p>
             </div>
             <div id="agenda-calendario" class="calendar-scheduling-wrap reveal">
-              <h3 class="sr-only">Agendar en Google Calendar</h3>
-              <p>Elige horario que te encaje:</p>
+              <h3 class="sr-only" data-i18n="a11y.calendarHidden">Agendar en Google Calendar</h3>
+              <p data-i18n="cta.calendarLead">Elige horario que te encaje:</p>
               <div id="calendar-scheduling-button"></div>
               <p class="calendar-fallback reveal" id="calendarFallback" hidden>
                 <a
@@ -605,18 +618,19 @@
                   data-event-name="calendar_fallback_click"
                   data-cursor="cta"
                 >
-                  <span>Programar una cita</span>
+                  <span data-i18n="cta.calendarBtn">Programar una cita</span>
                 </a>
               </p>
             </div>
             <div class="contact-channels reveal">
-              <span class="contact-channels-label">Otras vías</span>
+              <span class="contact-channels-label" data-i18n="cta.channels">Otras vías</span>
               <a
                 class="contact-channel-link track-event"
                 href="https://wa.me/573135076319?text=Hola%20Mateo%2C%20quiero%20agendar%20un%20diagn%C3%B3stico."
                 target="_blank"
                 rel="noopener noreferrer"
                 data-event-name="cta_whatsapp_inline"
+                data-i18n-wa="form.waHero"
                 >WhatsApp</a
               >
               <span class="contact-channels-sep" aria-hidden="true">·</span>
@@ -624,36 +638,36 @@
             </div>
             <form class="contact-mini-form reveal" id="contactMiniForm">
               <label>
-                Nombre
+                <span data-i18n="cta.formName">Nombre</span>
                 <input type="text" name="nombre" required autocomplete="name" />
               </label>
               <label>
-                Email de trabajo
+                <span data-i18n="cta.formEmail">Email de trabajo</span>
                 <input type="email" name="email" required autocomplete="email" />
               </label>
               <label>
-                ¿Qué quieres escalar primero?
+                <span data-i18n="cta.formGoal">¿Qué quieres escalar primero?</span>
                 <textarea name="objetivo" rows="3" required></textarea>
               </label>
               <button class="btn btn-light magnetic track-event" type="submit" data-cursor="cta" data-event-name="mini_form_submit_click">
                 <span class="btn-label">
-                  <span class="btn-text">Enviar resumen</span>
-                  <span class="btn-text btn-text--hover">Enviar resumen</span>
+                  <span class="btn-text" data-i18n="cta.formSubmit">Enviar resumen</span>
+                  <span class="btn-text btn-text--hover" data-i18n="cta.formSubmit">Enviar resumen</span>
                 </span>
               </button>
             </form>
             <div class="form-success reveal" id="formSuccess" hidden>
-              <p class="form-success-title">Listo. Siguiente paso:</p>
-              <p class="form-success-copy">
+              <p class="form-success-title" data-i18n="cta.successTitle">Listo. Siguiente paso:</p>
+              <p class="form-success-copy" data-i18n="cta.successCopy">
                 Abre tu correo para enviarnos el resumen, o copia el texto y pégalo en WhatsApp si prefieres.
               </p>
-              <pre class="form-success-pre" id="formSuccessPre" aria-label="Resumen del mensaje"></pre>
+              <pre class="form-success-pre" id="formSuccessPre" data-i18n-aria-label="a11y.formSummary"></pre>
               <div class="form-success-actions">
                 <a class="btn btn-light magnetic track-event" href="#" id="formSuccessMailto" data-cursor="cta" data-event-name="form_success_mailto_click">
-                  <span>Abrir correo</span>
+                  <span data-i18n="cta.openMail">Abrir correo</span>
                 </a>
                 <button type="button" class="btn btn-ghost magnetic track-event" id="formSuccessCopy" data-event-name="form_success_copy_click">
-                  <span>Copiar resumen</span>
+                  <span data-i18n="cta.copySummary">Copiar resumen</span>
                 </button>
                 <a
                   class="btn btn-ghost magnetic track-event"
@@ -664,14 +678,14 @@
                   data-event-name="form_success_whatsapp_click"
                   data-cursor="cta"
                 >
-                  <span>Abrir WhatsApp</span>
+                  <span data-i18n="cta.openWa">Abrir WhatsApp</span>
                 </a>
               </div>
-              <button type="button" class="form-success-reset" id="formSuccessReset">Enviar otro mensaje</button>
+              <button type="button" class="form-success-reset" id="formSuccessReset" data-i18n="cta.sendAnother">Enviar otro mensaje</button>
             </div>
             <div class="hero-actions">
               <a class="btn btn-ghost magnetic" href="#servicios" data-cursor="cta">
-                <span>Volver a servicios</span>
+                <span data-i18n="cta.backServices">Volver a servicios</span>
               </a>
             </div>
           </div>
@@ -684,7 +698,8 @@
       href="https://wa.me/573135076319?text=Hola%20Mateo%2C%20quiero%20agendar%20un%20diagn%C3%B3stico."
       target="_blank"
       rel="noopener noreferrer"
-      aria-label="Abrir WhatsApp para agendar diagnóstico"
+      data-i18n-aria-label="a11y.floatingWa"
+      data-i18n-wa="form.waHero"
       data-event-name="floating_whatsapp_click"
     >
       <span>WhatsApp</span>
@@ -701,25 +716,25 @@
             width="1639"
             height="507"
           />
-          <p>Sistemas de crecimiento para marcas ambiciosas.</p>
+          <p data-i18n="footer.tagline">Sistemas de crecimiento para marcas ambiciosas.</p>
         </div>
         <div class="footer-grid">
           <div class="footer-col">
-            <p class="footer-title">Compañía</p>
-            <a href="#filosofia" data-cursor="link">Filosofía</a>
-            <a href="#servicios" data-cursor="link">Servicios</a>
-            <a href="#metodologia" data-cursor="link">Metodología</a>
-            <a href="#proceso" data-cursor="link">Proceso</a>
-            <a href="#casos" data-cursor="link">Casos</a>
+            <p class="footer-title" data-i18n="footer.company">Compañía</p>
+            <a href="#filosofia" data-cursor="link" data-i18n="nav.philosophy">Filosofía</a>
+            <a href="#servicios" data-cursor="link" data-i18n="nav.services">Servicios</a>
+            <a href="#metodologia" data-cursor="link" data-i18n="nav.methodology">Metodología</a>
+            <a href="#proceso" data-cursor="link" data-i18n="nav.process">Proceso</a>
+            <a href="#casos" data-cursor="link" data-i18n="nav.cases">Casos</a>
           </div>
           <div class="footer-col">
-            <p class="footer-title">Contacto</p>
+            <p class="footer-title" data-i18n="footer.contact">Contacto</p>
             <a href="mailto:mateo@pimenton.io" data-cursor="link">mateo@pimenton.io</a>
-            <a href="#agenda-calendario" data-cursor="link">Agendar reunión</a>
+            <a href="#agenda-calendario" data-cursor="link" data-i18n="nav.scheduleMeeting">Agendar reunión</a>
             <a href="https://wa.me/573135076319" target="_blank" rel="noopener noreferrer" data-cursor="link">WhatsApp</a>
           </div>
           <div class="footer-col">
-            <p class="footer-title">Regiones</p>
+            <p class="footer-title" data-i18n="footer.regions">Regiones</p>
             <span>USA</span>
             <span>LATAM</span>
             <span>Europa</span>
@@ -727,13 +742,14 @@
         </div>
         <div class="footer-bottom">
           <p>© 2026 Picante Studio</p>
-          <p>Diseñado con intención.</p>
+          <p data-i18n="footer.designed">Diseñado con intención.</p>
         </div>
       </div>
     </footer>
 
     <!-- Smooth scroll (Lenis) -->
     <script src="https://unpkg.com/lenis@1.1.13/dist/lenis.min.js"></script>
+    <script src="./i18n.js"></script>
     <script src="./app.js"></script>
   </body>
 </html>

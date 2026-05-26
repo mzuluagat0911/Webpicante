@@ -402,6 +402,12 @@ initHeroVideo();
 /* =========================================================
   12. Mobile navigation
   ========================================================= */
+function navToggleLabel(open) {
+  const i18n = window.PicanteI18n;
+  if (!i18n) return open ? "Cerrar menú de navegación" : "Abrir menú de navegación";
+  return open ? i18n.t("a11y.navClose") : i18n.t("a11y.navOpen");
+}
+
 function initMobileNav() {
   const header = document.getElementById("siteHeader");
   const toggle = document.getElementById("navToggle");
@@ -413,10 +419,7 @@ function initMobileNav() {
     header.classList.toggle("nav-open", open);
     document.body.classList.toggle("nav-open", open);
     toggle.setAttribute("aria-expanded", open ? "true" : "false");
-    toggle.setAttribute(
-      "aria-label",
-      open ? "Cerrar menú de navegación" : "Abrir menú de navegación"
-    );
+    toggle.setAttribute("aria-label", navToggleLabel(open));
     drawer.setAttribute("aria-hidden", open ? "false" : "true");
     backdrop.setAttribute("aria-hidden", open ? "false" : "true");
   };
@@ -442,35 +445,41 @@ initMobileNav();
 const CALENDAR_BOOK_URL =
   "https://calendar.google.com/calendar/appointments/schedules/AcZssZ2tGRPxb4jN6Z6jf9zVSZuxGKlPQUWvckgLsWh-2YcP9gBGAz5HkezKdBU-G_V9FnDTVVzJhVvm?gv=true";
 
-function initCalendarScheduling() {
+let calendarLoaded = false;
+
+function calendarLabel() {
+  return window.PicanteI18n?.t("calendar.label") || "Programar una cita";
+}
+
+function initCalendarScheduling(force) {
   const target = document.getElementById("calendar-scheduling-button");
   const fallback = document.getElementById("calendarFallback");
   if (!target) return;
 
-  let loaded = false;
   const showFallback = () => {
     if (fallback) fallback.hidden = false;
   };
 
   const tryLoad = () => {
-    if (loaded) return true;
     if (!window.calendar?.schedulingButton) return false;
     try {
+      target.innerHTML = "";
       window.calendar.schedulingButton.load({
         url: CALENDAR_BOOK_URL,
         color: "#c31c1e",
-        label: "Programar una cita",
-        target
+        label: calendarLabel(),
+        target,
       });
-      loaded = true;
+      calendarLoaded = true;
       return true;
     } catch (_) {
-      loaded = true;
+      calendarLoaded = true;
       showFallback();
       return true;
     }
   };
 
+  if (!force && calendarLoaded && tryLoad()) return;
   if (tryLoad()) return;
 
   let attempts = 0;
@@ -478,12 +487,13 @@ function initCalendarScheduling() {
     attempts += 1;
     if (tryLoad() || attempts >= 60) {
       clearInterval(id);
-      if (!loaded) showFallback();
+      if (!calendarLoaded) showFallback();
     }
   }, 200);
 }
 
-window.addEventListener("load", initCalendarScheduling);
+window.addEventListener("load", () => initCalendarScheduling());
+window.addEventListener("picante:langchange", () => initCalendarScheduling(true));
 
 /* =========================================================
   14. Tracking + form conversion (sin redirección abrupta)
@@ -525,16 +535,18 @@ if (contactMiniForm && formSuccess && formSuccessMailto && formSuccessWhatsapp) 
     const nombre = (formData.get("nombre") || "").toString().trim();
     const email = (formData.get("email") || "").toString().trim();
     const objetivo = (formData.get("objetivo") || "").toString().trim();
-    const subject = encodeURIComponent("Nuevo diagnóstico desde sitio web");
-    const body = encodeURIComponent(
-      `Nombre: ${nombre}\nEmail: ${email}\nObjetivo principal: ${objetivo}`
-    );
-    lastSummaryText = `Nombre: ${nombre}\nEmail: ${email}\nObjetivo principal: ${objetivo}`;
+    const i18n = window.PicanteI18n;
+    const subject = encodeURIComponent(i18n?.t("form.mailSubject") || "Nuevo diagnóstico desde sitio web");
+    const nameLabel = i18n?.t("form.mailBodyName") || "Nombre";
+    const emailLabel = i18n?.t("form.mailBodyEmail") || "Email";
+    const goalLabel = i18n?.t("form.mailBodyGoal") || "Objetivo principal";
+    const bodyPlain = `${nameLabel}: ${nombre}\n${emailLabel}: ${email}\n${goalLabel}: ${objetivo}`;
+    const body = encodeURIComponent(bodyPlain);
+    lastSummaryText = bodyPlain;
     if (formSuccessPre) formSuccessPre.textContent = lastSummaryText;
     formSuccessMailto.href = `mailto:mateo@pimenton.io?subject=${subject}&body=${body}`;
-    const waText = encodeURIComponent(
-      `Hola Mateo, te escribo desde el sitio Picante:\n\n${lastSummaryText}`
-    );
+    const waIntro = i18n?.t("form.waIntro") || "Hola Mateo, te escribo desde el sitio Picante:";
+    const waText = encodeURIComponent(`${waIntro}\n\n${lastSummaryText}`);
     formSuccessWhatsapp.href = `https://wa.me/573135076319?text=${waText}`;
     trackEvent("mini_form_submit", { location: "cta_section" });
     contactMiniForm.setAttribute("hidden", "");
@@ -545,18 +557,20 @@ if (contactMiniForm && formSuccess && formSuccessMailto && formSuccessWhatsapp) 
 
 if (formSuccessCopy) {
   const copyLabel = formSuccessCopy.querySelector("span");
+  const copyDefault = () =>
+    window.PicanteI18n?.t("cta.copySummary") || "Copiar resumen";
   formSuccessCopy.addEventListener("click", async () => {
     if (!lastSummaryText) return;
     try {
       await navigator.clipboard.writeText(lastSummaryText);
-      if (copyLabel) copyLabel.textContent = "Copiado";
+      if (copyLabel) copyLabel.textContent = window.PicanteI18n?.t("cta.copied") || "Copiado";
       setTimeout(() => {
-        if (copyLabel) copyLabel.textContent = "Copiar resumen";
+        if (copyLabel) copyLabel.textContent = copyDefault();
       }, 2200);
     } catch (_) {
-      if (copyLabel) copyLabel.textContent = "Copia desde el recuadro";
+      if (copyLabel) copyLabel.textContent = window.PicanteI18n?.t("cta.copyFromBox") || "Copia desde el recuadro";
       setTimeout(() => {
-        if (copyLabel) copyLabel.textContent = "Copiar resumen";
+        if (copyLabel) copyLabel.textContent = copyDefault();
       }, 2800);
     }
   });
