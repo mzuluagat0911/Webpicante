@@ -6,7 +6,7 @@
     <title>Pulse | Deja de perder clientes en Google Maps — Picante Studio</title>
     <meta
       name="description"
-      content="Pulse te muestra cuánto tráfico y dinero pierdes por no gestionar bien tu presencia en Google Maps. Ranking, reseñas, alertas y multi-sucursal."
+      content="Pulse monitorea tu zona en Google Maps: competencia, rating, reseñas y un agente con IA que responde con el tono de tu marca. Recupera tráfico local."
     />
     <meta name="keywords" content="Google Maps, Google Business Profile, reseñas, rating local, competidores, multi-sucursal, Pulse, Picante" />
     <link rel="canonical" href="https://wearepicante.com/pulse.html" />
@@ -14,7 +14,7 @@
     <meta property="og:title" content="Pulse | Google envía a tus clientes a otro si no los cuidas" />
     <meta
       property="og:description"
-      content="Descubre cuánto dinero pierdes en Google Maps. Pulse monitorea tu zona y te indica qué hacer para recuperar tráfico."
+      content="Monitorea tu zona en Google Maps, competencia y reseñas. Agente con IA que responde con el tono de tu marca."
     />
     <meta property="og:url" content="https://wearepicante.com/pulse.html" />
     <meta property="og:image" content="https://wearepicante.com/assets/pulse-dashboard.png" />
@@ -90,6 +90,16 @@
       img { max-width: 100%; height: auto; display: block; }
 
       a { color: inherit; }
+
+      a:focus-visible,
+      button:focus-visible {
+        outline: 2px solid var(--brand);
+        outline-offset: 3px;
+      }
+
+      main section[id] {
+        scroll-margin-top: calc(var(--nav-h) + 20px);
+      }
 
       .container {
         width: min(var(--max), 92%);
@@ -225,7 +235,7 @@
 
       .text-link:hover { gap: 10px; }
 
-      .cta-display .display-line:last-child {
+      .section-dark .cta-display .display-line:last-child {
         color: #fff;
         font-weight: 700;
       }
@@ -510,6 +520,18 @@
         box-shadow: 0 18px 40px -12px rgba(195, 28, 30, 0.45);
       }
 
+      .btn-brand {
+        background: var(--brand);
+        color: #fff;
+        box-shadow: 0 14px 36px -14px rgba(195, 28, 30, 0.5);
+      }
+
+      .btn-brand:hover {
+        transform: translateY(-2px);
+        background: var(--brand-light);
+        box-shadow: 0 18px 40px -12px rgba(195, 28, 30, 0.55);
+      }
+
       .btn-ghost {
         background: transparent;
         color: inherit;
@@ -601,6 +623,12 @@
         .hero-title .line > span { transform: none; }
         .dashboard-mockup,
         .dashboard-stage:hover .dashboard-mockup { transform: none; }
+        .hero-video { opacity: 0 !important; visibility: hidden; }
+        .hero-video-wrap {
+          background:
+            radial-gradient(70% 55% at 85% 35%, rgba(195, 28, 30, 0.18), transparent 60%),
+            #050505 !important;
+        }
       }
 
       /* —— Hero —— */
@@ -616,15 +644,44 @@
         overflow: hidden;
       }
 
-      .hero-ambient {
+      .hero-video-wrap {
         position: absolute;
         inset: 0;
         z-index: 0;
-        pointer-events: none;
+        overflow: hidden;
+        background: #050505;
+      }
+
+      .hero-video {
+        position: absolute;
+        inset: 0;
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        object-position: center;
+        filter: saturate(1.05) contrast(1.04) brightness(0.88);
+        transform: scale(1.03);
+        transition: transform 1.4s var(--ease);
+      }
+
+      .hero.is-ready .hero-video {
+        transform: scale(1);
+      }
+
+      .hero-video-overlay {
+        position: absolute;
+        inset: 0;
         background:
-          radial-gradient(70% 55% at 85% 35%, rgba(195, 28, 30, 0.18), transparent 60%),
-          radial-gradient(50% 45% at 10% 80%, rgba(90, 10, 13, 0.28), transparent 55%),
-          linear-gradient(180deg, #0a0a0a 0%, #101010 50%, #0a0a0a 100%);
+          linear-gradient(105deg, rgba(5, 5, 5, 0.92) 0%, rgba(5, 5, 5, 0.72) 38%, rgba(5, 5, 5, 0.4) 62%, rgba(5, 5, 5, 0.7) 100%),
+          radial-gradient(70% 55% at 12% 40%, rgba(195, 28, 30, 0.14), transparent 58%);
+        pointer-events: none;
+      }
+
+      .hero-video-vignette {
+        position: absolute;
+        inset: 0;
+        pointer-events: none;
+        background: radial-gradient(120% 80% at 50% 50%, rgba(0, 0, 0, 0) 45%, rgba(0, 0, 0, 0.35) 100%);
       }
 
       .hero-inner {
@@ -715,6 +772,11 @@
       @keyframes marquee {
         from { transform: translateX(0); }
         to { transform: translateX(-50%); }
+      }
+
+      .pulse-marquee:hover .marquee-track,
+      .pulse-marquee:focus-within .marquee-track {
+        animation-play-state: paused;
       }
 
       /* —— Problem cards —— */
@@ -935,6 +997,41 @@
         line-height: 1.55;
       }
 
+      .feature-card--highlight {
+        grid-column: span 2;
+        border-color: rgba(195, 28, 30, 0.35);
+        background: linear-gradient(160deg, #1e1a1a 0%, #141416 100%);
+      }
+
+      .feature-card--highlight::before {
+        color: var(--brand-light);
+      }
+
+      .feature-list {
+        margin: 0;
+        padding: 0;
+        list-style: none;
+        display: flex;
+        flex-direction: column;
+        gap: 8px;
+      }
+
+      .feature-list li {
+        display: flex;
+        align-items: flex-start;
+        gap: 10px;
+        font-size: 0.95rem;
+        color: rgba(255, 255, 255, 0.62);
+        line-height: 1.5;
+      }
+
+      .feature-list li::before {
+        content: "✓";
+        color: var(--brand-light);
+        font-weight: 700;
+        flex-shrink: 0;
+      }
+
       /* —— Process —— */
       .steps-row {
         display: grid;
@@ -1023,6 +1120,71 @@
         flex-direction: column;
         align-items: center;
         gap: 16px;
+      }
+
+      .cta-actions--row {
+        flex-direction: row;
+        flex-wrap: wrap;
+        justify-content: center;
+      }
+
+      .section-cta-soft {
+        border-top: 1px solid var(--line);
+        border-bottom: 1px solid var(--line);
+      }
+
+      .section-cta-soft .cta-block .lead {
+        color: var(--ink-soft);
+      }
+
+      .section-cta-soft .eyebrow {
+        color: var(--ink-soft);
+      }
+
+      .section-cta-soft .cta-trust span:nth-child(odd) {
+        color: var(--ink-soft);
+      }
+
+      .costo-cta {
+        margin-top: 48px;
+        display: flex;
+        flex-wrap: wrap;
+        gap: 12px;
+        align-items: center;
+      }
+
+      .objection-actions {
+        margin-top: 32px;
+        display: flex;
+        flex-wrap: wrap;
+        gap: 16px 24px;
+        align-items: center;
+      }
+
+      .sticky-cta {
+        display: none;
+        position: fixed;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        z-index: 55;
+        padding: 12px 16px calc(12px + env(safe-area-inset-bottom, 0px));
+        background: rgba(255, 255, 255, 0.94);
+        backdrop-filter: saturate(180%) blur(16px);
+        -webkit-backdrop-filter: saturate(180%) blur(16px);
+        border-top: 1px solid var(--line);
+        box-shadow: 0 -8px 32px rgba(0, 0, 0, 0.08);
+        transform: translateY(110%);
+        transition: transform 0.4s var(--ease-out);
+      }
+
+      .sticky-cta.is-visible {
+        transform: translateY(0);
+      }
+
+      .sticky-cta .btn {
+        width: 100%;
+        padding: 16px 24px;
       }
 
       .cta-note {
@@ -1129,6 +1291,10 @@
         .features-grid {
           grid-template-columns: repeat(2, 1fr);
         }
+
+        .feature-card--highlight {
+          grid-column: span 2;
+        }
       }
 
       @media (max-width: 900px) {
@@ -1154,6 +1320,10 @@
 
         .footer-grid {
           grid-template-columns: 1fr 1fr;
+        }
+
+        .feature-card--highlight {
+          grid-column: span 1;
         }
       }
 
@@ -1211,6 +1381,23 @@
         .dashboard-mockup-badge {
           display: none;
         }
+
+        .sticky-cta {
+          display: block;
+        }
+
+        .cta-actions--row {
+          flex-direction: column;
+          width: 100%;
+        }
+
+        .cta-actions--row .btn {
+          width: 100%;
+        }
+
+        body.has-sticky-cta {
+          padding-bottom: calc(72px + env(safe-area-inset-bottom, 0px));
+        }
       }
 
       @media (max-width: 480px) {
@@ -1221,6 +1408,14 @@
 
         .hero-sub--lead {
           font-size: 0.98rem;
+        }
+
+        .footer-logo {
+          width: min(220px, 72%);
+        }
+
+        .eyebrow {
+          font-size: 0.8rem;
         }
       }
     </style>
@@ -1233,12 +1428,12 @@
           <img class="brand-logo brand-logo--dark" src="./assets/picante-black.png" alt="" width="1639" height="507" />
         </a>
         <nav class="menu menu--desktop" aria-label="Principal">
-          <a href="#costo">El costo</a>
           <a href="#pulse">Pulse</a>
           <a href="#que-ves">Qué ves</a>
           <a href="#proceso">Proceso</a>
           <a href="#numeros">Datos</a>
-          <a href="#demo" class="menu-cta">Agendar demo</a>
+          <a href="#costo">El costo</a>
+          <a href="#agendar" class="menu-cta">Agendar demo</a>
         </nav>
         <button
           type="button"
@@ -1254,19 +1449,34 @@
       </div>
       <div class="nav-backdrop" id="navBackdrop" aria-hidden="true"></div>
       <nav class="nav-drawer" id="navDrawer" aria-label="Móvil" aria-hidden="true">
-        <a href="#costo">El costo</a>
         <a href="#pulse">Pulse</a>
         <a href="#que-ves">Qué ves</a>
         <a href="#proceso">Proceso</a>
         <a href="#numeros">Datos</a>
-        <a href="#demo" class="nav-drawer-cta">Agendar demo</a>
+        <a href="#costo">El costo</a>
+        <a href="#agendar" class="nav-drawer-cta">Agendar demo</a>
       </nav>
     </header>
 
     <main>
       <!-- 1. Hero -->
       <section class="hero" id="top">
-        <div class="hero-ambient" aria-hidden="true"></div>
+        <div class="hero-video-wrap" aria-hidden="true">
+          <video
+            class="hero-video"
+            id="pulseHeroVideo"
+            autoplay
+            muted
+            loop
+            playsinline
+            preload="metadata"
+            poster="./assets/hero-poster.jpg"
+          >
+            <source src="./assets/pulse-hero.mp4" type="video/mp4" />
+          </video>
+          <div class="hero-video-overlay"></div>
+          <div class="hero-video-vignette"></div>
+        </div>
         <div class="container hero-inner">
             <p class="eyebrow">
               <span class="eyebrow-dot" aria-hidden="true"></span>
@@ -1276,86 +1486,41 @@
               <span class="line"><span>Tus clientes te están buscando.</span></span>
               <span class="line"><span class="accent-red">Google los manda con otro.</span></span>
             </h1>
-            <p class="hero-sub hero-sub--lead reveal">
+            <p class="hero-sub hero-sub--lead">
               El 90% de las personas buscan en Google antes de elegir un negocio local. El algoritmo de Google Maps decide a
               quién mostrar primero — y lo decide por rating, reseñas, respuestas y actividad. Si tu competencia hace eso
               mejor, se queda con tu tráfico.
             </p>
-            <div class="hero-actions reveal">
-              <a class="btn btn-primary" href="#demo">Quiero ver mi zona</a>
-              <a class="btn btn-ghost" href="#proceso">¿Cómo funciona?</a>
+            <div class="hero-actions">
+              <a class="btn btn-brand" href="#pulse">Ver el producto</a>
+              <a class="btn btn-ghost" href="#demo">Quiero ver mi zona</a>
             </div>
         </div>
         <div class="pulse-marquee" aria-hidden="true">
           <div class="marquee-track">
-            <span>Reseñas sin responder</span><span class="dot">●</span>
-            <span>Respuestas con IA</span><span class="dot">●</span>
-            <span>Rating cayendo</span><span class="dot">●</span>
-            <span>Competidores subiendo</span><span class="dot">●</span>
-            <span>Clientes eligiendo a otro</span><span class="dot">●</span>
-            <span>Oportunidades perdidas</span><span class="dot">●</span>
-            <span>Perfil desactualizado</span><span class="dot">●</span>
-            <span>Decisiones sin datos</span><span class="dot">●</span>
-            <span>Dinero que se va</span><span class="dot">●</span>
-            <span>Reseñas sin responder</span><span class="dot">●</span>
-            <span>Respuestas con IA</span><span class="dot">●</span>
-            <span>Rating cayendo</span><span class="dot">●</span>
-            <span>Competidores subiendo</span><span class="dot">●</span>
-            <span>Clientes eligiendo a otro</span><span class="dot">●</span>
-            <span>Oportunidades perdidas</span><span class="dot">●</span>
-            <span>Perfil desactualizado</span><span class="dot">●</span>
-            <span>Decisiones sin datos</span><span class="dot">●</span>
-            <span>Dinero que se va</span><span class="dot">●</span>
+            <span>Reseñas respondidas con IA</span><span class="dot">●</span>
+            <span>Tono de tu marca</span><span class="dot">●</span>
+            <span>Rating que compite</span><span class="dot">●</span>
+            <span>Competencia monitoreada</span><span class="dot">●</span>
+            <span>Clientes que te encuentran</span><span class="dot">●</span>
+            <span>Oportunidades visibles</span><span class="dot">●</span>
+            <span>Perfil siempre activo</span><span class="dot">●</span>
+            <span>Decisiones con datos</span><span class="dot">●</span>
+            <span>Tráfico que recuperas</span><span class="dot">●</span>
+            <span>Reseñas respondidas con IA</span><span class="dot">●</span>
+            <span>Tono de tu marca</span><span class="dot">●</span>
+            <span>Rating que compite</span><span class="dot">●</span>
+            <span>Competencia monitoreada</span><span class="dot">●</span>
+            <span>Clientes que te encuentran</span><span class="dot">●</span>
+            <span>Oportunidades visibles</span><span class="dot">●</span>
+            <span>Perfil siempre activo</span><span class="dot">●</span>
+            <span>Decisiones con datos</span><span class="dot">●</span>
+            <span>Tráfico que recuperas</span><span class="dot">●</span>
           </div>
         </div>
       </section>
 
-      <!-- 3. El costo -->
-      <section class="section section-light" id="costo">
-        <div class="container">
-          <div class="section-head reveal">
-            <p class="eyebrow"><span class="eyebrow-dot"></span> Lo que te cuesta</p>
-            <h2 class="display">
-              <span class="display-line">No es que no tengas clientes.</span>
-              <span class="display-line accent-red">Es que Google se los da a otro.</span>
-            </h2>
-          </div>
-          <div class="cards-row">
-            <article class="card-light reveal">
-              <div class="pain-icon" aria-hidden="true">
-                <svg viewBox="0 0 24 24" fill="none"><path d="M12 2l2.4 7.4H22l-6 4.6 2.3 7-6.3-4.6L6 21l2.3-7-6-4.6h7.6L12 2z" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round" opacity=".35"/><path d="M4 20L20 4" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/></svg>
-              </div>
-              <h3>Tu rating habla por ti</h3>
-              <p>
-                0.3 estrellas de diferencia entre tú y tu competidor. Parece poco. Pero Google muestra primero al que tiene
-                más. Y el cliente hace clic ahí.
-              </p>
-            </article>
-            <article class="card-light reveal">
-              <div class="pain-icon" aria-hidden="true">
-                <svg viewBox="0 0 24 24" fill="none"><path d="M21 15a4 4 0 01-4 4H8l-5 3V7a4 4 0 014-4h10a4 4 0 014 4v8z" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round"/><path d="M8 10h8M8 14h5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" opacity=".5"/></svg>
-              </div>
-              <h3>Reseñas que nadie responde</h3>
-              <p>
-                Cada reseña sin responder le dice a Google que tu negocio no está activo. Y le dice al cliente que no te
-                importa. Los dos te penalizan. Responder bien lleva tiempo — y un tono que no suene genérico.
-              </p>
-            </article>
-            <article class="card-light reveal">
-              <div class="pain-icon" aria-hidden="true">
-                <svg viewBox="0 0 24 24" fill="none"><path d="M4 18V6M4 18l3-3M4 18l-3-3M20 6v12M20 6l-3 3M20 6l3 3" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
-              </div>
-              <h3>Decisiones sin datos</h3>
-              <p>
-                ¿Cuántos competidores abrieron en tu zona este año? ¿Cuál subió de rating? ¿Qué están haciendo distinto? Si
-                no lo sabes, compites a ciegas.
-              </p>
-            </article>
-          </div>
-        </div>
-      </section>
-
-      <!-- 4. Pulse -->
+      <!-- 2. Pulse -->
       <section class="section section-dark" id="pulse">
         <div class="container">
           <div class="section-head reveal">
@@ -1391,7 +1556,8 @@
                   alt="Dashboard de Pulse: rating, reseñas, estimación de impacto y sucursales por mejorar"
                   width="1024"
                   height="917"
-                  loading="lazy"
+                  loading="eager"
+                  fetchpriority="high"
                   decoding="async"
                 />
                 <div class="dashboard-mockup-shine" aria-hidden="true"></div>
@@ -1401,7 +1567,41 @@
         </div>
       </section>
 
-      <!-- 5. Qué ves -->
+      <!-- 3. CTA (después del producto) -->
+      <section class="section section-soft section-cta-soft" id="demo">
+        <div class="container">
+          <div class="cta-block reveal">
+            <p class="eyebrow" style="justify-content: center"><span class="eyebrow-dot"></span> Siguiente paso</p>
+            <h2 class="display cta-display" style="color: var(--ink)">
+              <span class="display-line">Mientras lees esto,</span>
+              <span class="display-line accent-red">alguien buscó tu categoría en Google.</span>
+              <span class="display-line" style="color: var(--ink)">¿A quién le mostró?</span>
+            </h2>
+            <p class="lead">
+              Agenda 15 minutos. Te mostramos el panorama competitivo real de tu zona — con datos, no con opiniones.
+            </p>
+            <div class="cta-actions cta-actions--row">
+              <a
+                class="btn btn-primary btn--lg"
+                href="https://calendar.google.com/calendar/appointments/schedules/AcZssZ2tGRPxb4jN6Z6jf9zVSZuxGKlPQUWvckgLsWh-2YcP9gBGAz5HkezKdBU-G_V9FnDTVVzJhVvm?gv=true"
+                rel="noopener noreferrer"
+              >
+                Agendar demo gratuita
+              </a>
+              <a class="btn btn-ghost" href="#que-ves">Explorar funciones</a>
+            </div>
+            <p class="cta-trust" style="color: var(--ink-faint); margin-top: 20px">
+              <span style="color: var(--ink-soft)">Sin compromiso</span>
+              <span aria-hidden="true">·</span>
+              <span style="color: var(--ink-soft)">Datos reales de tu zona</span>
+              <span aria-hidden="true">·</span>
+              <span style="color: var(--ink-soft)">15 minutos</span>
+            </p>
+          </div>
+        </div>
+      </section>
+
+      <!-- 4. Qué ves -->
       <section class="section section-light" id="que-ves">
         <div class="container">
           <div class="section-head section-head--center reveal">
@@ -1433,13 +1633,13 @@
                 antes que nadie.
               </p>
             </article>
-            <article class="feature-card reveal" data-num="04">
+            <article class="feature-card feature-card--highlight reveal" data-num="04">
               <h3>¿Quién responde tus reseñas?</h3>
-              <p>
-                Conecta tu Google Business Profile y gestiona todo desde un solo lugar. Incluye un agente con IA que se
-                adapta al lenguaje y tono de tu marca para responder cada reseña de la forma más humana posible — sin
-                plantillas genéricas ni respuestas que suenen a robot.
-              </p>
+              <ul class="feature-list">
+                <li>Conecta tu Google Business Profile en un solo lugar</li>
+                <li>Agente con IA adaptado al lenguaje y tono de tu marca</li>
+                <li>Respuestas humanas — sin plantillas ni tono robótico</li>
+              </ul>
             </article>
             <article class="feature-card reveal" data-num="05">
               <h3>¿Y tus otras sucursales?</h3>
@@ -1534,29 +1734,86 @@
               tendencias? ¿Leyendo sus reseñas? ¿Detectando cuándo uno te superó? Eso es lo que Pulse hace por ti en
               automático. Cada semana. Sin que tengas que pedirlo.
             </p>
-            <a class="text-link" href="#proceso">Ver cómo funciona →</a>
+            <div class="objection-actions">
+              <a
+                class="btn btn-primary"
+                href="https://calendar.google.com/calendar/appointments/schedules/AcZssZ2tGRPxb4jN6Z6jf9zVSZuxGKlPQUWvckgLsWh-2YcP9gBGAz5HkezKdBU-G_V9FnDTVVzJhVvm?gv=true"
+                rel="noopener noreferrer"
+              >
+                Agendar demo gratuita
+              </a>
+              <a class="text-link" href="#proceso">Ver cómo funciona →</a>
+            </div>
           </div>
         </div>
       </section>
 
-      <!-- 9. CTA -->
-      <section class="section section-dark" id="demo">
+      <!-- 9. El costo -->
+      <section class="section section-light" id="costo">
+        <div class="container">
+          <div class="section-head reveal">
+            <p class="eyebrow"><span class="eyebrow-dot"></span> Lo que te cuesta</p>
+            <h2 class="display">
+              <span class="display-line">No es que no tengas clientes.</span>
+              <span class="display-line accent-red">Es que Google se los da a otro.</span>
+            </h2>
+          </div>
+          <div class="cards-row">
+            <article class="card-light reveal">
+              <div class="pain-icon" aria-hidden="true">
+                <svg viewBox="0 0 24 24" fill="none"><path d="M12 2l2.4 7.4H22l-6 4.6 2.3 7-6.3-4.6L6 21l2.3-7-6-4.6h7.6L12 2z" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round" opacity=".35"/><path d="M4 20L20 4" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/></svg>
+              </div>
+              <h3>Tu rating habla por ti</h3>
+              <p>
+                0.3 estrellas de diferencia entre tú y tu competidor. Parece poco. Pero Google muestra primero al que tiene
+                más. Y el cliente hace clic ahí.
+              </p>
+            </article>
+            <article class="card-light reveal">
+              <div class="pain-icon" aria-hidden="true">
+                <svg viewBox="0 0 24 24" fill="none"><path d="M21 15a4 4 0 01-4 4H8l-5 3V7a4 4 0 014-4h10a4 4 0 014 4v8z" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round"/><path d="M8 10h8M8 14h5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" opacity=".5"/></svg>
+              </div>
+              <h3>Reseñas que nadie responde</h3>
+              <p>
+                Cada reseña sin responder le dice a Google que tu negocio no está activo. Y le dice al cliente que no te
+                importa. Los dos te penalizan. Responder bien lleva tiempo — y un tono que no suene genérico.
+              </p>
+            </article>
+            <article class="card-light reveal">
+              <div class="pain-icon" aria-hidden="true">
+                <svg viewBox="0 0 24 24" fill="none"><path d="M4 18V6M4 18l3-3M4 18l-3-3M20 6v12M20 6l-3 3M20 6l3 3" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+              </div>
+              <h3>Decisiones sin datos</h3>
+              <p>
+                ¿Cuántos competidores abrieron en tu zona este año? ¿Cuál subió de rating? ¿Qué están haciendo distinto? Si
+                no lo sabes, compites a ciegas.
+              </p>
+            </article>
+          </div>
+          <div class="costo-cta reveal">
+            <a class="btn btn-primary" href="#agendar">Ver cómo recuperar tráfico</a>
+            <a class="text-link" href="#pulse">Volver al dashboard →</a>
+          </div>
+        </div>
+      </section>
+
+      <!-- 10. CTA final -->
+      <section class="section section-dark" id="agendar">
         <div class="container">
           <div class="cta-block reveal">
-            <p class="eyebrow" style="justify-content: center"><span class="eyebrow-dot"></span> Siguiente paso</p>
+            <p class="eyebrow" style="justify-content: center"><span class="eyebrow-dot"></span> Listo para competir</p>
             <h2 class="display cta-display">
-              <span class="display-line">Mientras lees esto,</span>
-              <span class="display-line accent-red">alguien buscó tu categoría en Google.</span>
-              <span class="display-line">¿A quién le mostró?</span>
+              <span class="display-line">Tu zona no espera.</span>
+              <span class="display-line accent-red">Agenda tu demo hoy.</span>
             </h2>
             <p class="lead">
-              Agenda 15 minutos. Te mostramos el panorama competitivo real de tu zona — con datos, no con opiniones.
+              15 minutos con datos reales de tu mercado. Sin compromiso. Sales sabiendo exactamente dónde estás perdiendo
+              y qué hacer primero.
             </p>
             <div class="cta-actions">
               <a
                 class="btn btn-light btn--lg"
                 href="https://calendar.google.com/calendar/appointments/schedules/AcZssZ2tGRPxb4jN6Z6jf9zVSZuxGKlPQUWvckgLsWh-2YcP9gBGAz5HkezKdBU-G_V9FnDTVVzJhVvm?gv=true"
-                target="_blank"
                 rel="noopener noreferrer"
               >
                 Agendar demo gratuita
@@ -1564,9 +1821,9 @@
               <p class="cta-trust">
                 <span>Sin compromiso</span>
                 <span aria-hidden="true">·</span>
-                <span>Terminas con datos reales de tu zona</span>
+                <span>Datos reales de tu zona</span>
                 <span aria-hidden="true">·</span>
-                <span>15 minutos que pueden cambiar cómo compites</span>
+                <span>15 minutos</span>
               </p>
             </div>
           </div>
@@ -1574,7 +1831,17 @@
       </section>
     </main>
 
-    <!-- 9. Footer -->
+    <div class="sticky-cta" id="stickyCta" aria-hidden="true">
+      <a
+        class="btn btn-brand"
+        href="https://calendar.google.com/calendar/appointments/schedules/AcZssZ2tGRPxb4jN6Z6jf9zVSZuxGKlPQUWvckgLsWh-2YcP9gBGAz5HkezKdBU-G_V9FnDTVVzJhVvm?gv=true"
+        rel="noopener noreferrer"
+      >
+        Agendar demo gratuita
+      </a>
+    </div>
+
+    <!-- Footer -->
     <footer class="site-footer">
       <div class="container">
         <div class="footer-hero">
@@ -1596,7 +1863,7 @@
           <div class="footer-col">
             <p class="footer-title">Contacto</p>
             <a href="mailto:mateo@pimenton.io">mateo@pimenton.io</a>
-            <a href="#demo">Agendar demo</a>
+            <a href="#agendar">Agendar demo</a>
             <a href="https://wa.me/573135076319?text=Hola%20Mateo%2C%20quiero%20una%20demo%20de%20Pulse." target="_blank" rel="noopener noreferrer">WhatsApp</a>
           </div>
           <div class="footer-col">
@@ -1633,6 +1900,32 @@
         }
         onScroll();
         window.addEventListener("scroll", onScroll, { passive: true });
+
+        const heroEl = document.querySelector(".hero");
+        const pulseHeroVideo = document.getElementById("pulseHeroVideo");
+        if (pulseHeroVideo && heroEl) {
+          if (prefersReduced) {
+            try {
+              pulseHeroVideo.pause();
+              pulseHeroVideo.removeAttribute("autoplay");
+            } catch (_) {}
+          } else {
+            const markReady = () => heroEl.classList.add("is-ready");
+            if (pulseHeroVideo.readyState >= 2) markReady();
+            else {
+              pulseHeroVideo.addEventListener("loadeddata", markReady, { once: true });
+              setTimeout(markReady, 1200);
+            }
+            const tryPlay = () => {
+              const p = pulseHeroVideo.play();
+              if (p && typeof p.catch === "function") p.catch(() => {});
+            };
+            tryPlay();
+            document.addEventListener("visibilitychange", () => {
+              if (!document.hidden) tryPlay();
+            });
+          }
+        }
 
         const heroTitle = document.getElementById("heroTitle");
         if (heroTitle && !prefersReduced) {
@@ -1683,6 +1976,19 @@
           document.addEventListener("keydown", (e) => {
             if (e.key === "Escape") setOpen(false);
           });
+        }
+
+        const stickyCta = document.getElementById("stickyCta");
+        const heroSection = document.getElementById("top");
+        if (stickyCta && heroSection && window.matchMedia("(max-width: 768px)").matches) {
+          const showSticky = () => {
+            const pastHero = heroSection.getBoundingClientRect().bottom < 0;
+            stickyCta.classList.toggle("is-visible", pastHero);
+            stickyCta.setAttribute("aria-hidden", pastHero ? "false" : "true");
+            document.body.classList.toggle("has-sticky-cta", pastHero);
+          };
+          showSticky();
+          window.addEventListener("scroll", showSticky, { passive: true });
         }
       })();
     </script>
