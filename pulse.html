@@ -106,11 +106,11 @@
       .display-line { display: block; }
 
       .hero-sub--lead {
-        margin-top: 28px;
-        font-size: clamp(1rem, 1.25vw, 1.15rem);
-        color: rgba(255, 255, 255, 0.72);
+        margin-top: 24px;
+        font-size: clamp(0.98rem, 1.15vw, 1.08rem);
+        color: rgba(255, 255, 255, 0.68);
         font-weight: 400;
-        max-width: 46ch;
+        max-width: 48ch;
         line-height: 1.65;
       }
 
@@ -602,6 +602,7 @@
         .dashboard-mockup,
         .dashboard-stage:hover .dashboard-mockup { transform: none; }
         .hero-dashboard-blur { transform: translateY(-46%); }
+        .hero-visual:hover .hero-dashboard-blur { transform: none; }
       }
 
       /* —— Hero —— */
@@ -611,7 +612,7 @@
         display: flex;
         flex-direction: column;
         justify-content: center;
-        padding: calc(var(--nav-h) + 48px) 0 0;
+        padding: calc(var(--nav-h) + 32px) 0 0;
         background: #050505;
         color: #fff;
         overflow: hidden;
@@ -629,71 +630,70 @@
         position: absolute;
         inset: -20% -10%;
         background:
-          radial-gradient(55% 50% at 72% 38%, rgba(195, 28, 30, 0.22), transparent 65%),
-          radial-gradient(45% 40% at 20% 70%, rgba(90, 10, 13, 0.35), transparent 60%),
+          radial-gradient(55% 50% at 78% 42%, rgba(195, 28, 30, 0.2), transparent 62%),
+          radial-gradient(45% 40% at 12% 72%, rgba(90, 10, 13, 0.32), transparent 58%),
           linear-gradient(180deg, #0a0a0a 0%, #121212 50%, #0a0a0a 100%);
       }
 
-      .hero-ambient::after {
-        content: "";
-        position: absolute;
-        inset: 0;
-        background: linear-gradient(
-          90deg,
-          rgba(5, 5, 5, 0.94) 0%,
-          rgba(5, 5, 5, 0.82) 38%,
-          rgba(5, 5, 5, 0.35) 58%,
-          transparent 78%
-        );
-        pointer-events: none;
+      .hero-layout {
+        position: relative;
+        z-index: 2;
+        flex: 1;
+        display: grid;
+        grid-template-columns: minmax(0, 1fr) minmax(260px, 420px);
+        gap: clamp(28px, 4vw, 56px);
+        align-items: center;
+        padding-bottom: 32px;
+      }
+
+      .hero-copy {
+        min-width: 0;
+      }
+
+      .hero-visual {
+        position: relative;
+        align-self: center;
+        width: 100%;
       }
 
       .hero-dashboard-blur {
-        position: absolute;
-        right: -4%;
-        top: 50%;
-        transform: translateY(-46%) perspective(900px) rotateY(-8deg);
-        width: min(58vw, 760px);
-        border-radius: 20px;
+        position: relative;
+        width: 100%;
+        border-radius: 18px;
         overflow: hidden;
         border: 1px solid rgba(255, 255, 255, 0.1);
-        opacity: 0.78;
         box-shadow:
-          0 48px 120px -40px rgba(0, 0, 0, 0.85),
-          0 0 80px -20px rgba(195, 28, 30, 0.35);
-        mask-image: linear-gradient(135deg, #000 40%, transparent 92%);
-        -webkit-mask-image: linear-gradient(135deg, #000 40%, transparent 92%);
+          0 40px 100px -36px rgba(0, 0, 0, 0.85),
+          0 0 60px -16px rgba(195, 28, 30, 0.28);
+        transform: perspective(900px) rotateY(-5deg);
+        transition: transform 0.6s var(--ease);
+      }
+
+      .hero-visual:hover .hero-dashboard-blur {
+        transform: perspective(900px) rotateY(-2deg) translateY(-4px);
       }
 
       .hero-dashboard-blur img {
         display: block;
         width: 100%;
         height: auto;
-        filter: blur(10px) saturate(1.08) brightness(0.82);
-        transform: scale(1.06);
+        filter: blur(7px) saturate(1.06) brightness(0.88);
+        transform: scale(1.04);
       }
 
       .hero-dashboard-blur::after {
         content: "";
         position: absolute;
         inset: 0;
-        background: linear-gradient(115deg, rgba(5, 5, 5, 0.55) 0%, rgba(5, 5, 5, 0.1) 55%, transparent 100%);
+        background: linear-gradient(145deg, rgba(5, 5, 5, 0.35) 0%, rgba(5, 5, 5, 0.08) 55%, transparent 100%);
         pointer-events: none;
-      }
-
-      .hero-inner {
-        position: relative;
-        z-index: 2;
-        width: min(920px, 52%);
-        max-width: none;
-        padding-right: 32px;
       }
 
       .hero-title {
         margin: 0;
-        font-size: clamp(2.35rem, 4.2vw, 4.85rem);
-        line-height: 1.02;
-        letter-spacing: -0.042em;
+        font-size: clamp(2rem, 3.35vw, 3.55rem);
+        line-height: 1.06;
+        letter-spacing: -0.038em;
         font-weight: 700;
         text-wrap: balance;
       }
@@ -701,18 +701,22 @@
       .hero-title .line {
         display: block;
         overflow: hidden;
-        padding-bottom: 0.04em;
+        padding-bottom: 0.06em;
+      }
+
+      .hero-title.is-in .line {
+        overflow: visible;
       }
 
       .hero-title .line > span {
-        display: inline-block;
+        display: inline;
         transform: translateY(110%);
         transition: transform 1s var(--ease-out);
       }
 
-      @media (min-width: 769px) {
+      @media (prefers-reduced-motion: no-preference) {
         .hero-title .line > span {
-          white-space: nowrap;
+          display: inline-block;
         }
       }
 
@@ -1159,15 +1163,13 @@
         .menu { gap: 18px; }
         .menu a { font-size: 0.82rem; }
 
-        .hero-inner {
-          width: min(780px, 58%);
+        .hero-layout {
+          grid-template-columns: minmax(0, 1fr) minmax(220px, 340px);
+          gap: 24px;
         }
 
-        .hero-dashboard-blur {
-          width: 72vw;
-          opacity: 0.62;
-          right: -18%;
-          transform: translateY(-46%) perspective(900px) rotateY(-6deg);
+        .hero-title {
+          font-size: clamp(1.85rem, 3.2vw, 2.85rem);
         }
 
         .dashboard-mockup {
@@ -1184,13 +1186,22 @@
       }
 
       @media (max-width: 900px) {
-        .hero-inner {
-          width: 100%;
-          padding-right: 0;
+        .hero-layout {
+          grid-template-columns: 1fr;
+          gap: 36px;
+        }
+
+        .hero-visual {
+          max-width: 520px;
+          margin: 0 auto;
+        }
+
+        .hero-dashboard-blur {
+          transform: none;
         }
 
         .hero-title {
-          font-size: clamp(2.1rem, 7.5vw, 3.4rem);
+          font-size: clamp(2rem, 6.5vw, 2.75rem);
         }
 
         .hero-sub--lead {
@@ -1228,10 +1239,8 @@
           grid-template-columns: 1fr;
         }
 
-        .hero-dashboard-blur { display: none; }
-
-        .hero-ambient::after {
-          background: linear-gradient(180deg, rgba(5, 5, 5, 0.55) 0%, rgba(5, 5, 5, 0.92) 100%);
+        .hero-visual {
+          display: none;
         }
 
         .footer-grid { grid-template-columns: 1fr; }
@@ -1329,28 +1338,31 @@
     <main>
       <!-- 1. Hero -->
       <section class="hero" id="top">
-        <div class="hero-ambient" aria-hidden="true">
-          <div class="hero-dashboard-blur">
-            <img src="./assets/pulse-dashboard.png" alt="" width="1024" height="917" decoding="async" />
+        <div class="hero-ambient" aria-hidden="true"></div>
+        <div class="container hero-layout">
+          <div class="hero-copy">
+            <p class="eyebrow">
+              <span class="eyebrow-dot" aria-hidden="true"></span>
+              Pulse by Picante
+            </p>
+            <h1 class="hero-title" id="heroTitle">
+              <span class="line"><span>Tus clientes te están buscando.</span></span>
+              <span class="line"><span class="accent-red">Google los manda con otro.</span></span>
+            </h1>
+            <p class="hero-sub hero-sub--lead reveal">
+              El 90% de las personas buscan en Google antes de elegir un negocio local. El algoritmo de Google Maps decide a
+              quién mostrar primero — y lo decide por rating, reseñas, respuestas y actividad. Si tu competencia hace eso
+              mejor, se queda con tu tráfico.
+            </p>
+            <div class="hero-actions reveal">
+              <a class="btn btn-primary" href="#demo">Quiero ver mi zona</a>
+              <a class="btn btn-ghost" href="#proceso">¿Cómo funciona?</a>
+            </div>
           </div>
-        </div>
-        <div class="container hero-inner">
-          <p class="eyebrow">
-            <span class="eyebrow-dot" aria-hidden="true"></span>
-            Pulse by Picante
-          </p>
-          <h1 class="hero-title" id="heroTitle">
-            <span class="line"><span>Tus clientes te están buscando.</span></span>
-            <span class="line"><span class="accent-red">Google los manda con otro.</span></span>
-          </h1>
-          <p class="hero-sub hero-sub--lead reveal">
-            El 90% de las personas buscan en Google antes de elegir un negocio local. El algoritmo de Google Maps decide a
-            quién mostrar primero — y lo decide por rating, reseñas, respuestas y actividad. Si tu competencia hace eso
-            mejor, se queda con tu tráfico.
-          </p>
-          <div class="hero-actions reveal">
-            <a class="btn btn-primary" href="#demo">Quiero ver mi zona</a>
-            <a class="btn btn-ghost" href="#proceso">¿Cómo funciona?</a>
+          <div class="hero-visual reveal" aria-hidden="true">
+            <div class="hero-dashboard-blur">
+              <img src="./assets/pulse-dashboard.png" alt="" width="1024" height="917" decoding="async" />
+            </div>
           </div>
         </div>
         <div class="pulse-marquee" aria-hidden="true">
