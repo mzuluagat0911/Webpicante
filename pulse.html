@@ -601,10 +601,6 @@
         .hero-title .line > span { transform: none; }
         .dashboard-mockup,
         .dashboard-stage:hover .dashboard-mockup { transform: none; }
-        .hero-video { opacity: 0 !important; visibility: hidden; }
-        .hero-video-overlay {
-          background: linear-gradient(180deg, #0a0a0a 0%, #121212 50%, #0a0a0a 100%) !important;
-        }
       }
 
       /* —— Hero —— */
@@ -620,44 +616,15 @@
         overflow: hidden;
       }
 
-      .hero-video-wrap {
+      .hero-ambient {
         position: absolute;
         inset: 0;
         z-index: 0;
-        overflow: hidden;
-        background: #050505;
-      }
-
-      .hero-video {
-        position: absolute;
-        inset: 0;
-        width: 100%;
-        height: 100%;
-        object-fit: cover;
-        object-position: center;
-        filter: saturate(1.05) contrast(1.04) brightness(0.88);
-        transform: scale(1.03);
-        transition: transform 1.4s var(--ease);
-      }
-
-      .hero.is-ready .hero-video {
-        transform: scale(1);
-      }
-
-      .hero-video-overlay {
-        position: absolute;
-        inset: 0;
+        pointer-events: none;
         background:
-          linear-gradient(105deg, rgba(5, 5, 5, 0.88) 0%, rgba(5, 5, 5, 0.55) 42%, rgba(5, 5, 5, 0.35) 68%, rgba(5, 5, 5, 0.65) 100%),
-          radial-gradient(80% 60% at 20% 30%, rgba(195, 28, 30, 0.12), transparent 55%);
-        pointer-events: none;
-      }
-
-      .hero-video-vignette {
-        position: absolute;
-        inset: 0;
-        pointer-events: none;
-        background: radial-gradient(120% 80% at 50% 50%, rgba(0, 0, 0, 0) 45%, rgba(0, 0, 0, 0.35) 100%);
+          radial-gradient(70% 55% at 85% 35%, rgba(195, 28, 30, 0.18), transparent 60%),
+          radial-gradient(50% 45% at 10% 80%, rgba(90, 10, 13, 0.28), transparent 55%),
+          linear-gradient(180deg, #0a0a0a 0%, #101010 50%, #0a0a0a 100%);
       }
 
       .hero-inner {
@@ -1299,24 +1266,7 @@
     <main>
       <!-- 1. Hero -->
       <section class="hero" id="top">
-        <!-- Video: coloca tu archivo en assets/pulse-hero.mp4 (el primero en la lista). Si aún no existe, se usa hero.mp4. -->
-        <div class="hero-video-wrap" aria-hidden="true">
-          <video
-            class="hero-video"
-            id="pulseHeroVideo"
-            autoplay
-            muted
-            loop
-            playsinline
-            preload="metadata"
-            poster="./assets/hero-poster.jpg"
-          >
-            <source src="./assets/pulse-hero.mp4" type="video/mp4" />
-            <source src="./assets/hero.mp4" type="video/mp4" />
-          </video>
-          <div class="hero-video-overlay"></div>
-          <div class="hero-video-vignette"></div>
-        </div>
+        <div class="hero-ambient" aria-hidden="true"></div>
         <div class="container hero-inner">
             <p class="eyebrow">
               <span class="eyebrow-dot" aria-hidden="true"></span>
@@ -1339,6 +1289,7 @@
         <div class="pulse-marquee" aria-hidden="true">
           <div class="marquee-track">
             <span>Reseñas sin responder</span><span class="dot">●</span>
+            <span>Respuestas con IA</span><span class="dot">●</span>
             <span>Rating cayendo</span><span class="dot">●</span>
             <span>Competidores subiendo</span><span class="dot">●</span>
             <span>Clientes eligiendo a otro</span><span class="dot">●</span>
@@ -1347,6 +1298,7 @@
             <span>Decisiones sin datos</span><span class="dot">●</span>
             <span>Dinero que se va</span><span class="dot">●</span>
             <span>Reseñas sin responder</span><span class="dot">●</span>
+            <span>Respuestas con IA</span><span class="dot">●</span>
             <span>Rating cayendo</span><span class="dot">●</span>
             <span>Competidores subiendo</span><span class="dot">●</span>
             <span>Clientes eligiendo a otro</span><span class="dot">●</span>
@@ -1386,7 +1338,7 @@
               <h3>Reseñas que nadie responde</h3>
               <p>
                 Cada reseña sin responder le dice a Google que tu negocio no está activo. Y le dice al cliente que no te
-                importa. Los dos te penalizan.
+                importa. Los dos te penalizan. Responder bien lleva tiempo — y un tono que no suene genérico.
               </p>
             </article>
             <article class="card-light reveal">
@@ -1419,6 +1371,7 @@
             <ul class="pulse-points">
               <li>Escaneamos todos los competidores en tu radio</li>
               <li>Analizamos reseñas, ratings, tendencias y actividad</li>
+              <li>Un agente con IA responde reseñas con el tono de tu marca</li>
               <li>Te mostramos dónde estás perdiendo y cómo recuperar</li>
             </ul>
           </div>
@@ -1481,10 +1434,11 @@
               </p>
             </article>
             <article class="feature-card reveal" data-num="04">
-              <h3>¿Cómo está tu perfil?</h3>
+              <h3>¿Quién responde tus reseñas?</h3>
               <p>
-                Conecta tu Google Business Profile y ve tu estado real: reseñas pendientes, rating vs zona,
-                oportunidades de mejora.
+                Conecta tu Google Business Profile y gestiona todo desde un solo lugar. Incluye un agente con IA que se
+                adapta al lenguaje y tono de tu marca para responder cada reseña de la forma más humana posible — sin
+                plantillas genéricas ni respuestas que suenen a robot.
               </p>
             </article>
             <article class="feature-card reveal" data-num="05">
@@ -1679,32 +1633,6 @@
         }
         onScroll();
         window.addEventListener("scroll", onScroll, { passive: true });
-
-        const heroEl = document.querySelector(".hero");
-        const pulseHeroVideo = document.getElementById("pulseHeroVideo");
-        if (pulseHeroVideo && heroEl) {
-          if (prefersReduced) {
-            try {
-              pulseHeroVideo.pause();
-              pulseHeroVideo.removeAttribute("autoplay");
-            } catch (_) {}
-          } else {
-            const markReady = () => heroEl.classList.add("is-ready");
-            if (pulseHeroVideo.readyState >= 2) markReady();
-            else {
-              pulseHeroVideo.addEventListener("loadeddata", markReady, { once: true });
-              setTimeout(markReady, 1200);
-            }
-            const tryPlay = () => {
-              const p = pulseHeroVideo.play();
-              if (p && typeof p.catch === "function") p.catch(() => {});
-            };
-            tryPlay();
-            document.addEventListener("visibilitychange", () => {
-              if (!document.hidden) tryPlay();
-            });
-          }
-        }
 
         const heroTitle = document.getElementById("heroTitle");
         if (heroTitle && !prefersReduced) {
