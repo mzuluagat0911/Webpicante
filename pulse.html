@@ -1281,6 +1281,20 @@
         font-size: 0.85rem;
       }
 
+      .footer-legal {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 8px 20px;
+      }
+
+      .footer-legal a {
+        color: var(--ink-soft);
+        text-decoration: none;
+        transition: color 0.2s;
+      }
+
+      .footer-legal a:hover { color: var(--ink); }
+
       /* —— Responsive —— */
       @media (max-width: 1200px) {
         .menu { gap: 16px; }
@@ -2146,7 +2160,10 @@
         </div>
         <div class="footer-bottom">
           <p>© 2026 Picante Studio</p>
-          <p>Diseñado con intención.</p>
+          <nav class="footer-legal" aria-label="Legal">
+            <a href="./pulse-privacidad.html">Políticas de Privacidad</a>
+            <a href="./pulse-terminos.html">Términos y Condiciones</a>
+          </nav>
         </div>
       </div>
     </footer>

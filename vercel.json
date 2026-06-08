@@ -1,5 +1,7 @@
 {
   "rewrites": [
-    { "source": "/pulse", "destination": "/pulse.html" }
+    { "source": "/pulse", "destination": "/pulse.html" },
+    { "source": "/pulse/privacidad", "destination": "/pulse-privacidad.html" },
+    { "source": "/pulse/terminos", "destination": "/pulse-terminos.html" }
   ]
 }
