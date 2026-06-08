@@ -3,5 +3,13 @@
     { "source": "/pulse", "destination": "/pulse.html" },
     { "source": "/pulse/privacidad", "destination": "/pulse-privacidad.html" },
     { "source": "/pulse/terminos", "destination": "/pulse-terminos.html" }
+  ],
+  "redirects": [
+    { "source": "/pulse/pulse.html", "destination": "/pulse", "permanent": true },
+    { "source": "/pulse/pulse-privacidad.html", "destination": "/pulse/privacidad", "permanent": true },
+    { "source": "/pulse/pulse-terminos.html", "destination": "/pulse/terminos", "permanent": true },
+    { "source": "/pulse-privacidad.html", "destination": "/pulse/privacidad", "permanent": true },
+    { "source": "/pulse-terminos.html", "destination": "/pulse/terminos", "permanent": true },
+    { "source": "/pulse.html", "destination": "/pulse", "permanent": true }
   ]
 }
