@@ -3,9 +3,12 @@
     "picante": [
       "qué es GEO",
       "GEO generative engine optimization",
-      "aparecer en ChatGPT"
+      "aparecer en ChatGPT",
+      "medir conversiones desde ChatGPT y atribución de tráfico de IA"
     ],
-    "pulse": []
+    "pulse": [
+      "por qué mi competencia aparece antes en Google Maps"
+    ]
   },
   "published": [
     {
@@ -16,6 +19,30 @@
       "title": "Qué es GEO y cómo aparecer en ChatGPT y la IA de Google | Picante Studio",
       "description": "GEO (Generative Engine Optimization) es optimizar tu contenido para que ChatGPT, Perplexity y las respuestas de IA de Google te citen. Guía práctica para marcas.",
       "path": "/blog/que-es-geo"
+    },
+    {
+      "slug": "medir-conversiones-chatgpt-atribucion-trafico-ia",
+      "destino": "picante",
+      "keyword": "medir conversiones desde ChatGPT y atribución de tráfico de IA",
+      "date": "2026-07-26",
+      "title": "Medir conversiones desde ChatGPT: guía de atribución de tráfico de IA",
+      "description": "Aprende a medir conversiones desde ChatGPT y la atribución de tráfico de IA con un funnel de 3 capas: Presencia, Referencia e Ingreso. Montado en GA4.",
+      "path": "/blog/medir-conversiones-chatgpt-atribucion-trafico-ia",
+      "pathEn": "/en/blog/measure-chatgpt-conversions-ai-attribution",
+      "titleEn": "Measure Conversions from ChatGPT & Attribute AI Traffic",
+      "descriptionEn": "Learn to measure ChatGPT referral traffic and attribute AI conversions with a 3-layer funnel—Presence, Reference, Revenue—built today in GA4."
+    },
+    {
+      "slug": "por-que-mi-competencia-aparece-antes-google-maps",
+      "destino": "pulse",
+      "keyword": "por qué mi competencia aparece antes en Google Maps",
+      "date": "2026-07-26",
+      "title": "Por qué tu competencia te gana en Google Maps (y cómo recuperarlo)",
+      "description": "Tu competencia rankea mejor en Maps por relevancia, distancia y prominencia. Aprende a auditarla en 20 minutos y a cerrar la brecha para recuperar clientes.",
+      "path": "/blog/por-que-mi-competencia-aparece-antes-google-maps",
+      "pathEn": "/en/blog/why-competitor-outranks-you-google-maps",
+      "titleEn": "Why Your Competitor Outranks You on Google Maps (and How to Win Back Those Customers)",
+      "descriptionEn": "Your competitor ranks higher on Google Maps because of relevance, distance and prominence. Learn how to audit them in 20 minutes and close the gap."
     }
   ]
 }

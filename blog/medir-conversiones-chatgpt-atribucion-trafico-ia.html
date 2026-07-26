@@ -1,0 +1,295 @@
+<!doctype html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <!-- Google Tag Manager -->
+    <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+    new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+    j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+    'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+    })(window,document,'script','dataLayer','GTM-M9Z9WLK4');</script>
+    <!-- End Google Tag Manager -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
+    <title>Medir conversiones desde ChatGPT: guía de atribución de tráfico de IA</title>
+    <meta name="description" content="Aprende a medir conversiones desde ChatGPT y la atribución de tráfico de IA con un funnel de 3 capas: Presencia, Referencia e Ingreso. Montado en GA4." />
+    <meta name="keywords" content="medir conversiones desde ChatGPT y atribución de tráfico de IA, cómo medir el tráfico que viene de ChatGPT o Perplexity, atribución de conversiones de IA generativa, medir ROI de GEO, cómo saber si ChatGPT recomienda mi marca, tráfico de referidos de LLM en Google Analytics 4, KPIs de GEO, dark traffic desde asistentes de IA, share of voice en respuestas de IA, CAC y respuestas de IA, how to measure ChatGPT referral traffic, LLM attribution, measure GEO ROI" />
+    <link rel="canonical" href="https://wearepicante.com/blog/medir-conversiones-chatgpt-atribucion-trafico-ia" />
+    <link rel="alternate" hreflang="es" href="https://wearepicante.com/blog/medir-conversiones-chatgpt-atribucion-trafico-ia" />
+    <link rel="alternate" hreflang="en" href="https://wearepicante.com/en/blog/measure-chatgpt-conversions-ai-attribution" />
+    <link rel="alternate" hreflang="x-default" href="https://wearepicante.com/blog/medir-conversiones-chatgpt-atribucion-trafico-ia" />
+    <meta property="og:type" content="article" />
+    <meta property="og:title" content="Medir conversiones desde ChatGPT: guía de atribución de tráfico de IA" />
+    <meta property="og:description" content="Aprende a medir conversiones desde ChatGPT y la atribución de tráfico de IA con un funnel de 3 capas: Presencia, Referencia e Ingreso. Montado en GA4." />
+    <meta property="og:url" content="https://wearepicante.com/blog/medir-conversiones-chatgpt-atribucion-trafico-ia" />
+    <meta property="og:image" content="https://wearepicante.com/assets/picante-red.png" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="Medir conversiones desde ChatGPT: guía de atribución de tráfico de IA" />
+    <meta name="twitter:description" content="Aprende a medir conversiones desde ChatGPT y la atribución de tráfico de IA con un funnel de 3 capas: Presencia, Referencia e Ingreso. Montado en GA4." />
+    <meta name="twitter:image" content="https://wearepicante.com/assets/picante-red.png" />
+    <meta name="theme-color" content="#c31c1e" />
+    <link rel="icon" type="image/png" href="/assets/picante-red.png" />
+    <link rel="apple-touch-icon" href="/assets/picante-red.png" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Instrument+Serif:ital@0;1&display=swap"
+      rel="stylesheet"
+    />
+    <script type="application/ld+json">
+{
+      "@context": "https://schema.org",
+      "@type": "Article",
+      "headline": "De visibilidad a ingresos: cómo medir y atribuir las conversiones que llegan desde ChatGPT, Perplexity y Google AI Overviews",
+      "description": "Aprende a medir conversiones desde ChatGPT y la atribución de tráfico de IA con un funnel de 3 capas: Presencia, Referencia e Ingreso. Montado en GA4.",
+      "inLanguage": "es",
+      "author": {
+            "@type": "Organization",
+            "name": "Picante Studio",
+            "url": "https://wearepicante.com/"
+      },
+      "publisher": {
+            "@type": "Organization",
+            "name": "Picante Studio",
+            "logo": {
+                  "@type": "ImageObject",
+                  "url": "https://wearepicante.com/assets/picante-red.png"
+            }
+      },
+      "datePublished": "2026-07-26",
+      "dateModified": "2026-07-26",
+      "mainEntityOfPage": "https://wearepicante.com/blog/medir-conversiones-chatgpt-atribucion-trafico-ia",
+      "image": "https://wearepicante.com/assets/picante-red.png"
+}
+    </script>
+    <script type="application/ld+json">
+{
+      "@context": "https://schema.org",
+      "@type": "FAQPage",
+      "mainEntity": [
+            {
+                  "@type": "Question",
+                  "name": "¿Se puede medir el tráfico que viene de ChatGPT o es dark traffic?",
+                  "acceptedAnswer": {
+                        "@type": "Answer",
+                        "text": "Sí se puede medir, aunque parte llega como dark traffic. Muchos asistentes no envían un referrer limpio, por lo que ese tráfico aparece como \"directo\" en GA4. Se recupera creando un canal para dominios de IA, usando UTMs en los enlaces que controlas y vigilando picos de tráfico directo hacia landings profundas."
+                  }
+            },
+            {
+                  "@type": "Question",
+                  "name": "¿Cómo identifico referidos de LLM en GA4?",
+                  "acceptedAnswer": {
+                        "@type": "Answer",
+                        "text": "En GA4, crea un segmento o grupo de canal personalizado filtrando por Session source que contenga chat.openai.com, chatgpt.com, perplexity.ai, gemini.google.com y copilot.microsoft.com. Agrúpalos bajo un canal \"AI Assistants\" para que no se diluyan en Referral o Direct y cruza ese canal con tus eventos de conversión."
+                  }
+            },
+            {
+                  "@type": "Question",
+                  "name": "¿Qué KPIs importan en GEO más allá de aparecer?",
+                  "acceptedAnswer": {
+                        "@type": "Answer",
+                        "text": "Además de aparecer, mide con el funnel de 3 capas: en Presencia, share of voice y exactitud de la cita; en Referencia, sesiones y calidad de tráfico por motor de IA; en Ingreso, conversiones atribuidas, valor por sesión y CAC del canal. Aparecer sin tráfico ni conversión no es un resultado de negocio."
+                  }
+            },
+            {
+                  "@type": "Question",
+                  "name": "¿La IA reduce el CAC o solo cambia dónde ocurre la decisión?",
+                  "acceptedAnswer": {
+                        "@type": "Answer",
+                        "text": "Principalmente cambia dónde ocurre la decisión: el usuario compara y filtra dentro del chat, por lo que llega más caliente. Eso puede bajar el CAC efectivo si el tráfico convierte mejor, pero solo lo sabrás si atribuyes conversiones e ingreso al canal de IA y lo comparas con tus otros canales."
+                  }
+            },
+            {
+                  "@type": "Question",
+                  "name": "¿Cómo sé si una IA está recomendando a mi competencia en vez de a mí?",
+                  "acceptedAnswer": {
+                        "@type": "Answer",
+                        "text": "Define un set fijo de prompts de tu categoría y córrelos periódicamente en ChatGPT, Perplexity, Gemini y Copilot, registrando quién aparece, en qué posición y con qué exactitud. Ese share of voice en respuestas de IA te muestra si un competidor te está ganando la cita y en qué temas."
+                  }
+            }
+      ]
+}
+    </script>
+    <script type="application/ld+json">
+{
+      "@context": "https://schema.org",
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+            {
+                  "@type": "ListItem",
+                  "position": 1,
+                  "name": "Inicio",
+                  "item": "https://wearepicante.com/"
+            },
+            {
+                  "@type": "ListItem",
+                  "position": 2,
+                  "name": "Blog",
+                  "item": "https://wearepicante.com/blog"
+            },
+            {
+                  "@type": "ListItem",
+                  "position": 3,
+                  "name": "De visibilidad a ingresos: cómo medir y atribuir las conversiones que llegan desde ChatGPT, Perplexity y Google AI Overviews",
+                  "item": "https://wearepicante.com/blog/medir-conversiones-chatgpt-atribucion-trafico-ia"
+            }
+      ]
+}
+    </script>
+    <style>
+      :root { --red:#c31c1e; --ink:#14110f; --muted:#6a635d; --line:#e7e2db; --bg:#faf8f5; --card:#fff; --measure:720px; }
+      * { box-sizing:border-box; }
+      html { scroll-behavior:smooth; }
+      body { margin:0; font-family:"Inter",system-ui,sans-serif; color:var(--ink); background:var(--bg); line-height:1.7; -webkit-font-smoothing:antialiased; }
+      a { color:inherit; }
+      .wrap { max-width:var(--measure); margin:0 auto; padding:0 24px; }
+      .topbar { position:sticky; top:0; z-index:50; background:rgba(250,248,245,.85); backdrop-filter:saturate(150%) blur(10px); border-bottom:1px solid var(--line); }
+      .topbar-inner { max-width:1120px; margin:0 auto; padding:14px 24px; display:flex; align-items:center; justify-content:space-between; gap:16px; }
+      .brand img { height:26px; width:auto; display:block; }
+      .topnav { display:flex; align-items:center; gap:22px; font-size:14px; font-weight:500; }
+      .topnav a { text-decoration:none; color:var(--muted); transition:color .2s; }
+      .topnav a:hover { color:var(--ink); }
+      .lang { display:inline-flex; border:1px solid var(--line); border-radius:999px; overflow:hidden; }
+      .lang a { padding:4px 10px; font-size:12px; font-weight:600; text-decoration:none; color:var(--muted); }
+      .lang a.active { background:var(--ink); color:#fff; }
+      @media (max-width:640px){ .topnav .hide-sm{ display:none; } }
+      article { padding:56px 0 40px; }
+      .eyebrow { display:inline-flex; align-items:center; gap:8px; font-size:12px; font-weight:700; letter-spacing:.12em; text-transform:uppercase; color:var(--red); }
+      .eyebrow::before { content:""; width:6px; height:6px; border-radius:50%; background:var(--red); }
+      h1 { font-family:"Instrument Serif",Georgia,serif; font-weight:400; font-size:clamp(2.4rem,6vw,3.6rem); line-height:1.05; letter-spacing:-.01em; margin:18px 0 20px; }
+      .lead-answer { font-size:1.22rem; line-height:1.6; color:var(--ink); border-left:3px solid var(--red); padding:4px 0 4px 20px; margin:0 0 12px; font-weight:500; }
+      .byline { color:var(--muted); font-size:14px; margin-bottom:28px; }
+      article h2 { font-family:"Instrument Serif",Georgia,serif; font-weight:400; font-size:clamp(1.7rem,3.6vw,2.1rem); line-height:1.15; margin:44px 0 12px; letter-spacing:-.01em; }
+      article h3 { font-size:1.08rem; font-weight:700; margin:26px 0 6px; }
+      article p { margin:0 0 18px; }
+      article ul, article ol { margin:0 0 18px; padding-left:22px; }
+      article li { margin:8px 0; }
+      article strong { font-weight:700; }
+      .callout { background:var(--card); border:1px solid var(--line); border-radius:14px; padding:22px 24px; margin:28px 0; }
+      .callout p:last-child { margin-bottom:0; }
+      .faq details { border-bottom:1px solid var(--line); padding:6px 0; }
+      .faq summary { cursor:pointer; font-weight:600; padding:14px 0; list-style:none; display:flex; justify-content:space-between; align-items:center; gap:16px; }
+      .faq summary::-webkit-details-marker { display:none; }
+      .faq summary::after { content:"+"; color:var(--red); font-size:1.4rem; line-height:1; }
+      .faq details[open] summary::after { content:"–"; }
+      .faq details p { margin:0 0 16px; color:var(--muted); }
+      .cta { margin:48px 0 8px; background:var(--ink); color:#fff; border-radius:18px; padding:34px 30px; text-align:center; }
+      .cta h2 { font-family:"Instrument Serif",Georgia,serif; color:#fff; margin:0 0 10px; }
+      .cta p { color:rgba(255,255,255,.75); margin:0 auto 22px; max-width:46ch; }
+      .btn { display:inline-block; background:var(--red); color:#fff; text-decoration:none; font-weight:600; padding:14px 26px; border-radius:999px; transition:transform .15s,opacity .2s; }
+      .btn:hover { transform:translateY(-1px); opacity:.95; }
+      footer { border-top:1px solid var(--line); margin-top:40px; padding:30px 0 50px; }
+      .foot { max-width:1120px; margin:0 auto; padding:0 24px; display:flex; flex-wrap:wrap; gap:12px; justify-content:space-between; align-items:center; color:var(--muted); font-size:14px; }
+      .foot a { color:var(--muted); text-decoration:none; }
+      .foot a:hover { color:var(--ink); }
+    </style>
+  </head>
+  <body>
+    <!-- Google Tag Manager (noscript) -->
+    <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-M9Z9WLK4"
+    height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+    <!-- End Google Tag Manager (noscript) -->
+    <header class="topbar">
+      <div class="topbar-inner">
+        <a class="brand" href="/" aria-label="Picante Studio">
+          <img src="/assets/picante-black.png" alt="Picante" width="1639" height="507" />
+        </a>
+        <nav class="topnav" aria-label="Principal">
+          <a class="hide-sm" href="/#servicios">Servicios</a>
+          <a href="/blog">Blog</a>
+          <a class="hide-sm" href="/#agenda-calendario">Agendar</a>
+          <span class="lang" role="group" aria-label="Idioma">
+            <a class="active" href="/blog/medir-conversiones-chatgpt-atribucion-trafico-ia" hreflang="es">ES</a>
+            <a class="" href="/en/blog/measure-chatgpt-conversions-ai-attribution" hreflang="en">EN</a>
+          </span>
+        </nav>
+      </div>
+    </header>
+    <main>
+      <div class="wrap">
+        <article>
+          <p class="eyebrow">SEO &amp; GEO</p>
+          <h1>De visibilidad a ingresos: cómo medir y atribuir las conversiones que llegan desde ChatGPT, Perplexity y Google AI Overviews</h1>
+          <p class="lead-answer"><p>Sí se puede medir el tráfico y las conversiones que llegan desde ChatGPT, Perplexity y Google AI Overviews, aunque parte llegue como <em>dark traffic</em>. La forma práctica es un <strong>funnel de 3 capas: Presencia → Referencia → Ingreso</strong>. Presencia mide si te citan (share of voice en respuestas de IA); Referencia mide el tráfico de referidos de LLM en GA4 filtrando dominios como chat.openai.com, perplexity.ai, gemini.google.com y copilot.microsoft.com; Ingreso mide conversiones, ROAS y CAC atribuidos a ese canal. Sin las tres capas solo tienes visibilidad, no economía.</p></p>
+          <p class="byline">Por Picante Studio · 2026-07-26 · 4 min de lectura</p>
+<p>La mayoría de contenido sobre GEO (Generative Engine Optimization) se queda en "cómo salir citado". Eso es apenas el primer paso. Si una marca ya vende y quiere escalar, la pregunta real no es si ChatGPT la menciona, sino <strong>cuánto ingreso genera esa mención y a qué costo</strong>. Aquí entra la medición: convertir visibilidad en un canal con números, no en una anécdota. Este es el marco que usamos para medir conversiones desde ChatGPT y hacer atribución de tráfico de IA de forma honesta.</p>
+<h2>Qué es la atribución de tráfico de IA y por qué es distinta</h2>
+<p>La <strong>atribución de tráfico de IA</strong> es el proceso de identificar qué visitas, leads e ingresos provienen de asistentes generativos (ChatGPT, Perplexity, Gemini, Copilot) y de resúmenes como Google AI Overviews. Es distinta de la búsqueda tradicional por tres razones:</p>
+<ul>
+<li><strong>La decisión ocurre antes del clic.</strong> El usuario compara opciones dentro del chat y llega ya con criterio formado.</li>
+<li><strong>Gran parte es dark traffic.</strong> Muchos asistentes no pasan un <em>referrer</em> limpio, así que el tráfico aparece como "directo" si no lo instrumentas.</li>
+<li><strong>El volumen es menor pero la intención es más alta.</strong> Menos sesiones, pero suelen convertir mejor porque llegan filtradas por la IA.</li>
+</ul>
+<p>Por eso medir solo "apariciones" no basta. Necesitas conectar la cita con el ingreso.</p>
+<h2>El funnel de 3 capas: Presencia → Referencia → Ingreso</h2>
+<p>Este es el marco que usamos en Picante para pasar de visibilidad a economía. Cada capa tiene su propia pregunta y sus propios KPIs de GEO.</p>
+<h3>Capa 1 — Presencia: ¿te citan?</h3>
+<p><strong>Pregunta:</strong> ¿La IA menciona tu marca cuando alguien pregunta por tu categoría? <strong>Qué medir:</strong></p>
+<ul>
+<li><strong>Share of voice en respuestas de IA:</strong> en un set fijo de prompts de tu categoría, ¿en qué porcentaje apareces tú vs. la competencia?</li>
+<li><strong>Frecuencia y posición de cita:</strong> si te nombran primero, en lista o de pasada.</li>
+<li><strong>Exactitud:</strong> si la IA describe bien tu propuesta o repite datos viejos.</li>
+</ul>
+<p>Se mide corriendo prompts recurrentes (semanal o mensual) en cada motor y registrando resultados en una hoja o herramienta de monitoreo GEO.</p>
+<h3>Capa 2 — Referencia: ¿te generan tráfico?</h3>
+<p><strong>Pregunta:</strong> ¿esas citas mandan gente a tu sitio? <strong>Qué medir:</strong> sesiones, usuarios nuevos y calidad de sesión por fuente de IA. Aquí es donde GA4 hace el trabajo, filtrando el <strong>tráfico de referidos de LLM</strong>.</p>
+<h3>Capa 3 — Ingreso: ¿te generan dinero?</h3>
+<p><strong>Pregunta:</strong> ¿ese tráfico convierte y a qué costo? <strong>Qué medir:</strong> conversiones atribuidas, tasa de conversión, valor por sesión, y el <strong>CAC</strong> del canal (si hay pauta o costo de contenido asociado). Aquí decides si el canal escala o no.</p>
+<h2>Cómo montarlo hoy con GA4 (accionable)</h2>
+<p>No necesitas herramientas exóticas para empezar. Con GA4 y disciplina de medición cubres las capas 2 y 3:</p>
+<ol>
+<li><strong>Crea un segmento de referidos de IA.</strong> En Exploraciones, filtra <em>Session source</em> que contenga: <strong>chat.openai.com</strong>, <strong>chatgpt.com</strong>, <strong>perplexity.ai</strong>, <strong>gemini.google.com</strong>, <strong>copilot.microsoft.com</strong> y <strong>bing.com</strong> (para Copilot).</li>
+<li><strong>Configura una lista de canal personalizada.</strong> Agrupa esos dominios bajo un canal "AI Assistants" para que no se pierdan en "Referral" o "Direct".</li>
+<li><strong>Recupera el dark traffic con UTMs.</strong> En los enlaces que tú controlas (los que la IA cita porque están en tu contenido) usa parámetros claros. Vigila también picos de "Direct / None" con landing pages profundas: suelen ser IA sin referrer.</li>
+<li><strong>Marca eventos de conversión por capa.</strong> Lead, demo agendada, compra. Cruza con el canal AI Assistants para ver conversiones e ingreso atribuido.</li>
+<li><strong>Construye un dashboard de visibilidad en motores generativos.</strong> Una vista con las tres capas: share of voice (capa 1, entrada manual o de tu monitor), sesiones por motor de IA (capa 2, GA4) y conversiones/CAC (capa 3, GA4 + costos).</li>
+</ol>
+<h2>Errores comunes al medir GEO</h2>
+<ul>
+<li><strong>Quedarse en la capa 1.</strong> Celebrar que te citan sin comprobar si eso mueve tráfico o ingreso.</li>
+<li><strong>Ignorar el dark traffic.</strong> Asumir que ChatGPT no manda visitas porque aparecen como "directo".</li>
+<li><strong>Comparar volumen contra SEO.</strong> El tráfico de IA es menor pero más caliente; júzgalo por conversión y valor, no por sesiones.</li>
+<li><strong>No fijar prompts.</strong> Sin un set constante de prompts no puedes medir evolución de share of voice ni si la IA recomienda a tu competencia.</li>
+<li><strong>Medir sin decidir.</strong> Los datos existen para escalar lo que funciona y descartar lo que no, no para llenar un reporte.</li>
+</ul>
+<h2>Cómo decidir con esos datos</h2>
+<p>Con las tres capas puedes responder preguntas de negocio, no de vanidad: ¿vale la pena producir más contenido para la categoría donde ya lideras el share of voice? ¿El CAC del canal de IA es mejor que el de tu pauta actual? ¿Estás perdiendo referencia frente a un competidor que la IA nombra primero? La regla de Picante: <strong>escalar lo que convierte, corregir lo que aparece pero no convierte, y descartar lo que ni aparece.</strong></p>
+<div class="callout"><p>En <strong>Picante Studio</strong> tratamos GEO como un canal con P&L, no como una moda. Montamos el funnel Presencia → Referencia → Ingreso conectado a tu GA4, definimos tus KPIs de GEO y tu dashboard de visibilidad, y usamos la evidencia para decidir dónde invertir. Primero el sistema, después la pieza. ¿Quieres saber cuánto ingreso te está dejando la IA sobre la mesa? Agenda un diagnóstico de 30 minutos.</p></div>
+          <h2 id="faq">Preguntas frecuentes</h2>
+          <div class="faq">
+            <details>
+              <summary>¿Se puede medir el tráfico que viene de ChatGPT o es dark traffic?</summary>
+              <p>Sí se puede medir, aunque parte llega como dark traffic. Muchos asistentes no envían un referrer limpio, por lo que ese tráfico aparece como &quot;directo&quot; en GA4. Se recupera creando un canal para dominios de IA, usando UTMs en los enlaces que controlas y vigilando picos de tráfico directo hacia landings profundas.</p>
+            </details>
+            <details>
+              <summary>¿Cómo identifico referidos de LLM en GA4?</summary>
+              <p>En GA4, crea un segmento o grupo de canal personalizado filtrando por Session source que contenga chat.openai.com, chatgpt.com, perplexity.ai, gemini.google.com y copilot.microsoft.com. Agrúpalos bajo un canal &quot;AI Assistants&quot; para que no se diluyan en Referral o Direct y cruza ese canal con tus eventos de conversión.</p>
+            </details>
+            <details>
+              <summary>¿Qué KPIs importan en GEO más allá de aparecer?</summary>
+              <p>Además de aparecer, mide con el funnel de 3 capas: en Presencia, share of voice y exactitud de la cita; en Referencia, sesiones y calidad de tráfico por motor de IA; en Ingreso, conversiones atribuidas, valor por sesión y CAC del canal. Aparecer sin tráfico ni conversión no es un resultado de negocio.</p>
+            </details>
+            <details>
+              <summary>¿La IA reduce el CAC o solo cambia dónde ocurre la decisión?</summary>
+              <p>Principalmente cambia dónde ocurre la decisión: el usuario compara y filtra dentro del chat, por lo que llega más caliente. Eso puede bajar el CAC efectivo si el tráfico convierte mejor, pero solo lo sabrás si atribuyes conversiones e ingreso al canal de IA y lo comparas con tus otros canales.</p>
+            </details>
+            <details>
+              <summary>¿Cómo sé si una IA está recomendando a mi competencia en vez de a mí?</summary>
+              <p>Define un set fijo de prompts de tu categoría y córrelos periódicamente en ChatGPT, Perplexity, Gemini y Copilot, registrando quién aparece, en qué posición y con qué exactitud. Ese share of voice en respuestas de IA te muestra si un competidor te está ganando la cita y en qué temas.</p>
+            </details>
+          </div>
+          <div class="cta">
+            <h2>¿Quieres que la IA cite a tu marca?</h2>
+            <p>Conversemos 30 minutos. Sales con un diagnóstico claro de SEO + GEO y los próximos pasos por impacto.</p>
+            <a class="btn" href="/#agenda-calendario">Agendar diagnóstico</a>
+          </div>
+        </article>
+      </div>
+    </main>
+    <footer>
+      <div class="foot">
+        <p>© 2026 Picante Studio</p>
+        <p><a href="/">Inicio</a> · <a href="/blog">Blog</a> · <a href="/#agenda-calendario">Agendar</a></p>
+      </div>
+    </footer>
+  </body>
+</html>
