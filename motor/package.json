@@ -1,0 +1,22 @@
+{
+  "name": "picante-motor-blog",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "description": "Sistema de agentes que idea, redacta y publica blogs SEO/GEO en la web de Picante (estática, Vercel).",
+  "scripts": {
+    "ideas": "tsx src/index.ts ideas",
+    "generate": "tsx src/index.ts run",
+    "run": "tsx src/index.ts run",
+    "typecheck": "tsc --noEmit"
+  },
+  "dependencies": {
+    "@anthropic-ai/sdk": "^0.68.0",
+    "dotenv": "^16.4.5"
+  },
+  "devDependencies": {
+    "@types/node": "^22.7.0",
+    "tsx": "^4.19.0",
+    "typescript": "^5.6.0"
+  }
+}

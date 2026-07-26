@@ -1,0 +1,58 @@
+name: Motor de blog (SEO/GEO)
+
+# Corre cada lunes 13:00 UTC (8am Colombia). Ajusta a tu gusto.
+# También se lanza a mano desde la pestaña Actions → "Run workflow".
+on:
+  schedule:
+    - cron: "0 13 * * 1"
+  workflow_dispatch:
+    inputs:
+      command:
+        description: "Qué ejecutar"
+        required: true
+        default: "run"
+        type: choice
+        options: [ideas, run]
+
+permissions:
+  contents: write
+  pull-requests: write
+
+jobs:
+  motor:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: "22"
+
+      - name: Instalar dependencias del motor
+        working-directory: motor
+        run: npm install
+
+      - name: Ejecutar agentes (idean + redactan + generan HTML)
+        working-directory: motor
+        env:
+          ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
+          SITE_URL: "https://wearepicante.com"
+          MAX_POSTS_PER_RUN: "1"
+        run: npm run ${{ github.event.inputs.command || 'run' }}
+
+      # Abre un Pull Request con los blogs nuevos + el estado actualizado.
+      # Para publicar 100% automático (sin merge manual): cambia esto por un
+      # commit directo a main, o activa auto-merge en el PR.
+      - name: Abrir Pull Request con los blogs nuevos
+        uses: peter-evans/create-pull-request@v6
+        with:
+          commit-message: "blog: nuevos posts generados por el motor"
+          branch: motor/blog-updates
+          delete-branch: true
+          title: "🌶️ Nuevos blogs generados por el motor"
+          body: |
+            Blogs generados automáticamente por el motor (SEO/GEO).
+
+            - Revisa el contenido de las páginas nuevas en `/blog/`.
+            - Si todo está bien, haz **merge** → Vercel despliega.
+          labels: blog, automated
