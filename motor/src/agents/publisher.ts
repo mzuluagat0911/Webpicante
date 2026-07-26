@@ -108,18 +108,13 @@ function patchTeaser(filePath: string, destino: Destino, cardsHtml: string): voi
 export function rebuildIndex(posts: PublishedPost[]): void {
   mkdirSync(join(REPO_ROOT, "blog"), { recursive: true });
   mkdirSync(join(REPO_ROOT, "en", "blog"), { recursive: true });
-  mkdirSync(join(REPO_ROOT, "blog", "pulse"), { recursive: true });
-  mkdirSync(join(REPO_ROOT, "en", "blog", "pulse"), { recursive: true });
 
   writeFileSync(join(REPO_ROOT, "blog", "index.html"), renderBlogIndex(posts, env.SITE_URL, "picante", "es"), "utf8");
   writeFileSync(join(REPO_ROOT, "en", "blog", "index.html"), renderBlogIndex(posts, env.SITE_URL, "picante", "en"), "utf8");
-  // Físicamente en /blog/pulse (no /pulse/blog): una carpeta /pulse/ tapa pulse.html en static hosts.
-  writeFileSync(join(REPO_ROOT, "blog", "pulse", "index.html"), renderBlogIndex(posts, env.SITE_URL, "pulse", "es"), "utf8");
-  writeFileSync(
-    join(REPO_ROOT, "en", "blog", "pulse", "index.html"),
-    renderBlogIndex(posts, env.SITE_URL, "pulse", "en"),
-    "utf8",
-  );
+  // Archivo plano blog/pulse.html (no carpeta): en Vercel /blog/:slug → .html
+  // y además no crea /pulse/ que tapa la landing.
+  writeFileSync(join(REPO_ROOT, "blog", "pulse.html"), renderBlogIndex(posts, env.SITE_URL, "pulse", "es"), "utf8");
+  writeFileSync(join(REPO_ROOT, "en", "blog", "pulse.html"), renderBlogIndex(posts, env.SITE_URL, "pulse", "en"), "utf8");
   writeFileSync(join(REPO_ROOT, "sitemap.xml"), renderSitemap(posts, env.SITE_URL), "utf8");
 
   patchTeaser(join(REPO_ROOT, "index.html"), "picante", renderBlogTeaserCards(posts, "picante", "es", 3));
