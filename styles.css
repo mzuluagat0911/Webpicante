@@ -1437,6 +1437,85 @@ body.nav-open {
   transform: translateY(0);
 }
 
+.blog-teaser-section {
+  background: var(--bg, #faf8f5);
+}
+
+.blog-teaser-section .lead {
+  max-width: 48ch;
+  margin-top: 12px;
+  color: var(--muted, #6a635d);
+}
+
+.blog-teaser-grid {
+  display: grid;
+  gap: 16px;
+  margin-top: 36px;
+}
+
+@media (min-width: 820px) {
+  .blog-teaser-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+.blog-teaser-card {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  padding: 26px 24px;
+  border-radius: 18px;
+  border: 1px solid var(--line, #e7e2db);
+  background: #fff;
+  text-decoration: none;
+  color: inherit;
+  transition: border-color 0.25s ease, transform 0.2s ease;
+}
+
+.blog-teaser-card:hover {
+  border-color: rgba(195, 28, 30, 0.45);
+  transform: translateY(-2px);
+}
+
+.blog-teaser-card time {
+  font-size: 0.82rem;
+  font-weight: 500;
+  color: var(--muted, #6a635d);
+}
+
+.blog-teaser-card h3 {
+  margin: 0;
+  font-family: "Instrument Serif", Georgia, serif;
+  font-weight: 400;
+  font-size: clamp(1.35rem, 2.4vw, 1.65rem);
+  line-height: 1.15;
+  letter-spacing: -0.01em;
+}
+
+.blog-teaser-card p {
+  margin: 0;
+  flex: 1;
+  font-size: 0.95rem;
+  line-height: 1.55;
+  color: var(--muted, #6a635d);
+}
+
+.blog-teaser-more {
+  margin-top: 4px;
+  font-size: 0.92rem;
+  font-weight: 600;
+  color: var(--red, #c31c1e);
+}
+
+.blog-teaser-empty {
+  color: var(--muted, #6a635d);
+  grid-column: 1 / -1;
+}
+
+.blog-teaser-foot {
+  margin-top: 28px;
+}
+
 .faq-section {
   padding-top: 40px;
   background: #fff;

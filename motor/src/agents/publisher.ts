@@ -1,17 +1,17 @@
-import { writeFileSync, mkdirSync } from "node:fs";
+import { writeFileSync, mkdirSync, readFileSync, existsSync } from "node:fs";
 import { fileURLToPath } from "node:url";
 import { dirname, join } from "node:path";
 import { log } from "../lib/logger.js";
 import { env } from "../config/env.js";
 import { renderArticle, type ArticleDraft } from "../render/template.js";
-import { renderBlogIndex } from "../render/blogIndex.js";
+import { renderBlogIndex, renderBlogTeaserCards } from "../render/blogIndex.js";
 import { renderSitemap } from "../render/sitemap.js";
 import type { Destino, Idea, Language, WriterOutput } from "../types.js";
 import type { PublishedPost } from "../lib/state.js";
 import { writeDraft } from "./writer.js";
 
 const here = dirname(fileURLToPath(import.meta.url));
-const REPO_ROOT = join(here, "..", "..", ".."); // .../Webpicante
+const REPO_ROOT = join(here, "..", "..", "..");
 
 function words(html: string): number {
   return html.replace(/<[^>]+>/g, " ").split(/\s+/).filter(Boolean).length;
@@ -41,7 +41,7 @@ function toArticle(destino: Destino, lang: Language, w: WriterOutput, date: stri
     headline: w.headline,
     metaDescription: w.meta_description,
     keywords: w.keywords,
-    eyebrow: "SEO & GEO",
+    eyebrow: destino === "pulse" ? "Pulse · Local SEO" : "SEO & GEO",
     answerHtml: w.answer_html,
     byline: byline(destino, lang, readingTime(w), date),
     bodyHtml: w.body_html,
@@ -50,10 +50,6 @@ function toArticle(destino: Destino, lang: Language, w: WriterOutput, date: stri
   };
 }
 
-/**
- * PUBLICADOR: para una idea genera ES + EN, renderiza el HTML con el molde y
- * lo escribe en /blog y /en/blog. Devuelve el registro para el estado.
- */
 export async function publishIdea(destino: Destino, idea: Idea): Promise<PublishedPost> {
   const date = new Date().toISOString().slice(0, 10);
 
@@ -89,12 +85,45 @@ export async function publishIdea(destino: Destino, idea: Idea): Promise<Publish
   };
 }
 
-/** Regenera índices ES/EN + sitemap a partir de los posts publicados. */
+function patchTeaser(filePath: string, destino: Destino, cardsHtml: string): void {
+  if (!existsSync(filePath)) {
+    log.warn(`No existe ${filePath}; teaser ${destino} omitido.`);
+    return;
+  }
+  const start = `<!-- BLOG_TEASER:${destino} -->`;
+  const end = `<!-- /BLOG_TEASER:${destino} -->`;
+  const raw = readFileSync(filePath, "utf8");
+  const i = raw.indexOf(start);
+  const j = raw.indexOf(end);
+  if (i === -1 || j === -1 || j < i) {
+    log.warn(`Marcadores ${destino} no encontrados en ${filePath}`);
+    return;
+  }
+  const next = raw.slice(0, i + start.length) + "\n" + cardsHtml + "\n          " + raw.slice(j);
+  writeFileSync(filePath, next, "utf8");
+  log.ok(`Teaser ${destino} actualizado en ${filePath}`);
+}
+
+/** Regenera índices ES/EN por carril, sitemap y teasers en landings. */
 export function rebuildIndex(posts: PublishedPost[]): void {
   mkdirSync(join(REPO_ROOT, "blog"), { recursive: true });
   mkdirSync(join(REPO_ROOT, "en", "blog"), { recursive: true });
-  writeFileSync(join(REPO_ROOT, "blog", "index.html"), renderBlogIndex(posts, env.SITE_URL, "es"), "utf8");
-  writeFileSync(join(REPO_ROOT, "en", "blog", "index.html"), renderBlogIndex(posts, env.SITE_URL, "en"), "utf8");
+  mkdirSync(join(REPO_ROOT, "blog", "pulse"), { recursive: true });
+  mkdirSync(join(REPO_ROOT, "en", "blog", "pulse"), { recursive: true });
+
+  writeFileSync(join(REPO_ROOT, "blog", "index.html"), renderBlogIndex(posts, env.SITE_URL, "picante", "es"), "utf8");
+  writeFileSync(join(REPO_ROOT, "en", "blog", "index.html"), renderBlogIndex(posts, env.SITE_URL, "picante", "en"), "utf8");
+  // Físicamente en /blog/pulse (no /pulse/blog): una carpeta /pulse/ tapa pulse.html en static hosts.
+  writeFileSync(join(REPO_ROOT, "blog", "pulse", "index.html"), renderBlogIndex(posts, env.SITE_URL, "pulse", "es"), "utf8");
+  writeFileSync(
+    join(REPO_ROOT, "en", "blog", "pulse", "index.html"),
+    renderBlogIndex(posts, env.SITE_URL, "pulse", "en"),
+    "utf8",
+  );
   writeFileSync(join(REPO_ROOT, "sitemap.xml"), renderSitemap(posts, env.SITE_URL), "utf8");
-  log.ok("Índices /blog + /en/blog + sitemap.xml regenerados.");
+
+  patchTeaser(join(REPO_ROOT, "index.html"), "picante", renderBlogTeaserCards(posts, "picante", "es", 3));
+  patchTeaser(join(REPO_ROOT, "pulse.html"), "pulse", renderBlogTeaserCards(posts, "pulse", "es", 3));
+
+  log.ok("Índices Picante/Pulse + teasers + sitemap regenerados.");
 }

@@ -36,25 +36,65 @@ export interface RenderContext {
 }
 
 const T = {
-  es: {
-    nav: { services: "Servicios", blog: "Blog", schedule: "Agendar" },
-    ctaTitle: "¿Quieres que la IA cite a tu marca?",
-    ctaText:
-      "Conversemos 30 minutos. Sales con un diagnóstico claro de SEO + GEO y los próximos pasos por impacto.",
-    ctaLabel: "Agendar diagnóstico",
-    ctaHref: "/#agenda-calendario",
-    faqTitle: "Preguntas frecuentes",
-    footerLinks: '<a href="/">Inicio</a> · <a href="/blog">Blog</a> · <a href="/#agenda-calendario">Agendar</a>',
+  picante: {
+    es: {
+      nav: { home: "Inicio", blog: "Blog", schedule: "Agendar" },
+      blogHref: "/blog",
+      homeHref: "/",
+      ctaTitle: "¿Quieres que la IA cite a tu marca?",
+      ctaText:
+        "Conversemos 30 minutos. Sales con un diagnóstico claro de SEO + GEO y los próximos pasos por impacto.",
+      ctaLabel: "Agendar diagnóstico",
+      ctaHref: "/#agenda-calendario",
+      faqTitle: "Preguntas frecuentes",
+      footerLinks: '<a href="/">Inicio</a> · <a href="/blog">Blog</a> · <a href="/#agenda-calendario">Agendar</a>',
+      breadcrumbBlog: "Blog",
+      breadcrumbBlogUrl: "/blog",
+    },
+    en: {
+      nav: { home: "Home", blog: "Blog", schedule: "Book a call" },
+      blogHref: "/en/blog",
+      homeHref: "/",
+      ctaTitle: "Want AI to cite your brand?",
+      ctaText:
+        "Let's talk for 30 minutes. You'll leave with a clear SEO + GEO diagnosis and prioritized next steps.",
+      ctaLabel: "Book a diagnosis",
+      ctaHref: "/#agenda-calendario",
+      faqTitle: "Frequently asked questions",
+      footerLinks: '<a href="/">Home</a> · <a href="/en/blog">Blog</a> · <a href="/#agenda-calendario">Book a call</a>',
+      breadcrumbBlog: "Blog",
+      breadcrumbBlogUrl: "/en/blog",
+    },
   },
-  en: {
-    nav: { services: "Services", blog: "Blog", schedule: "Book a call" },
-    ctaTitle: "Want AI to cite your brand?",
-    ctaText:
-      "Let's talk for 30 minutes. You'll leave with a clear SEO + GEO diagnosis and prioritized next steps.",
-    ctaLabel: "Book a diagnosis",
-    ctaHref: "/#agenda-calendario",
-    faqTitle: "Frequently asked questions",
-    footerLinks: '<a href="/">Home</a> · <a href="/blog">Blog</a> · <a href="/#agenda-calendario">Book a call</a>',
+  pulse: {
+    es: {
+      nav: { home: "Pulse", blog: "Blog", schedule: "Agendar demo" },
+      blogHref: "/pulse/blog",
+      homeHref: "/pulse",
+      ctaTitle: "¿Quieres ver quién te está ganando en Maps?",
+      ctaText:
+        "Agenda 15 minutos. Revisamos tu zona con datos reales: competencia, rating y qué mover primero.",
+      ctaLabel: "Agendar demo gratuita",
+      ctaHref: "/pulse#agendar",
+      faqTitle: "Preguntas frecuentes",
+      footerLinks: '<a href="/pulse">Pulse</a> · <a href="/pulse/blog">Blog</a> · <a href="/pulse#agendar">Demo</a>',
+      breadcrumbBlog: "Blog Pulse",
+      breadcrumbBlogUrl: "/pulse/blog",
+    },
+    en: {
+      nav: { home: "Pulse", blog: "Blog", schedule: "Book a demo" },
+      blogHref: "/en/pulse/blog",
+      homeHref: "/pulse",
+      ctaTitle: "Want to see who's beating you on Maps?",
+      ctaText:
+        "Book 15 minutes. We'll review your area with real data: competitors, ratings, and what to fix first.",
+      ctaLabel: "Book a free demo",
+      ctaHref: "/pulse#agendar",
+      faqTitle: "Frequently asked questions",
+      footerLinks: '<a href="/pulse">Pulse</a> · <a href="/en/pulse/blog">Blog</a> · <a href="/pulse#agendar">Demo</a>',
+      breadcrumbBlog: "Pulse Blog",
+      breadcrumbBlogUrl: "/en/pulse/blog",
+    },
   },
 } as const;
 
@@ -78,13 +118,15 @@ function faqAccordion(faq: FaqItem[]): string {
 }
 
 function jsonLd(draft: ArticleDraft, ctx: RenderContext, canonical: string, ogImage: string): string {
+  const t = T[draft.destino][draft.lang];
+  const authorName = draft.destino === "pulse" ? "Pulse by Picante" : "Picante Studio";
   const article = {
     "@context": "https://schema.org",
     "@type": "Article",
     headline: draft.headline,
     description: draft.metaDescription,
     inLanguage: draft.lang,
-    author: { "@type": "Organization", name: "Picante Studio", url: `${ctx.siteUrl}/` },
+    author: { "@type": "Organization", name: authorName, url: `${ctx.siteUrl}${t.homeHref}` },
     publisher: {
       "@type": "Organization",
       name: "Picante Studio",
@@ -108,8 +150,13 @@ function jsonLd(draft: ArticleDraft, ctx: RenderContext, canonical: string, ogIm
     "@context": "https://schema.org",
     "@type": "BreadcrumbList",
     itemListElement: [
-      { "@type": "ListItem", position: 1, name: draft.lang === "es" ? "Inicio" : "Home", item: `${ctx.siteUrl}/` },
-      { "@type": "ListItem", position: 2, name: "Blog", item: `${ctx.siteUrl}/blog` },
+      {
+        "@type": "ListItem",
+        position: 1,
+        name: draft.lang === "es" ? (draft.destino === "pulse" ? "Pulse" : "Inicio") : draft.destino === "pulse" ? "Pulse" : "Home",
+        item: `${ctx.siteUrl}${t.homeHref === "/" ? "/" : t.homeHref}`,
+      },
+      { "@type": "ListItem", position: 2, name: t.breadcrumbBlog, item: `${ctx.siteUrl}${t.breadcrumbBlogUrl}` },
       { "@type": "ListItem", position: 3, name: draft.headline, item: canonical },
     ],
   };
@@ -119,11 +166,12 @@ function jsonLd(draft: ArticleDraft, ctx: RenderContext, canonical: string, ogIm
 }
 
 export function renderArticle(draft: ArticleDraft, ctx: RenderContext): string {
-  const t = T[draft.lang];
+  const t = T[draft.destino][draft.lang];
   const ogImage = ctx.ogImage ?? `${ctx.siteUrl}/assets/picante-red.png`;
   const esUrl = `${ctx.siteUrl}${ctx.esPath}`;
   const enUrl = `${ctx.siteUrl}${ctx.enPath}`;
   const canonical = draft.lang === "es" ? esUrl : enUrl;
+  const themeClass = draft.destino === "pulse" ? "theme-pulse" : "theme-picante";
 
   return `<!doctype html>
 <html lang="${draft.lang}">
@@ -164,21 +212,26 @@ export function renderArticle(draft: ArticleDraft, ctx: RenderContext): string {
     />
 ${jsonLd(draft, ctx, canonical, ogImage)}
     <style>
-      :root { --red:#c31c1e; --ink:#14110f; --muted:#6a635d; --line:#e7e2db; --bg:#faf8f5; --card:#fff; --measure:720px; }
+      :root { --red:#c31c1e; --ink:#14110f; --muted:#6a635d; --line:#e7e2db; --bg:#faf8f5; --card:#fff; --measure:720px; --topbar:rgba(250,248,245,.85); --cta-bg:#14110f; }
+      .theme-pulse {
+        --ink:#f4f1ec; --muted:rgba(244,241,236,.68); --line:rgba(255,255,255,.12);
+        --bg:#0c0b0a; --card:#161412; --topbar:rgba(12,11,10,.9); --cta-bg:#1a1714;
+      }
       * { box-sizing:border-box; }
       html { scroll-behavior:smooth; }
       body { margin:0; font-family:"Inter",system-ui,sans-serif; color:var(--ink); background:var(--bg); line-height:1.7; -webkit-font-smoothing:antialiased; }
       a { color:inherit; }
       .wrap { max-width:var(--measure); margin:0 auto; padding:0 24px; }
-      .topbar { position:sticky; top:0; z-index:50; background:rgba(250,248,245,.85); backdrop-filter:saturate(150%) blur(10px); border-bottom:1px solid var(--line); }
+      .topbar { position:sticky; top:0; z-index:50; background:var(--topbar); backdrop-filter:saturate(150%) blur(10px); border-bottom:1px solid var(--line); }
       .topbar-inner { max-width:1120px; margin:0 auto; padding:14px 24px; display:flex; align-items:center; justify-content:space-between; gap:16px; }
       .brand img { height:26px; width:auto; display:block; }
+      .theme-pulse .brand img { filter: invert(1); }
       .topnav { display:flex; align-items:center; gap:22px; font-size:14px; font-weight:500; }
       .topnav a { text-decoration:none; color:var(--muted); transition:color .2s; }
       .topnav a:hover { color:var(--ink); }
       .lang { display:inline-flex; border:1px solid var(--line); border-radius:999px; overflow:hidden; }
       .lang a { padding:4px 10px; font-size:12px; font-weight:600; text-decoration:none; color:var(--muted); }
-      .lang a.active { background:var(--ink); color:#fff; }
+      .lang a.active { background:var(--ink); color:var(--bg); }
       @media (max-width:640px){ .topnav .hide-sm{ display:none; } }
       article { padding:56px 0 40px; }
       .eyebrow { display:inline-flex; align-items:center; gap:8px; font-size:12px; font-weight:700; letter-spacing:.12em; text-transform:uppercase; color:var(--red); }
@@ -200,7 +253,7 @@ ${jsonLd(draft, ctx, canonical, ogImage)}
       .faq summary::after { content:"+"; color:var(--red); font-size:1.4rem; line-height:1; }
       .faq details[open] summary::after { content:"–"; }
       .faq details p { margin:0 0 16px; color:var(--muted); }
-      .cta { margin:48px 0 8px; background:var(--ink); color:#fff; border-radius:18px; padding:34px 30px; text-align:center; }
+      .cta { margin:48px 0 8px; background:var(--cta-bg); color:#fff; border-radius:18px; padding:34px 30px; text-align:center; border:1px solid var(--line); }
       .cta h2 { font-family:"Instrument Serif",Georgia,serif; color:#fff; margin:0 0 10px; }
       .cta p { color:rgba(255,255,255,.75); margin:0 auto 22px; max-width:46ch; }
       .btn { display:inline-block; background:var(--red); color:#fff; text-decoration:none; font-weight:600; padding:14px 26px; border-radius:999px; transition:transform .15s,opacity .2s; }
@@ -211,20 +264,20 @@ ${jsonLd(draft, ctx, canonical, ogImage)}
       .foot a:hover { color:var(--ink); }
     </style>
   </head>
-  <body>
+  <body class="${themeClass}">
     <!-- Google Tag Manager (noscript) -->
     <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=${GTM_ID}"
     height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     <!-- End Google Tag Manager (noscript) -->
     <header class="topbar">
       <div class="topbar-inner">
-        <a class="brand" href="/" aria-label="Picante Studio">
+        <a class="brand" href="${t.homeHref}" aria-label="Picante Studio">
           <img src="/assets/picante-black.png" alt="Picante" width="1639" height="507" />
         </a>
         <nav class="topnav" aria-label="Principal">
-          <a class="hide-sm" href="/#servicios">${t.nav.services}</a>
-          <a href="/blog">${t.nav.blog}</a>
-          <a class="hide-sm" href="/#agenda-calendario">${t.nav.schedule}</a>
+          <a class="hide-sm" href="${t.homeHref}">${t.nav.home}</a>
+          <a href="${t.blogHref}">${t.nav.blog}</a>
+          <a class="hide-sm" href="${t.ctaHref}">${t.nav.schedule}</a>
           <span class="lang" role="group" aria-label="Idioma">
             <a class="${draft.lang === "es" ? "active" : ""}" href="${ctx.esPath}" hreflang="es">ES</a>
             <a class="${draft.lang === "en" ? "active" : ""}" href="${ctx.enPath}" hreflang="en">EN</a>

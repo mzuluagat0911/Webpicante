@@ -144,13 +144,14 @@
 }
     </script>
     <style>
-      :root { --red:#c31c1e; --ink:#14110f; --muted:#6a635d; --line:#e7e2db; --bg:#faf8f5; --card:#fff; --measure:720px; }
+      :root { --red:#c31c1e; --ink:#f4f1ec; --muted:rgba(244,241,236,.68); --line:rgba(255,255,255,.12); --bg:#0c0b0a; --card:#161412; --measure:720px; }
+      .brand img { filter: invert(1); }
       * { box-sizing:border-box; }
       html { scroll-behavior:smooth; }
       body { margin:0; font-family:"Inter",system-ui,sans-serif; color:var(--ink); background:var(--bg); line-height:1.7; -webkit-font-smoothing:antialiased; }
       a { color:inherit; }
       .wrap { max-width:var(--measure); margin:0 auto; padding:0 24px; }
-      .topbar { position:sticky; top:0; z-index:50; background:rgba(250,248,245,.85); backdrop-filter:saturate(150%) blur(10px); border-bottom:1px solid var(--line); }
+      .topbar { position:sticky; top:0; z-index:50; background:rgba(12,11,10,.9); backdrop-filter:saturate(150%) blur(10px); border-bottom:1px solid var(--line); }
       .topbar-inner { max-width:1120px; margin:0 auto; padding:14px 24px; display:flex; align-items:center; justify-content:space-between; gap:16px; }
       .brand img { height:26px; width:auto; display:block; }
       .topnav { display:flex; align-items:center; gap:22px; font-size:14px; font-weight:500; }
@@ -198,13 +199,13 @@
     <!-- End Google Tag Manager (noscript) -->
     <header class="topbar">
       <div class="topbar-inner">
-        <a class="brand" href="/" aria-label="Picante Studio">
+        <a class="brand" href="/pulse" aria-label="Pulse by Picante">
           <img src="/assets/picante-black.png" alt="Picante" width="1639" height="507" />
         </a>
         <nav class="topnav" aria-label="Principal">
-          <a class="hide-sm" href="/#servicios">Servicios</a>
-          <a href="/blog">Blog</a>
-          <a class="hide-sm" href="/#agenda-calendario">Agendar</a>
+          <a class="hide-sm" href="/pulse">Pulse</a>
+          <a href="/pulse/blog">Blog</a>
+          <a class="hide-sm" href="/pulse#agendar">Agendar demo</a>
           <span class="lang" role="group" aria-label="Idioma">
             <a class="active" href="/blog/por-que-mi-competencia-aparece-antes-google-maps" hreflang="es">ES</a>
             <a class="" href="/en/blog/why-competitor-outranks-you-google-maps" hreflang="en">EN</a>
@@ -248,9 +249,9 @@
             </details>
           </div>
           <div class="cta">
-            <h2>¿Quieres que la IA cite a tu marca?</h2>
-            <p>Conversemos 30 minutos. Sales con un diagnóstico claro de SEO + GEO y los próximos pasos por impacto.</p>
-            <a class="btn" href="/#agenda-calendario">Agendar diagnóstico</a>
+            <h2>¿Quieres ver quién te está ganando en Maps?</h2>
+            <p>Agenda 15 minutos. Revisamos tu zona con datos reales: competencia, rating y qué mover primero.</p>
+            <a class="btn" href="/pulse#agendar">Agendar demo gratuita</a>
           </div>
         </article>
       </div>
@@ -258,7 +259,7 @@
     <footer>
       <div class="foot">
         <p>© 2026 Picante Studio</p>
-        <p><a href="/">Inicio</a> · <a href="/blog">Blog</a> · <a href="/#agenda-calendario">Agendar</a></p>
+        <p><a href="/pulse">Pulse</a> · <a href="/pulse/blog">Blog</a> · <a href="/pulse#agendar">Demo</a></p>
       </div>
     </footer>
   </body>

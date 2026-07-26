@@ -1227,6 +1227,69 @@
         vertical-align: middle;
       }
 
+      /* —— Blog teaser —— */
+      .blog-teaser-grid {
+        display: grid;
+        gap: 16px;
+        margin-top: 40px;
+      }
+      @media (min-width: 820px) {
+        .blog-teaser-grid { grid-template-columns: repeat(3, 1fr); }
+      }
+      .blog-teaser-card {
+        display: flex;
+        flex-direction: column;
+        gap: 12px;
+        padding: 26px 24px;
+        border-radius: 18px;
+        border: 1px solid rgba(255, 255, 255, 0.1);
+        background: rgba(255, 255, 255, 0.03);
+        text-decoration: none;
+        color: inherit;
+        transition: border-color 0.25s ease, background 0.25s ease, transform 0.2s ease;
+      }
+      .blog-teaser-card:hover {
+        border-color: rgba(195, 28, 30, 0.55);
+        background: rgba(255, 255, 255, 0.05);
+        transform: translateY(-2px);
+      }
+      .blog-teaser-card time {
+        font-size: 0.82rem;
+        font-weight: 500;
+        color: rgba(255, 255, 255, 0.45);
+      }
+      .blog-teaser-card h3 {
+        margin: 0;
+        font-family: "Instrument Serif", Georgia, serif;
+        font-weight: 400;
+        font-size: clamp(1.35rem, 2.4vw, 1.65rem);
+        line-height: 1.15;
+        letter-spacing: -0.01em;
+        color: #fff;
+      }
+      .blog-teaser-card p {
+        margin: 0;
+        flex: 1;
+        font-size: 0.95rem;
+        line-height: 1.55;
+        color: rgba(255, 255, 255, 0.58);
+      }
+      .blog-teaser-more {
+        margin-top: 4px;
+        font-size: 0.92rem;
+        font-weight: 600;
+        color: var(--brand, #c31c1e);
+      }
+      .blog-teaser-empty {
+        color: rgba(255, 255, 255, 0.5);
+        grid-column: 1 / -1;
+      }
+      .blog-teaser-foot {
+        margin-top: 32px;
+        display: flex;
+        justify-content: flex-start;
+      }
+
       /* —— Footer —— */
       .site-footer {
         padding: 80px 0 40px;
@@ -1730,6 +1793,7 @@
           <a href="#proceso">Proceso</a>
           <a href="#numeros">Datos</a>
           <a href="#costo">El costo</a>
+          <a href="#blog">Blog</a>
           <a href="#agendar" class="menu-cta">Agendar demo</a>
         </nav>
         <button
@@ -1751,6 +1815,7 @@
         <a href="#proceso">Proceso</a>
         <a href="#numeros">Datos</a>
         <a href="#costo">El costo</a>
+        <a href="#blog">Blog</a>
         <a href="#agendar" class="nav-drawer-cta">Agendar demo</a>
       </nav>
     </header>
@@ -2094,6 +2159,35 @@
         </div>
       </section>
 
+      <!-- Blog Pulse -->
+      <section class="section section-dark" id="blog">
+        <div class="container">
+          <div class="section-head reveal">
+            <p class="eyebrow"><span class="eyebrow-dot"></span> Blog Pulse</p>
+            <h2 class="display">
+              <span class="display-line">Guías para no perder</span>
+              <span class="display-line accent-red">clientes en Maps.</span>
+            </h2>
+            <p class="lead">
+              Reseñas, ranking local y competencia — contenido práctico para dueños y operadores.
+            </p>
+          </div>
+          <div class="blog-teaser-grid reveal">
+          <!-- BLOG_TEASER:pulse -->
+<a class="blog-teaser-card" href="/blog/por-que-mi-competencia-aparece-antes-google-maps">
+  <time datetime="2026-07-26">26 jul 2026</time>
+  <h3>Por qué tu competencia te gana en Google Maps (y cómo recuperarlo)</h3>
+  <p>Tu competencia rankea mejor en Maps por relevancia, distancia y prominencia. Aprende a auditarla en 20 minutos y a cerrar la brecha para recuperar clientes.</p>
+  <span class="blog-teaser-more">Leer artículo →</span>
+</a>
+          <!-- /BLOG_TEASER:pulse -->
+          </div>
+          <div class="blog-teaser-foot reveal">
+            <a class="btn btn-ghost" href="/pulse/blog">Ver todo el blog Pulse</a>
+          </div>
+        </div>
+      </section>
+
       <!-- 10. CTA final -->
       <section class="section section-dark" id="agendar">
         <div class="container">
@@ -2156,6 +2250,7 @@
             <a href="./index.html#proceso">Proceso</a>
             <a href="./index.html#casos">Casos</a>
             <a href="./pulse.html" aria-current="page">Pulse</a>
+            <a href="/pulse/blog">Blog Pulse</a>
           </div>
           <div class="footer-col">
             <p class="footer-title">Contacto</p>

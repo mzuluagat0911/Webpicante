@@ -1,8 +1,12 @@
 {
   "rewrites": [
-    { "source": "/pulse", "destination": "/pulse.html" },
+    { "source": "/pulse/blog", "destination": "/blog/pulse/index.html" },
+    { "source": "/en/pulse/blog", "destination": "/en/blog/pulse/index.html" },
     { "source": "/pulse/privacidad", "destination": "/pulse-privacidad.html" },
     { "source": "/pulse/terminos", "destination": "/pulse-terminos.html" },
+    { "source": "/pulse", "destination": "/pulse.html" },
+    { "source": "/blog/pulse", "destination": "/blog/pulse/index.html" },
+    { "source": "/en/blog/pulse", "destination": "/en/blog/pulse/index.html" },
     { "source": "/blog", "destination": "/blog/index.html" },
     { "source": "/blog/:slug", "destination": "/blog/:slug.html" },
     { "source": "/en/blog", "destination": "/en/blog/index.html" },

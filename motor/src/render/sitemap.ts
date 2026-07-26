@@ -1,6 +1,15 @@
 import type { PublishedPost } from "../lib/state.js";
 
-const STATIC_PATHS = ["/", "/pulse", "/blog", "/en/blog", "/pulse/privacidad", "/pulse/terminos"];
+const STATIC_PATHS = [
+  "/",
+  "/pulse",
+  "/blog",
+  "/en/blog",
+  "/pulse/blog",
+  "/en/pulse/blog",
+  "/pulse/privacidad",
+  "/pulse/terminos",
+];
 
 /** Genera sitemap.xml con páginas estáticas + posts ES/EN. */
 export function renderSitemap(posts: PublishedPost[], siteUrl: string): string {

@@ -34,6 +34,13 @@
         schedule: "Agendar",
         scheduleMeeting: "Agendar reunión",
       },
+      blog: {
+        eyebrow: "Blog",
+        l1: "Criterio que escala.",
+        l2: "Sin humo.",
+        lead: "SEO, GEO, performance e IA — guías para marcas que ya venden y quieren crecer.",
+        viewAll: "Ver todo el blog",
+      },
       hero: {
         regions: "USA · LATAM · Europa",
         titleL1: "Las marcas que ganan",
@@ -255,6 +262,13 @@
         faq: "FAQ",
         schedule: "Book",
         scheduleMeeting: "Book a call",
+      },
+      blog: {
+        eyebrow: "Blog",
+        l1: "Judgment that scales.",
+        l2: "No fluff.",
+        lead: "SEO, GEO, performance & AI — guides for brands that already sell and want to grow.",
+        viewAll: "View all posts",
       },
       hero: {
         regions: "US · LATAM · Europe",

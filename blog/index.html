@@ -2,16 +2,14 @@
 <html lang="es">
   <head>
     <meta charset="UTF-8" />
-    <!-- Google Tag Manager -->
     <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
     new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
     j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
     'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
     })(window,document,'script','dataLayer','GTM-M9Z9WLK4');</script>
-    <!-- End Google Tag Manager -->
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Blog | Picante Studio</title>
-    <meta name="description" content="Ideas sobre growth, performance, IA y SEO/GEO para marcas que escalan." />
+    <meta name="description" content="Growth, performance e IA aplicada al marketing. Guías citables para marcas que escalan." />
     <link rel="canonical" href="https://wearepicante.com/blog" />
     <link rel="alternate" hreflang="es" href="https://wearepicante.com/blog" />
     <link rel="alternate" hreflang="en" href="https://wearepicante.com/en/blog" />
@@ -20,64 +18,93 @@
     <meta name="theme-color" content="#c31c1e" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Instrument+Serif:ital@0;1&display=swap" rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Instrument+Serif:ital@0;1&display=swap" rel="stylesheet" />
     <style>
-      :root { --red:#c31c1e; --ink:#14110f; --muted:#6a635d; --line:#e7e2db; --bg:#faf8f5; }
+      :root {
+        --red:#c31c1e; --ink:#14110f; --muted:#6a635d; --line:#e7e2db;
+        --bg:#f7f4ef; --card:#fffcf8; --topbar:rgba(247,244,239,.88);
+      }
+      .theme-pulse {
+        --ink:#f4f1ec; --muted:rgba(244,241,236,.62); --line:rgba(255,255,255,.1);
+        --bg:#0c0b0a; --card:#161412; --topbar:rgba(12,11,10,.88);
+      }
       * { box-sizing:border-box; }
-      body { margin:0; font-family:"Inter",system-ui,sans-serif; color:var(--ink); background:var(--bg); }
+      body { margin:0; font-family:"Inter",system-ui,sans-serif; color:var(--ink); background:var(--bg); -webkit-font-smoothing:antialiased; }
       a { color:inherit; text-decoration:none; }
-      .topbar { position:sticky; top:0; background:rgba(250,248,245,.85); backdrop-filter:blur(10px); border-bottom:1px solid var(--line); }
+      .topbar { position:sticky; top:0; z-index:20; background:var(--topbar); backdrop-filter:blur(12px); border-bottom:1px solid var(--line); }
       .topbar-inner { max-width:1120px; margin:0 auto; padding:14px 24px; display:flex; justify-content:space-between; align-items:center; gap:16px; }
       .brand img { height:26px; display:block; }
+      .theme-pulse .brand img { filter: invert(1); }
       .top-actions { display:flex; align-items:center; gap:18px; font-size:14px; font-weight:500; }
-      .lang a { opacity:.55; }
+      .lang a { opacity:.5; }
       .lang a.active { opacity:1; }
-      .wrap { max-width:900px; margin:0 auto; padding:56px 24px 80px; }
-      .eyebrow { color:var(--red); font-weight:700; font-size:12px; letter-spacing:.12em; text-transform:uppercase; }
-      h1 { font-family:"Instrument Serif",Georgia,serif; font-weight:400; font-size:clamp(2.4rem,6vw,3.4rem); margin:14px 0 40px; }
-      .post { display:block; padding:26px 0; border-top:1px solid var(--line); transition:opacity .2s; }
-      .post:hover { opacity:.7; }
-      .post h2 { font-family:"Instrument Serif",Georgia,serif; font-weight:400; font-size:1.6rem; margin:0 0 8px; }
-      .post p { color:var(--muted); margin:0 0 8px; line-height:1.6; }
-      .post .meta { color:var(--muted); font-size:13px; }
-      .empty { color:var(--muted); }
+      .btn-cta { font-weight:600; }
+      .theme-pulse .btn-cta { color:#fff; border:1px solid rgba(255,255,255,.35); padding:8px 14px; border-radius:999px; }
+      .hero { max-width:1120px; margin:0 auto; padding:64px 24px 28px; }
+      .eyebrow { color:var(--red); font-weight:700; font-size:12px; letter-spacing:.14em; text-transform:uppercase; display:inline-flex; align-items:center; gap:8px; }
+      .eyebrow::before { content:""; width:6px; height:6px; border-radius:50%; background:var(--red); }
+      h1 { font-family:"Instrument Serif",Georgia,serif; font-weight:400; font-size:clamp(2.6rem,6.5vw,3.8rem); line-height:1.05; margin:16px 0 14px; letter-spacing:-.01em; max-width:16ch; }
+      .lead { color:var(--muted); font-size:1.08rem; line-height:1.6; max-width:48ch; margin:0; }
+      .grid { max-width:1120px; margin:0 auto; padding:24px 24px 96px; display:grid; gap:18px; }
+      @media (min-width:820px) {
+        .grid { grid-template-columns:1.2fr 1fr; align-items:stretch; }
+        .post-card--featured { grid-row: span 2; }
+      }
+      .post-card {
+        display:flex; flex-direction:column; gap:12px;
+        background:var(--card); border:1px solid var(--line);
+        border-radius:18px; padding:28px 26px 24px;
+        transition: transform .2s ease, border-color .2s ease;
+      }
+      .post-card:hover { transform:translateY(-2px); border-color:rgba(195,28,30,.45); }
+      .post-card-meta { font-size:13px; color:var(--muted); font-weight:500; }
+      .post-card h2 {
+        font-family:"Instrument Serif",Georgia,serif; font-weight:400;
+        font-size:clamp(1.45rem,2.6vw,1.85rem); line-height:1.15; margin:0; letter-spacing:-.01em;
+      }
+      .post-card--featured h2 { font-size:clamp(1.85rem,3.4vw,2.35rem); }
+      .post-card p { color:var(--muted); margin:0; line-height:1.6; flex:1; }
+      .post-card-more { margin-top:8px; font-size:14px; font-weight:600; color:var(--red); }
+      .empty { color:var(--muted); padding:40px 0; }
     </style>
   </head>
-  <body>
-    <!-- Google Tag Manager (noscript) -->
+  <body class="theme-picante">
     <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-M9Z9WLK4" height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
-    <!-- End Google Tag Manager (noscript) -->
     <header class="topbar">
       <div class="topbar-inner">
-        <a class="brand" href="/" aria-label="Picante Studio"><img src="/assets/picante-black.png" alt="Picante" /></a>
+        <a class="brand" href="/" aria-label="Picante"><img src="/assets/picante-black.png" alt="Picante" /></a>
         <div class="top-actions">
           <span class="lang">
             <a href="/blog" hreflang="es" class="active">ES</a>
             ·
             <a href="/en/blog" hreflang="en" class="">EN</a>
           </span>
-          <a href="/#agenda-calendario">Agendar</a>
+          <a class="btn-cta" href="/#agenda-calendario">Agendar</a>
         </div>
       </div>
     </header>
-    <main class="wrap">
-      <p class="eyebrow">Blog</p>
-      <h1>Growth, performance e IA</h1>
-          <a class="post" href="/blog/por-que-mi-competencia-aparece-antes-google-maps">
-            <h2>Por qué tu competencia te gana en Google Maps (y cómo recuperarlo)</h2>
-            <p>Tu competencia rankea mejor en Maps por relevancia, distancia y prominencia. Aprende a auditarla en 20 minutos y a cerrar la brecha para recuperar clientes.</p>
-            <span class="meta">2026-07-26</span>
-          </a>
-          <a class="post" href="/blog/medir-conversiones-chatgpt-atribucion-trafico-ia">
-            <h2>Medir conversiones desde ChatGPT: guía de atribución de tráfico de IA</h2>
-            <p>Aprende a medir conversiones desde ChatGPT y la atribución de tráfico de IA con un funnel de 3 capas: Presencia, Referencia e Ingreso. Montado en GA4.</p>
-            <span class="meta">2026-07-26</span>
-          </a>
-          <a class="post" href="/blog/que-es-geo">
-            <h2>Qué es GEO y cómo aparecer en ChatGPT y la IA de Google | Picante Studio</h2>
-            <p>GEO (Generative Engine Optimization) es optimizar tu contenido para que ChatGPT, Perplexity y las respuestas de IA de Google te citen. Guía práctica para marcas.</p>
-            <span class="meta">2026-07-25</span>
-          </a>
+    <header class="hero">
+      <p class="eyebrow">Blog Picante</p>
+      <h1>Ideas que escalan marcas</h1>
+      <p class="lead">SEO, GEO, performance e IA — sin humo. Criterio para equipos que ya venden y quieren crecer.</p>
+    </header>
+    <main class="grid">
+        <a class="post-card post-card--featured" href="/blog/medir-conversiones-chatgpt-atribucion-trafico-ia">
+          <div class="post-card-meta">
+            <time datetime="2026-07-26">26 jul 2026</time>
+          </div>
+          <h2>Medir conversiones desde ChatGPT: guía de atribución de tráfico de IA</h2>
+          <p>Aprende a medir conversiones desde ChatGPT y la atribución de tráfico de IA con un funnel de 3 capas: Presencia, Referencia e Ingreso. Montado en GA4.</p>
+          <span class="post-card-more" aria-hidden="true">Leer →</span>
+        </a>
+        <a class="post-card" href="/blog/que-es-geo">
+          <div class="post-card-meta">
+            <time datetime="2026-07-25">25 jul 2026</time>
+          </div>
+          <h2>Qué es GEO y cómo aparecer en ChatGPT y la IA de Google | Picante Studio</h2>
+          <p>GEO (Generative Engine Optimization) es optimizar tu contenido para que ChatGPT, Perplexity y las respuestas de IA de Google te citen. Guía práctica para marcas.</p>
+          <span class="post-card-more" aria-hidden="true">Leer →</span>
+        </a>
     </main>
   </body>
 </html>
