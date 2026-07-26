@@ -14,9 +14,9 @@ on:
         type: choice
         options: [ideas, run]
 
+# Necesario para que el robot pueda commitear los blogs a main.
 permissions:
   contents: write
-  pull-requests: write
 
 jobs:
   motor:
@@ -40,19 +40,15 @@ jobs:
           MAX_POSTS_PER_RUN: "1"
         run: npm run ${{ github.event.inputs.command || 'run' }}
 
-      # Abre un Pull Request con los blogs nuevos + el estado actualizado.
-      # Para publicar 100% automático (sin merge manual): cambia esto por un
-      # commit directo a main, o activa auto-merge en el PR.
-      - name: Abrir Pull Request con los blogs nuevos
-        uses: peter-evans/create-pull-request@v6
-        with:
-          commit-message: "blog: nuevos posts generados por el motor"
-          branch: motor/blog-updates
-          delete-branch: true
-          title: "🌶️ Nuevos blogs generados por el motor"
-          body: |
-            Blogs generados automáticamente por el motor (SEO/GEO).
-
-            - Revisa el contenido de las páginas nuevas en `/blog/`.
-            - Si todo está bien, haz **merge** → Vercel despliega.
-          labels: blog, automated
+      # Publica directo a main (full-auto). Vercel despliega en el push.
+      - name: Publicar blogs (commit a main)
+        run: |
+          git config user.name "motor-blog[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add blog en motor/data 2>/dev/null || true
+          if git diff --cached --quiet; then
+            echo "Sin cambios que publicar."
+          else
+            git commit -m "blog: nuevos posts generados por el motor"
+            git push
+          fi
