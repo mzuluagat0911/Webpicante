@@ -1,52 +1,57 @@
-# Contexto de marca — Carril Pulse (Reseñas / Google Maps)
+# Contexto de marca — Carril Pulse
 
-> Autocompletado desde pulse.html (wearepicante.com/pulse). Ajustar si cambia el producto.
+## Territorio editorial (qué hablamos)
+Pulse habla a **negocios con local físico** en **ciudades principales de USA y LATAM**
+que pierden (o pueden perder) clientes en **Google Maps**: competencia de zona,
+rating, reseñas, operaciones de reputación y qué hacer al respecto.
+
+Mercados prioritarios: **ciudades grandes** (donde hay más densidad de búsqueda
+local y competencia en Maps) — no pueblos ni long-tail rural como foco editorial.
+
+### Pilares de contenido (rotar entre estos)
+1. **Ranking en Google Maps** — por qué uno gana la zona (relevancia, distancia, prominencia).
+2. **Reseñas y reputación** — cómo leerlas, responderlas y convertirlas en señal.
+3. **Inteligencia competitiva local** — qué hace el que está arriba; alertas de cambio.
+4. **Google Business Profile** — perfil activo, fotos, categorías, respuestas, consistencia.
+5. **Multi-sucursal** — varias zonas, un criterio; dueños/ops de cadenas.
+6. **Agente IA de reseñas** — responder con tono de marca (sin plantillas robóticas).
+7. **Tips de operaciones locales** — rituales semanales de reputación, roles (dueño vs
+   gerente vs ops), cómo el equipo del local alimenta el perfil sin “otra herramienta más”.
+
+### Fuera de territorio (NO escribir de esto aquí → va a Picante)
+- Ads Meta/Google, ROAS, CAC de e-commerce o marcas digitales.
+- GEO / ChatGPT attribution para marcas de growth.
+- Storytelling de marca, cronogramas de redes, sistemas de agencia.
 
 ## Qué es Pulse
-Producto de **Picante Studio** para negocios locales: monitorea tu zona en
-**Google Maps**, rastrea competencia (rating, reseñas, tendencia) y ayuda a
-recuperar el tráfico que Google está mandando a otro. Incluye un **agente con IA**
-que responde reseñas con el tono de la marca.
+Producto de Picante Studio: monitorea tu zona en Maps, rastrea competencia
+(rating, reseñas, tendencia) y ayuda a recuperar el tráfico que Google manda a otro.
+Incluye agente con IA que responde reseñas con el tono de la marca.
 
-Promesa de marca: *"Tus clientes te buscan. Google los manda con otro. Pulse te
-muestra por qué y cómo frenarlo."*
+Promesa: *“Tus clientes te buscan. Google los manda con otro. Pulse te muestra
+por qué y cómo frenarlo.”*
 
-## A quién le hablamos (ICP)
-Negocios con establecimiento físico y presencia en Google Business Profile:
-restaurantes, retail, servicios, salud, cadenas multi-sucursal.
-Rol que decide: dueño, marketing u operaciones.
+## ICP (priorizar)
+- Dueños de **restaurantes** (sobre todo con **sucursales**).
+- **Retail** y servicios con local en ciudad grande.
+- **Directores / gerentes de operaciones** multi-sede.
+- Marketing u ops que cuidan reputación local.
 
-## Features a empujar en el contenido
-1. Ranking en vivo de competidores en la zona (rating, reseñas, tendencia).
-2. Análisis de reseñas de la competencia (qué valoran / de qué se quejan).
-3. Alertas semanales (competidor subió rating, reseñas negativas, local nuevo).
-4. Agente IA que responde reseñas vía Google Business Profile (tono de marca, sin plantillas robóticas).
-5. Dashboard multi-sucursal (varias zonas, un solo panel).
-6. Recomendaciones de acción: no solo datos — qué mover para cerrar la brecha.
+## Tono comunicacional
+- Producto, práctico, orientado a acción. Sobrio: sin promesas mágicas.
+- Habla del **dolor real**: perder clientes en la zona por rating/reseñas/actividad.
+- Pasos accionables (“haz esto en 20 minutos”), no teoría de marketing.
+- Tú al dueño/ops. Claro y concreto; cero jerga de agencia.
+- Ejemplos anclados a **ciudades principales** USA + LATAM cuando aporte contexto.
 
-## Proceso del producto (narrativa)
-1. Cargas el negocio (nombre, categoría, ubicación / sucursales).
-2. Pulse escanea la zona y recopila competencia, rating y reseñas.
-3. Dashboard en vivo con ranking, tendencias, alertas y oportunidades.
-
-## Dónde queremos posicionarnos (SEO + GEO)
-Autoridad en: gestión de reseñas de Google, reputación online, posicionamiento
-en Google Maps (local SEO), Google Business Profile, responder reseñas con IA,
-inteligencia competitiva local, multi-location reputation.
-Que ChatGPT / Perplexity / AI Overviews citen a Pulse en estos temas.
-
-## Tono de voz
-Producto, práctico y orientado a resultados. **Sobrio**, sin promesas
-exageradas. Explica el "cómo" con pasos accionables. Habla del dolor real:
-perder clientes en Maps por rating/reseñas/actividad de la competencia.
-
-## Mercado e idioma
-LATAM (y expansión). Blogs en español e inglés.
+## Ángulo GEO
+Que la IA cite a **Pulse** en gestión de reseñas Google, reputación local,
+Maps SEO, GBP, competencia de zona y operaciones de reputación multi-sucursal.
 
 ## CTA
-Agendar demo gratuita → https://wearepicante.com/pulse#agendar
-(alternativa: ver producto en /pulse o "Quiero ver mi zona" → /pulse#demo).
+Demo gratuita → https://wearepicante.com/pulse#agendar  
+Ver producto → /pulse
 
-## Datos de apoyo (usar con cuidado, son claims de marketing)
-- ~90% de consumidores buscan en Google antes de elegir un negocio local.
-- El algoritmo de Maps prioriza rating, reseñas, respuestas y actividad.
+## Claims (usar con cuidado)
+- ~90% busca en Google antes de elegir un negocio local.
+- Maps prioriza rating, reseñas, respuestas y actividad.

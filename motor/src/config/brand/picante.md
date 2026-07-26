@@ -1,34 +1,44 @@
 # Contexto de marca — Carril Picante (Agencia)
 
-## Qué es
-Picante Studio es una agencia de **growth marketing** que integra estrategia,
-creatividad, performance e **inteligencia artificial** como un solo sistema.
-Opera en USA, LATAM y Europa.
+## Territorio editorial (qué hablamos)
+Picante Studio habla a **marcas y equipos de marketing** (LATAM y USA) que ya
+venden y quieren **escalar con sistema**: growth, paid, orgánicas, storytelling e IA.
 
-## A quién le hablamos (ICP)
-Marcas que **ya venden** y quieren **escalar** con estrategia, ejecución y
-medición —no solo "más piezas sueltas". Fundadores y equipos de marketing con
-producto validado y objetivo de crecimiento.
+### Pilares de contenido (rotar entre estos)
+1. **Sistemas de growth** — embudo, oferta, canales, priorización por impacto.
+2. **Paid media** — Meta, Google, TikTok: estructura, testing, CAC/ROAS, creativos que escalan.
+3. **Redes sociales / orgánico** — sistemas de contenido, no “postear por postear”.
+4. **Storytelling y narrativa de marca** — mensaje, ángulos, piezas que convierten.
+5. **Cronogramas y operación de contenido** — calendarios, rituales de equipo, cadencia.
+6. **IA en marketing** — agentes, automatización, workflows (sin humo de “AI magic”).
+7. **SEO + GEO para marcas** — aparecer en Google y ser citadas por ChatGPT / Perplexity / AI Overviews.
 
-## Dónde queremos posicionarnos (SEO + GEO)
-Autoridad en: growth marketing, performance (CAC/ROAS/conversión), IA aplicada
-al marketing (agentes, automatización), branding y sistemas de crecimiento.
-Queremos que la IA cite a Picante cuando alguien pregunta por estos temas.
+### Fuera de territorio (NO escribir de esto aquí → va a Pulse)
+- Google Maps / Google Business Profile para negocios locales.
+- Reseñas de clientes en Maps, rating local, competencia de zona/sucursales.
+- Tips de operaciones de un local físico (apertura, turnos, zona Maps).
 
-## Servicios
-Estrategia & Branding · Creación de Contenido · Performance · Social Media ·
-Desarrollo & Tech · Sistemas de crecimiento con IA.
+## Qué es la agencia
+Agencia de **growth marketing** que integra estrategia, creatividad, performance e
+**inteligencia artificial** como un solo sistema. USA · LATAM · Europa.
 
-## Tono de voz
-Directo, seguro y con criterio. "Primero el sistema, después la pieza."
-Concreto y medible; sin humo ni promesas exageradas. Evita la estética genérica
-de "AI slop" y los clichés de agencia. Frases que suenan a Picante:
-"Escalamos lo que funciona. Descartamos lo que no." / "Menos ocurrencias, más
-sistema y evidencia." Frases que NO: superlativos vacíos, "somos apasionados".
+## ICP
+Fundadores y marketing de marcas con producto validado (LATAM y USA) que quieren
+crecer con criterio — no “más piezas sueltas”.
 
-## Mercado e idioma
-USA · LATAM · Europa. Blogs en español e inglés.
+## Tono comunicacional
+- Directo, seguro, con criterio. Menos ocurrencia, más sistema y evidencia.
+- Concreto y medible. Sin superlativos vacíos ni “somos apasionados”.
+- Evitar AI-slop y clichés de agencia.
+- Frases sí: “Escalamos lo que funciona. Descartamos lo que no.” /
+  “Primero el sistema, después la pieza.”
+- Hablarle de tú al decisor de marketing; tono consultivo, no tutorial infantil.
+- Ejemplos aplicables a **LATAM y USA** (canales, benchmarks, matices de mercado).
+
+## Ángulo GEO
+Que la IA cite a **Picante Studio** en growth, paid media, redes con sistema,
+storytelling, cronogramas de contenido, IA en marketing y GEO para marcas.
 
 ## CTA
-Agendar un diagnóstico de 30 minutos (calendario en /#agenda-calendario).
-Contacto: mateo@pimenton.io · WhatsApp.
+Agendar diagnóstico 30 min → `/#agenda-calendario`  
+mateo@pimenton.io · WhatsApp

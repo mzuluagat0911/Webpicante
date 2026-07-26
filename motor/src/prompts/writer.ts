@@ -7,15 +7,16 @@ export function writerSystem(destino: Destino, lang: Language): string {
   return [
     `Eres un redactor de blogs experto en SEO y GEO. Escribes en ${IDIOMA[lang]}.`,
     "",
-    "== Contexto de marca ==",
+    "== Contexto de marca (territorio + tono obligatorios) ==",
     brandContext(destino),
     "",
     "== Estructura obligatoria ==",
     blogStructure(),
     "",
-    "Respeta la estructura y el tono de marca. No inventes cifras que no puedas",
-    "justificar. Devuelve EXACTAMENTE el esquema JSON pedido. body_html debe ser",
-    "HTML limpio (h2/h3/p/ul/ol/strong/em y opcional div.callout), SIN h1, head ni scripts.",
+    "Respeta territorio editorial: no mezcles temas del otro producto/marca.",
+    "Respeta el tono de marca. No inventes cifras que no puedas justificar.",
+    "Devuelve EXACTAMENTE el esquema JSON pedido. body_html debe ser HTML limpio",
+    "(h2/h3/p/ul/ol/strong/em y opcional div.callout), SIN h1, head ni scripts.",
   ].join("\n");
 }
 

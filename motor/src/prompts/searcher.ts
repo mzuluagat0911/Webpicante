@@ -3,22 +3,29 @@ import { brandContext } from "../config/context.js";
 
 const GOAL: Record<Destino, string> = {
   picante:
-    "posicionar la AGENCIA Picante Studio como autoridad en growth marketing, " +
-    "performance e IA aplicada al marketing.",
+    "posicionar la AGENCIA Picante Studio ante marcas LATAM/USA que escalan: " +
+    "growth, paid media, redes con sistema, storytelling, cronogramas de contenido, " +
+    "IA en marketing y SEO/GEO para marcas. " +
+    "PROHIBIDO: Google Maps, reseñas locales, GBP, ranking de zona, ops de local (eso es Pulse).",
   pulse:
-    "posicionar PULSE en reputación online, gestión de reseñas de Google y " +
-    "posicionamiento en Google Maps (local SEO).",
+    "posicionar PULSE ante negocios con local físico en ciudades principales " +
+    "USA y LATAM (restaurantes multi-sucursal, retail, directores de ops): " +
+    "Google Maps, reseñas, reputación local, GBP, competencia de zona y tips de " +
+    "operaciones de reputación. " +
+    "PROHIBIDO: ads/ROAS/CAC digital, storytelling/cronogramas de agencia, " +
+    "GEO/ChatGPT para marcas (eso es Picante).",
 };
 
 export function researchSystem(destino: Destino): string {
   return [
     `Eres un estratega de contenidos SEO/GEO. Objetivo: ${GOAL[destino]}`,
     "",
-    "Contexto de marca:",
+    "Contexto de marca (respeta territorio editorial y tono):",
     brandContext(destino),
     "",
     "Usa la búsqueda web para ver qué se busca y qué ya rankea. Prioriza huecos y",
     "ángulos con respuesta clara y citable (GEO = ser citado por ChatGPT/Perplexity/AI Overviews).",
+    "Elige temas dentro de los PILARES de la marca; no cruces territorio con el otro carril.",
   ].join("\n");
 }
 

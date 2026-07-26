@@ -1,10 +1,11 @@
 name: Motor de blog (SEO/GEO)
 
-# Corre cada lunes 13:00 UTC (8am Colombia). Ajusta a tu gusto.
-# También se lanza a mano desde la pestaña Actions → "Run workflow".
+# Corre cada sábado 13:00 UTC (8:00 Colombia).
+# Semana 1 = posts ya publicados (jul 2026). Siguientes = cada sábado.
+# También se lanza a mano desde Actions → "Run workflow".
 on:
   schedule:
-    - cron: "0 13 * * 1"
+    - cron: "0 13 * * 6"
   workflow_dispatch:
     inputs:
       command:
