@@ -5,6 +5,7 @@ import { log } from "../lib/logger.js";
 import { env } from "../config/env.js";
 import { renderArticle, type ArticleDraft } from "../render/template.js";
 import { renderBlogIndex } from "../render/blogIndex.js";
+import { renderSitemap } from "../render/sitemap.js";
 import type { Destino, Idea, Language, WriterOutput } from "../types.js";
 import type { PublishedPost } from "../lib/state.js";
 import { writeDraft } from "./writer.js";
@@ -20,10 +21,15 @@ function readingTime(w: WriterOutput): number {
   return Math.max(3, Math.round((words(w.body_html) + words(w.answer_html)) / 220));
 }
 
-function byline(lang: Language, min: number, date: string): string {
+function brandName(destino: Destino): string {
+  return destino === "pulse" ? "Pulse" : "Picante Studio";
+}
+
+function byline(destino: Destino, lang: Language, min: number, date: string): string {
+  const brand = brandName(destino);
   return lang === "es"
-    ? `Por Picante Studio · ${date} · ${min} min de lectura`
-    : `By Picante Studio · ${date} · ${min} min read`;
+    ? `Por ${brand} · ${date} · ${min} min de lectura`
+    : `By ${brand} · ${date} · ${min} min read`;
 }
 
 function toArticle(destino: Destino, lang: Language, w: WriterOutput, date: string): ArticleDraft {
@@ -37,7 +43,7 @@ function toArticle(destino: Destino, lang: Language, w: WriterOutput, date: stri
     keywords: w.keywords,
     eyebrow: "SEO & GEO",
     answerHtml: w.answer_html,
-    byline: byline(lang, readingTime(w), date),
+    byline: byline(destino, lang, readingTime(w), date),
     bodyHtml: w.body_html,
     faq: w.faq,
     datePublished: date,
@@ -77,12 +83,18 @@ export async function publishIdea(destino: Destino, idea: Idea): Promise<Publish
     title: es.title,
     description: es.meta_description,
     path: esPath,
+    pathEn: enPath,
+    titleEn: en.title,
+    descriptionEn: en.meta_description,
   };
 }
 
-/** Regenera /blog/index.html a partir de los posts publicados. */
+/** Regenera índices ES/EN + sitemap a partir de los posts publicados. */
 export function rebuildIndex(posts: PublishedPost[]): void {
   mkdirSync(join(REPO_ROOT, "blog"), { recursive: true });
-  writeFileSync(join(REPO_ROOT, "blog", "index.html"), renderBlogIndex(posts, env.SITE_URL), "utf8");
-  log.ok("Índice /blog regenerado.");
+  mkdirSync(join(REPO_ROOT, "en", "blog"), { recursive: true });
+  writeFileSync(join(REPO_ROOT, "blog", "index.html"), renderBlogIndex(posts, env.SITE_URL, "es"), "utf8");
+  writeFileSync(join(REPO_ROOT, "en", "blog", "index.html"), renderBlogIndex(posts, env.SITE_URL, "en"), "utf8");
+  writeFileSync(join(REPO_ROOT, "sitemap.xml"), renderSitemap(posts, env.SITE_URL), "utf8");
+  log.ok("Índices /blog + /en/blog + sitemap.xml regenerados.");
 }

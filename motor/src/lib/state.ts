@@ -16,6 +16,10 @@ export interface PublishedPost {
   title: string;
   description: string;
   path: string; // /blog/<slug>
+  /** Versión EN (opcional en posts legacy). */
+  pathEn?: string;
+  titleEn?: string;
+  descriptionEn?: string;
 }
 
 interface State {

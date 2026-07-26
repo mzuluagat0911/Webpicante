@@ -1,0 +1,21 @@
+{
+  "covered": {
+    "picante": [
+      "qué es GEO",
+      "GEO generative engine optimization",
+      "aparecer en ChatGPT"
+    ],
+    "pulse": []
+  },
+  "published": [
+    {
+      "slug": "que-es-geo",
+      "destino": "picante",
+      "keyword": "qué es GEO",
+      "date": "2026-07-25",
+      "title": "Qué es GEO y cómo aparecer en ChatGPT y la IA de Google | Picante Studio",
+      "description": "GEO (Generative Engine Optimization) es optimizar tu contenido para que ChatGPT, Perplexity y las respuestas de IA de Google te citen. Guía práctica para marcas.",
+      "path": "/blog/que-es-geo"
+    }
+  ]
+}

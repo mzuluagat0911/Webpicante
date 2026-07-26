@@ -2,7 +2,11 @@
   "rewrites": [
     { "source": "/pulse", "destination": "/pulse.html" },
     { "source": "/pulse/privacidad", "destination": "/pulse-privacidad.html" },
-    { "source": "/pulse/terminos", "destination": "/pulse-terminos.html" }
+    { "source": "/pulse/terminos", "destination": "/pulse-terminos.html" },
+    { "source": "/blog", "destination": "/blog/index.html" },
+    { "source": "/blog/:slug", "destination": "/blog/:slug.html" },
+    { "source": "/en/blog", "destination": "/en/blog/index.html" },
+    { "source": "/en/blog/:slug", "destination": "/en/blog/:slug.html" }
   ],
   "redirects": [
     { "source": "/pulse/pulse.html", "destination": "/pulse", "permanent": true },
