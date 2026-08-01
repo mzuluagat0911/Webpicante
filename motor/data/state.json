@@ -4,10 +4,12 @@
       "qué es GEO",
       "GEO generative engine optimization",
       "aparecer en ChatGPT",
-      "medir conversiones desde ChatGPT y atribución de tráfico de IA"
+      "medir conversiones desde ChatGPT y atribución de tráfico de IA",
+      "cómo hacer que ChatGPT recomiende tu marca"
     ],
     "pulse": [
-      "por qué mi competencia aparece antes en Google Maps"
+      "por qué mi competencia aparece antes en Google Maps",
+      "cómo gestionar reseñas de Google en negocio multi-sucursal"
     ]
   },
   "published": [
@@ -43,6 +45,30 @@
       "pathEn": "/en/blog/why-competitor-outranks-you-google-maps",
       "titleEn": "Why Your Competitor Outranks You on Google Maps (and How to Win Back Those Customers)",
       "descriptionEn": "Your competitor ranks higher on Google Maps because of relevance, distance and prominence. Learn how to audit them in 20 minutes and close the gap."
+    },
+    {
+      "slug": "como-hacer-que-chatgpt-recomiende-tu-marca",
+      "destino": "picante",
+      "keyword": "cómo hacer que ChatGPT recomiende tu marca",
+      "date": "2026-08-01",
+      "title": "Cómo hacer que ChatGPT recomiende tu marca (no solo te cite)",
+      "description": "Ser citado es SEO; ser recomendado es reputación de entidad. Sistema de 3 capas para que ChatGPT nombre tu marca como opción de compra y medir tu share of model.",
+      "path": "/blog/como-hacer-que-chatgpt-recomiende-tu-marca",
+      "pathEn": "/en/blog/get-chatgpt-to-recommend-your-brand",
+      "titleEn": "How to Get ChatGPT to Recommend Your Brand (Not Just Cite It)",
+      "descriptionEn": "Being cited is SEO. Being recommended is entity reputation. Learn the 3-layer system to make ChatGPT name your brand as a buying option."
+    },
+    {
+      "slug": "gestionar-resenas-google-multi-sucursal",
+      "destino": "pulse",
+      "keyword": "cómo gestionar reseñas de Google en negocio multi-sucursal",
+      "date": "2026-08-01",
+      "title": "Cómo gestionar reseñas de Google en negocio multi-sucursal",
+      "description": "Sistema operativo para gestionar reseñas de Google en varias sucursales: criterio de tono único, matriz de roles, ritual semanal de 20 min y semáforo por local.",
+      "path": "/blog/gestionar-resenas-google-multi-sucursal",
+      "pathEn": "/en/blog/manage-google-reviews-multiple-locations",
+      "titleEn": "How to Manage Google Reviews Across Multiple Locations",
+      "descriptionEn": "A weekly operating system to manage Google reviews across all your locations: one tone, a clear role matrix, and a 20-minute reputation ritual."
     }
   ]
 }
