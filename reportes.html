@@ -722,6 +722,21 @@
         font-size: 0.85rem;
       }
 
+      .footer-legal {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 8px 20px;
+      }
+
+      .footer-legal a {
+        color: var(--ink-soft);
+        text-decoration: none;
+        font-size: 0.85rem;
+        transition: color 0.2s;
+      }
+
+      .footer-legal a:hover { color: var(--ink); }
+
       @media (max-width: 900px) {
         .menu--desktop { display: none; }
         .nav-toggle { display: inline-flex; }
@@ -1118,6 +1133,7 @@
             <p class="footer-title">Cuenta</p>
             <a href="https://app.wearepicante.com/registro">Crear cuenta</a>
             <a href="https://app.wearepicante.com/login">Entrar</a>
+            <a href="/reportes/privacidad">Privacidad</a>
             <a href="mailto:mateo@pimenton.io">mateo@pimenton.io</a>
           </div>
           <div class="footer-col">
@@ -1129,7 +1145,10 @@
         </div>
         <div class="footer-bottom">
           <p>© 2026 Picante Studio</p>
-          <p>Reportes · wearepicante.com</p>
+          <nav class="footer-legal" aria-label="Legal">
+            <a href="/reportes/privacidad">Privacidad</a>
+            <a href="https://app.wearepicante.com/registro">Empezar gratis</a>
+          </nav>
         </div>
       </div>
     </footer>
