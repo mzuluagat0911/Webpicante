@@ -1,0 +1,1270 @@
+<!doctype html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <!-- Google Tag Manager -->
+    <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+    new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+    j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+    'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+    })(window,document,'script','dataLayer','GTM-M9Z9WLK4');</script>
+    <!-- End Google Tag Manager -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
+    <title>Reportes Picante | Instagram y TikTok, claros — sin Excel</title>
+    <meta
+      name="description"
+      content="Panel de métricas y listening para creators, marcas y micro-agencias. Reportes de Instagram y TikTok que se entienden. Empezá gratis en app.wearepicante.com."
+    />
+    <meta name="keywords" content="reportes Instagram, métricas TikTok, listening redes, influencers, micro-agencias, Picante Reportes" />
+    <link rel="canonical" href="https://wearepicante.com/reportes" />
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content="Reportes Picante | Tus números, claros. Sin Excel." />
+    <meta
+      property="og:description"
+      content="Hecho para creators, marcas y micro-agencias que quieren reportes de Instagram y TikTok que se entienden."
+    />
+    <meta property="og:url" content="https://wearepicante.com/reportes" />
+    <meta property="og:image" content="https://wearepicante.com/assets/reportes-hero-poster.jpg" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="Reportes Picante | Tus números, claros. Sin Excel." />
+    <meta
+      name="twitter:description"
+      content="Métricas y listening para creators, marcas y micro-agencias. Empezá gratis."
+    />
+    <meta name="theme-color" content="#0a0a0a" />
+    <link rel="icon" type="image/png" href="./assets/picante-red.png" />
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "SoftwareApplication",
+        "name": "Reportes Picante",
+        "applicationCategory": "BusinessApplication",
+        "operatingSystem": "Web",
+        "description": "Panel de métricas y listening de Instagram y TikTok para creators, marcas y micro-agencias.",
+        "url": "https://wearepicante.com/reportes",
+        "provider": {
+          "@type": "Organization",
+          "name": "Picante Studio",
+          "url": "https://wearepicante.com"
+        },
+        "offers": {
+          "@type": "Offer",
+          "url": "https://app.wearepicante.com/registro"
+        }
+      }
+    </script>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Instrument+Serif:ital@0;1&display=swap"
+      rel="stylesheet"
+    />
+    <style>
+      :root {
+        --brand: #c31c1e;
+        --brand-light: #e63946;
+        --brand-glow: rgba(195, 28, 30, 0.55);
+        --ink: #1d1d1f;
+        --ink-soft: #6e6e73;
+        --ink-faint: #86868b;
+        --bg: #ffffff;
+        --bg-soft: #f5f5f7;
+        --bg-dark: #0a0a0a;
+        --line: rgba(0, 0, 0, 0.06);
+        --line-dark: rgba(255, 255, 255, 0.1);
+        --nav-h: 68px;
+        --ease: cubic-bezier(0.22, 1, 0.36, 1);
+        --ease-out: cubic-bezier(0.16, 1, 0.3, 1);
+        --max: 1120px;
+      }
+
+      *, *::before, *::after { box-sizing: border-box; }
+      html { scroll-behavior: smooth; }
+      body {
+        margin: 0;
+        font-family: Inter, -apple-system, BlinkMacSystemFont, "SF Pro Display", "Segoe UI", sans-serif;
+        font-size: 16px;
+        line-height: 1.5;
+        color: var(--ink);
+        background: var(--bg);
+        -webkit-font-smoothing: antialiased;
+        overflow-x: hidden;
+      }
+      ::selection { background: var(--ink); color: #fff; }
+      img { max-width: 100%; height: auto; display: block; }
+      a { color: inherit; }
+      a:focus-visible,
+      button:focus-visible {
+        outline: 2px solid var(--brand);
+        outline-offset: 3px;
+      }
+      main { overflow-x: clip; }
+      main section[id] { scroll-margin-top: calc(var(--nav-h) + 20px); }
+
+      .container {
+        width: min(var(--max), calc(100% - 40px));
+        margin: 0 auto;
+      }
+
+      .accent-red { color: var(--brand); }
+      .accent-serif {
+        font-family: "Instrument Serif", Georgia, serif;
+        font-style: italic;
+        font-weight: 400;
+      }
+      .display-line { display: block; }
+
+      /* —— Header —— */
+      .site-header {
+        position: fixed;
+        inset: 0 0 auto;
+        z-index: 60;
+        color: var(--ink);
+        border-bottom: 1px solid transparent;
+        transition: background 0.45s var(--ease), border-color 0.45s var(--ease), backdrop-filter 0.45s var(--ease);
+      }
+      .site-header.scrolled {
+        background: rgba(255, 255, 255, 0.78);
+        backdrop-filter: saturate(180%) blur(20px);
+        -webkit-backdrop-filter: saturate(180%) blur(20px);
+        border-bottom-color: var(--line);
+      }
+      .site-header.on-dark:not(.scrolled) { color: #fff; }
+
+      .nav {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        min-height: var(--nav-h);
+        gap: 16px;
+      }
+      .brand {
+        display: inline-flex;
+        align-items: center;
+        text-decoration: none;
+        height: 22px;
+        width: 72px;
+        position: relative;
+        flex-shrink: 0;
+      }
+      .brand-logo {
+        position: absolute;
+        inset: 0;
+        width: 100%;
+        height: 100%;
+        object-fit: contain;
+        object-position: left center;
+        transition: opacity 0.4s var(--ease);
+      }
+      .brand-logo--dark { opacity: 0; }
+      .brand-logo--light { opacity: 1; }
+      .site-header.scrolled .brand-logo--light { opacity: 0; }
+      .site-header.scrolled .brand-logo--dark { opacity: 1; }
+
+      .menu {
+        display: flex;
+        align-items: center;
+        gap: 28px;
+      }
+      .menu a {
+        text-decoration: none;
+        font-size: 0.88rem;
+        font-weight: 500;
+        color: var(--ink-soft);
+        transition: color 0.2s;
+      }
+      .menu a:hover { color: var(--ink); }
+      .site-header.on-dark:not(.scrolled) .menu a { color: rgba(255, 255, 255, 0.68); }
+      .site-header.on-dark:not(.scrolled) .menu a:hover { color: #fff; }
+
+      .menu-cta {
+        padding: 9px 18px;
+        border-radius: 999px;
+        border: 1px solid var(--line);
+        color: var(--ink) !important;
+        background: transparent;
+        transition: background 0.25s, border-color 0.25s, color 0.25s;
+      }
+      .site-header.on-dark:not(.scrolled) .menu-cta {
+        border-color: rgba(255, 255, 255, 0.22);
+        color: #fff !important;
+      }
+      .menu-cta:hover {
+        background: rgba(0, 0, 0, 0.05);
+        border-color: rgba(0, 0, 0, 0.12);
+      }
+      .site-header.on-dark:not(.scrolled) .menu-cta:hover {
+        background: rgba(255, 255, 255, 0.1);
+      }
+
+      .nav-toggle {
+        display: none;
+        width: 44px;
+        height: 44px;
+        border-radius: 12px;
+        border: 1px solid var(--line);
+        background: rgba(255, 255, 255, 0.92);
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        gap: 6px;
+        cursor: pointer;
+      }
+      .site-header.on-dark:not(.scrolled) .nav-toggle {
+        border-color: rgba(255, 255, 255, 0.22);
+        background: rgba(0, 0, 0, 0.28);
+      }
+      .nav-toggle-bar {
+        display: block;
+        width: 18px;
+        height: 2px;
+        border-radius: 2px;
+        background: var(--ink);
+        transition: transform 0.3s var(--ease);
+      }
+      .site-header.on-dark:not(.scrolled) .nav-toggle-bar { background: #fff; }
+      .site-header.nav-open .nav-toggle-bar:first-child { transform: translateY(4px) rotate(45deg); }
+      .site-header.nav-open .nav-toggle-bar:last-child { transform: translateY(-4px) rotate(-45deg); }
+
+      .nav-backdrop {
+        position: fixed;
+        inset: 0;
+        top: var(--nav-h);
+        background: rgba(0, 0, 0, 0.45);
+        opacity: 0;
+        visibility: hidden;
+        pointer-events: none;
+        transition: opacity 0.3s, visibility 0.3s;
+        z-index: 55;
+      }
+      .site-header.nav-open .nav-backdrop {
+        opacity: 1;
+        visibility: visible;
+        pointer-events: auto;
+      }
+      .nav-drawer {
+        position: fixed;
+        top: var(--nav-h);
+        right: 0;
+        width: min(360px, 88vw);
+        height: calc(100dvh - var(--nav-h));
+        background: #fff;
+        border-left: 1px solid var(--line);
+        padding: 20px;
+        display: flex;
+        flex-direction: column;
+        gap: 4px;
+        transform: translateX(100%);
+        visibility: hidden;
+        transition: transform 0.4s var(--ease-out), visibility 0.4s;
+        z-index: 58;
+        overflow-y: auto;
+      }
+      .site-header.nav-open .nav-drawer {
+        transform: translateX(0);
+        visibility: visible;
+      }
+      .nav-drawer a {
+        display: block;
+        padding: 14px;
+        border-radius: 12px;
+        text-decoration: none;
+        font-weight: 600;
+        color: var(--ink);
+      }
+      .nav-drawer a:hover { background: var(--bg-soft); }
+      .nav-drawer-cta {
+        margin-top: 12px;
+        text-align: center;
+        background: var(--brand);
+        color: #fff !important;
+      }
+      body.nav-open { overflow: hidden; }
+
+      /* —— Type —— */
+      .eyebrow {
+        display: inline-flex;
+        align-items: center;
+        gap: 10px;
+        margin: 0 0 24px;
+        font-size: 0.74rem;
+        letter-spacing: 0.22em;
+        text-transform: uppercase;
+        font-weight: 600;
+        color: var(--ink-soft);
+      }
+      .section-dark .eyebrow,
+      .hero .eyebrow { color: rgba(255, 255, 255, 0.55); }
+      .eyebrow-dot {
+        width: 6px;
+        height: 6px;
+        border-radius: 50%;
+        background: var(--brand);
+        box-shadow: 0 0 12px var(--brand-glow);
+        flex-shrink: 0;
+      }
+      .display {
+        margin: 0;
+        font-size: clamp(1.85rem, 4.5vw, 3.8rem);
+        line-height: 1.05;
+        letter-spacing: -0.038em;
+        font-weight: 700;
+        text-wrap: balance;
+      }
+      .lead {
+        margin: 22px 0 0;
+        font-size: clamp(1.02rem, 1.25vw, 1.15rem);
+        color: var(--ink-soft);
+        max-width: 54ch;
+        line-height: 1.55;
+      }
+      .section-dark .lead { color: rgba(255, 255, 255, 0.62); }
+
+      .btn {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        gap: 8px;
+        padding: 14px 28px;
+        border-radius: 999px;
+        font-weight: 600;
+        font-size: 0.95rem;
+        text-decoration: none;
+        border: 1px solid transparent;
+        transition: transform 0.35s var(--ease), background 0.35s var(--ease), border-color 0.35s var(--ease), box-shadow 0.35s var(--ease), color 0.35s var(--ease);
+      }
+      .btn-brand {
+        background: var(--brand);
+        color: #fff;
+        box-shadow: 0 14px 36px -14px rgba(195, 28, 30, 0.5);
+      }
+      .btn-brand:hover {
+        transform: translateY(-2px);
+        background: var(--brand-light);
+      }
+      .btn-ghost {
+        background: transparent;
+        color: inherit;
+        border-color: rgba(255, 255, 255, 0.22);
+      }
+      .btn-ghost:hover {
+        background: rgba(255, 255, 255, 0.08);
+        transform: translateY(-2px);
+      }
+      .section-soft .btn-ghost,
+      .section-light .btn-ghost {
+        border-color: rgba(0, 0, 0, 0.12);
+        color: var(--ink);
+      }
+      .section-soft .btn-ghost:hover,
+      .section-light .btn-ghost:hover {
+        background: rgba(0, 0, 0, 0.04);
+      }
+      .btn-light {
+        background: #fff;
+        color: #000;
+        box-shadow: 0 14px 36px -14px rgba(0, 0, 0, 0.35);
+      }
+      .btn-light:hover {
+        transform: translateY(-2px);
+        background: var(--brand);
+        color: #fff;
+      }
+      .btn--lg { padding: 16px 32px; font-size: 1rem; }
+
+      .section {
+        padding: clamp(88px, 11vw, 128px) 0;
+        position: relative;
+      }
+      .section-dark {
+        background: var(--bg-dark);
+        color: #fff;
+      }
+      .section-soft { background: var(--bg-soft); }
+      .section-head {
+        max-width: 720px;
+        margin-bottom: 52px;
+      }
+      .section-head--center {
+        margin-left: auto;
+        margin-right: auto;
+        text-align: center;
+      }
+      .section-head--center .eyebrow { justify-content: center; }
+      .section-head--center .lead { margin-left: auto; margin-right: auto; }
+
+      .reveal {
+        opacity: 0;
+        transform: translateY(28px);
+        transition: opacity 0.85s var(--ease-out), transform 0.85s var(--ease-out);
+      }
+      .reveal.is-in {
+        opacity: 1;
+        transform: none;
+      }
+
+      @media (prefers-reduced-motion: reduce) {
+        .reveal { opacity: 1; transform: none; transition: none; }
+        .hero-title .line > span { transform: none; }
+        .hero-video { opacity: 0 !important; visibility: hidden; }
+        .hero-video-wrap {
+          background:
+            radial-gradient(70% 55% at 85% 35%, rgba(195, 28, 30, 0.2), transparent 60%),
+            #050505 !important;
+        }
+      }
+
+      /* —— Hero —— */
+      .hero {
+        position: relative;
+        min-height: 100vh;
+        min-height: 100dvh;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        padding: calc(var(--nav-h) + 32px) 0 48px;
+        background: #050505;
+        color: #fff;
+        overflow: hidden;
+      }
+      .hero-video-wrap {
+        position: absolute;
+        inset: 0;
+        z-index: 0;
+        overflow: hidden;
+        background:
+          radial-gradient(70% 55% at 80% 30%, rgba(195, 28, 30, 0.22), transparent 55%),
+          radial-gradient(50% 40% at 15% 70%, rgba(195, 28, 30, 0.12), transparent 50%),
+          #050505;
+      }
+      .hero-video {
+        position: absolute;
+        inset: 0;
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        object-position: center 30%;
+        filter: saturate(1.02) contrast(1.03) brightness(0.92);
+        transform: scale(1.03);
+        transition: transform 1.4s var(--ease);
+      }
+      .hero.is-ready .hero-video { transform: scale(1); }
+      .hero-video-overlay {
+        position: absolute;
+        inset: 0;
+        background:
+          linear-gradient(105deg, rgba(5, 5, 5, 0.78) 0%, rgba(5, 5, 5, 0.48) 38%, rgba(5, 5, 5, 0.22) 62%, rgba(5, 5, 5, 0.55) 100%),
+          radial-gradient(70% 55% at 12% 40%, rgba(195, 28, 30, 0.1), transparent 58%);
+        pointer-events: none;
+      }
+      .hero-video-vignette {
+        position: absolute;
+        inset: 0;
+        pointer-events: none;
+        background: radial-gradient(120% 80% at 50% 45%, rgba(0, 0, 0, 0) 48%, rgba(0, 0, 0, 0.28) 100%);
+      }
+      .hero-inner {
+        position: relative;
+        z-index: 2;
+        width: min(680px, 100%);
+      }
+      .hero-title {
+        margin: 0;
+        font-size: clamp(2.05rem, 5vw, 3.55rem);
+        line-height: 1.06;
+        letter-spacing: -0.04em;
+        font-weight: 700;
+        text-wrap: balance;
+      }
+      .hero-title .line {
+        display: block;
+        overflow: hidden;
+        padding-bottom: 0.06em;
+      }
+      .hero-title .line > span {
+        display: block;
+        transform: translateY(110%);
+        transition: transform 0.9s var(--ease-out);
+      }
+      .hero-title.is-in .line > span { transform: translateY(0); }
+      .hero-title.is-in .line:nth-child(1) > span { transition-delay: 0.08s; }
+      .hero-title.is-in .line:nth-child(2) > span { transition-delay: 0.18s; }
+      .hero-sub {
+        margin: 22px 0 0;
+        font-size: clamp(1rem, 1.2vw, 1.12rem);
+        color: rgba(255, 255, 255, 0.68);
+        max-width: 42ch;
+        line-height: 1.6;
+      }
+      .hero-actions {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 12px;
+        margin-top: 36px;
+      }
+
+      /* —— Audiences (no cards) —— */
+      .audience-rail {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 0;
+        border-top: 1px solid rgba(0, 0, 0, 0.08);
+        border-bottom: 1px solid rgba(0, 0, 0, 0.08);
+      }
+      .audience-item {
+        padding: 36px 28px 40px;
+        border-right: 1px solid rgba(0, 0, 0, 0.08);
+      }
+      .audience-item:last-child { border-right: none; }
+      .audience-kicker {
+        margin: 0 0 14px;
+        font-size: 0.72rem;
+        letter-spacing: 0.18em;
+        text-transform: uppercase;
+        font-weight: 600;
+        color: var(--brand);
+      }
+      .audience-item h3 {
+        margin: 0 0 12px;
+        font-size: 1.35rem;
+        letter-spacing: -0.02em;
+        font-weight: 700;
+      }
+      .audience-item p {
+        margin: 0;
+        color: var(--ink-soft);
+        font-size: 0.98rem;
+        line-height: 1.55;
+        max-width: 32ch;
+      }
+
+      /* —— Benefits —— */
+      .benefit-list {
+        display: grid;
+        gap: 0;
+        margin: 0;
+        padding: 0;
+        list-style: none;
+      }
+      .benefit-item {
+        display: grid;
+        grid-template-columns: 64px 1fr;
+        gap: 20px;
+        padding: 28px 0;
+        border-top: 1px solid var(--line-dark);
+        align-items: start;
+      }
+      .benefit-item:last-child { border-bottom: 1px solid var(--line-dark); }
+      .benefit-num {
+        font-family: "Instrument Serif", Georgia, serif;
+        font-style: italic;
+        font-size: 1.65rem;
+        color: var(--brand-light);
+        line-height: 1;
+        padding-top: 4px;
+      }
+      .benefit-item h3 {
+        margin: 0 0 8px;
+        font-size: 1.2rem;
+        letter-spacing: -0.02em;
+      }
+      .benefit-item p {
+        margin: 0;
+        color: rgba(255, 255, 255, 0.62);
+        max-width: 58ch;
+        line-height: 1.55;
+      }
+
+      /* —— Why —— */
+      .why-block {
+        max-width: 720px;
+        margin: 0 auto;
+        text-align: center;
+      }
+      .why-block .lead { margin-left: auto; margin-right: auto; }
+
+      /* —— FAQ —— */
+      .faq-list {
+        max-width: 720px;
+        margin: 0 auto;
+        display: flex;
+        flex-direction: column;
+        gap: 0;
+      }
+      .faq-item {
+        border-top: 1px solid rgba(0, 0, 0, 0.08);
+        padding: 0;
+      }
+      .faq-item:last-child { border-bottom: 1px solid rgba(0, 0, 0, 0.08); }
+      .faq-item summary {
+        list-style: none;
+        cursor: pointer;
+        padding: 22px 0;
+        font-weight: 600;
+        font-size: 1.05rem;
+        letter-spacing: -0.015em;
+        display: flex;
+        justify-content: space-between;
+        gap: 16px;
+        align-items: center;
+      }
+      .faq-item summary::-webkit-details-marker { display: none; }
+      .faq-item summary::after {
+        content: "+";
+        font-weight: 400;
+        font-size: 1.35rem;
+        color: var(--ink-faint);
+        flex-shrink: 0;
+        transition: transform 0.25s var(--ease);
+      }
+      .faq-item[open] summary::after { content: "−"; }
+      .faq-item p {
+        margin: 0 0 24px;
+        color: var(--ink-soft);
+        max-width: 58ch;
+        line-height: 1.55;
+      }
+
+      /* —— CTA —— */
+      .cta-block {
+        text-align: center;
+        max-width: 720px;
+        margin: 0 auto;
+      }
+      .cta-block .eyebrow { justify-content: center; }
+      .cta-block .lead { margin-left: auto; margin-right: auto; }
+      .cta-actions {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 12px;
+        margin-top: 36px;
+      }
+      .cta-trust {
+        margin: 20px 0 0;
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 8px 14px;
+        font-size: 0.88rem;
+        color: rgba(255, 255, 255, 0.45);
+      }
+
+      .sticky-cta {
+        position: fixed;
+        left: 16px;
+        right: 16px;
+        bottom: 16px;
+        z-index: 50;
+        display: none;
+        opacity: 0;
+        transform: translateY(12px);
+        transition: opacity 0.35s var(--ease), transform 0.35s var(--ease);
+        pointer-events: none;
+      }
+      .sticky-cta.is-visible {
+        opacity: 1;
+        transform: none;
+        pointer-events: auto;
+      }
+      .sticky-cta .btn {
+        width: 100%;
+        box-shadow: 0 16px 40px -12px rgba(195, 28, 30, 0.55);
+      }
+
+      /* —— Footer —— */
+      .site-footer {
+        padding: 80px 0 40px;
+        border-top: 1px solid var(--line);
+        background: var(--bg);
+      }
+      .footer-hero {
+        padding-bottom: 56px;
+        border-bottom: 1px solid var(--line);
+      }
+      .footer-logo { width: min(340px, 58%); margin: 0; }
+      .footer-hero p {
+        margin: 18px 0 0;
+        color: var(--ink-soft);
+      }
+      .footer-grid {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 40px;
+        padding: 48px 0;
+        border-bottom: 1px solid var(--line);
+      }
+      .footer-col {
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+      }
+      .footer-title {
+        margin: 0 0 4px;
+        font-weight: 600;
+        font-size: 0.9rem;
+      }
+      .footer-col a,
+      .footer-col span {
+        color: var(--ink-soft);
+        text-decoration: none;
+        font-size: 0.92rem;
+        transition: color 0.2s;
+      }
+      .footer-col a:hover { color: var(--ink); }
+      .footer-bottom {
+        padding-top: 24px;
+        display: flex;
+        justify-content: space-between;
+        flex-wrap: wrap;
+        gap: 12px;
+        color: var(--ink-soft);
+        font-size: 0.85rem;
+      }
+
+      @media (max-width: 900px) {
+        .menu--desktop { display: none; }
+        .nav-toggle { display: inline-flex; }
+        .container { width: min(var(--max), calc(100% - 32px)); }
+        .hero {
+          padding: calc(var(--nav-h) + 24px) 0 40px;
+          min-height: 100svh;
+        }
+        .hero-inner { width: 100%; }
+        .hero-title {
+          font-size: clamp(1.95rem, 5.8vw, 2.85rem);
+        }
+        .hero-video {
+          object-position: center 28%;
+        }
+        .hero-video-overlay {
+          background:
+            linear-gradient(180deg, rgba(5, 5, 5, 0.55) 0%, rgba(5, 5, 5, 0.42) 35%, rgba(5, 5, 5, 0.62) 100%),
+            linear-gradient(105deg, rgba(5, 5, 5, 0.72) 0%, rgba(5, 5, 5, 0.28) 55%, rgba(5, 5, 5, 0.45) 100%),
+            radial-gradient(70% 55% at 12% 40%, rgba(195, 28, 30, 0.1), transparent 58%);
+        }
+        .section { padding: clamp(72px, 12vw, 100px) 0; }
+        .section-head { margin-bottom: 40px; }
+        .display { font-size: clamp(1.7rem, 5.2vw, 2.8rem); }
+        .audience-rail { grid-template-columns: 1fr; }
+        .audience-item {
+          border-right: none;
+          border-bottom: 1px solid rgba(0, 0, 0, 0.08);
+          padding: 28px 0;
+        }
+        .audience-item:last-child { border-bottom: none; }
+        .audience-item p { max-width: none; }
+        .footer-grid { grid-template-columns: 1fr 1fr; gap: 32px; }
+        .footer-logo { width: min(280px, 70%); }
+      }
+
+      @media (max-width: 640px) {
+        :root { --nav-h: 60px; }
+        .container { width: min(var(--max), calc(100% - 28px)); }
+        .hero {
+          padding-top: calc(var(--nav-h) + 16px);
+          padding-bottom: 32px;
+          min-height: 100svh;
+          justify-content: flex-end;
+        }
+        .hero-inner {
+          padding-bottom: max(12px, env(safe-area-inset-bottom));
+        }
+        .hero-title {
+          font-size: clamp(1.75rem, 8.4vw, 2.35rem);
+          letter-spacing: -0.035em;
+        }
+        .hero-sub {
+          max-width: none;
+          font-size: 0.98rem;
+        }
+        .hero-actions {
+          flex-direction: column;
+          align-items: stretch;
+          margin-top: 28px;
+          gap: 10px;
+        }
+        .hero-actions .btn {
+          width: 100%;
+          min-height: 48px;
+        }
+        .eyebrow {
+          margin-bottom: 16px;
+          font-size: 0.68rem;
+          letter-spacing: 0.18em;
+        }
+        .section { padding: 72px 0; }
+        .section-head { margin-bottom: 32px; }
+        .lead { font-size: 1rem; }
+        .benefit-item {
+          grid-template-columns: 40px 1fr;
+          gap: 12px;
+          padding: 22px 0;
+        }
+        .benefit-num { font-size: 1.35rem; }
+        .benefit-item h3 { font-size: 1.08rem; }
+        .faq-item summary {
+          font-size: 0.98rem;
+          padding: 18px 0;
+          align-items: flex-start;
+        }
+        .footer-grid { grid-template-columns: 1fr; gap: 28px; }
+        .footer-hero { padding-bottom: 36px; }
+        .footer-logo { width: min(220px, 72%); }
+        .sticky-cta {
+          display: block;
+          left: max(12px, env(safe-area-inset-left));
+          right: max(12px, env(safe-area-inset-right));
+          bottom: max(12px, env(safe-area-inset-bottom));
+        }
+        .sticky-cta .btn { min-height: 48px; }
+        body.has-sticky-cta { padding-bottom: calc(88px + env(safe-area-inset-bottom)); }
+        .cta-actions {
+          flex-direction: column;
+          align-items: stretch;
+        }
+        .cta-actions .btn {
+          width: 100%;
+          min-height: 48px;
+        }
+        .cta-trust {
+          flex-direction: column;
+          gap: 6px;
+        }
+        .cta-trust span[aria-hidden="true"] { display: none; }
+      }
+
+      @media (max-width: 380px) {
+        .hero-title { font-size: 1.6rem; }
+        .btn { padding: 13px 20px; font-size: 0.9rem; }
+      }
+    </style>
+  </head>
+  <body>
+    <!-- Google Tag Manager (noscript) -->
+    <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-M9Z9WLK4"
+    height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+    <!-- End Google Tag Manager (noscript) -->
+
+    <header class="site-header on-dark" id="siteHeader">
+      <div class="container nav">
+        <a class="brand" href="./index.html" aria-label="Picante Studio">
+          <img class="brand-logo brand-logo--light" src="./assets/picante-white.png" alt="" width="799" height="255" />
+          <img class="brand-logo brand-logo--dark" src="./assets/picante-black.png" alt="" width="1639" height="507" />
+        </a>
+        <nav class="menu menu--desktop" aria-label="Principal">
+          <a href="#para-quien">Para quién</a>
+          <a href="#que-ves">Qué ves</a>
+          <a href="#por-que">Por qué</a>
+          <a href="#faq">FAQ</a>
+          <a href="https://app.wearepicante.com/login">Entrar</a>
+          <a class="menu-cta" href="https://app.wearepicante.com/registro">Empezar gratis</a>
+        </nav>
+        <button
+          type="button"
+          class="nav-toggle"
+          id="navToggle"
+          aria-expanded="false"
+          aria-controls="navDrawer"
+          aria-label="Abrir menú"
+        >
+          <span class="nav-toggle-bar" aria-hidden="true"></span>
+          <span class="nav-toggle-bar" aria-hidden="true"></span>
+        </button>
+      </div>
+      <div class="nav-backdrop" id="navBackdrop" aria-hidden="true"></div>
+      <nav class="nav-drawer" id="navDrawer" aria-label="Móvil" aria-hidden="true">
+        <a href="#para-quien">Para quién</a>
+        <a href="#que-ves">Qué ves</a>
+        <a href="#por-que">Por qué</a>
+        <a href="#faq">FAQ</a>
+        <a href="https://app.wearepicante.com/login">Entrar</a>
+        <a class="nav-drawer-cta" href="https://app.wearepicante.com/registro">Empezar gratis</a>
+      </nav>
+    </header>
+
+    <main>
+      <!-- 1. Hero — video full-bleed -->
+      <section class="hero" id="top">
+        <div class="hero-video-wrap" aria-hidden="true">
+          <!-- Mateo: subir video aquí → ./assets/reportes-hero.mp4 (y opcional .webm) -->
+          <video
+            class="hero-video"
+            id="reportesHeroVideo"
+            autoplay
+            muted
+            loop
+            playsinline
+            preload="metadata"
+            poster="./assets/reportes-hero-poster.jpg"
+          >
+            <source src="./assets/reportes-hero.mp4" type="video/mp4" />
+          </video>
+          <div class="hero-video-overlay"></div>
+          <div class="hero-video-vignette"></div>
+        </div>
+        <div class="container hero-inner">
+          <p class="eyebrow">
+            <span class="eyebrow-dot" aria-hidden="true"></span>
+            Reportes by Picante
+          </p>
+          <h1 class="hero-title" id="heroTitle">
+            <span class="line"><span>Tus números de Instagram y TikTok,</span></span>
+            <span class="line"><span class="accent-red">claros. Sin Excel.</span></span>
+          </h1>
+          <p class="hero-sub">
+            Hecho para creators, marcas y micro-agencias que quieren reportes que se entienden.
+          </p>
+          <div class="hero-actions">
+            <a class="btn btn-brand" href="https://app.wearepicante.com/registro">Empezar gratis</a>
+            <a class="btn btn-ghost" href="https://app.wearepicante.com/login">Entrar</a>
+          </div>
+        </div>
+      </section>
+
+      <!-- 2. Para quién -->
+      <section class="section section-soft" id="para-quien">
+        <div class="container">
+          <div class="section-head reveal">
+            <p class="eyebrow"><span class="eyebrow-dot"></span> Para quién</p>
+            <h2 class="display">
+              <span class="display-line">Tres formas de usar</span>
+              <span class="display-line accent-red">los mismos datos.</span>
+            </h2>
+            <p class="lead">
+              Un panel. Tres ritmos distintos. Sin equipo de data, sin plantillas rotas.
+            </p>
+          </div>
+          <div class="audience-rail reveal">
+            <article class="audience-item">
+              <p class="audience-kicker">01</p>
+              <h3>Creator / influencer</h3>
+              <p>
+                Mirá tu crecimiento real y armá un informe limpio para sponsors — sin pelearte con capturas de pantalla.
+              </p>
+            </article>
+            <article class="audience-item">
+              <p class="audience-kicker">02</p>
+              <h3>Marca</h3>
+              <p>
+                Seguimiento de cuentas propias y campañas con creators: qué funciona, qué no, y por qué.
+              </p>
+            </article>
+            <article class="audience-item">
+              <p class="audience-kicker">03</p>
+              <h3>Micro-agencia</h3>
+              <p>
+                Pocas cuentas, mucho ruido. Reportes listos para mandar al cliente, cada mes, sin Excel.
+              </p>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <!-- 3. Qué ves -->
+      <section class="section section-dark" id="que-ves">
+        <div class="container">
+          <div class="section-head reveal">
+            <p class="eyebrow"><span class="eyebrow-dot"></span> Qué ves</p>
+            <h2 class="display">
+              <span class="display-line">Lo que necesitás</span>
+              <span class="display-line accent-red">para decidir.</span>
+            </h2>
+            <p class="lead">
+              No es un dump de métricas. Es lo suficiente para entender performance, conversación y próximos pasos.
+            </p>
+          </div>
+          <ol class="benefit-list">
+            <li class="benefit-item reveal">
+              <span class="benefit-num" aria-hidden="true">01</span>
+              <div>
+                <h3>Métricas que importan</h3>
+                <p>
+                  Alcance, engagement, crecimiento y tendencia — organizados para leer en minutos, no en una tarde.
+                </p>
+              </div>
+            </li>
+            <li class="benefit-item reveal">
+              <span class="benefit-num" aria-hidden="true">02</span>
+              <div>
+                <h3>Listening y menciones</h3>
+                <p>
+                  Qué se dice alrededor de la marca o el creator: menciones, tono y oportunidades sin peinar mil tabs.
+                </p>
+              </div>
+            </li>
+            <li class="benefit-item reveal">
+              <span class="benefit-num" aria-hidden="true">03</span>
+              <div>
+                <h3>Comparables claros</h3>
+                <p>
+                  Periodo contra periodo, cuenta contra cuenta. Contexto para saber si estás arriba, abajo o quieto.
+                </p>
+              </div>
+            </li>
+            <li class="benefit-item reveal">
+              <span class="benefit-num" aria-hidden="true">04</span>
+              <div>
+                <h3>Informe listo para mandar</h3>
+                <p>
+                  Salida limpia para sponsor, marca o cliente. Menos capturas, menos powerpoints de última hora.
+                </p>
+              </div>
+            </li>
+          </ol>
+        </div>
+      </section>
+
+      <!-- 4. Por qué Picante -->
+      <section class="section" id="por-que">
+        <div class="container">
+          <div class="why-block reveal">
+            <p class="eyebrow" style="justify-content: center"><span class="eyebrow-dot"></span> Por qué Picante</p>
+            <h2 class="display">
+              <span class="display-line">Menos ruido.</span>
+              <span class="display-line accent-red">Más decisión.</span>
+            </h2>
+            <p class="lead">
+              Pensado para quien no tiene un analista full-time: creators que cierran deals, marcas que mueven contenido
+              y micro-agencias con pocas cuentas. Claridad primero. El resto, después.
+            </p>
+          </div>
+        </div>
+      </section>
+
+      <!-- 5. FAQ -->
+      <section class="section section-soft" id="faq">
+        <div class="container">
+          <div class="section-head section-head--center reveal">
+            <p class="eyebrow"><span class="eyebrow-dot"></span> FAQ</p>
+            <h2 class="display">
+              <span class="display-line">Antes de crear</span>
+              <span class="display-line accent-serif">tu cuenta.</span>
+            </h2>
+          </div>
+          <div class="faq-list reveal">
+            <details class="faq-item">
+              <summary>¿Tengo que pagar para empezar?</summary>
+              <p>
+                Podés crear tu cuenta y empezar desde la app. Los detalles de planes se ven adentro; acá no inventamos
+                precios.
+              </p>
+            </details>
+            <details class="faq-item">
+              <summary>¿Para qué redes sirve?</summary>
+              <p>
+                Reportes Picante está pensado alrededor de Instagram y TikTok — las dos redes donde suelen vivir tus
+                números y tu conversación.
+              </p>
+            </details>
+            <details class="faq-item">
+              <summary>¿Es para una sola cuenta o varias?</summary>
+              <p>
+                Sirve si manejás tu propio perfil o varias cuentas (marca, roster, clientes). Micro-agencias: pensado
+                para pocas cuentas, sin equipo de data.
+              </p>
+            </details>
+          </div>
+        </div>
+      </section>
+
+      <!-- 6. CTA final -->
+      <section class="section section-dark" id="empezar">
+        <div class="container">
+          <div class="cta-block reveal">
+            <p class="eyebrow"><span class="eyebrow-dot"></span> Empezá hoy</p>
+            <h2 class="display">
+              <span class="display-line">Tus números, claros.</span>
+              <span class="display-line accent-red">Sin Excel.</span>
+            </h2>
+            <p class="lead">
+              Creá tu cuenta en la app. Si ya tenés una, entrá y seguí donde dejaste.
+            </p>
+            <div class="cta-actions">
+              <a class="btn btn-brand btn--lg" href="https://app.wearepicante.com/registro">Empezar gratis</a>
+              <a class="btn btn-ghost" href="https://app.wearepicante.com/login">Ya tengo cuenta</a>
+            </div>
+            <p class="cta-trust">
+              <span>app.wearepicante.com</span>
+              <span aria-hidden="true">·</span>
+              <span>Creators · Marcas · Micro-agencias</span>
+            </p>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <div class="sticky-cta" id="stickyCta" aria-hidden="true">
+      <a class="btn btn-brand" href="https://app.wearepicante.com/registro">Empezar gratis</a>
+    </div>
+
+    <footer class="site-footer">
+      <div class="container">
+        <div class="footer-hero">
+          <a href="./index.html">
+            <img class="footer-logo" src="./assets/picante-red.png" alt="Picante Studio" width="1639" height="507" loading="lazy" />
+          </a>
+          <p>Sistemas de crecimiento para marcas ambiciosas.</p>
+        </div>
+        <div class="footer-grid">
+          <div class="footer-col">
+            <p class="footer-title">Producto</p>
+            <a href="./reportes.html" aria-current="page">Reportes</a>
+            <a href="./pulse.html">Pulse</a>
+            <a href="./index.html">Agencia</a>
+            <a href="/blog">Blog</a>
+          </div>
+          <div class="footer-col">
+            <p class="footer-title">Cuenta</p>
+            <a href="https://app.wearepicante.com/registro">Crear cuenta</a>
+            <a href="https://app.wearepicante.com/login">Entrar</a>
+            <a href="mailto:mateo@pimenton.io">mateo@pimenton.io</a>
+          </div>
+          <div class="footer-col">
+            <p class="footer-title">Regiones</p>
+            <span>USA</span>
+            <span>LATAM</span>
+            <span>Europa</span>
+          </div>
+        </div>
+        <div class="footer-bottom">
+          <p>© 2026 Picante Studio</p>
+          <p>Reportes · wearepicante.com</p>
+        </div>
+      </div>
+    </footer>
+
+    <script>
+      (function () {
+        const prefersReduced = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+        const header = document.getElementById("siteHeader");
+        const darkSurfaces = document.querySelectorAll(".hero, .section-dark");
+
+        function onScroll() {
+          const y = window.scrollY || document.documentElement.scrollTop;
+          if (header) header.classList.toggle("scrolled", y > 10);
+          if (header && darkSurfaces.length) {
+            let onDark = false;
+            darkSurfaces.forEach((el) => {
+              const r = el.getBoundingClientRect();
+              if (r.top < 72 && r.bottom > 72) onDark = true;
+            });
+            header.classList.toggle("on-dark", onDark);
+          }
+        }
+        onScroll();
+        window.addEventListener("scroll", onScroll, { passive: true });
+
+        const heroEl = document.querySelector(".hero");
+        const heroVideo = document.getElementById("reportesHeroVideo");
+        if (heroVideo && heroEl) {
+          if (prefersReduced) {
+            try {
+              heroVideo.pause();
+              heroVideo.removeAttribute("autoplay");
+            } catch (_) {}
+          } else {
+            const markReady = () => heroEl.classList.add("is-ready");
+            if (heroVideo.readyState >= 2) markReady();
+            else {
+              heroVideo.addEventListener("loadeddata", markReady, { once: true });
+              setTimeout(markReady, 1200);
+            }
+            const tryPlay = () => {
+              const p = heroVideo.play();
+              if (p && typeof p.catch === "function") p.catch(() => {});
+            };
+            tryPlay();
+            document.addEventListener("visibilitychange", () => {
+              if (!document.hidden) tryPlay();
+            });
+            if ("IntersectionObserver" in window) {
+              const vio = new IntersectionObserver(
+                (entries) => {
+                  entries.forEach((entry) => {
+                    if (entry.isIntersecting) tryPlay();
+                    else heroVideo.pause();
+                  });
+                },
+                { threshold: 0.05 }
+              );
+              vio.observe(heroEl);
+            }
+          }
+        }
+
+        const heroTitle = document.getElementById("heroTitle");
+        if (heroTitle && !prefersReduced) {
+          requestAnimationFrame(() => heroTitle.classList.add("is-in"));
+        } else if (heroTitle) {
+          heroTitle.classList.add("is-in");
+        }
+
+        const revealEls = document.querySelectorAll(".reveal");
+        if (prefersReduced) {
+          revealEls.forEach((el) => el.classList.add("is-in"));
+        } else if ("IntersectionObserver" in window) {
+          const io = new IntersectionObserver(
+            (entries) => {
+              entries.forEach((entry) => {
+                if (entry.isIntersecting) {
+                  entry.target.classList.add("is-in");
+                  io.unobserve(entry.target);
+                }
+              });
+            },
+            { threshold: 0.12, rootMargin: "0px 0px -48px 0px" }
+          );
+          revealEls.forEach((el) => io.observe(el));
+          setTimeout(() => {
+            revealEls.forEach((el) => {
+              if (!el.classList.contains("is-in")) el.classList.add("is-in");
+            });
+          }, 2800);
+        } else {
+          revealEls.forEach((el) => el.classList.add("is-in"));
+        }
+
+        const toggle = document.getElementById("navToggle");
+        const backdrop = document.getElementById("navBackdrop");
+        const drawer = document.getElementById("navDrawer");
+        if (toggle && backdrop && drawer && header) {
+          const setOpen = (open) => {
+            header.classList.toggle("nav-open", open);
+            document.body.classList.toggle("nav-open", open);
+            toggle.setAttribute("aria-expanded", open ? "true" : "false");
+            toggle.setAttribute("aria-label", open ? "Cerrar menú" : "Abrir menú");
+            drawer.setAttribute("aria-hidden", open ? "false" : "true");
+          };
+          toggle.addEventListener("click", () => setOpen(!header.classList.contains("nav-open")));
+          backdrop.addEventListener("click", () => setOpen(false));
+          drawer.querySelectorAll("a").forEach((a) => a.addEventListener("click", () => setOpen(false)));
+          document.addEventListener("keydown", (e) => {
+            if (e.key === "Escape") setOpen(false);
+          });
+        }
+
+        const stickyCta = document.getElementById("stickyCta");
+        const heroSection = document.getElementById("top");
+        const mqSticky = window.matchMedia("(max-width: 640px)");
+        if (stickyCta && heroSection) {
+          const showSticky = () => {
+            if (!mqSticky.matches) {
+              stickyCta.classList.remove("is-visible");
+              stickyCta.setAttribute("aria-hidden", "true");
+              document.body.classList.remove("has-sticky-cta");
+              return;
+            }
+            const pastHero = heroSection.getBoundingClientRect().bottom < 0;
+            stickyCta.classList.toggle("is-visible", pastHero);
+            stickyCta.setAttribute("aria-hidden", pastHero ? "false" : "true");
+            document.body.classList.toggle("has-sticky-cta", pastHero);
+          };
+          showSticky();
+          window.addEventListener("scroll", showSticky, { passive: true });
+          mqSticky.addEventListener("change", showSticky);
+        }
+      })();
+    </script>
+  </body>
+</html>

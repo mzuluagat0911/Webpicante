@@ -5,6 +5,7 @@
     { "source": "/pulse/privacidad", "destination": "/pulse-privacidad.html" },
     { "source": "/pulse/terminos", "destination": "/pulse-terminos.html" },
     { "source": "/pulse", "destination": "/pulse.html" },
+    { "source": "/reportes", "destination": "/reportes.html" },
     { "source": "/blog", "destination": "/blog/index.html" },
     { "source": "/blog/:slug", "destination": "/blog/:slug.html" },
     { "source": "/en/blog", "destination": "/en/blog/index.html" },
@@ -17,6 +18,7 @@
     { "source": "/pulse-privacidad.html", "destination": "/pulse/privacidad", "permanent": true },
     { "source": "/pulse-terminos.html", "destination": "/pulse/terminos", "permanent": true },
     { "source": "/pulse.html", "destination": "/pulse", "permanent": true },
+    { "source": "/reportes.html", "destination": "/reportes", "permanent": true },
     { "source": "/blog/pulse/", "destination": "/pulse/blog", "permanent": true },
     { "source": "/en/blog/pulse/", "destination": "/en/pulse/blog", "permanent": true }
   ]
