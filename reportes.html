@@ -10,26 +10,26 @@
     })(window,document,'script','dataLayer','GTM-M9Z9WLK4');</script>
     <!-- End Google Tag Manager -->
     <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
-    <title>Reportes Picante | Instagram y TikTok, claros — sin Excel</title>
+    <title>Picante Reportes | Your All-in-One Social Media Analytics Dashboard</title>
     <meta
       name="description"
-      content="Panel de métricas y listening para creators, marcas y micro-agencias. Reportes de Instagram y TikTok que se entienden. Empezá gratis en app.wearepicante.com."
+      content="Tu dashboard all-in-one de analytics sociales. Mide, analiza y crece con métricas orgánicas de Instagram y TikTok. Sin Excel. Empezar gratis en app.wearepicante.com."
     />
-    <meta name="keywords" content="reportes Instagram, métricas TikTok, listening redes, influencers, micro-agencias, Picante Reportes" />
+    <meta name="keywords" content="reportes Instagram, métricas TikTok, social analytics dashboard, listening redes, influencers, micro-agencias, Picante Reportes" />
     <link rel="canonical" href="https://wearepicante.com/reportes" />
     <meta property="og:type" content="website" />
-    <meta property="og:title" content="Reportes Picante | Tus números, claros. Sin Excel." />
+    <meta property="og:title" content="Picante Reportes | Your All-in-One Social Media Analytics Dashboard" />
     <meta
       property="og:description"
-      content="Hecho para creators, marcas y micro-agencias que quieren reportes de Instagram y TikTok que se entienden."
+      content="Mide, analiza y crece tu marca. Dashboard all-in-one de métricas orgánicas de Instagram y TikTok."
     />
     <meta property="og:url" content="https://wearepicante.com/reportes" />
     <meta property="og:image" content="https://wearepicante.com/assets/reportes-hero-poster.jpg" />
     <meta name="twitter:card" content="summary_large_image" />
-    <meta name="twitter:title" content="Reportes Picante | Tus números, claros. Sin Excel." />
+    <meta name="twitter:title" content="Picante Reportes | All-in-One Social Analytics" />
     <meta
       name="twitter:description"
-      content="Métricas y listening para creators, marcas y micro-agencias. Empezá gratis."
+      content="Mide, analiza y crece. Instagram + TikTok en un solo dashboard."
     />
     <meta name="theme-color" content="#0a0a0a" />
     <link rel="icon" type="image/png" href="./assets/picante-red.png" />
@@ -444,11 +444,19 @@
         height: 100%;
         object-fit: cover;
         object-position: center 30%;
-        filter: saturate(1.02) contrast(1.03) brightness(0.92);
-        transform: scale(1.03);
-        transition: transform 1.4s var(--ease);
+        /* Sin filter CSS: reduce jank en mobile/GPU */
+        opacity: 0.92;
+        transform: none;
       }
-      .hero.is-ready .hero-video { transform: scale(1); }
+      .hero.is-ready .hero-video { opacity: 1; transition: opacity 0.6s var(--ease); }
+      .hero-video.is-static {
+        display: none;
+      }
+      .hero-video-wrap.has-poster-fallback {
+        background-image: url("./assets/reportes-hero-poster.jpg");
+        background-size: cover;
+        background-position: center 30%;
+      }
       .hero-video-overlay {
         position: absolute;
         inset: 0;
@@ -470,7 +478,7 @@
       }
       .hero-title {
         margin: 0;
-        font-size: clamp(2.05rem, 5vw, 3.55rem);
+        font-size: clamp(1.85rem, 4.6vw, 3.35rem);
         line-height: 1.06;
         letter-spacing: -0.04em;
         font-weight: 700;
@@ -493,14 +501,27 @@
         margin: 22px 0 0;
         font-size: clamp(1rem, 1.2vw, 1.12rem);
         color: rgba(255, 255, 255, 0.68);
-        max-width: 42ch;
+        max-width: 44ch;
         line-height: 1.6;
+      }
+      .hero-sub-en {
+        margin: 10px 0 0;
+        font-size: 0.92rem;
+        color: rgba(255, 255, 255, 0.48);
+        max-width: 48ch;
+        line-height: 1.5;
+        font-weight: 500;
       }
       .hero-actions {
         display: flex;
         flex-wrap: wrap;
         gap: 12px;
         margin-top: 36px;
+      }
+      .hero-micro {
+        margin: 14px 0 0;
+        font-size: 0.88rem;
+        color: rgba(255, 255, 255, 0.48);
       }
 
       /* —— Audiences (no cards) —— */
@@ -921,19 +942,21 @@
         <div class="container hero-inner">
           <p class="eyebrow">
             <span class="eyebrow-dot" aria-hidden="true"></span>
-            Reportes by Picante
+            Picante Reportes · Instagram + TikTok
           </p>
           <h1 class="hero-title" id="heroTitle">
-            <span class="line"><span>Tus números de Instagram y TikTok,</span></span>
-            <span class="line"><span class="accent-red">claros. Sin Excel.</span></span>
+            <span class="line"><span>Your <span class="accent-red">All-in-One</span> Social Media</span></span>
+            <span class="line"><span>Analytics Dashboard.</span></span>
           </h1>
           <p class="hero-sub">
-            Hecho para creators, marcas y micro-agencias que quieren reportes que se entienden.
+            Tu panel all-in-one de analytics sociales. Mide, analiza y crece con métricas orgánicas de Instagram y TikTok — claras, en un solo lugar. Sin Excel.
           </p>
+          <p class="hero-sub-en">Track. Analyze. Grow. — Built for creators, brands &amp; micro-agencies.</p>
           <div class="hero-actions">
             <a class="btn btn-brand" href="https://app.wearepicante.com/registro">Empezar gratis</a>
             <a class="btn btn-ghost" href="https://app.wearepicante.com/login">Entrar</a>
           </div>
+          <p class="hero-micro">Crea tu cuenta en minutos. Conecta Instagram o TikTok cuando quieras.</p>
         </div>
       </section>
 
@@ -955,7 +978,7 @@
               <p class="audience-kicker">01</p>
               <h3>Creator / influencer</h3>
               <p>
-                Mirá tu crecimiento real y armá un informe limpio para sponsors — sin pelearte con capturas de pantalla.
+                Mira tu crecimiento real y arma un informe limpio para sponsors — sin pelearte con capturas de pantalla.
               </p>
             </article>
             <article class="audience-item">
@@ -969,7 +992,7 @@
               <p class="audience-kicker">03</p>
               <h3>Micro-agencia</h3>
               <p>
-                Pocas cuentas, mucho ruido. Reportes listos para mandar al cliente, cada mes, sin Excel.
+                Pocas cuentas, mucho ruido. Reportes listos para enviar al cliente, cada mes, sin Excel.
               </p>
             </article>
           </div>
@@ -982,7 +1005,7 @@
           <div class="section-head reveal">
             <p class="eyebrow"><span class="eyebrow-dot"></span> Qué ves</p>
             <h2 class="display">
-              <span class="display-line">Lo que necesitás</span>
+              <span class="display-line">Lo que necesitas</span>
               <span class="display-line accent-red">para decidir.</span>
             </h2>
             <p class="lead">
@@ -1020,7 +1043,7 @@
             <li class="benefit-item reveal">
               <span class="benefit-num" aria-hidden="true">04</span>
               <div>
-                <h3>Informe listo para mandar</h3>
+                <h3>Informe listo para enviar</h3>
                 <p>
                   Salida limpia para sponsor, marca o cliente. Menos capturas, menos powerpoints de última hora.
                 </p>
@@ -1061,21 +1084,21 @@
             <details class="faq-item">
               <summary>¿Tengo que pagar para empezar?</summary>
               <p>
-                Podés crear tu cuenta y empezar desde la app. Los detalles de planes se ven adentro; acá no inventamos
-                precios.
+                Puedes crear tu cuenta y empezar desde la app. Los detalles de planes se ven adentro; aquí no
+                inventamos precios.
               </p>
             </details>
             <details class="faq-item">
               <summary>¿Para qué redes sirve?</summary>
               <p>
-                Reportes Picante está pensado alrededor de Instagram y TikTok — las dos redes donde suelen vivir tus
+                Picante Reportes está pensado alrededor de Instagram y TikTok — las dos redes donde suelen vivir tus
                 números y tu conversación.
               </p>
             </details>
             <details class="faq-item">
               <summary>¿Es para una sola cuenta o varias?</summary>
               <p>
-                Sirve si manejás tu propio perfil o varias cuentas (marca, roster, clientes). Micro-agencias: pensado
+                Sirve si manejas tu propio perfil o varias cuentas (marca, roster, clientes). Micro-agencias: pensado
                 para pocas cuentas, sin equipo de data.
               </p>
             </details>
@@ -1087,13 +1110,13 @@
       <section class="section section-dark" id="empezar">
         <div class="container">
           <div class="cta-block reveal">
-            <p class="eyebrow"><span class="eyebrow-dot"></span> Empezá hoy</p>
+            <p class="eyebrow"><span class="eyebrow-dot"></span> Empieza hoy</p>
             <h2 class="display">
-              <span class="display-line">Tus números, claros.</span>
-              <span class="display-line accent-red">Sin Excel.</span>
+              <span class="display-line">Your all-in-one dashboard.</span>
+              <span class="display-line accent-red">Listo para crecer.</span>
             </h2>
             <p class="lead">
-              Creá tu cuenta en la app. Si ya tenés una, entrá y seguí donde dejaste.
+              Crea tu cuenta en la app. Si ya tienes una, entra y continúa donde lo dejaste.
             </p>
             <div class="cta-actions">
               <a class="btn btn-brand btn--lg" href="https://app.wearepicante.com/registro">Empezar gratis</a>
@@ -1176,26 +1199,50 @@
 
         const heroEl = document.querySelector(".hero");
         const heroVideo = document.getElementById("reportesHeroVideo");
+        const heroWrap = heroEl && heroEl.querySelector(".hero-video-wrap");
+
+        function usePosterOnly() {
+          if (!heroVideo || !heroWrap) return;
+          try {
+            heroVideo.pause();
+            heroVideo.removeAttribute("autoplay");
+            heroVideo.querySelectorAll("source").forEach((s) => s.remove());
+            heroVideo.removeAttribute("src");
+            heroVideo.load();
+          } catch (_) {}
+          heroVideo.classList.add("is-static");
+          heroWrap.classList.add("has-poster-fallback");
+          heroEl.classList.add("is-ready");
+        }
+
         if (heroVideo && heroEl) {
-          if (prefersReduced) {
-            try {
-              heroVideo.pause();
-              heroVideo.removeAttribute("autoplay");
-            } catch (_) {}
+          const conn = navigator.connection || navigator.mozConnection || navigator.webkitConnection;
+          const slowNet =
+            !!conn &&
+            (conn.saveData ||
+              (conn.effectiveType && ["slow-2g", "2g"].indexOf(conn.effectiveType) !== -1));
+
+          if (prefersReduced || slowNet) {
+            usePosterOnly();
           } else {
             const markReady = () => heroEl.classList.add("is-ready");
             if (heroVideo.readyState >= 2) markReady();
             else {
               heroVideo.addEventListener("loadeddata", markReady, { once: true });
-              setTimeout(markReady, 1200);
+              setTimeout(markReady, 900);
             }
             const tryPlay = () => {
               const p = heroVideo.play();
               if (p && typeof p.catch === "function") p.catch(() => {});
             };
-            tryPlay();
+            if ("requestIdleCallback" in window) {
+              requestIdleCallback(() => tryPlay(), { timeout: 800 });
+            } else {
+              setTimeout(tryPlay, 120);
+            }
             document.addEventListener("visibilitychange", () => {
               if (!document.hidden) tryPlay();
+              else heroVideo.pause();
             });
             if ("IntersectionObserver" in window) {
               const vio = new IntersectionObserver(
@@ -1205,7 +1252,7 @@
                     else heroVideo.pause();
                   });
                 },
-                { threshold: 0.05 }
+                { threshold: 0.08 }
               );
               vio.observe(heroEl);
             }
