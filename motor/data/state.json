@@ -5,11 +5,13 @@
       "GEO generative engine optimization",
       "aparecer en ChatGPT",
       "medir conversiones desde ChatGPT y atribución de tráfico de IA",
-      "cómo hacer que ChatGPT recomiende tu marca"
+      "cómo hacer que ChatGPT recomiende tu marca",
+      "cómo aparecer en las AI Overviews de Google"
     ],
     "pulse": [
       "por qué mi competencia aparece antes en Google Maps",
-      "cómo gestionar reseñas de Google en negocio multi-sucursal"
+      "cómo gestionar reseñas de Google en negocio multi-sucursal",
+      "cómo pedir reseñas en Google sin que te las borren"
     ]
   },
   "published": [
@@ -69,6 +71,30 @@
       "pathEn": "/en/blog/manage-google-reviews-multiple-locations",
       "titleEn": "How to Manage Google Reviews Across Multiple Locations",
       "descriptionEn": "A weekly operating system to manage Google reviews across all your locations: one tone, a clear role matrix, and a 20-minute reputation ritual."
+    },
+    {
+      "slug": "como-aparecer-ai-overviews-google",
+      "destino": "picante",
+      "keyword": "cómo aparecer en las AI Overviews de Google",
+      "date": "2026-08-08",
+      "title": "Cómo aparecer en las AI Overviews de Google: sistema para marcas",
+      "description": "El sistema de 5 pasos para que tu marca aparezca en las AI Overviews de Google: auditar, reescribir con estructura extraíble, autoridad, schema y medir citación.",
+      "path": "/blog/como-aparecer-ai-overviews-google",
+      "pathEn": "/en/blog/appear-google-ai-overviews-system-brands",
+      "titleEn": "How to Appear in Google AI Overviews: The System for Brands",
+      "descriptionEn": "AI Overviews cut clicks, not visibility. Here's a 5-step system for brands in LATAM and USA to win share of citation instead of chasing lost traffic."
+    },
+    {
+      "slug": "pedir-resenas-google-sin-que-borren-2026",
+      "destino": "pulse",
+      "keyword": "cómo pedir reseñas en Google sin que te las borren",
+      "date": "2026-08-08",
+      "title": "Cómo pedir reseñas en Google sin que te las borren (regla 2026)",
+      "description": "Guía 2026 para pedir reseñas en Google sin sanción: qué sí y qué no, guion compliant, ritual de 20 min y cómo hacerlo parejo en varias sucursales.",
+      "path": "/blog/pedir-resenas-google-sin-que-borren-2026",
+      "pathEn": "/en/blog/ask-google-reviews-without-deletion-2026",
+      "titleEn": "How to Ask for Google Reviews Without Getting Them Deleted (2026 Rule)",
+      "descriptionEn": "Google now bans review gating and enforces it. Here's the safe way to ask for reviews across all your locations without deletions or profile restrictions."
     }
   ]
 }
