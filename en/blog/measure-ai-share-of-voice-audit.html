@@ -1,0 +1,258 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <!-- Google Tag Manager -->
+    <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+    new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+    j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+    'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+    })(window,document,'script','dataLayer','GTM-M9Z9WLK4');</script>
+    <!-- End Google Tag Manager -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
+    <title>How to Measure Your AI Share of Voice: A Repeatable Audit Protocol</title>
+    <meta name="description" content="Learn a repeatable protocol to measure your AI Share of Voice across ChatGPT, Perplexity and Gemini: prompt set, scoring matrix, sampling and benchmark." />
+    <meta name="keywords" content="share of voice en IA, visibilidad de marca en IA, cómo saber si ChatGPT menciona mi marca, monitorear menciones de marca en LLMs, share of voice en LLMs, auditoría de visibilidad en ChatGPT y Perplexity, herramientas para medir presencia de marca en IA, AI share of voice para B2B, cómo trackear citas de mi marca en Perplexity, benchmark de visibilidad de marca vs competencia en IA" />
+    <link rel="canonical" href="https://wearepicante.com/en/blog/measure-ai-share-of-voice-audit" />
+    <link rel="alternate" hreflang="es" href="https://wearepicante.com/blog/share-of-voice-en-ia" />
+    <link rel="alternate" hreflang="en" href="https://wearepicante.com/en/blog/measure-ai-share-of-voice-audit" />
+    <link rel="alternate" hreflang="x-default" href="https://wearepicante.com/blog/share-of-voice-en-ia" />
+    <meta property="og:type" content="article" />
+    <meta property="og:title" content="How to Measure Your AI Share of Voice: A Repeatable Audit Protocol" />
+    <meta property="og:description" content="Learn a repeatable protocol to measure your AI Share of Voice across ChatGPT, Perplexity and Gemini: prompt set, scoring matrix, sampling and benchmark." />
+    <meta property="og:url" content="https://wearepicante.com/en/blog/measure-ai-share-of-voice-audit" />
+    <meta property="og:image" content="https://wearepicante.com/assets/picante-red.png" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="How to Measure Your AI Share of Voice: A Repeatable Audit Protocol" />
+    <meta name="twitter:description" content="Learn a repeatable protocol to measure your AI Share of Voice across ChatGPT, Perplexity and Gemini: prompt set, scoring matrix, sampling and benchmark." />
+    <meta name="twitter:image" content="https://wearepicante.com/assets/picante-red.png" />
+    <meta name="theme-color" content="#c31c1e" />
+    <link rel="icon" type="image/png" href="/assets/picante-red.png" />
+    <link rel="apple-touch-icon" href="/assets/picante-red.png" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Instrument+Serif:ital@0;1&display=swap"
+      rel="stylesheet"
+    />
+    <script type="application/ld+json">
+{
+      "@context": "https://schema.org",
+      "@type": "Article",
+      "headline": "How to Measure Your AI Share of Voice: Auditing Brand Visibility in ChatGPT, Perplexity, and Gemini",
+      "description": "Learn a repeatable protocol to measure your AI Share of Voice across ChatGPT, Perplexity and Gemini: prompt set, scoring matrix, sampling and benchmark.",
+      "inLanguage": "en",
+      "author": {
+            "@type": "Organization",
+            "name": "Picante Studio",
+            "url": "https://wearepicante.com/"
+      },
+      "publisher": {
+            "@type": "Organization",
+            "name": "Picante Studio",
+            "logo": {
+                  "@type": "ImageObject",
+                  "url": "https://wearepicante.com/assets/picante-red.png"
+            }
+      },
+      "datePublished": "2026-08-15",
+      "dateModified": "2026-08-15",
+      "mainEntityOfPage": "https://wearepicante.com/en/blog/measure-ai-share-of-voice-audit",
+      "image": "https://wearepicante.com/assets/picante-red.png"
+}
+    </script>
+    <script type="application/ld+json">
+{
+      "@context": "https://schema.org",
+      "@type": "FAQPage",
+      "mainEntity": [
+            {
+                  "@type": "Question",
+                  "name": "What is AI Share of Voice and how does it differ from traditional SEO?",
+                  "acceptedAnswer": {
+                        "@type": "Answer",
+                        "text": "AI Share of Voice is the percentage of relevant AI answers where your brand appears, weighted by position, sentiment and citation. Unlike SEO, there's no ranked results page — the model gives one synthesized answer, so you're either named in it or effectively invisible."
+                  }
+            },
+            {
+                  "@type": "Question",
+                  "name": "How do I know if ChatGPT or Perplexity mention my brand?",
+                  "acceptedAnswer": {
+                        "@type": "Answer",
+                        "text": "Run a fixed set of ICP questions on each engine — especially unbranded category and comparison queries — and record whether your brand is named, where, and with what sentiment. Repeat each prompt several times, since answers vary between sessions."
+                  }
+            },
+            {
+                  "@type": "Question",
+                  "name": "How many prompts do I need for a reliable sample?",
+                  "acceptedAnswer": {
+                        "@type": "Answer",
+                        "text": "For a B2B brand, 20–40 prompts across intent buckets (category, problem, comparison, branded) is enough. Run each prompt at least 3 times per engine on different days to average out the natural variability of AI answers."
+                  }
+            },
+            {
+                  "@type": "Question",
+                  "name": "Can I measure AI visibility manually without a paid tool?",
+                  "acceptedAnswer": {
+                        "@type": "Answer",
+                        "text": "Yes. A spreadsheet, a frozen prompt set and disciplined sampling are enough to get a defensible baseline. Paid tools speed up scale and monitoring, but the method — appearance, position, sentiment, citation, competitors — is the same either way."
+                  }
+            },
+            {
+                  "@type": "Question",
+                  "name": "How do I compare my visibility against competitors?",
+                  "acceptedAnswer": {
+                        "@type": "Answer",
+                        "text": "Track which rival brands appear in the same answers and their positions, then calculate relative Share of Voice: your appearances divided by the total appearances of you plus your top competitors within category and comparison prompts. Report it per engine, since gaps differ by model."
+                  }
+            }
+      ]
+}
+    </script>
+    <script type="application/ld+json">
+{
+      "@context": "https://schema.org",
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+            {
+                  "@type": "ListItem",
+                  "position": 1,
+                  "name": "Home",
+                  "item": "https://wearepicante.com/"
+            },
+            {
+                  "@type": "ListItem",
+                  "position": 2,
+                  "name": "Blog",
+                  "item": "https://wearepicante.com/en/blog"
+            },
+            {
+                  "@type": "ListItem",
+                  "position": 3,
+                  "name": "How to Measure Your AI Share of Voice: Auditing Brand Visibility in ChatGPT, Perplexity, and Gemini",
+                  "item": "https://wearepicante.com/en/blog/measure-ai-share-of-voice-audit"
+            }
+      ]
+}
+    </script>
+    <style>
+      :root { --red:#c31c1e; --ink:#14110f; --muted:#6a635d; --line:#e7e2db; --bg:#faf8f5; --card:#fff; --measure:720px; --topbar:rgba(250,248,245,.85); --cta-bg:#14110f; }
+      .theme-pulse {
+        --ink:#f4f1ec; --muted:rgba(244,241,236,.68); --line:rgba(255,255,255,.12);
+        --bg:#0c0b0a; --card:#161412; --topbar:rgba(12,11,10,.9); --cta-bg:#1a1714;
+      }
+      * { box-sizing:border-box; }
+      html { scroll-behavior:smooth; }
+      body { margin:0; font-family:"Inter",system-ui,sans-serif; color:var(--ink); background:var(--bg); line-height:1.7; -webkit-font-smoothing:antialiased; }
+      a { color:inherit; }
+      .wrap { max-width:var(--measure); margin:0 auto; padding:0 24px; }
+      .topbar { position:sticky; top:0; z-index:50; background:var(--topbar); backdrop-filter:saturate(150%) blur(10px); border-bottom:1px solid var(--line); }
+      .topbar-inner { max-width:1120px; margin:0 auto; padding:14px 24px; display:flex; align-items:center; justify-content:space-between; gap:16px; }
+      .brand img { height:26px; width:auto; display:block; }
+      .theme-pulse .brand img { filter: invert(1); }
+      .topnav { display:flex; align-items:center; gap:22px; font-size:14px; font-weight:500; }
+      .topnav a { text-decoration:none; color:var(--muted); transition:color .2s; }
+      .topnav a:hover { color:var(--ink); }
+      .lang { display:inline-flex; border:1px solid var(--line); border-radius:999px; overflow:hidden; }
+      .lang a { padding:4px 10px; font-size:12px; font-weight:600; text-decoration:none; color:var(--muted); }
+      .lang a.active { background:var(--ink); color:var(--bg); }
+      @media (max-width:640px){ .topnav .hide-sm{ display:none; } }
+      article { padding:56px 0 40px; }
+      .eyebrow { display:inline-flex; align-items:center; gap:8px; font-size:12px; font-weight:700; letter-spacing:.12em; text-transform:uppercase; color:var(--red); }
+      .eyebrow::before { content:""; width:6px; height:6px; border-radius:50%; background:var(--red); }
+      h1 { font-family:"Instrument Serif",Georgia,serif; font-weight:400; font-size:clamp(2.4rem,6vw,3.6rem); line-height:1.05; letter-spacing:-.01em; margin:18px 0 20px; }
+      .lead-answer { font-size:1.22rem; line-height:1.6; color:var(--ink); border-left:3px solid var(--red); padding:4px 0 4px 20px; margin:0 0 12px; font-weight:500; }
+      .byline { color:var(--muted); font-size:14px; margin-bottom:28px; }
+      article h2 { font-family:"Instrument Serif",Georgia,serif; font-weight:400; font-size:clamp(1.7rem,3.6vw,2.1rem); line-height:1.15; margin:44px 0 12px; letter-spacing:-.01em; }
+      article h3 { font-size:1.08rem; font-weight:700; margin:26px 0 6px; }
+      article p { margin:0 0 18px; }
+      article ul, article ol { margin:0 0 18px; padding-left:22px; }
+      article li { margin:8px 0; }
+      article strong { font-weight:700; }
+      .callout { background:var(--card); border:1px solid var(--line); border-radius:14px; padding:22px 24px; margin:28px 0; }
+      .callout p:last-child { margin-bottom:0; }
+      .faq details { border-bottom:1px solid var(--line); padding:6px 0; }
+      .faq summary { cursor:pointer; font-weight:600; padding:14px 0; list-style:none; display:flex; justify-content:space-between; align-items:center; gap:16px; }
+      .faq summary::-webkit-details-marker { display:none; }
+      .faq summary::after { content:"+"; color:var(--red); font-size:1.4rem; line-height:1; }
+      .faq details[open] summary::after { content:"–"; }
+      .faq details p { margin:0 0 16px; color:var(--muted); }
+      .cta { margin:48px 0 8px; background:var(--cta-bg); color:#fff; border-radius:18px; padding:34px 30px; text-align:center; border:1px solid var(--line); }
+      .cta h2 { font-family:"Instrument Serif",Georgia,serif; color:#fff; margin:0 0 10px; }
+      .cta p { color:rgba(255,255,255,.75); margin:0 auto 22px; max-width:46ch; }
+      .btn { display:inline-block; background:var(--red); color:#fff; text-decoration:none; font-weight:600; padding:14px 26px; border-radius:999px; transition:transform .15s,opacity .2s; }
+      .btn:hover { transform:translateY(-1px); opacity:.95; }
+      footer { border-top:1px solid var(--line); margin-top:40px; padding:30px 0 50px; }
+      .foot { max-width:1120px; margin:0 auto; padding:0 24px; display:flex; flex-wrap:wrap; gap:12px; justify-content:space-between; align-items:center; color:var(--muted); font-size:14px; }
+      .foot a { color:var(--muted); text-decoration:none; }
+      .foot a:hover { color:var(--ink); }
+    </style>
+  </head>
+  <body class="theme-picante">
+    <!-- Google Tag Manager (noscript) -->
+    <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-M9Z9WLK4"
+    height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+    <!-- End Google Tag Manager (noscript) -->
+    <header class="topbar">
+      <div class="topbar-inner">
+        <a class="brand" href="/" aria-label="Picante Studio">
+          <img src="/assets/picante-black.png" alt="Picante" width="1639" height="507" />
+        </a>
+        <nav class="topnav" aria-label="Principal">
+          <a class="hide-sm" href="/">Home</a>
+          <a href="/en/blog">Blog</a>
+          <a class="hide-sm" href="/#agenda-calendario">Book a call</a>
+          <span class="lang" role="group" aria-label="Idioma">
+            <a class="" href="/blog/share-of-voice-en-ia" hreflang="es">ES</a>
+            <a class="active" href="/en/blog/measure-ai-share-of-voice-audit" hreflang="en">EN</a>
+          </span>
+        </nav>
+      </div>
+    </header>
+    <main>
+      <div class="wrap">
+        <article>
+          <p class="eyebrow">SEO &amp; GEO</p>
+          <h1>How to Measure Your AI Share of Voice: Auditing Brand Visibility in ChatGPT, Perplexity, and Gemini</h1>
+          <p class="lead-answer"><p><strong>AI Share of Voice (SoV) is the percentage of relevant AI answers where your brand appears, weighted by position, sentiment and whether you get a linked citation.</strong> You measure it by running a fixed set of ICP prompts across ChatGPT, Perplexity and Gemini, scoring each answer on appearance, rank, sentiment and citation, and comparing your score against named competitors. Get your baseline first — then optimize.</p></p>
+          <p class="byline">By Picante Studio · 2026-08-15 · 5 min read</p>
+<p>Everyone wants to "show up in ChatGPT" but almost nobody knows their current number. That's backwards. You can't optimize a metric you've never measured. Before you rewrite content, chase citations or hire someone to "do GEO," you need a baseline: how often, where and how favorably do the major AI engines mention your brand today? This is a repeatable audit protocol — a mini-system, not a list of tips — to measure your AI Share of Voice across ChatGPT, Perplexity and Gemini.</p><h2>What AI Share of Voice is (and how it differs from SEO)</h2><p><strong>AI Share of Voice is the share of relevant AI-generated answers in which your brand appears, weighted by position, sentiment and citation.</strong> In classic SEO, you rank for keywords on a results page and users click. In AI answers, the model synthesizes one response and often names a short list of brands — sometimes with a linked source, sometimes not. There's no page-two safety net: you're either in the answer or invisible.</p><p>The practical differences that change how you measure:</p><ul><li><strong>No fixed ranking.</strong> The same question can produce different brand mentions across sessions and users.</li><li><strong>Citation ≠ mention.</strong> A model can praise you without linking you, or link a source that never names you.</li><li><strong>Answers are probabilistic.</strong> One data point tells you nothing. You need sampling.</li></ul><p>That's why an honest audit treats AI visibility as a distribution, not a single screenshot.</p><h2>Step 1 — Build your ICP prompt set</h2><p>Your prompt set is the backbone of the whole audit. Don't test vanity queries like "is [your brand] good?" — test the questions your ideal customer actually asks <em>before</em> they know you exist. Group them into intent buckets:</p><ol><li><strong>Category discovery:</strong> "best [category] tools for [ICP segment]", "top vendors for [use case]".</li><li><strong>Problem-first:</strong> "how do I solve [pain the product fixes]".</li><li><strong>Comparison:</strong> "[competitor] vs alternatives", "alternatives to [competitor]".</li><li><strong>Branded:</strong> "what is [your brand]", "is [your brand] reliable for [use case]".</li></ol><p>For a B2B brand, aim for 20–40 prompts total, balanced across buckets and, if you sell in LATAM and the US, mirrored in Spanish and English — engines answer differently by language. Freeze this list. It becomes your recurring benchmark set.</p><h2>Step 2 — Define the measurement matrix</h2><p>For every prompt on every engine, score five dimensions. This is what turns anecdotes into data:</p><ul><li><strong>Appearance (0/1):</strong> is your brand named at all?</li><li><strong>Position:</strong> first mention, in the top 3, or buried at the end.</li><li><strong>Sentiment:</strong> positive, neutral or negative framing.</li><li><strong>Citation:</strong> is there a linked source, and does it point to your domain?</li><li><strong>Competitors:</strong> which rival brands appear, and in what position?</li></ul><p>Record this in a simple sheet: one row per prompt-engine-run. The competitor column is the one most teams skip — and it's the one that turns your audit into a real benchmark instead of a mirror.</p><h2>Step 3 — Sample honestly per engine</h2><p>Because AI answers vary, a single run lies to you. <strong>Run each prompt at least 3 times per engine</strong>, ideally on different days and in fresh sessions (no memory, no personalization carried over). With 30 prompts × 3 engines × 3 runs you get 270 observations — enough to see stable patterns without a research budget.</p><p>Keep the conditions comparable and documented:</p><ul><li>Use the same account tier and model version each round (note whether it's ChatGPT with browsing, Perplexity default vs Pro, Gemini standard).</li><li>Turn off custom instructions and chat history so you measure the model, not your profile.</li><li>Timestamp everything — AI answers drift as models and indexes update.</li></ul><p>You're not chasing statistical perfection; you're chasing a defensible, repeatable baseline you can re-run next quarter under the same rules.</p><h2>Step 4 — Calculate the score and benchmark</h2><p>Convert the matrix into numbers. A workable formula:</p><ul><li><strong>Appearance rate</strong> = answers where you appear ÷ total answers.</li><li><strong>Citation rate</strong> = answers linking your domain ÷ total answers.</li><li><strong>Weighted SoV</strong> = average of (appearance × position weight × sentiment weight), where first mention counts more than a late one and negative sentiment discounts the score.</li></ul><p>Then compute the same appearance rate for your top 3 competitors. Your <strong>relative Share of Voice</strong> is your appearances ÷ (your appearances + competitors' appearances) within the category and comparison buckets. Report per engine — being strong in Perplexity and absent in Gemini is a completely different problem than being weak everywhere.</p><h2>Step 5 — From data to action</h2><p>A baseline is only useful if it points somewhere. Read your matrix for the failure mode:</p><ul><li><strong>Low appearance everywhere:</strong> you have a coverage problem — the model doesn't associate your brand with the category. Fix source presence and category content.</li><li><strong>Appear but never cited:</strong> the model "knows" you but doesn't trust a linkable source. Strengthen authoritative, quotable pages.</li><li><strong>Appear late / negative sentiment:</strong> a positioning and narrative problem, not a coverage one.</li><li><strong>Strong in one engine only:</strong> engine-specific gap — different sources feed different models.</li></ul><p>Prioritize by impact: the buckets closest to purchase intent (comparison, category discovery) move revenue faster than branded queries where you already win.</p><div class="callout"><p>At <strong>Picante Studio</strong> we treat AI visibility like any growth lever: baseline first, then optimize what moves. We build your ICP prompt set, run the multi-engine audit, benchmark you against competitors and turn the gaps into a GEO roadmap tied to pipeline — not vanity mentions. Want your number? <strong>Book a 30-min diagnosis.</strong></p></div><h2>Common mistakes that ruin the audit</h2><ul><li><strong>Testing branded prompts only.</strong> Of course ChatGPT describes you when you name yourself. Measure the unbranded questions that decide the shortlist.</li><li><strong>One run, one conclusion.</strong> Single-shot testing captures noise, not signal.</li><li><strong>Ignoring competitors.</strong> SoV is relative. Absolute appearance without a benchmark tells you nothing about the race.</li><li><strong>Mixing personalization into the test.</strong> Your logged-in, history-rich account is not what a stranger sees.</li><li><strong>Auditing once and calling it done.</strong> Re-run the frozen prompt set quarterly to see if optimization actually moved the number.</li></ul><p>The discipline is the point. A screenshot proves nothing; a repeatable protocol with a frozen prompt set, a scoring matrix and honest sampling gives you a number you can defend to leadership — and improve on purpose.</p>
+          <h2 id="faq">Frequently asked questions</h2>
+          <div class="faq">
+            <details>
+              <summary>What is AI Share of Voice and how does it differ from traditional SEO?</summary>
+              <p>AI Share of Voice is the percentage of relevant AI answers where your brand appears, weighted by position, sentiment and citation. Unlike SEO, there's no ranked results page — the model gives one synthesized answer, so you're either named in it or effectively invisible.</p>
+            </details>
+            <details>
+              <summary>How do I know if ChatGPT or Perplexity mention my brand?</summary>
+              <p>Run a fixed set of ICP questions on each engine — especially unbranded category and comparison queries — and record whether your brand is named, where, and with what sentiment. Repeat each prompt several times, since answers vary between sessions.</p>
+            </details>
+            <details>
+              <summary>How many prompts do I need for a reliable sample?</summary>
+              <p>For a B2B brand, 20–40 prompts across intent buckets (category, problem, comparison, branded) is enough. Run each prompt at least 3 times per engine on different days to average out the natural variability of AI answers.</p>
+            </details>
+            <details>
+              <summary>Can I measure AI visibility manually without a paid tool?</summary>
+              <p>Yes. A spreadsheet, a frozen prompt set and disciplined sampling are enough to get a defensible baseline. Paid tools speed up scale and monitoring, but the method — appearance, position, sentiment, citation, competitors — is the same either way.</p>
+            </details>
+            <details>
+              <summary>How do I compare my visibility against competitors?</summary>
+              <p>Track which rival brands appear in the same answers and their positions, then calculate relative Share of Voice: your appearances divided by the total appearances of you plus your top competitors within category and comparison prompts. Report it per engine, since gaps differ by model.</p>
+            </details>
+          </div>
+          <div class="cta">
+            <h2>Want AI to cite your brand?</h2>
+            <p>Let's talk for 30 minutes. You'll leave with a clear SEO + GEO diagnosis and prioritized next steps.</p>
+            <a class="btn" href="/#agenda-calendario">Book a diagnosis</a>
+          </div>
+        </article>
+      </div>
+    </main>
+    <footer>
+      <div class="foot">
+        <p>© 2026 Picante Studio</p>
+        <p><a href="/">Home</a> · <a href="/en/blog">Blog</a> · <a href="/#agenda-calendario">Book a call</a></p>
+      </div>
+    </footer>
+  </body>
+</html>

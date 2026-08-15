@@ -1,0 +1,270 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <!-- Google Tag Manager -->
+    <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+    new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+    j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+    'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+    })(window,document,'script','dataLayer','GTM-M9Z9WLK4');</script>
+    <!-- End Google Tag Manager -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
+    <title>How Google Calculates Your Star Rating (Not a Simple Average)</title>
+    <meta name="description" content="Your Google star rating isn't a plain average. Learn how volume, recency and filtering affect it, plus the math to move from 4.3 to 4.5." />
+    <meta name="keywords" content="how Google calculates star rating, why do I have 5 star reviews but Google shows 4.8, how Google Maps star average works, why did my Google rating drop with no bad reviews, how long does a review take to raise my Google rating, do old reviews count the same as new ones on Google, how to go from 4.3 to 4.5 stars on Google Maps" />
+    <link rel="canonical" href="https://wearepicante.com/en/blog/how-google-calculates-star-rating" />
+    <link rel="alternate" hreflang="es" href="https://wearepicante.com/blog/como-se-calcula-calificacion-estrellas-google" />
+    <link rel="alternate" hreflang="en" href="https://wearepicante.com/en/blog/how-google-calculates-star-rating" />
+    <link rel="alternate" hreflang="x-default" href="https://wearepicante.com/blog/como-se-calcula-calificacion-estrellas-google" />
+    <meta property="og:type" content="article" />
+    <meta property="og:title" content="How Google Calculates Your Star Rating (Not a Simple Average)" />
+    <meta property="og:description" content="Your Google star rating isn't a plain average. Learn how volume, recency and filtering affect it, plus the math to move from 4.3 to 4.5." />
+    <meta property="og:url" content="https://wearepicante.com/en/blog/how-google-calculates-star-rating" />
+    <meta property="og:image" content="https://wearepicante.com/assets/picante-red.png" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="How Google Calculates Your Star Rating (Not a Simple Average)" />
+    <meta name="twitter:description" content="Your Google star rating isn't a plain average. Learn how volume, recency and filtering affect it, plus the math to move from 4.3 to 4.5." />
+    <meta name="twitter:image" content="https://wearepicante.com/assets/picante-red.png" />
+    <meta name="theme-color" content="#c31c1e" />
+    <link rel="icon" type="image/png" href="/assets/picante-red.png" />
+    <link rel="apple-touch-icon" href="/assets/picante-red.png" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Instrument+Serif:ital@0;1&display=swap"
+      rel="stylesheet"
+    />
+    <script type="application/ld+json">
+{
+      "@context": "https://schema.org",
+      "@type": "Article",
+      "headline": "How Google Calculates Your Star Rating (and Why It's Not a Simple Average)",
+      "description": "Your Google star rating isn't a plain average. Learn how volume, recency and filtering affect it, plus the math to move from 4.3 to 4.5.",
+      "inLanguage": "en",
+      "author": {
+            "@type": "Organization",
+            "name": "Pulse by Picante",
+            "url": "https://wearepicante.com/pulse"
+      },
+      "publisher": {
+            "@type": "Organization",
+            "name": "Picante Studio",
+            "logo": {
+                  "@type": "ImageObject",
+                  "url": "https://wearepicante.com/assets/picante-red.png"
+            }
+      },
+      "datePublished": "2026-08-15",
+      "dateModified": "2026-08-15",
+      "mainEntityOfPage": "https://wearepicante.com/en/blog/how-google-calculates-star-rating",
+      "image": "https://wearepicante.com/assets/picante-red.png"
+}
+    </script>
+    <script type="application/ld+json">
+{
+      "@context": "https://schema.org",
+      "@type": "FAQPage",
+      "mainEntity": [
+            {
+                  "@type": "Question",
+                  "name": "Does Google use the exact average of all my reviews?",
+                  "acceptedAnswer": {
+                        "@type": "Answer",
+                        "text": "No. Google uses a weighted calculation, not a plain average. It factors in review volume, how recent each review is, ongoing activity, and it filters reviews it flags as fake or spam — so the displayed number often differs from what you'd calculate by hand."
+                  }
+            },
+            {
+                  "@type": "Question",
+                  "name": "Why doesn't my rating change even though new reviews keep coming in?",
+                  "acceptedAnswer": {
+                        "@type": "Answer",
+                        "text": "That's the anchor effect. The more reviews you already have, the less each new one moves the number. On 300 reviews you may need over 130 new 5-star reviews to climb just 0.2, so the change feels invisible even though reviews are arriving."
+                  }
+            },
+            {
+                  "@type": "Question",
+                  "name": "Do recent reviews count more than old ones on Google?",
+                  "acceptedAnswer": {
+                        "@type": "Answer",
+                        "text": "Yes. Google gives more weight to recent reviews because they reflect your current quality. Old 5-star reviews slowly lose pull, which is why a business that stops collecting reviews can see its rating drift down even with no new negatives."
+                  }
+            },
+            {
+                  "@type": "Question",
+                  "name": "How many 5-star reviews do I need to go from 4.4 to 4.5?",
+                  "acceptedAnswer": {
+                        "@type": "Answer",
+                        "text": "It depends on your current volume. With about 50 existing reviews you'd need roughly 15–20 fresh 5-star reviews; with 100 reviews, closer to 40–50. The more total reviews you have, the more new ones each 0.1 move requires."
+                  }
+            },
+            {
+                  "@type": "Question",
+                  "name": "Does Google delete or filter reviews, and does that affect my rating?",
+                  "acceptedAnswer": {
+                        "@type": "Answer",
+                        "text": "Yes. Google removes reviews it flags as spam, fake, or policy-violating, and those don't count toward your visible rating. When a filtered review is reinstated or a positive one is removed, your number can shift even if you didn't get any new reviews."
+                  }
+            },
+            {
+                  "@type": "Question",
+                  "name": "Why does my competitor with fewer reviews have a better rating?",
+                  "acceptedAnswer": {
+                        "@type": "Answer",
+                        "text": "With fewer reviews, each 5-star has more weight, so a small business can hold a high number more easily — until one bad review drops it hard. Recency and filtering also matter: a competitor with fresher, cleaner reviews can outshine you even with a smaller total."
+                  }
+            }
+      ]
+}
+    </script>
+    <script type="application/ld+json">
+{
+      "@context": "https://schema.org",
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+            {
+                  "@type": "ListItem",
+                  "position": 1,
+                  "name": "Pulse",
+                  "item": "https://wearepicante.com/pulse"
+            },
+            {
+                  "@type": "ListItem",
+                  "position": 2,
+                  "name": "Pulse Blog",
+                  "item": "https://wearepicante.com/en/pulse/blog"
+            },
+            {
+                  "@type": "ListItem",
+                  "position": 3,
+                  "name": "How Google Calculates Your Star Rating (and Why It's Not a Simple Average)",
+                  "item": "https://wearepicante.com/en/blog/how-google-calculates-star-rating"
+            }
+      ]
+}
+    </script>
+    <style>
+      :root { --red:#c31c1e; --ink:#14110f; --muted:#6a635d; --line:#e7e2db; --bg:#faf8f5; --card:#fff; --measure:720px; --topbar:rgba(250,248,245,.85); --cta-bg:#14110f; }
+      .theme-pulse {
+        --ink:#f4f1ec; --muted:rgba(244,241,236,.68); --line:rgba(255,255,255,.12);
+        --bg:#0c0b0a; --card:#161412; --topbar:rgba(12,11,10,.9); --cta-bg:#1a1714;
+      }
+      * { box-sizing:border-box; }
+      html { scroll-behavior:smooth; }
+      body { margin:0; font-family:"Inter",system-ui,sans-serif; color:var(--ink); background:var(--bg); line-height:1.7; -webkit-font-smoothing:antialiased; }
+      a { color:inherit; }
+      .wrap { max-width:var(--measure); margin:0 auto; padding:0 24px; }
+      .topbar { position:sticky; top:0; z-index:50; background:var(--topbar); backdrop-filter:saturate(150%) blur(10px); border-bottom:1px solid var(--line); }
+      .topbar-inner { max-width:1120px; margin:0 auto; padding:14px 24px; display:flex; align-items:center; justify-content:space-between; gap:16px; }
+      .brand img { height:26px; width:auto; display:block; }
+      .theme-pulse .brand img { filter: invert(1); }
+      .topnav { display:flex; align-items:center; gap:22px; font-size:14px; font-weight:500; }
+      .topnav a { text-decoration:none; color:var(--muted); transition:color .2s; }
+      .topnav a:hover { color:var(--ink); }
+      .lang { display:inline-flex; border:1px solid var(--line); border-radius:999px; overflow:hidden; }
+      .lang a { padding:4px 10px; font-size:12px; font-weight:600; text-decoration:none; color:var(--muted); }
+      .lang a.active { background:var(--ink); color:var(--bg); }
+      @media (max-width:640px){ .topnav .hide-sm{ display:none; } }
+      article { padding:56px 0 40px; }
+      .eyebrow { display:inline-flex; align-items:center; gap:8px; font-size:12px; font-weight:700; letter-spacing:.12em; text-transform:uppercase; color:var(--red); }
+      .eyebrow::before { content:""; width:6px; height:6px; border-radius:50%; background:var(--red); }
+      h1 { font-family:"Instrument Serif",Georgia,serif; font-weight:400; font-size:clamp(2.4rem,6vw,3.6rem); line-height:1.05; letter-spacing:-.01em; margin:18px 0 20px; }
+      .lead-answer { font-size:1.22rem; line-height:1.6; color:var(--ink); border-left:3px solid var(--red); padding:4px 0 4px 20px; margin:0 0 12px; font-weight:500; }
+      .byline { color:var(--muted); font-size:14px; margin-bottom:28px; }
+      article h2 { font-family:"Instrument Serif",Georgia,serif; font-weight:400; font-size:clamp(1.7rem,3.6vw,2.1rem); line-height:1.15; margin:44px 0 12px; letter-spacing:-.01em; }
+      article h3 { font-size:1.08rem; font-weight:700; margin:26px 0 6px; }
+      article p { margin:0 0 18px; }
+      article ul, article ol { margin:0 0 18px; padding-left:22px; }
+      article li { margin:8px 0; }
+      article strong { font-weight:700; }
+      .callout { background:var(--card); border:1px solid var(--line); border-radius:14px; padding:22px 24px; margin:28px 0; }
+      .callout p:last-child { margin-bottom:0; }
+      .faq details { border-bottom:1px solid var(--line); padding:6px 0; }
+      .faq summary { cursor:pointer; font-weight:600; padding:14px 0; list-style:none; display:flex; justify-content:space-between; align-items:center; gap:16px; }
+      .faq summary::-webkit-details-marker { display:none; }
+      .faq summary::after { content:"+"; color:var(--red); font-size:1.4rem; line-height:1; }
+      .faq details[open] summary::after { content:"–"; }
+      .faq details p { margin:0 0 16px; color:var(--muted); }
+      .cta { margin:48px 0 8px; background:var(--cta-bg); color:#fff; border-radius:18px; padding:34px 30px; text-align:center; border:1px solid var(--line); }
+      .cta h2 { font-family:"Instrument Serif",Georgia,serif; color:#fff; margin:0 0 10px; }
+      .cta p { color:rgba(255,255,255,.75); margin:0 auto 22px; max-width:46ch; }
+      .btn { display:inline-block; background:var(--red); color:#fff; text-decoration:none; font-weight:600; padding:14px 26px; border-radius:999px; transition:transform .15s,opacity .2s; }
+      .btn:hover { transform:translateY(-1px); opacity:.95; }
+      footer { border-top:1px solid var(--line); margin-top:40px; padding:30px 0 50px; }
+      .foot { max-width:1120px; margin:0 auto; padding:0 24px; display:flex; flex-wrap:wrap; gap:12px; justify-content:space-between; align-items:center; color:var(--muted); font-size:14px; }
+      .foot a { color:var(--muted); text-decoration:none; }
+      .foot a:hover { color:var(--ink); }
+    </style>
+  </head>
+  <body class="theme-pulse">
+    <!-- Google Tag Manager (noscript) -->
+    <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-M9Z9WLK4"
+    height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+    <!-- End Google Tag Manager (noscript) -->
+    <header class="topbar">
+      <div class="topbar-inner">
+        <a class="brand" href="/pulse" aria-label="Picante Studio">
+          <img src="/assets/picante-black.png" alt="Picante" width="1639" height="507" />
+        </a>
+        <nav class="topnav" aria-label="Principal">
+          <a class="hide-sm" href="/pulse">Pulse</a>
+          <a href="/en/pulse/blog">Blog</a>
+          <a class="hide-sm" href="/pulse#agendar">Book a demo</a>
+          <span class="lang" role="group" aria-label="Idioma">
+            <a class="" href="/blog/como-se-calcula-calificacion-estrellas-google" hreflang="es">ES</a>
+            <a class="active" href="/en/blog/how-google-calculates-star-rating" hreflang="en">EN</a>
+          </span>
+        </nav>
+      </div>
+    </header>
+    <main>
+      <div class="wrap">
+        <article>
+          <p class="eyebrow">Pulse · Local SEO</p>
+          <h1>How Google Calculates Your Star Rating (and Why It's Not a Simple Average)</h1>
+          <p class="lead-answer"><p>Your Google star rating is a <strong>weighted signal, not a plain average</strong>. Google factors in the volume of reviews you have, how recent they are, review activity over time, and reviews that get filtered as spam or fake. That's why you can have mostly 5-star reviews but display 4.8 — old, filtered, or lower-weighted reviews still pull the number.</p></p>
+          <p class="byline">By Pulse · 2026-08-15 · 4 min read</p>
+<p>Most local business owners assume their Google rating is just the sum of every star divided by the number of reviews. It isn't. Google treats your rating as a <strong>living signal</strong> that weighs how many reviews you have, how fresh they are, whether people are still reviewing you, and which reviews it trusts. Understanding this is the difference between chasing your rating blindly and actually moving it on purpose.</p><h2>Why your rating is a weighted signal, not a simple average</h2><p>A <strong>simple average</strong> would mean 20 five-star reviews and one 1-star review always equals exactly 4.86. In practice, Google's displayed number often differs from what you'd calculate by hand. There are three main reasons:</p><ul><li><strong>Filtering:</strong> Google removes or hides reviews it flags as spam, fake, or policy-violating. Those don't count toward your visible number — even if you can still see them somewhere.</li><li><strong>Recency weighting:</strong> newer reviews carry more signal than reviews from three years ago. A business with fresh 5-star reviews looks healthier than one coasting on old ones.</li><li><strong>Rounding and volume:</strong> Google displays one decimal, so a 4.849 shows as 4.8. With few reviews, each new one swings the number hard; with thousands, it barely moves.</li></ul><p>This is why you can have <em>5-star reviews coming in but Google shows 4.8</em> — the math you do in your head isn't the math Google runs.</p><h2>The anchor effect: how volume decides how hard you can move</h2><p>The single biggest factor in how fast your rating changes is <strong>how many reviews you already have</strong>. Early reviews are powerful; later ones barely register. That's the <strong>anchor effect</strong> — your accumulated volume anchors the number in place.</p><p>Here's roughly how many new 5-star reviews you'd need to climb from <strong>4.3 to 4.5</strong>, depending on your current total (assuming existing reviews stay put):</p><ul><li><strong>20 existing reviews:</strong> about 8–10 fresh 5-star reviews.</li><li><strong>50 existing reviews:</strong> roughly 20–25 new 5-star reviews.</li><li><strong>100 existing reviews:</strong> around 45–55 new 5-star reviews.</li><li><strong>300 existing reviews:</strong> well over 130 — it becomes a long, slow grind.</li></ul><p>The lesson cuts both ways. When you're small, <strong>one 1-star review hurts far more</strong> — a single 1-star on 10 reviews drops you from 5.0 to around 4.6. The same 1-star on 500 reviews is invisible. Early on, protect the number aggressively; at scale, focus on steady flow.</p><h2>Why your rating dropped with no bad reviews</h2><p>Owners often ask <em>why did my Google rating drop if I have no new bad reviews</em>. Usually it's one of these:</p><ul><li><strong>A filtered review came back:</strong> Google reinstated a review it had previously suppressed.</li><li><strong>Old positives got down-weighted:</strong> as recency matters more, stale 5-star reviews lose pull and older mediocre ones surface.</li><li><strong>You stopped getting reviews:</strong> inactivity is itself a negative signal. A quiet profile looks stale next to a competitor collecting reviews weekly.</li></ul><p>And yes — <strong>rating influences where you rank in Maps</strong>. Google prioritizes relevance, distance, and prominence, and your rating plus review activity feed prominence. A stronger, fresher rating helps you win the local pack in your zone.</p><h2>The weekly ritual to move your number</h2><p>You don't fix a rating with a one-time push. You move it with a repeatable rhythm. Here's a 20-minute weekly ritual any owner or ops manager can run:</p><ol><li><strong>Check the delta:</strong> note your current rating and review count versus last week. Track the trend, not the snapshot.</li><li><strong>Reply to every new review</strong> — positive and negative. Responses are an activity signal and they change how future customers read your profile.</li><li><strong>Ask 5–10 happy customers</strong> at the moment of satisfaction (after checkout, after service). Fresh reviews carry the most weight.</li><li><strong>Flag suspicious 1-star reviews</strong> that violate policy so Google can review them.</li><li><strong>Compare against the shop next door:</strong> if a competitor jumped 0.2 this month, find out what they changed.</li></ol><h2>The multi-location reality</h2><p>If you run several branches, the anchor effect plays out differently at each one. Your flagship with 800 reviews barely moves; your newest location with 15 reviews swings wildly on a single bad night. Averaging your brand's rating across locations hides the branch that's quietly bleeding traffic. Each location needs its own trendline and its own ritual — one criterion, many zones.</p><div class="callout"><p><strong>This is exactly what Pulse tracks.</strong> Pulse monitors your zone on Google Maps and follows the <strong>rating trend</strong> of every one of your locations — and your competitors' — so you see the direction, not just today's number. Its AI review agent replies to reviews in your brand voice, keeping the activity signal alive without adding "one more tool" to your team. <em>Your customers are searching for you. Google sends them to someone else. Pulse shows you why — and how to stop it.</em> <a href="https://wearepicante.com/pulse#agendar">Book a free demo</a>.</p></div><h2>Common mistakes that keep your rating stuck</h2><ul><li><strong>Buying or begging for a burst of reviews:</strong> unnatural spikes get filtered and can look like manipulation.</li><li><strong>Ignoring negative reviews:</strong> no reply signals a dead profile and loses the future customer reading it.</li><li><strong>Only asking after problems are resolved:</strong> you miss your happiest, most eager reviewers.</li><li><strong>Treating all branches as one number:</strong> the average hides the location that's dragging you down.</li></ul>
+          <h2 id="faq">Frequently asked questions</h2>
+          <div class="faq">
+            <details>
+              <summary>Does Google use the exact average of all my reviews?</summary>
+              <p>No. Google uses a weighted calculation, not a plain average. It factors in review volume, how recent each review is, ongoing activity, and it filters reviews it flags as fake or spam — so the displayed number often differs from what you'd calculate by hand.</p>
+            </details>
+            <details>
+              <summary>Why doesn't my rating change even though new reviews keep coming in?</summary>
+              <p>That's the anchor effect. The more reviews you already have, the less each new one moves the number. On 300 reviews you may need over 130 new 5-star reviews to climb just 0.2, so the change feels invisible even though reviews are arriving.</p>
+            </details>
+            <details>
+              <summary>Do recent reviews count more than old ones on Google?</summary>
+              <p>Yes. Google gives more weight to recent reviews because they reflect your current quality. Old 5-star reviews slowly lose pull, which is why a business that stops collecting reviews can see its rating drift down even with no new negatives.</p>
+            </details>
+            <details>
+              <summary>How many 5-star reviews do I need to go from 4.4 to 4.5?</summary>
+              <p>It depends on your current volume. With about 50 existing reviews you'd need roughly 15–20 fresh 5-star reviews; with 100 reviews, closer to 40–50. The more total reviews you have, the more new ones each 0.1 move requires.</p>
+            </details>
+            <details>
+              <summary>Does Google delete or filter reviews, and does that affect my rating?</summary>
+              <p>Yes. Google removes reviews it flags as spam, fake, or policy-violating, and those don't count toward your visible rating. When a filtered review is reinstated or a positive one is removed, your number can shift even if you didn't get any new reviews.</p>
+            </details>
+            <details>
+              <summary>Why does my competitor with fewer reviews have a better rating?</summary>
+              <p>With fewer reviews, each 5-star has more weight, so a small business can hold a high number more easily — until one bad review drops it hard. Recency and filtering also matter: a competitor with fresher, cleaner reviews can outshine you even with a smaller total.</p>
+            </details>
+          </div>
+          <div class="cta">
+            <h2>Want to see who's beating you on Maps?</h2>
+            <p>Book 15 minutes. We'll review your area with real data: competitors, ratings, and what to fix first.</p>
+            <a class="btn" href="/pulse#agendar">Book a free demo</a>
+          </div>
+        </article>
+      </div>
+    </main>
+    <footer>
+      <div class="foot">
+        <p>© 2026 Picante Studio</p>
+        <p><a href="/pulse">Pulse</a> · <a href="/en/pulse/blog">Blog</a> · <a href="/pulse#agendar">Demo</a></p>
+      </div>
+    </footer>
+  </body>
+</html>

@@ -6,12 +6,14 @@
       "aparecer en ChatGPT",
       "medir conversiones desde ChatGPT y atribución de tráfico de IA",
       "cómo hacer que ChatGPT recomiende tu marca",
-      "cómo aparecer en las AI Overviews de Google"
+      "cómo aparecer en las AI Overviews de Google",
+      "share of voice en IA"
     ],
     "pulse": [
       "por qué mi competencia aparece antes en Google Maps",
       "cómo gestionar reseñas de Google en negocio multi-sucursal",
-      "cómo pedir reseñas en Google sin que te las borren"
+      "cómo pedir reseñas en Google sin que te las borren",
+      "cómo se calcula la calificación de estrellas en Google"
     ]
   },
   "published": [
@@ -95,6 +97,30 @@
       "pathEn": "/en/blog/ask-google-reviews-without-deletion-2026",
       "titleEn": "How to Ask for Google Reviews Without Getting Them Deleted (2026 Rule)",
       "descriptionEn": "Google now bans review gating and enforces it. Here's the safe way to ask for reviews across all your locations without deletions or profile restrictions."
+    },
+    {
+      "slug": "share-of-voice-en-ia",
+      "destino": "picante",
+      "keyword": "share of voice en IA",
+      "date": "2026-08-15",
+      "title": "Share of Voice en IA: cómo auditar la visibilidad de tu marca en ChatGPT, Perplexity y Gemini",
+      "description": "Protocolo replicable para medir tu Share of Voice en IA: prompts del ICP, matriz de medición, muestreo honesto por motor y benchmark vs competencia.",
+      "path": "/blog/share-of-voice-en-ia",
+      "pathEn": "/en/blog/measure-ai-share-of-voice-audit",
+      "titleEn": "How to Measure Your AI Share of Voice: A Repeatable Audit Protocol",
+      "descriptionEn": "Learn a repeatable protocol to measure your AI Share of Voice across ChatGPT, Perplexity and Gemini: prompt set, scoring matrix, sampling and benchmark."
+    },
+    {
+      "slug": "como-se-calcula-calificacion-estrellas-google",
+      "destino": "pulse",
+      "keyword": "cómo se calcula la calificación de estrellas en Google",
+      "date": "2026-08-15",
+      "title": "Cómo se calcula la calificación de estrellas en Google (no es un promedio simple)",
+      "description": "Cómo se calcula la calificación de estrellas en Google: pesa recencia, volumen, actividad y filtrado. Matemática y ritual para subir de 4.3 a 4.5.",
+      "path": "/blog/como-se-calcula-calificacion-estrellas-google",
+      "pathEn": "/en/blog/how-google-calculates-star-rating",
+      "titleEn": "How Google Calculates Your Star Rating (Not a Simple Average)",
+      "descriptionEn": "Your Google star rating isn't a plain average. Learn how volume, recency and filtering affect it, plus the math to move from 4.3 to 4.5."
     }
   ]
 }
