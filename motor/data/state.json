@@ -7,13 +7,15 @@
       "medir conversiones desde ChatGPT y atribución de tráfico de IA",
       "cómo hacer que ChatGPT recomiende tu marca",
       "cómo aparecer en las AI Overviews de Google",
-      "share of voice en IA"
+      "share of voice en IA",
+      "llms.txt"
     ],
     "pulse": [
       "por qué mi competencia aparece antes en Google Maps",
       "cómo gestionar reseñas de Google en negocio multi-sucursal",
       "cómo pedir reseñas en Google sin que te las borren",
-      "cómo se calcula la calificación de estrellas en Google"
+      "cómo se calcula la calificación de estrellas en Google",
+      "cómo responder reseñas negativas en Google"
     ]
   },
   "published": [
@@ -121,6 +123,30 @@
       "pathEn": "/en/blog/how-google-calculates-star-rating",
       "titleEn": "How Google Calculates Your Star Rating (Not a Simple Average)",
       "descriptionEn": "Your Google star rating isn't a plain average. Learn how volume, recency and filtering affect it, plus the math to move from 4.3 to 4.5."
+    },
+    {
+      "slug": "llms-txt-para-marcas",
+      "destino": "picante",
+      "keyword": "llms.txt",
+      "date": "2026-08-22",
+      "title": "llms.txt para marcas: ¿sirve para que la IA te cite? (guía con evidencia)",
+      "description": "llms.txt es un archivo Markdown que da contexto curado a crawlers de IA. Qué sí hace, qué no, y cómo encaja en un sistema GEO real. Con ejemplo y checklist.",
+      "path": "/blog/llms-txt-para-marcas",
+      "pathEn": "/en/blog/llms-txt-for-brands",
+      "titleEn": "llms.txt for Brands: Does It Really Get You Cited by AI? (Evidence-Based)",
+      "descriptionEn": "llms.txt gives AI crawlers curated context about your brand—but it's not a ranking factor today. Here's what it does, what it doesn't, and how to use it."
+    },
+    {
+      "slug": "como-responder-resenas-negativas-google",
+      "destino": "pulse",
+      "keyword": "cómo responder reseñas negativas en Google",
+      "date": "2026-08-22",
+      "title": "Cómo responder reseñas negativas en Google: guía y plantillas",
+      "description": "Guía práctica para responder reseñas negativas en Google: framework por tipo de queja, plantillas listas para pegar, SLA, roles y tono multi-sucursal.",
+      "path": "/blog/como-responder-resenas-negativas-google",
+      "pathEn": "/en/blog/how-to-respond-negative-google-reviews",
+      "titleEn": "How to Respond to Negative Google Reviews: Guide and Templates by Complaint Type",
+      "descriptionEn": "Learn how to respond to negative Google reviews by complaint type. Copy-paste templates, response SLAs, roles, and multi-location tone consistency."
     }
   ]
 }
