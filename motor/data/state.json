@@ -8,14 +8,16 @@
       "cómo hacer que ChatGPT recomiende tu marca",
       "cómo aparecer en las AI Overviews de Google",
       "share of voice en IA",
-      "llms.txt"
+      "llms.txt",
+      "contenido citable por IA"
     ],
     "pulse": [
       "por qué mi competencia aparece antes en Google Maps",
       "cómo gestionar reseñas de Google en negocio multi-sucursal",
       "cómo pedir reseñas en Google sin que te las borren",
       "cómo se calcula la calificación de estrellas en Google",
-      "cómo responder reseñas negativas en Google"
+      "cómo responder reseñas negativas en Google",
+      "cómo elegir la categoría en Google Business Profile"
     ]
   },
   "published": [
@@ -147,6 +149,30 @@
       "pathEn": "/en/blog/how-to-respond-negative-google-reviews",
       "titleEn": "How to Respond to Negative Google Reviews: Guide and Templates by Complaint Type",
       "descriptionEn": "Learn how to respond to negative Google reviews by complaint type. Copy-paste templates, response SLAs, roles, and multi-location tone consistency."
+    },
+    {
+      "slug": "contenido-citable-por-ia",
+      "destino": "picante",
+      "keyword": "contenido citable por IA",
+      "date": "2026-08-29",
+      "title": "Contenido citable por IA: anatomía de un bloque que ChatGPT cita",
+      "description": "Contenido citable por IA es el que un LLM puede extraer sin reescribir. Aprende la anatomía de un bloque citable, con ejemplos antes/después y checklist.",
+      "path": "/blog/contenido-citable-por-ia",
+      "pathEn": "/en/blog/ai-citable-content-anatomy",
+      "titleEn": "AI-Citable Content: The Anatomy of a Page ChatGPT and Perplexity Choose",
+      "descriptionEn": "AI-citable content is writing structured block-by-block so LLMs can extract and quote it. Learn the anatomy of a citable block, a 7-point checklist and LATAM/USA nuances."
+    },
+    {
+      "slug": "como-elegir-categoria-google-business-profile",
+      "destino": "pulse",
+      "keyword": "cómo elegir la categoría en Google Business Profile",
+      "date": "2026-08-29",
+      "title": "Cómo elegir la categoría en Google Business Profile (y espiar la de tu competencia)",
+      "description": "Aprende cómo elegir la categoría en Google Business Profile, leer la de tu competencia en Maps y cerrar la brecha sin arriesgar una suspensión.",
+      "path": "/blog/como-elegir-categoria-google-business-profile",
+      "pathEn": "/en/blog/choose-google-business-profile-category",
+      "titleEn": "How to Choose the Right Google Business Profile Category (And Reverse-Engineer Your Competitor's)",
+      "descriptionEn": "Your primary category is the single biggest lever for Maps relevance. Learn how to choose it, reverse-engineer your competitor's, and close the gap."
     }
   ]
 }
