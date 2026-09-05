@@ -9,7 +9,8 @@
       "cómo aparecer en las AI Overviews de Google",
       "share of voice en IA",
       "llms.txt",
-      "contenido citable por IA"
+      "contenido citable por IA",
+      "agentes de IA en marketing"
     ],
     "pulse": [
       "por qué mi competencia aparece antes en Google Maps",
@@ -17,7 +18,8 @@
       "cómo pedir reseñas en Google sin que te las borren",
       "cómo se calcula la calificación de estrellas en Google",
       "cómo responder reseñas negativas en Google",
-      "cómo elegir la categoría en Google Business Profile"
+      "cómo elegir la categoría en Google Business Profile",
+      "cada cuánto actualizar Google Business Profile"
     ]
   },
   "published": [
@@ -173,6 +175,30 @@
       "pathEn": "/en/blog/choose-google-business-profile-category",
       "titleEn": "How to Choose the Right Google Business Profile Category (And Reverse-Engineer Your Competitor's)",
       "descriptionEn": "Your primary category is the single biggest lever for Maps relevance. Learn how to choose it, reverse-engineer your competitor's, and close the gap."
+    },
+    {
+      "slug": "agentes-de-ia-en-marketing",
+      "destino": "picante",
+      "keyword": "agentes de IA en marketing",
+      "date": "2026-09-05",
+      "title": "Agentes de IA en marketing: qué workflows automatizar (y cuáles no)",
+      "description": "Marco de decisión para clasificar workflows por impacto × riesgo: qué automatizar con agentes de IA, qué NO delegar y cómo medirlo en marketing.",
+      "path": "/blog/agentes-de-ia-en-marketing",
+      "pathEn": "/en/blog/ai-agents-marketing-workflows-automate",
+      "titleEn": "AI Agents in Marketing: What to Automate (and What Not)",
+      "descriptionEn": "A decision framework for AI agents in marketing: classify workflows by impact and brand risk, know what not to automate, and see where human judgment stays."
+    },
+    {
+      "slug": "cada-cuanto-actualizar-google-business-profile",
+      "destino": "pulse",
+      "keyword": "cada cuánto actualizar Google Business Profile",
+      "date": "2026-09-05",
+      "title": "¿Cada cuánto actualizar tu Google Business Profile? Rutina real",
+      "description": "Rutina diaria, semanal y mensual para actualizar tu Google Business Profile con tiempos y roles. Evita caer en Maps por inactividad.",
+      "path": "/blog/cada-cuanto-actualizar-google-business-profile",
+      "pathEn": "/en/blog/how-often-update-google-business-profile",
+      "titleEn": "How Often to Update Your Google Business Profile: The Real Routine",
+      "descriptionEn": "How often to update your Google Business Profile: a daily, weekly and monthly routine with time estimates and a multi-location view to hold your top 3 spot."
     }
   ]
 }
