@@ -10,7 +10,8 @@
       "share of voice en IA",
       "llms.txt",
       "contenido citable por IA",
-      "agentes de IA en marketing"
+      "agentes de IA en marketing",
+      "estructura de campañas meta ads"
     ],
     "pulse": [
       "por qué mi competencia aparece antes en Google Maps",
@@ -19,7 +20,8 @@
       "cómo se calcula la calificación de estrellas en Google",
       "cómo responder reseñas negativas en Google",
       "cómo elegir la categoría en Google Business Profile",
-      "cada cuánto actualizar Google Business Profile"
+      "cada cuánto actualizar Google Business Profile",
+      "cómo auditar a tu competencia en Google Maps"
     ]
   },
   "published": [
@@ -199,6 +201,30 @@
       "pathEn": "/en/blog/how-often-update-google-business-profile",
       "titleEn": "How Often to Update Your Google Business Profile: The Real Routine",
       "descriptionEn": "How often to update your Google Business Profile: a daily, weekly and monthly routine with time estimates and a multi-location view to hold your top 3 spot."
+    },
+    {
+      "slug": "estructura-campanas-meta-ads-escalar",
+      "destino": "picante",
+      "keyword": "estructura de campañas meta ads",
+      "date": "2026-09-12",
+      "title": "Estructura de campañas de Meta Ads para escalar: el sistema, no el hack",
+      "description": "Mapa de cuenta de Meta Ads por etapa: testing, escala y retención, con reglas de umbral CAC/ROAS y doble lente LATAM vs USA. El sistema, no el hack.",
+      "path": "/blog/estructura-campanas-meta-ads-escalar",
+      "pathEn": "/en/blog/meta-ads-account-structure-to-scale",
+      "titleEn": "Meta Ads Campaign Structure to Scale: The System, Not the Hack",
+      "descriptionEn": "A Meta Ads account structure by growth stage: testing, scaling, retention, plus CBO vs ABO rules, budget thresholds, and LATAM vs USA benchmarks."
+    },
+    {
+      "slug": "como-auditar-competencia-google-maps",
+      "destino": "pulse",
+      "keyword": "cómo auditar a tu competencia en Google Maps",
+      "date": "2026-09-12",
+      "title": "Cómo auditar a tu competencia en Google Maps: checklist 2025",
+      "description": "Auditoría de zona en 20 minutos: 7 señales medibles (ritmo de reseñas, categorías, fotos) para saber por qué un competidor te gana en Google Maps.",
+      "path": "/blog/como-auditar-competencia-google-maps",
+      "pathEn": "/en/blog/audit-competition-google-maps-checklist",
+      "titleEn": "How to Audit Your Competition on Google Maps: 7-Signal Checklist",
+      "descriptionEn": "Audit your local competition on Google Maps in 20 minutes. A 7-signal checklist focused on review velocity, categories, photos and ranking trend."
     }
   ]
 }
