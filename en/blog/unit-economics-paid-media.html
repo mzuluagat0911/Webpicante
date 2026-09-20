@@ -1,0 +1,270 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <!-- Google Tag Manager -->
+    <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+    new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+    j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+    'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+    })(window,document,'script','dataLayer','GTM-M9Z9WLK4');</script>
+    <!-- End Google Tag Manager -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
+    <title>Unit Economics for Paid Media: How Much You Can Pay per Customer</title>
+    <meta name="description" content="Your max allowable CAC = contribution margin per customer × payback target. Learn the formula, LTV:CAC thresholds and when to scale vs. fix your offer." />
+    <meta name="keywords" content="unit economics para paid media, cómo calcular CAC objetivo, CAC máximo permitido, relación LTV:CAC saludable ecommerce SaaS, ROAS vs margen de contribución, payback de CAC en cuántos meses, CAC blended vs CAC pagado, cuánto invertir en Meta Ads para ser rentable, unit economics ecommerce LATAM, métricas de adquisición para founders" />
+    <link rel="canonical" href="https://wearepicante.com/en/blog/unit-economics-paid-media" />
+    <link rel="alternate" hreflang="es" href="https://wearepicante.com/blog/unit-economics-para-paid-media" />
+    <link rel="alternate" hreflang="en" href="https://wearepicante.com/en/blog/unit-economics-paid-media" />
+    <link rel="alternate" hreflang="x-default" href="https://wearepicante.com/blog/unit-economics-para-paid-media" />
+    <meta property="og:type" content="article" />
+    <meta property="og:title" content="Unit Economics for Paid Media: How Much You Can Pay per Customer" />
+    <meta property="og:description" content="Your max allowable CAC = contribution margin per customer × payback target. Learn the formula, LTV:CAC thresholds and when to scale vs. fix your offer." />
+    <meta property="og:url" content="https://wearepicante.com/en/blog/unit-economics-paid-media" />
+    <meta property="og:image" content="https://wearepicante.com/assets/picante-red.png" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="Unit Economics for Paid Media: How Much You Can Pay per Customer" />
+    <meta name="twitter:description" content="Your max allowable CAC = contribution margin per customer × payback target. Learn the formula, LTV:CAC thresholds and when to scale vs. fix your offer." />
+    <meta name="twitter:image" content="https://wearepicante.com/assets/picante-red.png" />
+    <meta name="theme-color" content="#c31c1e" />
+    <link rel="icon" type="image/png" href="/assets/picante-red.png" />
+    <link rel="apple-touch-icon" href="/assets/picante-red.png" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Instrument+Serif:ital@0;1&display=swap"
+      rel="stylesheet"
+    />
+    <script type="application/ld+json">
+{
+      "@context": "https://schema.org",
+      "@type": "Article",
+      "headline": "How Much You Can Pay per Customer: CAC, LTV and Unit Economics for Scaling Paid Media",
+      "description": "Your max allowable CAC = contribution margin per customer × payback target. Learn the formula, LTV:CAC thresholds and when to scale vs. fix your offer.",
+      "inLanguage": "en",
+      "author": {
+            "@type": "Organization",
+            "name": "Picante Studio",
+            "url": "https://wearepicante.com/"
+      },
+      "publisher": {
+            "@type": "Organization",
+            "name": "Picante Studio",
+            "logo": {
+                  "@type": "ImageObject",
+                  "url": "https://wearepicante.com/assets/picante-red.png"
+            }
+      },
+      "datePublished": "2026-09-20",
+      "dateModified": "2026-09-20",
+      "mainEntityOfPage": "https://wearepicante.com/en/blog/unit-economics-paid-media",
+      "image": "https://wearepicante.com/assets/picante-red.png"
+}
+    </script>
+    <script type="application/ld+json">
+{
+      "@context": "https://schema.org",
+      "@type": "FAQPage",
+      "mainEntity": [
+            {
+                  "@type": "Question",
+                  "name": "What is a healthy LTV:CAC ratio and why doesn't 3:1 fit everyone?",
+                  "acceptedAnswer": {
+                        "@type": "Answer",
+                        "text": "A healthy LTV:CAC ratio is generally around 3:1 — three dollars of lifetime contribution margin for every dollar of acquisition cost. But it varies: high-margin SaaS with long retention can thrive at higher ratios and longer payback, while thin-margin ecommerce needs faster payback and can't wait on uncertain repeat purchases."
+                  }
+            },
+            {
+                  "@type": "Question",
+                  "name": "How much can I pay for a customer without losing money?",
+                  "acceptedAnswer": {
+                        "@type": "Answer",
+                        "text": "Your maximum allowable CAC equals your contribution margin per customer over the payback window you can fund. For a single-purchase product it's roughly the contribution margin per order; for subscriptions it's monthly contribution margin times the number of payback months you can afford."
+                  }
+            },
+            {
+                  "@type": "Question",
+                  "name": "ROAS or contribution margin — which really shows profitability?",
+                  "acceptedAnswer": {
+                        "@type": "Answer",
+                        "text": "Contribution margin shows profit; ROAS only shows revenue per ad dollar. Calculate break-even ROAS as 1 divided by your contribution margin percentage — at 40% margin that's 2.5x. Any ROAS below break-even loses money no matter how good the dashboard looks."
+                  }
+            },
+            {
+                  "@type": "Question",
+                  "name": "What is CAC payback and in how many months should I recover it?",
+                  "acceptedAnswer": {
+                        "@type": "Answer",
+                        "text": "CAC payback is the time it takes to recover acquisition cost from a customer's contribution margin. Ecommerce usually needs fast payback (ideally within the first order or a few months); SaaS commonly targets 6–12 months. Set the window based on the cash you can float, not on optimistic retention."
+                  }
+            },
+            {
+                  "@type": "Question",
+                  "name": "Blended CAC vs. per-channel CAC — which should I use for budget?",
+                  "acceptedAnswer": {
+                        "@type": "Answer",
+                        "text": "Use paid CAC per channel to decide whether to scale a specific channel, since it isolates what Meta or Google actually costs. Use blended CAC to judge overall business health — it must stay below your maximum allowable CAC at the company level."
+                  }
+            },
+            {
+                  "@type": "Question",
+                  "name": "How does the calculation change between ecommerce and subscription/SaaS?",
+                  "acceptedAnswer": {
+                        "@type": "Answer",
+                        "text": "In ecommerce, max CAC is roughly the contribution margin of an order (or expected repeat orders). In SaaS, LTV compounds over months, so max CAC is monthly contribution margin times your payback window — allowing higher acquisition cost when retention and margin are strong."
+                  }
+            }
+      ]
+}
+    </script>
+    <script type="application/ld+json">
+{
+      "@context": "https://schema.org",
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+            {
+                  "@type": "ListItem",
+                  "position": 1,
+                  "name": "Home",
+                  "item": "https://wearepicante.com/"
+            },
+            {
+                  "@type": "ListItem",
+                  "position": 2,
+                  "name": "Blog",
+                  "item": "https://wearepicante.com/en/blog"
+            },
+            {
+                  "@type": "ListItem",
+                  "position": 3,
+                  "name": "How Much You Can Pay per Customer: CAC, LTV and Unit Economics for Scaling Paid Media",
+                  "item": "https://wearepicante.com/en/blog/unit-economics-paid-media"
+            }
+      ]
+}
+    </script>
+    <style>
+      :root { --red:#c31c1e; --ink:#14110f; --muted:#6a635d; --line:#e7e2db; --bg:#faf8f5; --card:#fff; --measure:720px; --topbar:rgba(250,248,245,.85); --cta-bg:#14110f; }
+      .theme-pulse {
+        --ink:#f4f1ec; --muted:rgba(244,241,236,.68); --line:rgba(255,255,255,.12);
+        --bg:#0c0b0a; --card:#161412; --topbar:rgba(12,11,10,.9); --cta-bg:#1a1714;
+      }
+      * { box-sizing:border-box; }
+      html { scroll-behavior:smooth; }
+      body { margin:0; font-family:"Inter",system-ui,sans-serif; color:var(--ink); background:var(--bg); line-height:1.7; -webkit-font-smoothing:antialiased; }
+      a { color:inherit; }
+      .wrap { max-width:var(--measure); margin:0 auto; padding:0 24px; }
+      .topbar { position:sticky; top:0; z-index:50; background:var(--topbar); backdrop-filter:saturate(150%) blur(10px); border-bottom:1px solid var(--line); }
+      .topbar-inner { max-width:1120px; margin:0 auto; padding:14px 24px; display:flex; align-items:center; justify-content:space-between; gap:16px; }
+      .brand img { height:26px; width:auto; display:block; }
+      .theme-pulse .brand img { filter: invert(1); }
+      .topnav { display:flex; align-items:center; gap:22px; font-size:14px; font-weight:500; }
+      .topnav a { text-decoration:none; color:var(--muted); transition:color .2s; }
+      .topnav a:hover { color:var(--ink); }
+      .lang { display:inline-flex; border:1px solid var(--line); border-radius:999px; overflow:hidden; }
+      .lang a { padding:4px 10px; font-size:12px; font-weight:600; text-decoration:none; color:var(--muted); }
+      .lang a.active { background:var(--ink); color:var(--bg); }
+      @media (max-width:640px){ .topnav .hide-sm{ display:none; } }
+      article { padding:56px 0 40px; }
+      .eyebrow { display:inline-flex; align-items:center; gap:8px; font-size:12px; font-weight:700; letter-spacing:.12em; text-transform:uppercase; color:var(--red); }
+      .eyebrow::before { content:""; width:6px; height:6px; border-radius:50%; background:var(--red); }
+      h1 { font-family:"Instrument Serif",Georgia,serif; font-weight:400; font-size:clamp(2.4rem,6vw,3.6rem); line-height:1.05; letter-spacing:-.01em; margin:18px 0 20px; }
+      .lead-answer { font-size:1.22rem; line-height:1.6; color:var(--ink); border-left:3px solid var(--red); padding:4px 0 4px 20px; margin:0 0 12px; font-weight:500; }
+      .byline { color:var(--muted); font-size:14px; margin-bottom:28px; }
+      article h2 { font-family:"Instrument Serif",Georgia,serif; font-weight:400; font-size:clamp(1.7rem,3.6vw,2.1rem); line-height:1.15; margin:44px 0 12px; letter-spacing:-.01em; }
+      article h3 { font-size:1.08rem; font-weight:700; margin:26px 0 6px; }
+      article p { margin:0 0 18px; }
+      article ul, article ol { margin:0 0 18px; padding-left:22px; }
+      article li { margin:8px 0; }
+      article strong { font-weight:700; }
+      .callout { background:var(--card); border:1px solid var(--line); border-radius:14px; padding:22px 24px; margin:28px 0; }
+      .callout p:last-child { margin-bottom:0; }
+      .faq details { border-bottom:1px solid var(--line); padding:6px 0; }
+      .faq summary { cursor:pointer; font-weight:600; padding:14px 0; list-style:none; display:flex; justify-content:space-between; align-items:center; gap:16px; }
+      .faq summary::-webkit-details-marker { display:none; }
+      .faq summary::after { content:"+"; color:var(--red); font-size:1.4rem; line-height:1; }
+      .faq details[open] summary::after { content:"–"; }
+      .faq details p { margin:0 0 16px; color:var(--muted); }
+      .cta { margin:48px 0 8px; background:var(--cta-bg); color:#fff; border-radius:18px; padding:34px 30px; text-align:center; border:1px solid var(--line); }
+      .cta h2 { font-family:"Instrument Serif",Georgia,serif; color:#fff; margin:0 0 10px; }
+      .cta p { color:rgba(255,255,255,.75); margin:0 auto 22px; max-width:46ch; }
+      .btn { display:inline-block; background:var(--red); color:#fff; text-decoration:none; font-weight:600; padding:14px 26px; border-radius:999px; transition:transform .15s,opacity .2s; }
+      .btn:hover { transform:translateY(-1px); opacity:.95; }
+      footer { border-top:1px solid var(--line); margin-top:40px; padding:30px 0 50px; }
+      .foot { max-width:1120px; margin:0 auto; padding:0 24px; display:flex; flex-wrap:wrap; gap:12px; justify-content:space-between; align-items:center; color:var(--muted); font-size:14px; }
+      .foot a { color:var(--muted); text-decoration:none; }
+      .foot a:hover { color:var(--ink); }
+    </style>
+  </head>
+  <body class="theme-picante">
+    <!-- Google Tag Manager (noscript) -->
+    <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-M9Z9WLK4"
+    height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+    <!-- End Google Tag Manager (noscript) -->
+    <header class="topbar">
+      <div class="topbar-inner">
+        <a class="brand" href="/" aria-label="Picante Studio">
+          <img src="/assets/picante-black.png" alt="Picante" width="1639" height="507" />
+        </a>
+        <nav class="topnav" aria-label="Principal">
+          <a class="hide-sm" href="/">Home</a>
+          <a href="/en/blog">Blog</a>
+          <a class="hide-sm" href="/#agenda-calendario">Book a call</a>
+          <span class="lang" role="group" aria-label="Idioma">
+            <a class="" href="/blog/unit-economics-para-paid-media" hreflang="es">ES</a>
+            <a class="active" href="/en/blog/unit-economics-paid-media" hreflang="en">EN</a>
+          </span>
+        </nav>
+      </div>
+    </header>
+    <main>
+      <div class="wrap">
+        <article>
+          <p class="eyebrow">SEO &amp; GEO</p>
+          <h1>How Much You Can Pay per Customer: CAC, LTV and Unit Economics for Scaling Paid Media</h1>
+          <p class="lead-answer"><p><strong>Your maximum allowable CAC equals your contribution margin per customer over the payback window you can afford.</strong> For a business that must recover acquisition cost inside 3 months, max CAC = monthly contribution margin per customer × 3. If your projected LTV:CAC lands above 3:1 with acceptable payback, you scale; if it's below, you fix the offer or margin before spending more.</p></p>
+          <p class="byline">By Picante Studio · 2026-09-20 · 5 min read</p>
+<p>Most founders ask "what's a good ROAS?" when the real question is "how much can I pay for a customer and still make money?" Paid media doesn't fail because the creative was bad — it fails because nobody set the ceiling first. Unit economics is the ceiling. Get it right and every ad decision becomes math, not opinion.</p><h2>What unit economics for paid media actually means</h2><p><strong>Unit economics is the profit and cost attached to a single customer or order.</strong> For paid media it comes down to three numbers: how much a customer is worth (LTV), how much it costs to acquire them (CAC), and how fast you get your cash back (payback). Everything else — ROAS, CPM, CTR — is downstream of these.</p><p>Two definitions to lock in before you spend:</p><ul><li><strong>CAC (customer acquisition cost):</strong> total acquisition spend ÷ new customers acquired.</li><li><strong>Contribution margin:</strong> revenue per customer minus variable costs (COGS, shipping, payment fees, fulfillment). This is the real money you have to spend on acquisition — not gross revenue.</li></ul><h2>The formula: your maximum allowable CAC</h2><p>The number that should govern your budget is <strong>maximum allowable CAC</strong> — the most you can pay for a customer without breaking your cash or margin.</p><p>Start with contribution margin, not revenue. If your average order value (AOV) is $80 and variable costs are $32, your contribution margin is $48. That $48 is your acquisition budget per customer, adjusted by your payback target.</p><ul><li><strong>One-purchase ecommerce:</strong> Max CAC ≈ contribution margin per order. Spend more than $48 and that order loses money.</li><li><strong>Repeat / subscription:</strong> Max CAC = monthly contribution margin × payback months you can fund. A SaaS with $40/mo contribution margin and a 6-month payback target can pay up to $240 per customer.</li></ul><p>The formula in one line: <strong>Max CAC = contribution margin per period × acceptable payback period.</strong> Set the payback window based on how much cash you can float — not on optimism about retention.</p><h2>LTV:CAC thresholds: scale, hold, or fix the offer</h2><p><strong>LTV:CAC is the ratio between the lifetime contribution margin of a customer and what it cost to acquire them.</strong> The classic 3:1 rule is a starting reference, not a law. Use it as a decision table:</p><ul><li><strong>Below 1:1</strong> — You lose money on every customer. Stop scaling. Fix pricing, AOV, or margin first.</li><li><strong>1:1 to 2:1</strong> — Marginal. You may cover ad cost but not overhead. Improve the offer before adding budget.</li><li><strong>3:1</strong> — Healthy for most ecommerce and SaaS. Room to scale while staying profitable.</li><li><strong>4:1 and up</strong> — You're likely under-investing. You can push more spend and buy growth.</li></ul><p>Why 3:1 doesn't apply equally: a high-margin SaaS with 90% gross margin and 24-month retention can thrive at higher ratios and longer payback, while a thin-margin ecommerce brand needs faster payback and can't afford to wait for a second purchase that may never come.</p><h2>ROAS vs. contribution margin: what actually shows profit</h2><p><strong>ROAS measures revenue returned per ad dollar; contribution margin measures profit.</strong> A 3x ROAS looks great until you realize a product with 35% margin needs roughly 2.9x ROAS just to break even on the order. ROAS is a channel efficiency signal. Contribution margin is the profitability signal. Set your target ROAS by working backward from your break-even, then add the margin you actually want to keep.</p><p>Break-even ROAS = 1 ÷ contribution margin %. At 40% margin, break-even ROAS is 2.5x. Anything below that loses money regardless of how good the dashboard looks.</p><h2>Blended CAC vs. paid CAC: which decides budget</h2><p><strong>Blended CAC is total spend ÷ all new customers (including organic); paid CAC is paid spend ÷ customers from paid channels.</strong> Use both, for different jobs:</p><ul><li><strong>Paid CAC</strong> to decide whether to scale a specific channel — it isolates what Meta or Google actually costs you.</li><li><strong>Blended CAC</strong> to judge the health of the whole business — it's the number that has to stay under your max allowable CAC at the company level.</li></ul><p>A common trap: paid CAC looks fine per channel but blended CAC creeps up as you scale and organic can't keep pace. Watch both or you'll scale into a cash hole.</p><h2>The LATAM vs. USA nuance: margin, AOV and FX</h2><p>The same brand can have very different max CAC across markets. Three levers move the number:</p><ul><li><strong>AOV and margin:</strong> Lower AOV in many LATAM markets compresses contribution margin, which lowers max CAC — even if CPMs are cheaper.</li><li><strong>Exchange rate:</strong> If you buy inventory in USD and sell in local currency, FX swings can quietly erase margin and drop your real max CAC between months.</li><li><strong>Payback discipline:</strong> Tighter cash and higher financing costs in LATAM usually mean shorter acceptable payback windows than in the USA — which caps how aggressively you can bid.</li></ul><p>The rule: recalculate max CAC per market, in the currency you actually collect and spend in. A single global CAC target will over-invest in one market and starve another.</p><div class="callout"><p><strong>How we run this at Picante Studio:</strong> Before touching a campaign, we build the unit economics model — contribution margin, max allowable CAC, payback target and LTV:CAC by market. Then paid media becomes a scaling decision, not a gamble. We scale what clears the threshold and fix the offer when it doesn't. Want your numbers pressure-tested? <a href="/#agenda-calendario">Book a 30-min diagnosis</a>.</p></div><h2>Turn the number into an operating rule</h2><p>Don't leave max CAC in a spreadsheet. Make it a live rule for the team:</p><ol><li>Calculate contribution margin per customer, per market.</li><li>Set a payback window you can actually fund.</li><li>Derive max allowable CAC and target ROAS from those two.</li><li>Scale channels running under max CAC with LTV:CAC ≥ 3:1.</li><li>Pause or rework anything above max CAC — and fix the offer before blaming the ads.</li></ol><p>Scale what works, cut what doesn't. The math tells you which is which.</p>
+          <h2 id="faq">Frequently asked questions</h2>
+          <div class="faq">
+            <details>
+              <summary>What is a healthy LTV:CAC ratio and why doesn't 3:1 fit everyone?</summary>
+              <p>A healthy LTV:CAC ratio is generally around 3:1 — three dollars of lifetime contribution margin for every dollar of acquisition cost. But it varies: high-margin SaaS with long retention can thrive at higher ratios and longer payback, while thin-margin ecommerce needs faster payback and can't wait on uncertain repeat purchases.</p>
+            </details>
+            <details>
+              <summary>How much can I pay for a customer without losing money?</summary>
+              <p>Your maximum allowable CAC equals your contribution margin per customer over the payback window you can fund. For a single-purchase product it's roughly the contribution margin per order; for subscriptions it's monthly contribution margin times the number of payback months you can afford.</p>
+            </details>
+            <details>
+              <summary>ROAS or contribution margin — which really shows profitability?</summary>
+              <p>Contribution margin shows profit; ROAS only shows revenue per ad dollar. Calculate break-even ROAS as 1 divided by your contribution margin percentage — at 40% margin that's 2.5x. Any ROAS below break-even loses money no matter how good the dashboard looks.</p>
+            </details>
+            <details>
+              <summary>What is CAC payback and in how many months should I recover it?</summary>
+              <p>CAC payback is the time it takes to recover acquisition cost from a customer's contribution margin. Ecommerce usually needs fast payback (ideally within the first order or a few months); SaaS commonly targets 6–12 months. Set the window based on the cash you can float, not on optimistic retention.</p>
+            </details>
+            <details>
+              <summary>Blended CAC vs. per-channel CAC — which should I use for budget?</summary>
+              <p>Use paid CAC per channel to decide whether to scale a specific channel, since it isolates what Meta or Google actually costs. Use blended CAC to judge overall business health — it must stay below your maximum allowable CAC at the company level.</p>
+            </details>
+            <details>
+              <summary>How does the calculation change between ecommerce and subscription/SaaS?</summary>
+              <p>In ecommerce, max CAC is roughly the contribution margin of an order (or expected repeat orders). In SaaS, LTV compounds over months, so max CAC is monthly contribution margin times your payback window — allowing higher acquisition cost when retention and margin are strong.</p>
+            </details>
+          </div>
+          <div class="cta">
+            <h2>Want AI to cite your brand?</h2>
+            <p>Let's talk for 30 minutes. You'll leave with a clear SEO + GEO diagnosis and prioritized next steps.</p>
+            <a class="btn" href="/#agenda-calendario">Book a diagnosis</a>
+          </div>
+        </article>
+      </div>
+    </main>
+    <footer>
+      <div class="foot">
+        <p>© 2026 Picante Studio</p>
+        <p><a href="/">Home</a> · <a href="/en/blog">Blog</a> · <a href="/#agenda-calendario">Book a call</a></p>
+      </div>
+    </footer>
+  </body>
+</html>

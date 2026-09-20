@@ -11,7 +11,8 @@
       "llms.txt",
       "contenido citable por IA",
       "agentes de IA en marketing",
-      "estructura de campañas meta ads"
+      "estructura de campañas meta ads",
+      "unit economics para paid media"
     ],
     "pulse": [
       "por qué mi competencia aparece antes en Google Maps",
@@ -21,7 +22,8 @@
       "cómo responder reseñas negativas en Google",
       "cómo elegir la categoría en Google Business Profile",
       "cada cuánto actualizar Google Business Profile",
-      "cómo auditar a tu competencia en Google Maps"
+      "cómo auditar a tu competencia en Google Maps",
+      "por qué mi negocio no aparece en Google Maps"
     ]
   },
   "published": [
@@ -225,6 +227,30 @@
       "pathEn": "/en/blog/audit-competition-google-maps-checklist",
       "titleEn": "How to Audit Your Competition on Google Maps: 7-Signal Checklist",
       "descriptionEn": "Audit your local competition on Google Maps in 20 minutes. A 7-signal checklist focused on review velocity, categories, photos and ranking trend."
+    },
+    {
+      "slug": "unit-economics-para-paid-media",
+      "destino": "picante",
+      "keyword": "unit economics para paid media",
+      "date": "2026-09-20",
+      "title": "Unit economics para paid media: CAC máximo, LTV y cuándo escalar",
+      "description": "Aprende a calcular tu CAC máximo permitido desde el margen y el payback, con umbrales de LTV:CAC para decidir si escalar paid media o arreglar la oferta.",
+      "path": "/blog/unit-economics-para-paid-media",
+      "pathEn": "/en/blog/unit-economics-paid-media",
+      "titleEn": "Unit Economics for Paid Media: How Much You Can Pay per Customer",
+      "descriptionEn": "Your max allowable CAC = contribution margin per customer × payback target. Learn the formula, LTV:CAC thresholds and when to scale vs. fix your offer."
+    },
+    {
+      "slug": "por-que-mi-negocio-no-aparece-google-maps",
+      "destino": "pulse",
+      "keyword": "por qué mi negocio no aparece en Google Maps",
+      "date": "2026-09-20",
+      "title": "Por qué mi negocio no aparece en Google Maps: 9 razones y solución",
+      "description": "¿Tu negocio no aparece en Google Maps? Aquí las 9 razones reales por zona y un checklist de 20 minutos para volver a salir en el mapa.",
+      "path": "/blog/por-que-mi-negocio-no-aparece-google-maps",
+      "pathEn": "/en/blog/business-not-showing-google-maps",
+      "titleEn": "Why My Business Doesn't Show Up on Google Maps: 9 Real Reasons + Fixes",
+      "descriptionEn": "Your business not showing on Google Maps? Visibility isn't yes/no — it depends on where the customer is. 9 real reasons and a 20-minute fix checklist."
     }
   ]
 }
