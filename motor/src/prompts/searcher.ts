@@ -29,7 +29,12 @@ export function researchSystem(destino: Destino): string {
   ].join("\n");
 }
 
-export function researchUser(seed: string, covered: string[], n: number): string {
+export function researchUser(
+  seed: string,
+  covered: string[],
+  n: number,
+  gscDigest?: string | null,
+): string {
   const semilla = seed
     ? `Tema semilla: "${seed}".`
     : "Sin semilla: propón tú los temas más valiosos según la marca.";
@@ -37,11 +42,15 @@ export function researchUser(seed: string, covered: string[], n: number): string
     covered.length > 0
       ? `Keywords YA cubiertas (NO repitas ni variantes casi idénticas):\n- ${covered.join("\n- ")}`
       : "Aún no hay keywords cubiertas.";
+  const feedback = gscDigest
+    ? `${gscDigest}\n\nPRIORIZA con estos datos reales (círculo virtuoso): primero cubre o mejora los QUICK WINS (rankeas cerca de página 1) y profundiza los GANADORES con clusters/temas relacionados; solo si sobra cupo, propón temas nuevos de los pilares. NO repitas keywords ya cubiertas.\n`
+    : "";
   return [
     semilla,
     "",
     yaHecho,
     "",
+    feedback,
     `Investiga material para ${n} ideas de blog fuertes en SEO y GEO. Para cada una:`,
     "keyword principal, variantes long-tail, intención, preguntas relacionadas (PAA),",
     "un ángulo diferenciador y por qué vale la pena. Responde en texto (aún no JSON).",

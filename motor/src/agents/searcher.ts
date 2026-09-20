@@ -3,6 +3,7 @@ import { log } from "../lib/logger.js";
 import { IDEAS_SCHEMA } from "../schemas.js";
 import type { Destino, Idea } from "../types.js";
 import { researchSystem, researchUser, structureSystem } from "../prompts/searcher.js";
+import { getGscDigest } from "../feedback/searchConsole.js";
 
 /** BUSCADOR: investiga con búsqueda web y estructura ideas en JSON. */
 export async function searchIdeas(
@@ -11,14 +12,16 @@ export async function searchIdeas(
   covered: string[],
   n: number,
 ): Promise<Idea[]> {
-  log.step(`[${destino}] Investigando en la web…`);
+  // Círculo virtuoso: si hay Search Console conectado, prioriza con datos reales.
+  const gscDigest = await getGscDigest(destino);
+  log.step(`[${destino}] Investigando en la web…${gscDigest ? " (con feedback de Search Console)" : ""}`);
   const research = await anthropic.messages.create({
     model: MODEL,
     max_tokens: 16000,
     thinking: { type: "adaptive" },
     tools: [{ type: "web_search_20260209", name: "web_search", max_uses: 6 }],
     system: researchSystem(destino),
-    messages: [{ role: "user", content: researchUser(seed, covered, n) }],
+    messages: [{ role: "user", content: researchUser(seed, covered, n, gscDigest) }],
   });
 
   log.step(`[${destino}] Estructurando ideas…`);

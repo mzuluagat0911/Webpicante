@@ -25,4 +25,7 @@ export const env = {
   // Semillas opcionales por carril.
   SEED_PICANTE: process.env.SEED_PICANTE ?? "",
   SEED_PULSE: process.env.SEED_PULSE ?? "",
+  // Feedback de Search Console (opcional). Propiedad = URL-prefix con "/" final.
+  // El JSON del service account va en GSC_SERVICE_ACCOUNT_JSON (se lee aparte).
+  GSC_SITE_URL: (process.env.GSC_SITE_URL ?? "https://wearepicante.com/").replace(/\/?$/, "/"),
 } as const;

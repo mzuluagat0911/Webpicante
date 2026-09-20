@@ -39,6 +39,10 @@ jobs:
           ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
           SITE_URL: "https://wearepicante.com"
           MAX_POSTS_PER_RUN: "1"
+          # Círculo virtuoso (opcional): feedback de Google Search Console.
+          # Si el secret no existe, el motor corre igual (sin feedback).
+          GSC_SERVICE_ACCOUNT_JSON: ${{ secrets.GSC_SERVICE_ACCOUNT_JSON }}
+          GSC_SITE_URL: "https://wearepicante.com/"
         run: npm run ${{ github.event.inputs.command || 'run' }}
 
       # Publica directo a main (full-auto). Vercel despliega en el push.
