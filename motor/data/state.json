@@ -12,7 +12,8 @@
       "contenido citable por IA",
       "agentes de IA en marketing",
       "estructura de campañas meta ads",
-      "unit economics para paid media"
+      "unit economics para paid media",
+      "sistema de contenido para redes sociales"
     ],
     "pulse": [
       "por qué mi competencia aparece antes en Google Maps",
@@ -23,7 +24,8 @@
       "cómo elegir la categoría en Google Business Profile",
       "cada cuánto actualizar Google Business Profile",
       "cómo auditar a tu competencia en Google Maps",
-      "por qué mi negocio no aparece en Google Maps"
+      "por qué mi negocio no aparece en Google Maps",
+      "cómo entrar al pack de 3 de Google Maps"
     ]
   },
   "published": [
@@ -251,6 +253,30 @@
       "pathEn": "/en/blog/business-not-showing-google-maps",
       "titleEn": "Why My Business Doesn't Show Up on Google Maps: 9 Real Reasons + Fixes",
       "descriptionEn": "Your business not showing on Google Maps? Visibility isn't yes/no — it depends on where the customer is. 9 real reasons and a 20-minute fix checklist."
+    },
+    {
+      "slug": "sistema-de-contenido-para-redes-sociales",
+      "destino": "picante",
+      "keyword": "sistema de contenido para redes sociales",
+      "date": "2026-09-26",
+      "title": "Sistema de contenido para redes sociales: cronograma, cadencia y roles",
+      "description": "Un sistema de contenido para redes sociales tiene 4 capas: pilares, cadencia por canal, roles y medición. Aprende a operarlo con IA y escalar lo que funciona.",
+      "path": "/blog/sistema-de-contenido-para-redes-sociales",
+      "pathEn": "/en/blog/social-media-content-system",
+      "titleEn": "Social Media Content System: Schedule, Cadence & Roles",
+      "descriptionEn": "A social media content system is four operable layers: pillars, cadence per channel, team roles and a measurement loop. Here's how to build one that scales."
+    },
+    {
+      "slug": "como-entrar-pack-3-google-maps",
+      "destino": "pulse",
+      "keyword": "cómo entrar al pack de 3 de Google Maps",
+      "date": "2026-09-26",
+      "title": "Cómo entrar al pack de 3 de Google Maps: guía práctica",
+      "description": "Salir en Maps no es ganar la zona. Aprende qué es el pack de 3, los 3 factores que deciden el top 3 y un checklist de 20 minutos para entrar.",
+      "path": "/blog/como-entrar-pack-3-google-maps",
+      "pathEn": "/en/blog/google-maps-3-pack-how-to-rank",
+      "titleEn": "How to Get Into the Google Maps 3-Pack: What It Is and How to Rank",
+      "descriptionEn": "The Google Maps 3-pack shows only 3 businesses per local search. Learn what it is, the 3 ranking factors and a 20-minute checklist to get in."
     }
   ]
 }
