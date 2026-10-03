@@ -13,7 +13,8 @@
       "agentes de IA en marketing",
       "estructura de campañas meta ads",
       "unit economics para paid media",
-      "sistema de contenido para redes sociales"
+      "sistema de contenido para redes sociales",
+      "sistema de testing de creativos"
     ],
     "pulse": [
       "por qué mi competencia aparece antes en Google Maps",
@@ -25,7 +26,8 @@
       "cada cuánto actualizar Google Business Profile",
       "cómo auditar a tu competencia en Google Maps",
       "por qué mi negocio no aparece en Google Maps",
-      "cómo entrar al pack de 3 de Google Maps"
+      "cómo entrar al pack de 3 de Google Maps",
+      "cómo responder reseñas positivas en Google"
     ]
   },
   "published": [
@@ -277,6 +279,30 @@
       "pathEn": "/en/blog/google-maps-3-pack-how-to-rank",
       "titleEn": "How to Get Into the Google Maps 3-Pack: What It Is and How to Rank",
       "descriptionEn": "The Google Maps 3-pack shows only 3 businesses per local search. Learn what it is, the 3 ranking factors and a 20-minute checklist to get in."
+    },
+    {
+      "slug": "sistema-de-testing-de-creativos",
+      "destino": "picante",
+      "keyword": "sistema de testing de creativos",
+      "date": "2026-10-03",
+      "title": "Sistema de testing de creativos para Meta y TikTok Ads",
+      "description": "Un sistema de testing de creativos en 3 capas (tesis de ángulos, matriz de producción y reglas numéricas) para escalar ROAS en Meta y TikTok Ads.",
+      "path": "/blog/sistema-de-testing-de-creativos",
+      "pathEn": "/en/blog/creative-testing-system-meta-tiktok",
+      "titleEn": "Creative Testing System for Meta & TikTok Ads: The Framework to Scale ROAS",
+      "descriptionEn": "A 3-layer creative testing system for Meta & TikTok: angle thesis, production matrix and numeric kill/iterate/scale rules tied to your unit economics."
+    },
+    {
+      "slug": "como-responder-resenas-positivas-google",
+      "destino": "pulse",
+      "keyword": "cómo responder reseñas positivas en Google",
+      "date": "2026-10-03",
+      "title": "Cómo responder reseñas positivas en Google: la señal que casi nadie aprovecha",
+      "description": "Responder reseñas positivas en Google no es cortesía: es señal de actividad que Maps premia. Framework anti-plantilla de 4 partes y cómo escalarlo multi-sucursal.",
+      "path": "/blog/como-responder-resenas-positivas-google",
+      "pathEn": "/en/blog/how-to-respond-positive-google-reviews",
+      "titleEn": "How to Respond to Positive Google Reviews (The Signal Almost No One Uses)",
+      "descriptionEn": "Responding to positive Google reviews is an activity signal Maps rewards. Use a 4-part anti-template framework and scale it across every location."
     }
   ]
 }
