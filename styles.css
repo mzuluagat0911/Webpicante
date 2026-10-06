@@ -743,6 +743,13 @@ body.nav-open {
   max-width: 58ch;
 }
 
+.hero-sub--lead {
+  margin-top: 14px;
+  max-width: 62ch;
+  font-size: clamp(0.98rem, 1.2vw, 1.12rem);
+  color: rgba(255, 255, 255, 0.86);
+}
+
 .hero-actions {
   margin-top: 40px;
   display: flex;
@@ -1222,6 +1229,12 @@ body.nav-open {
   line-height: 1;
   font-variant-numeric: tabular-nums;
   transition: color 0.35s var(--ease-soft), text-shadow 0.35s var(--ease-soft);
+}
+
+.stat-num--text {
+  font-size: 1.15rem;
+  line-height: 1.25;
+  letter-spacing: -0.02em;
 }
 
 .stat--counting .stat-num {

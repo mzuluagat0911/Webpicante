@@ -19,6 +19,12 @@ Pulse es el software de Picante Studio que monitorea la zona de un negocio en Go
 
 ## Picante Studio
 
+Picante Studio is the growth agency that designs growth systems for brands that already sell in the US, Latin America, and Europe. It brings strategy, creativity, performance, and artificial intelligence into one team. The work is measured with a diagnostic, execution, and results.
+
+Picante is not a shop for isolated ads or one-off assets. Pulse is its separate software for Google Maps reputation.
+
+Picante Studio es la agencia de growth que diseña sistemas de crecimiento para marcas que ya venden en USA, LATAM y Europa. Junta estrategia, creatividad, performance e inteligencia artificial en un solo equipo. Pulse es el software aparte, para reputación en Google Maps.
+
 - Home: https://wearepicante.com/
 - Blog: https://wearepicante.com/blog
 - English blog: https://wearepicante.com/en/blog

@@ -5,9 +5,9 @@
   const translations = {
     es: {
       meta: {
-        title: "Picante Studio | Agencia de Growth, Performance e IA para marcas que escalan",
+        title: "Picante Studio | Agencia de growth para marcas que venden",
         description:
-          "Agencia de growth con estrategia, creatividad, performance e IA. Escala tu marca en USA, LATAM y Europa con un sistema medible.",
+          "Picante Studio es la agencia de growth para marcas que ya venden en USA, LATAM y Europa. Estrategia, creatividad, performance e IA en un solo equipo.",
       },
       a11y: {
         navMain: "Principal",
@@ -50,6 +50,8 @@
         titleL2em: "no gritan.",
         titleL3: "Conectan.",
         sub: "Diseñamos sistemas de crecimiento donde estrategia, creatividad e inteligencia artificial trabajan como uno solo.",
+        definition:
+          "Picante Studio es la agencia de growth que diseña sistemas de crecimiento para marcas que ya venden en USA, LATAM y Europa. Junta estrategia, creatividad, performance e inteligencia artificial en un solo equipo. El trabajo se mide con diagnóstico, ejecución y resultados.",
         ctaPrimary: "Descubrir el sistema",
         ctaSecondary: "Agendar reunión",
         scroll: "Scroll",
@@ -103,10 +105,13 @@
         eyebrow: "Alcance",
         l1: "Visión global.",
         l2: "Ejecución local.",
-        lead: "Operamos en ocho países. Un mismo estándar de excelencia, adaptado a cada cultura, mercado y audiencia.",
-        statCountries: "Países",
-        statBrands: "Marcas impactadas",
-        statRetention: "Retención de clientes",
+        lead: "Trabajamos con marcas en USA, LATAM y Europa. El mismo criterio en cada mercado.",
+        stat1: "USA · LATAM · Europa",
+        stat1label: "Mercados",
+        stat2: "Marcas que ya venden",
+        stat2label: "Para quién",
+        stat3: "Diagnóstico y medición",
+        stat3label: "Cómo trabajamos",
       },
       results90: {
         title: "Resultados que buscamos en los primeros 90 días",
@@ -164,13 +169,13 @@
         eyebrow: "Impacto",
         l1: "Tipo de resultados",
         l2: "que buscamos generar.",
-        m1: "−22% CAC",
+        m1: "CAC más bajo",
         l1label: "Performance + creatividad",
         d1: "Reestructura de embudo y pruebas semanales en anuncios y landing.",
-        m2: "+31% tasa de conversión",
+        m2: "Más conversión",
         l2label: "Sitio + narrativa",
         d2: "Mensaje alineado a intención de búsqueda y pruebas con prueba social.",
-        m3: "+2.4× ROAS",
+        m3: "Escala con control",
         l3label: "Escala controlada",
         d3: "Presupuesto gradual con reglas de apagado y optimización por cohorte.",
       },
@@ -178,6 +183,8 @@
         eyebrow: "Preguntas frecuentes",
         l1: "Respuestas claras.",
         l2: "Decisiones más rápidas.",
+        q0: "¿Qué es Picante Studio?",
+        a0: "Picante Studio es la agencia de growth que diseña sistemas de crecimiento para marcas que ya venden en USA, LATAM y Europa. Junta estrategia, creatividad, performance e inteligencia artificial en un solo equipo. El trabajo se mide con diagnóstico, ejecución y resultados.",
         q1: "¿Para qué tipo de marca es ideal Picante?",
         a1: "Para marcas que ya venden y necesitan escalar con estrategia, ejecución y medición, no solo más piezas sueltas.",
         q2: "¿Qué recibo en la llamada inicial de 30 minutos?",
@@ -236,9 +243,9 @@
     },
     en: {
       meta: {
-        title: "Picante Studio | Growth, Performance & AI Agency for Scaling Brands",
+        title: "Picante Studio | Growth agency for brands that sell",
         description:
-          "Growth agency combining strategy, creativity, performance, and AI. Scale your brand across the US, LATAM, and Europe with a measurable system.",
+          "Picante Studio is the growth agency for brands that already sell in the US, Latin America, and Europe. Strategy, creativity, performance, and AI in one team.",
       },
       a11y: {
         navMain: "Main",
@@ -281,6 +288,8 @@
         titleL2em: "don't shout.",
         titleL3: "They connect.",
         sub: "We design growth systems where strategy, creativity, and artificial intelligence work as one.",
+        definition:
+          "Picante Studio is the growth agency that designs growth systems for brands that already sell in the US, Latin America, and Europe. It brings strategy, creativity, performance, and artificial intelligence into one team. The work is measured with a diagnostic, execution, and results.",
         ctaPrimary: "Explore the system",
         ctaSecondary: "Book a call",
         scroll: "Scroll",
@@ -334,10 +343,13 @@
         eyebrow: "Reach",
         l1: "Global vision.",
         l2: "Local execution.",
-        lead: "We operate in eight countries. One standard of excellence, adapted to each culture, market, and audience.",
-        statCountries: "Countries",
-        statBrands: "Brands impacted",
-        statRetention: "Client retention",
+        lead: "We work with brands in the US, Latin America, and Europe. The same standard in every market.",
+        stat1: "US · LATAM · Europe",
+        stat1label: "Markets",
+        stat2: "Brands that already sell",
+        stat2label: "Who it's for",
+        stat3: "Diagnostic and measurement",
+        stat3label: "How we work",
       },
       results90: {
         title: "Results we target in the first 90 days",
@@ -395,13 +407,13 @@
         eyebrow: "Impact",
         l1: "The kind of results",
         l2: "we aim to deliver.",
-        m1: "−22% CAC",
+        m1: "Lower CAC",
         l1label: "Performance + creative",
         d1: "Funnel rebuild and weekly tests on ads and landing pages.",
-        m2: "+31% conversion rate",
+        m2: "Higher conversion",
         l2label: "Site + narrative",
         d2: "Message aligned to search intent and social-proof tests.",
-        m3: "+2.4× ROAS",
+        m3: "Controlled scale",
         l3label: "Controlled scale",
         d3: "Gradual budget with kill rules and cohort-based optimization.",
       },
@@ -409,6 +421,8 @@
         eyebrow: "FAQ",
         l1: "Clear answers.",
         l2: "Faster decisions.",
+        q0: "What is Picante Studio?",
+        a0: "Picante Studio is the growth agency that designs growth systems for brands that already sell in the US, Latin America, and Europe. It brings strategy, creativity, performance, and artificial intelligence into one team. The work is measured with a diagnostic, execution, and results.",
         q1: "What type of brand is Picante ideal for?",
         a1: "Brands that already sell and need to scale with strategy, execution, and measurement—not just more isolated assets.",
         q2: "What do I get in the initial 30-minute call?",
@@ -562,6 +576,16 @@
     document.title = t("meta.title", lang);
     const metaDesc = document.querySelector('meta[name="description"]');
     if (metaDesc) metaDesc.setAttribute("content", t("meta.description", lang));
+    const ogLocale = document.querySelector('meta[property="og:locale"]');
+    if (ogLocale) ogLocale.setAttribute("content", lang === "en" ? "en_US" : "es_ES");
+    ["og:title", "twitter:title"].forEach((name) => {
+      const el = document.querySelector(name.startsWith("og:") ? `meta[property="${name}"]` : `meta[name="${name}"]`);
+      if (el) el.setAttribute("content", t("meta.title", lang));
+    });
+    ["og:description", "twitter:description"].forEach((name) => {
+      const el = document.querySelector(name.startsWith("og:") ? `meta[property="${name}"]` : `meta[name="${name}"]`);
+      if (el) el.setAttribute("content", t("meta.description", lang));
+    });
 
     document.querySelectorAll(".lang-switch-btn").forEach((btn) => {
       const active = btn.getAttribute("data-lang") === lang;
