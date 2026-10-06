@@ -3,6 +3,7 @@ import type { PublishedPost } from "../lib/state.js";
 const STATIC_PATHS = [
   "/",
   "/pulse",
+  "/en/pulse",
   "/blog",
   "/en/blog",
   "/pulse/blog",

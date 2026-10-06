@@ -1,0 +1,24 @@
+# Picante
+
+> Picante Studio designs growth systems for brands in the US, Latin America, and Europe. Pulse is its software for local reputation on Google Maps.
+
+## Pulse
+
+Pulse is Picante Studio software that monitors a business's area on Google Maps, compares competitor ratings, reviews, and activity, and replies to reviews in the brand's voice.
+
+It is for restaurant owners, retail and local services, and operations teams that run several locations in cities across the US and Latin America.
+
+Pulse is not an ads agency. It does not run Meta ads, Google Ads, or e-commerce performance campaigns.
+
+- Spanish landing: https://wearepicante.com/pulse
+- English landing: https://wearepicante.com/en/pulse
+- Spanish blog: https://wearepicante.com/pulse/blog
+- English blog: https://wearepicante.com/en/pulse/blog
+
+Pulse es el software de Picante Studio que monitorea la zona de un negocio en Google Maps, compara rating, reseñas y actividad de la competencia, y responde reseñas con el tono de la marca. Sirve a restaurantes, retail y operaciones con varios locales en ciudades de USA y LATAM. No es una agencia de anuncios.
+
+## Picante Studio
+
+- Home: https://wearepicante.com/
+- Blog: https://wearepicante.com/blog
+- English blog: https://wearepicante.com/en/blog

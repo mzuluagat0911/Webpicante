@@ -84,14 +84,14 @@ const T = {
     en: {
       nav: { home: "Pulse", blog: "Blog", schedule: "Book a demo" },
       blogHref: "/en/pulse/blog",
-      homeHref: "/pulse",
+      homeHref: "/en/pulse",
       ctaTitle: "Want to see who's beating you on Maps?",
       ctaText:
         "Book 15 minutes. We'll review your area with real data: competitors, ratings, and what to fix first.",
       ctaLabel: "Book a free demo",
-      ctaHref: "/pulse#agendar",
+      ctaHref: "/en/pulse#agendar",
       faqTitle: "Frequently asked questions",
-      footerLinks: '<a href="/pulse">Pulse</a> · <a href="/en/pulse/blog">Blog</a> · <a href="/pulse#agendar">Demo</a>',
+      footerLinks: '<a href="/en/pulse">Pulse</a> · <a href="/en/pulse/blog">Blog</a> · <a href="/en/pulse#agendar">Demo</a>',
       breadcrumbBlog: "Pulse Blog",
       breadcrumbBlogUrl: "/en/pulse/blog",
     },

@@ -31,6 +31,7 @@
         blog: "Blog",
         reportes: "Reportes",
         pulse: "Pulse",
+        pulseMaps: "Reputación en Google Maps",
         faq: "FAQ",
         schedule: "Agendar",
         scheduleMeeting: "Agendar reunión",
@@ -261,6 +262,7 @@
         blog: "Blog",
         reportes: "Reports",
         pulse: "Pulse",
+        pulseMaps: "Google Maps reputation",
         faq: "FAQ",
         schedule: "Book",
         scheduleMeeting: "Book a call",
@@ -521,6 +523,11 @@
       const key = el.getAttribute("data-i18n");
       const value = t(key, lang);
       if (typeof value === "string") el.textContent = value;
+    });
+
+    document.querySelectorAll("[data-href-en]").forEach((el) => {
+      const next = lang === "en" ? el.getAttribute("data-href-en") : el.getAttribute("data-href-es");
+      if (next) el.setAttribute("href", next);
     });
 
     document.querySelectorAll("[data-i18n-html]").forEach((el) => {
