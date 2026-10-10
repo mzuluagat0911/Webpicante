@@ -1,0 +1,270 @@
+<!doctype html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <!-- Google Tag Manager -->
+    <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+    new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+    j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+    'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+    })(window,document,'script','dataLayer','GTM-M9Z9WLK4');</script>
+    <!-- End Google Tag Manager -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
+    <title>Incrementalidad en paid media: mide qué ventas causó tu publicidad</title>
+    <meta name="description" content="El ROAS es correlación, no causa. Aprende a medir incrementalidad con holdout, geo-lift, conversion lift y MMM, y qué decidir con cada resultado." />
+    <meta name="keywords" content="incrementalidad en paid media, incrementality testing marketing, cómo medir el impacto real de la publicidad digital, incrementalidad vs atribución diferencia, test de holdout publicidad, geo lift testing qué es, conversion lift study Meta, marketing mix modeling marcas medianas, ventas incrementales vs ventas atribuidas" />
+    <link rel="canonical" href="https://wearepicante.com/blog/incrementalidad-paid-media" />
+    <link rel="alternate" hreflang="es" href="https://wearepicante.com/blog/incrementalidad-paid-media" />
+    <link rel="alternate" hreflang="en" href="https://wearepicante.com/en/blog/incrementality-paid-media" />
+    <link rel="alternate" hreflang="x-default" href="https://wearepicante.com/blog/incrementalidad-paid-media" />
+    <meta property="og:type" content="article" />
+    <meta property="og:title" content="Incrementalidad en paid media: mide qué ventas causó tu publicidad" />
+    <meta property="og:description" content="El ROAS es correlación, no causa. Aprende a medir incrementalidad con holdout, geo-lift, conversion lift y MMM, y qué decidir con cada resultado." />
+    <meta property="og:url" content="https://wearepicante.com/blog/incrementalidad-paid-media" />
+    <meta property="og:image" content="https://wearepicante.com/assets/picante-red.png" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="Incrementalidad en paid media: mide qué ventas causó tu publicidad" />
+    <meta name="twitter:description" content="El ROAS es correlación, no causa. Aprende a medir incrementalidad con holdout, geo-lift, conversion lift y MMM, y qué decidir con cada resultado." />
+    <meta name="twitter:image" content="https://wearepicante.com/assets/picante-red.png" />
+    <meta name="theme-color" content="#c31c1e" />
+    <link rel="icon" type="image/png" href="/assets/picante-red.png" />
+    <link rel="apple-touch-icon" href="/assets/picante-red.png" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Instrument+Serif:ital@0;1&display=swap"
+      rel="stylesheet"
+    />
+    <script type="application/ld+json">
+{
+      "@context": "https://schema.org",
+      "@type": "Article",
+      "headline": "Incrementalidad en paid media: cómo saber qué ventas causó de verdad tu publicidad",
+      "description": "El ROAS es correlación, no causa. Aprende a medir incrementalidad con holdout, geo-lift, conversion lift y MMM, y qué decidir con cada resultado.",
+      "inLanguage": "es",
+      "author": {
+            "@type": "Organization",
+            "name": "Picante Studio",
+            "url": "https://wearepicante.com/"
+      },
+      "publisher": {
+            "@type": "Organization",
+            "name": "Picante Studio",
+            "logo": {
+                  "@type": "ImageObject",
+                  "url": "https://wearepicante.com/assets/picante-red.png"
+            }
+      },
+      "datePublished": "2026-10-10",
+      "dateModified": "2026-10-10",
+      "mainEntityOfPage": "https://wearepicante.com/blog/incrementalidad-paid-media",
+      "image": "https://wearepicante.com/assets/picante-red.png"
+}
+    </script>
+    <script type="application/ld+json">
+{
+      "@context": "https://schema.org",
+      "@type": "FAQPage",
+      "mainEntity": [
+            {
+                  "@type": "Question",
+                  "name": "¿Qué es la incrementalidad en marketing y en qué se diferencia de la atribución?",
+                  "acceptedAnswer": {
+                        "@type": "Answer",
+                        "text": "La incrementalidad es la porción de ventas que ocurre únicamente gracias a la publicidad, es decir, las que no habrías conseguido sin anunciar. La atribución, en cambio, reparte el crédito de ventas que ya ocurrieron entre los puntos de contacto. La incrementalidad mide causa; la atribución mide correlación y tiende a sobreestimar el impacto real."
+                  }
+            },
+            {
+                  "@type": "Question",
+                  "name": "¿Cómo monto un test de holdout sin romper mis campañas?",
+                  "acceptedAnswer": {
+                        "@type": "Answer",
+                        "text": "Usa las herramientas nativas (Conversion Lift de Meta o Google), que aíslan un grupo de control aleatorio sin apagar tus campañas activas: el algoritmo simplemente deja de mostrar anuncios a ese grupo. Si no tienes volumen, haz un geo-lift apagando o reduciendo inversión solo en ciertas regiones. Corre al menos 4 semanas para captar el ciclo de compra."
+                  }
+            },
+            {
+                  "@type": "Question",
+                  "name": "¿Qué es un geo-lift test y cuándo conviene sobre un conversion lift study?",
+                  "acceptedAnswer": {
+                        "@type": "Answer",
+                        "text": "Un geo-lift test divide tu mercado en regiones tratadas y de control, variando la inversión entre ellas para medir la diferencia en ventas reales. Conviene sobre el conversion lift cuando quieres medir el canal completo (no una sola plataforma), cuando vendes también offline, o cuando no tienes volumen de usuarios suficiente para un lift limpio dentro de la plataforma."
+                  }
+            },
+            {
+                  "@type": "Question",
+                  "name": "¿El ROAS de Meta o Google está inflado y cuánto?",
+                  "acceptedAnswer": {
+                        "@type": "Answer",
+                        "text": "Sí, casi siempre: las plataformas se adjudican ventas que habrían ocurrido igual, sobre todo en retargeting y audiencias de marca. La magnitud varía por negocio, pero la incrementalidad real suele quedar bastante por debajo del ROAS reportado. Solo un test de holdout o geo-lift te dice cuánto en tu caso concreto."
+                  }
+            },
+            {
+                  "@type": "Question",
+                  "name": "¿Qué presupuesto mínimo necesito para medir incrementalidad con significancia?",
+                  "acceptedAnswer": {
+                        "@type": "Answer",
+                        "text": "Depende del método: con menos de $5.000/mes solo logras blackout tests observacionales; entre $5.000 y $30.000/mes un geo-lift ya da señal fiable; sobre $30.000/mes puedes correr conversion lift por plataforma; y arriba de $150.000/mes conviene MMM continuo calibrado con experimentos. El factor clave es el volumen de conversiones, no solo el gasto."
+                  }
+            },
+            {
+                  "@type": "Question",
+                  "name": "¿Sirve el marketing mix modeling para marcas que no son enterprise?",
+                  "acceptedAnswer": {
+                        "@type": "Answer",
+                        "text": "Sí. Con MMM ligeros y librerías abiertas como Robyn o Meridian, marcas medianas que invierten de forma sostenida en varios canales pueden estimar contribución por canal sin equipos de ciencia de datos enormes. No reemplaza a los experimentos de lift: se calibra con ellos para evitar conclusiones sesgadas."
+                  }
+            }
+      ]
+}
+    </script>
+    <script type="application/ld+json">
+{
+      "@context": "https://schema.org",
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+            {
+                  "@type": "ListItem",
+                  "position": 1,
+                  "name": "Inicio",
+                  "item": "https://wearepicante.com/"
+            },
+            {
+                  "@type": "ListItem",
+                  "position": 2,
+                  "name": "Blog",
+                  "item": "https://wearepicante.com/blog"
+            },
+            {
+                  "@type": "ListItem",
+                  "position": 3,
+                  "name": "Incrementalidad en paid media: cómo saber qué ventas causó de verdad tu publicidad",
+                  "item": "https://wearepicante.com/blog/incrementalidad-paid-media"
+            }
+      ]
+}
+    </script>
+    <style>
+      :root { --red:#c31c1e; --ink:#14110f; --muted:#6a635d; --line:#e7e2db; --bg:#faf8f5; --card:#fff; --measure:720px; --topbar:rgba(250,248,245,.85); --cta-bg:#14110f; }
+      .theme-pulse {
+        --ink:#f4f1ec; --muted:rgba(244,241,236,.68); --line:rgba(255,255,255,.12);
+        --bg:#0c0b0a; --card:#161412; --topbar:rgba(12,11,10,.9); --cta-bg:#1a1714;
+      }
+      * { box-sizing:border-box; }
+      html { scroll-behavior:smooth; }
+      body { margin:0; font-family:"Inter",system-ui,sans-serif; color:var(--ink); background:var(--bg); line-height:1.7; -webkit-font-smoothing:antialiased; }
+      a { color:inherit; }
+      .wrap { max-width:var(--measure); margin:0 auto; padding:0 24px; }
+      .topbar { position:sticky; top:0; z-index:50; background:var(--topbar); backdrop-filter:saturate(150%) blur(10px); border-bottom:1px solid var(--line); }
+      .topbar-inner { max-width:1120px; margin:0 auto; padding:14px 24px; display:flex; align-items:center; justify-content:space-between; gap:16px; }
+      .brand img { height:26px; width:auto; display:block; }
+      .theme-pulse .brand img { filter: invert(1); }
+      .topnav { display:flex; align-items:center; gap:22px; font-size:14px; font-weight:500; }
+      .topnav a { text-decoration:none; color:var(--muted); transition:color .2s; }
+      .topnav a:hover { color:var(--ink); }
+      .lang { display:inline-flex; border:1px solid var(--line); border-radius:999px; overflow:hidden; }
+      .lang a { padding:4px 10px; font-size:12px; font-weight:600; text-decoration:none; color:var(--muted); }
+      .lang a.active { background:var(--ink); color:var(--bg); }
+      @media (max-width:640px){ .topnav .hide-sm{ display:none; } }
+      article { padding:56px 0 40px; }
+      .eyebrow { display:inline-flex; align-items:center; gap:8px; font-size:12px; font-weight:700; letter-spacing:.12em; text-transform:uppercase; color:var(--red); }
+      .eyebrow::before { content:""; width:6px; height:6px; border-radius:50%; background:var(--red); }
+      h1 { font-family:"Instrument Serif",Georgia,serif; font-weight:400; font-size:clamp(2.4rem,6vw,3.6rem); line-height:1.05; letter-spacing:-.01em; margin:18px 0 20px; }
+      .lead-answer { font-size:1.22rem; line-height:1.6; color:var(--ink); border-left:3px solid var(--red); padding:4px 0 4px 20px; margin:0 0 12px; font-weight:500; }
+      .byline { color:var(--muted); font-size:14px; margin-bottom:28px; }
+      article h2 { font-family:"Instrument Serif",Georgia,serif; font-weight:400; font-size:clamp(1.7rem,3.6vw,2.1rem); line-height:1.15; margin:44px 0 12px; letter-spacing:-.01em; }
+      article h3 { font-size:1.08rem; font-weight:700; margin:26px 0 6px; }
+      article p { margin:0 0 18px; }
+      article ul, article ol { margin:0 0 18px; padding-left:22px; }
+      article li { margin:8px 0; }
+      article strong { font-weight:700; }
+      .callout { background:var(--card); border:1px solid var(--line); border-radius:14px; padding:22px 24px; margin:28px 0; }
+      .callout p:last-child { margin-bottom:0; }
+      .faq details { border-bottom:1px solid var(--line); padding:6px 0; }
+      .faq summary { cursor:pointer; font-weight:600; padding:14px 0; list-style:none; display:flex; justify-content:space-between; align-items:center; gap:16px; }
+      .faq summary::-webkit-details-marker { display:none; }
+      .faq summary::after { content:"+"; color:var(--red); font-size:1.4rem; line-height:1; }
+      .faq details[open] summary::after { content:"–"; }
+      .faq details p { margin:0 0 16px; color:var(--muted); }
+      .cta { margin:48px 0 8px; background:var(--cta-bg); color:#fff; border-radius:18px; padding:34px 30px; text-align:center; border:1px solid var(--line); }
+      .cta h2 { font-family:"Instrument Serif",Georgia,serif; color:#fff; margin:0 0 10px; }
+      .cta p { color:rgba(255,255,255,.75); margin:0 auto 22px; max-width:46ch; }
+      .btn { display:inline-block; background:var(--red); color:#fff; text-decoration:none; font-weight:600; padding:14px 26px; border-radius:999px; transition:transform .15s,opacity .2s; }
+      .btn:hover { transform:translateY(-1px); opacity:.95; }
+      footer { border-top:1px solid var(--line); margin-top:40px; padding:30px 0 50px; }
+      .foot { max-width:1120px; margin:0 auto; padding:0 24px; display:flex; flex-wrap:wrap; gap:12px; justify-content:space-between; align-items:center; color:var(--muted); font-size:14px; }
+      .foot a { color:var(--muted); text-decoration:none; }
+      .foot a:hover { color:var(--ink); }
+    </style>
+  </head>
+  <body class="theme-picante">
+    <!-- Google Tag Manager (noscript) -->
+    <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-M9Z9WLK4"
+    height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+    <!-- End Google Tag Manager (noscript) -->
+    <header class="topbar">
+      <div class="topbar-inner">
+        <a class="brand" href="/" aria-label="Picante Studio">
+          <img src="/assets/picante-black.png" alt="Picante" width="1639" height="507" />
+        </a>
+        <nav class="topnav" aria-label="Principal">
+          <a class="hide-sm" href="/">Inicio</a>
+          <a href="/blog">Blog</a>
+          <a class="hide-sm" href="/#agenda-calendario">Agendar</a>
+          <span class="lang" role="group" aria-label="Idioma">
+            <a class="active" href="/blog/incrementalidad-paid-media" hreflang="es">ES</a>
+            <a class="" href="/en/blog/incrementality-paid-media" hreflang="en">EN</a>
+          </span>
+        </nav>
+      </div>
+    </header>
+    <main>
+      <div class="wrap">
+        <article>
+          <p class="eyebrow">SEO &amp; GEO</p>
+          <h1>Incrementalidad en paid media: cómo saber qué ventas causó de verdad tu publicidad</h1>
+          <p class="lead-answer"><p>La <strong>incrementalidad en paid media</strong> es la porción de ventas que existe <em>únicamente</em> porque hiciste publicidad: las que no habrías conseguido igual. Se mide comparando un grupo expuesto contra un grupo de control (holdout) usando métodos como geo-lift, conversion lift o marketing mix modeling. A diferencia de la atribución —que reparte crédito entre clics y vistas—, la incrementalidad aísla la <strong>causa</strong>, no la correlación. El ROAS que reporta Meta o Google casi siempre sobreestima el impacto real porque incluye ventas que ibas a cerrar sin anunciar.</p></p>
+          <p class="byline">Por Picante Studio · 2026-10-10 · 5 min de lectura</p>
+<p>El ROAS que ves en tu dashboard es una correlación disfrazada de causa. Dice que las ventas pasaron <em>cerca</em> de tus anuncios, no que tus anuncios las <em>provocaron</em>. Una parte de esas conversiones iba a ocurrir igual: el cliente ya te buscaba, ya tenía el carrito, ya era tuyo. Separar lo que tu paid realmente causa de lo que ibas a vender de todas formas es la diferencia entre escalar con criterio y quemar presupuesto convencido de que funciona. Eso es incrementalidad.</p><h2>Qué es la incrementalidad y en qué se diferencia de la atribución</h2><p>La <strong>incrementalidad</strong> es el porcentaje de resultados (ventas, leads, instalaciones) que ocurrieron <em>solo</em> gracias a la publicidad. Formalmente: lo que pasó con el anuncio, menos lo que habría pasado sin él. Ese "sin él" es el <strong>baseline</strong>, y nunca lo ves en un panel de plataforma.</p><p>La <strong>atribución</strong> hace otra cosa: reparte el crédito de una venta entre los puntos de contacto (último clic, view-through, data-driven). El problema es estructural: si alguien vio tu anuncio y luego compró, la plataforma se lleva el crédito aunque esa persona hubiera comprado sin verlo nunca. Por eso <strong>ventas atribuidas y ventas incrementales no son lo mismo</strong>, y la brecha suele ser grande.</p><ul><li><strong>Atribución</strong> responde: ¿por dónde pasó la venta?</li><li><strong>Incrementalidad</strong> responde: ¿esta venta existe gracias a mí?</li></ul><p>En marcas que miden bien, la incrementalidad real de Meta prospecting suele quedar muy por debajo del ROAS reportado, y el retargeting de marca —el que más "brilla" en atribución— es con frecuencia el menos incremental: le estás pagando a gente que ya iba a comprar.</p><h2>Los 4 métodos para medir impacto real (y cuándo usar cada uno)</h2><p>No hay un método único. La herramienta correcta depende de tu inversión mensual y de qué decisión necesitas tomar.</p><h3>1. Test de holdout (conversion lift)</h3><p>Un <strong>holdout</strong> apaga la publicidad para un grupo de usuarios o audiencia elegido al azar y la deja encendida para el resto. La diferencia de conversión entre ambos grupos es tu lift incremental. Meta lo ofrece como <strong>Conversion Lift Study</strong> y Google como <strong>Conversion Lift</strong>. Es el estándar de oro cuando tienes volumen: aleatorización limpia dentro de la plataforma.</p><h3>2. Geo-lift test</h3><p>Un <strong>geo-lift test</strong> divide tu mercado por geografías: en unas regiones mantienes o subes la inversión, en otras la bajas o la apagas. Comparas el comportamiento de ventas entre zonas tratadas y zonas de control. Conviene sobre el conversion lift cuando quieres medir el canal completo (no una sola plataforma), cuando vendes también offline, o cuando no tienes volumen suficiente para un lift a nivel usuario. Es agnóstico de cookies y mide el efecto total.</p><h3>3. Marketing mix modeling (MMM)</h3><p>El <strong>marketing mix modeling</strong> usa regresión sobre datos históricos para estimar la contribución de cada canal a las ventas, controlando estacionalidad, precio y promociones. Dejó de ser solo para enterprise: con MMM ligeros (y librerías abiertas tipo Robyn o Meridian) hoy es viable para <strong>marcas medianas</strong> que invierten de forma sostenida en varios canales. No reemplaza a los experimentos: los complementa y se calibra con ellos.</p><h3>4. Observación directa / blackout</h3><p>El más simple: apagas un canal por completo durante un periodo y observas qué pasa con las ventas totales. Es tosco y vulnerable a estacionalidad, pero para marcas pequeñas es el primer paso honesto para ver si el mundo se cae cuando dejas de pagar.</p><h2>Árbol de decisión por tamaño de inversión</h2><p>Elige el método según lo que gastas al mes en el canal que quieres validar:</p><ol><li><strong>Menos de $5.000/mes:</strong> no tendrás significancia estadística para un lift limpio. Usa <strong>blackout tests</strong> por tiempo y observa ventas totales, no métricas de plataforma. Decisión binaria: ¿el negocio lo nota o no?</li><li><strong>$5.000–$30.000/mes:</strong> entra el <strong>geo-lift</strong>. Divide mercados comparables, corre 4–6 semanas, mide la diferencia en ventas reales. Es el mejor costo-beneficio para marcas en crecimiento.</li><li><strong>$30.000–$150.000/mes:</strong> combina <strong>conversion lift</strong> dentro de las plataformas con geo-lifts periódicos. Ya tienes volumen para aislar canal por canal.</li><li><strong>Más de $150.000/mes:</strong> <strong>MMM continuo</strong> calibrado con experimentos trimestrales. El MMM te da la foto siempre-encendida; los lifts lo mantienen honesto.</li></ol><h2>Qué decisión tomar con cada resultado</h2><p>Medir sin decidir es un reporte bonito, no un sistema. Reglas prácticas:</p><ul><li><strong>Incrementalidad alta y estable:</strong> escala. Este canal crea demanda, no la cosecha. Sube presupuesto hasta encontrar el punto de rendimientos decrecientes.</li><li><strong>Incrementalidad baja pero positiva:</strong> optimiza antes de escalar. Revisa creativos, audiencias y overlap con otros canales; mucho "crédito" puede estar canibalizado.</li><li><strong>Incrementalidad cercana a cero (típico del retargeting de marca):</strong> recorta drásticamente o reasigna. Estás pagando por ventas que ya tenías.</li><li><strong>Incrementalidad negativa o nula con ROAS alto reportado:</strong> alerta roja de over-attribution. El canal se está robando el crédito de otros. Recorta y reinvierte en prospecting incremental.</li></ul><h2>Errores comunes al medir incrementalidad</h2><ul><li><strong>Confundir ROAS con causa.</strong> El ROAS alto del retargeting casi siempre es correlación: ya eran clientes.</li><li><strong>No definir baseline.</strong> Sin estimar "cuánto vendía sin anunciar" no puedes calcular incrementalidad. El baseline es el corazón del cálculo.</li><li><strong>Tests demasiado cortos.</strong> Menos de 3–4 semanas no captura ciclo de compra ni efectos de arrastre. Vas a leer ruido.</li><li><strong>Grupos de control contaminados.</strong> Si tu holdout sigue viendo tu orgánico, email o PR, no es control puro; interpreta con cuidado.</li><li><strong>Medir una sola vez.</strong> La incrementalidad cambia con la saturación, la estacionalidad y la competencia. Es un ritual, no un proyecto único.</li></ul><div class="callout"><p>En <strong>Picante Studio</strong> montamos sistemas de medición de incrementalidad junto a tu paid: elegimos el método por tamaño de inversión, corremos los experimentos y traducimos cada resultado en una decisión de presupuesto. Escalamos lo que de verdad causa ventas y descartamos lo que solo las acompaña. ¿Quieres saber cuánto de tu ROAS es real? <a href="/#agenda-calendario">Agenda un diagnóstico de 30 min</a>.</p></div><h2>En resumen</h2><p>La atribución te dice dónde pasó la venta; la incrementalidad te dice si la causaste. Si escalas presupuesto por ROAS sin validar causa, escalas también el autoengaño. Empieza por el método que tu inversión permite, define tu baseline, corre el test suficiente tiempo y toma la decisión que el resultado exige. Primero el sistema de medición, después el escalamiento.</p>
+          <h2 id="faq">Preguntas frecuentes</h2>
+          <div class="faq">
+            <details>
+              <summary>¿Qué es la incrementalidad en marketing y en qué se diferencia de la atribución?</summary>
+              <p>La incrementalidad es la porción de ventas que ocurre únicamente gracias a la publicidad, es decir, las que no habrías conseguido sin anunciar. La atribución, en cambio, reparte el crédito de ventas que ya ocurrieron entre los puntos de contacto. La incrementalidad mide causa; la atribución mide correlación y tiende a sobreestimar el impacto real.</p>
+            </details>
+            <details>
+              <summary>¿Cómo monto un test de holdout sin romper mis campañas?</summary>
+              <p>Usa las herramientas nativas (Conversion Lift de Meta o Google), que aíslan un grupo de control aleatorio sin apagar tus campañas activas: el algoritmo simplemente deja de mostrar anuncios a ese grupo. Si no tienes volumen, haz un geo-lift apagando o reduciendo inversión solo en ciertas regiones. Corre al menos 4 semanas para captar el ciclo de compra.</p>
+            </details>
+            <details>
+              <summary>¿Qué es un geo-lift test y cuándo conviene sobre un conversion lift study?</summary>
+              <p>Un geo-lift test divide tu mercado en regiones tratadas y de control, variando la inversión entre ellas para medir la diferencia en ventas reales. Conviene sobre el conversion lift cuando quieres medir el canal completo (no una sola plataforma), cuando vendes también offline, o cuando no tienes volumen de usuarios suficiente para un lift limpio dentro de la plataforma.</p>
+            </details>
+            <details>
+              <summary>¿El ROAS de Meta o Google está inflado y cuánto?</summary>
+              <p>Sí, casi siempre: las plataformas se adjudican ventas que habrían ocurrido igual, sobre todo en retargeting y audiencias de marca. La magnitud varía por negocio, pero la incrementalidad real suele quedar bastante por debajo del ROAS reportado. Solo un test de holdout o geo-lift te dice cuánto en tu caso concreto.</p>
+            </details>
+            <details>
+              <summary>¿Qué presupuesto mínimo necesito para medir incrementalidad con significancia?</summary>
+              <p>Depende del método: con menos de $5.000/mes solo logras blackout tests observacionales; entre $5.000 y $30.000/mes un geo-lift ya da señal fiable; sobre $30.000/mes puedes correr conversion lift por plataforma; y arriba de $150.000/mes conviene MMM continuo calibrado con experimentos. El factor clave es el volumen de conversiones, no solo el gasto.</p>
+            </details>
+            <details>
+              <summary>¿Sirve el marketing mix modeling para marcas que no son enterprise?</summary>
+              <p>Sí. Con MMM ligeros y librerías abiertas como Robyn o Meridian, marcas medianas que invierten de forma sostenida en varios canales pueden estimar contribución por canal sin equipos de ciencia de datos enormes. No reemplaza a los experimentos de lift: se calibra con ellos para evitar conclusiones sesgadas.</p>
+            </details>
+          </div>
+          <div class="cta">
+            <h2>¿Quieres que la IA cite a tu marca?</h2>
+            <p>Conversemos 30 minutos. Sales con un diagnóstico claro de SEO + GEO y los próximos pasos por impacto.</p>
+            <a class="btn" href="/#agenda-calendario">Agendar diagnóstico</a>
+          </div>
+        </article>
+      </div>
+    </main>
+    <footer>
+      <div class="foot">
+        <p>© 2026 Picante Studio</p>
+        <p><a href="/">Inicio</a> · <a href="/blog">Blog</a> · <a href="/#agenda-calendario">Agendar</a></p>
+      </div>
+    </footer>
+  </body>
+</html>

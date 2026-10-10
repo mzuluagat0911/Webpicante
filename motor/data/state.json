@@ -14,7 +14,8 @@
       "estructura de campañas meta ads",
       "unit economics para paid media",
       "sistema de contenido para redes sociales",
-      "sistema de testing de creativos"
+      "sistema de testing de creativos",
+      "incrementalidad en paid media"
     ],
     "pulse": [
       "por qué mi competencia aparece antes en Google Maps",
@@ -303,6 +304,18 @@
       "pathEn": "/en/blog/how-to-respond-positive-google-reviews",
       "titleEn": "How to Respond to Positive Google Reviews (The Signal Almost No One Uses)",
       "descriptionEn": "Responding to positive Google reviews is an activity signal Maps rewards. Use a 4-part anti-template framework and scale it across every location."
+    },
+    {
+      "slug": "incrementalidad-paid-media",
+      "destino": "picante",
+      "keyword": "incrementalidad en paid media",
+      "date": "2026-10-10",
+      "title": "Incrementalidad en paid media: mide qué ventas causó tu publicidad",
+      "description": "El ROAS es correlación, no causa. Aprende a medir incrementalidad con holdout, geo-lift, conversion lift y MMM, y qué decidir con cada resultado.",
+      "path": "/blog/incrementalidad-paid-media",
+      "pathEn": "/en/blog/incrementality-paid-media",
+      "titleEn": "Incrementality in Paid Media: Which Sales Your Ads Actually Caused",
+      "descriptionEn": "ROAS is correlation, not causation. Use holdout, geo-lift, conversion lift and MMM to measure the sales your ads actually caused — by budget size."
     }
   ]
 }
