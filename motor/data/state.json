@@ -28,7 +28,8 @@
       "cómo auditar a tu competencia en Google Maps",
       "por qué mi negocio no aparece en Google Maps",
       "cómo entrar al pack de 3 de Google Maps",
-      "cómo responder reseñas positivas en Google"
+      "cómo responder reseñas positivas en Google",
+      "cómo eliminar reseñas falsas en Google"
     ]
   },
   "published": [
@@ -316,6 +317,18 @@
       "pathEn": "/en/blog/incrementality-paid-media",
       "titleEn": "Incrementality in Paid Media: Which Sales Your Ads Actually Caused",
       "descriptionEn": "ROAS is correlation, not causation. Use holdout, geo-lift, conversion lift and MMM to measure the sales your ads actually caused — by budget size."
+    },
+    {
+      "slug": "como-eliminar-resenas-falsas-google",
+      "destino": "pulse",
+      "keyword": "cómo eliminar reseñas falsas en Google",
+      "date": "2026-10-10",
+      "title": "Cómo eliminar reseñas falsas en Google: guía operativa 2025",
+      "description": "Cómo eliminar reseñas falsas en Google, detectar ataques de la competencia, denunciarlas citando políticas y qué hacer si Google no las borra.",
+      "path": "/blog/como-eliminar-resenas-falsas-google",
+      "pathEn": "/en/blog/remove-fake-google-reviews",
+      "titleEn": "Fake Google Reviews: Remove, Report & Defend Against Competitor Attacks",
+      "descriptionEn": "How to spot, report and remove fake Google reviews, appeal when Google won't delete them, and defend your local business from coordinated competitor attacks."
     }
   ]
 }
