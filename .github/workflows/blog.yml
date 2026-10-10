@@ -13,7 +13,7 @@ on:
         required: true
         default: "run"
         type: choice
-        options: [ideas, run]
+        options: [ideas, run, pulse, picante]
 
 # Necesario para que el robot pueda commitear los blogs a main.
 permissions:

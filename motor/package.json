@@ -8,6 +8,7 @@
     "ideas": "tsx src/index.ts ideas",
     "generate": "tsx src/index.ts run",
     "run": "tsx src/index.ts run",
+    "pulse": "tsx src/index.ts pulse",
     "typecheck": "tsc --noEmit"
   },
   "dependencies": {
