@@ -15,7 +15,8 @@
       "unit economics para paid media",
       "sistema de contenido para redes sociales",
       "sistema de testing de creativos",
-      "incrementalidad en paid media"
+      "incrementalidad en paid media",
+      "growth loops"
     ],
     "pulse": [
       "por qué mi competencia aparece antes en Google Maps",
@@ -29,7 +30,8 @@
       "por qué mi negocio no aparece en Google Maps",
       "cómo entrar al pack de 3 de Google Maps",
       "cómo responder reseñas positivas en Google",
-      "cómo eliminar reseñas falsas en Google"
+      "cómo eliminar reseñas falsas en Google",
+      "rutina semanal de reputación en Google"
     ]
   },
   "published": [
@@ -329,6 +331,30 @@
       "pathEn": "/en/blog/remove-fake-google-reviews",
       "titleEn": "Fake Google Reviews: Remove, Report & Defend Against Competitor Attacks",
       "descriptionEn": "How to spot, report and remove fake Google reviews, appeal when Google won't delete them, and defend your local business from coordinated competitor attacks."
+    },
+    {
+      "slug": "growth-loops-bucles-de-crecimiento",
+      "destino": "picante",
+      "keyword": "growth loops",
+      "date": "2026-10-17",
+      "title": "Growth loops: qué son y por qué reemplazan al embudo",
+      "description": "Qué son los growth loops, tipos, cómo diseñarlos y cuándo NO usarlos. Loops para marcas que ya venden: paid como sistema y contenido con IA.",
+      "path": "/blog/growth-loops-bucles-de-crecimiento",
+      "pathEn": "/en/blog/growth-loops",
+      "titleEn": "Growth Loops: What They Are and Why They Beat the Funnel",
+      "descriptionEn": "Growth loops are self-reinforcing systems where each output feeds the next cycle. Learn the types, how to design one, and when not to force a loop."
+    },
+    {
+      "slug": "rutina-semanal-reputacion-google",
+      "destino": "pulse",
+      "keyword": "rutina semanal de reputación en Google",
+      "date": "2026-10-17",
+      "title": "Rutina semanal de reputación en Google: qué revisar cada lunes",
+      "description": "Convierte la reputación en Google en un sistema: bloque de 20 min cada lunes, auditoría mensual y matriz de roles dueño/gerente/ops para uno o varios locales.",
+      "path": "/blog/rutina-semanal-reputacion-google",
+      "pathEn": "/en/blog/weekly-google-reputation-routine",
+      "titleEn": "The Weekly Google Reputation Routine: Your 20-Minute Monday Checklist",
+      "descriptionEn": "A 20-minute Monday routine plus a monthly audit to keep your Google Business Profile active, answer reviews fast, and run one standard across all locations."
     }
   ]
 }
