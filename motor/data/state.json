@@ -16,7 +16,8 @@
       "sistema de contenido para redes sociales",
       "sistema de testing de creativos",
       "incrementalidad en paid media",
-      "growth loops"
+      "growth loops",
+      "propuesta de valor"
     ],
     "pulse": [
       "por qué mi competencia aparece antes en Google Maps",
@@ -31,7 +32,8 @@
       "cómo entrar al pack de 3 de Google Maps",
       "cómo responder reseñas positivas en Google",
       "cómo eliminar reseñas falsas en Google",
-      "rutina semanal de reputación en Google"
+      "rutina semanal de reputación en Google",
+      "cuántas fotos subir a Google Business Profile"
     ]
   },
   "published": [
@@ -355,6 +357,30 @@
       "pathEn": "/en/blog/weekly-google-reputation-routine",
       "titleEn": "The Weekly Google Reputation Routine: Your 20-Minute Monday Checklist",
       "descriptionEn": "A 20-minute Monday routine plus a monthly audit to keep your Google Business Profile active, answer reviews fast, and run one standard across all locations."
+    },
+    {
+      "slug": "propuesta-de-valor-framework",
+      "destino": "picante",
+      "keyword": "propuesta de valor",
+      "date": "2026-10-24",
+      "title": "Propuesta de valor: framework para escalar tu mensaje",
+      "description": "La propuesta de valor es la capa base de tu growth: se escribe una vez y se instancia hacia abajo del embudo. Framework, plantilla y ejemplos.",
+      "path": "/blog/propuesta-de-valor-framework",
+      "pathEn": "/en/blog/value-proposition-framework-brand-message",
+      "titleEn": "Value Proposition Framework: Build a Brand Message That Scales",
+      "descriptionEn": "A value proposition is the base layer of your growth system. Learn the framework to write a brand message once and scale it across paid, organic and AI."
+    },
+    {
+      "slug": "cuantas-fotos-google-business-profile",
+      "destino": "pulse",
+      "keyword": "cuántas fotos subir a Google Business Profile",
+      "date": "2026-10-24",
+      "title": "¿Cuántas fotos subir a Google Business Profile? Guía para Maps",
+      "description": "Cuántas fotos subir a Google Business Profile, cada cuánto y cuáles mueven el ranking en Maps. Cheat-sheet con cifras concretas y ángulo competitivo.",
+      "path": "/blog/cuantas-fotos-google-business-profile",
+      "pathEn": "/en/blog/how-many-photos-google-business-profile-maps",
+      "titleEn": "How Many Photos to Upload to Google Business Profile for Maps",
+      "descriptionEn": "Photos are an activity signal on Google Maps, not a beauty contest. How many to upload, how often, ideal size, and how to beat the competitor in your pack."
     }
   ]
 }
