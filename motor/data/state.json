@@ -17,7 +17,8 @@
       "sistema de testing de creativos",
       "incrementalidad en paid media",
       "growth loops",
-      "propuesta de valor"
+      "propuesta de valor",
+      "storytelling de marca"
     ],
     "pulse": [
       "por qué mi competencia aparece antes en Google Maps",
@@ -33,7 +34,8 @@
       "cómo responder reseñas positivas en Google",
       "cómo eliminar reseñas falsas en Google",
       "rutina semanal de reputación en Google",
-      "cuántas fotos subir a Google Business Profile"
+      "cuántas fotos subir a Google Business Profile",
+      "cuántas reseñas necesito al mes en google maps"
     ]
   },
   "published": [
@@ -381,6 +383,30 @@
       "pathEn": "/en/blog/how-many-photos-google-business-profile-maps",
       "titleEn": "How Many Photos to Upload to Google Business Profile for Maps",
       "descriptionEn": "Photos are an activity signal on Google Maps, not a beauty contest. How many to upload, how often, ideal size, and how to beat the competitor in your pack."
+    },
+    {
+      "slug": "storytelling-de-marca-que-convierte",
+      "destino": "picante",
+      "keyword": "storytelling de marca",
+      "date": "2026-11-07",
+      "title": "Storytelling de marca que convierte: el framework de 5 niveles",
+      "description": "Storytelling de marca que convierte: pasa de la ocurrencia al sistema con el framework de 5 niveles (verdad, tensión, ángulo, pieza y métrica).",
+      "path": "/blog/storytelling-de-marca-que-convierte",
+      "pathEn": "/en/blog/brand-storytelling-that-converts",
+      "titleEn": "Brand Storytelling That Converts: The 5-Level Message Angles System",
+      "descriptionEn": "Brand storytelling that converts isn't about pretty stories. Use the 5-level Message Angles System to turn narrative into measurable angles for ads."
+    },
+    {
+      "slug": "cuantas-resenas-al-mes-google-maps",
+      "destino": "pulse",
+      "keyword": "cuántas reseñas necesito al mes en google maps",
+      "date": "2026-11-07",
+      "title": "¿Cuántas reseñas necesitas al mes en Google Maps? | Pulse",
+      "description": "No hay número mágico: tu meta mensual = reseñas del competidor nº1 de tu zona +20%. Fórmula, tabla por rubro y regla de recencia.",
+      "path": "/blog/cuantas-resenas-al-mes-google-maps",
+      "pathEn": "/en/blog/google-maps-reviews-per-month-ranking",
+      "titleEn": "How Many Google Maps Reviews Per Month Do You Need to Rank?",
+      "descriptionEn": "There's no magic number. Your monthly review target = the #1 competitor in your category and area +20%. Here's the formula and a reference table."
     }
   ]
 }
