@@ -18,7 +18,8 @@
       "incrementalidad en paid media",
       "growth loops",
       "propuesta de valor",
-      "storytelling de marca"
+      "storytelling de marca",
+      "sistema de producción de contenido con IA"
     ],
     "pulse": [
       "por qué mi competencia aparece antes en Google Maps",
@@ -35,7 +36,8 @@
       "cómo eliminar reseñas falsas en Google",
       "rutina semanal de reputación en Google",
       "cuántas fotos subir a Google Business Profile",
-      "cuántas reseñas necesito al mes en google maps"
+      "cuántas reseñas necesito al mes en google maps",
+      "cómo responder reseñas de Google con IA"
     ]
   },
   "published": [
@@ -407,6 +409,30 @@
       "pathEn": "/en/blog/google-maps-reviews-per-month-ranking",
       "titleEn": "How Many Google Maps Reviews Per Month Do You Need to Rank?",
       "descriptionEn": "There's no magic number. Your monthly review target = the #1 competitor in your category and area +20%. Here's the formula and a reference table."
+    },
+    {
+      "slug": "sistema-produccion-contenido-con-ia",
+      "destino": "picante",
+      "keyword": "sistema de producción de contenido con IA",
+      "date": "2026-11-14",
+      "title": "Sistema de producción de contenido con IA: el motor que sí se ejecuta",
+      "description": "Un sistema de producción de contenido con IA es el flujo que convierte ideas en piezas publicadas sin depender de la motivación. Así se monta paso a paso.",
+      "path": "/blog/sistema-produccion-contenido-con-ia",
+      "pathEn": "/en/blog/ai-content-production-system",
+      "titleEn": "The AI Content Engine: Build a Content System That Ships",
+      "descriptionEn": "Your calendar was never the problem—the production system behind it was. Build an AI content engine with a clear human/AI split and shipping cadence."
+    },
+    {
+      "slug": "como-responder-resenas-google-ia-sin-sonar-robot",
+      "destino": "pulse",
+      "keyword": "cómo responder reseñas de Google con IA",
+      "date": "2026-11-14",
+      "title": "Cómo responder reseñas de Google con IA sin sonar a robot",
+      "description": "Guía práctica para responder reseñas de Google con IA sin sonar robótico: qué debe leer la IA, qué nunca inventar y cómo mantener tu voz en varias sucursales.",
+      "path": "/blog/como-responder-resenas-google-ia-sin-sonar-robot",
+      "pathEn": "/en/blog/respond-google-reviews-ai-without-sounding-robotic",
+      "titleEn": "How to Respond to Google Reviews with AI Without Sounding Like a Robot",
+      "descriptionEn": "Learn how to respond to Google reviews with AI without sounding robotic. A human-criteria framework to keep your brand voice across every location."
     }
   ]
 }
